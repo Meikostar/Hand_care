@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="country_codes" ns1:ignore="MissingTranslation">
+    <item>-</item>
+    <item>AR</item>
+    <item>AU</item>
+    <item>BR</item>
+    <item>BG</item>
+    <item>CA</item>
+    <item>CH</item>
+    <item>CN</item>
+    <item>CZ</item>
+    <item>DE</item>
+    <item>DK</item>
+    <item>ES</item>
+    <item>FI</item>
+    <item>FR</item>
+    <item>GB</item>
+    <item>GR</item>
+    <item>HU</item>
+    <item>ID</item>
+    <item>IT</item>
+    <item>JP</item>
+    <item>KR</item>
+    <item>NL</item>
+    <item>PL</item>
+    <item>PT</item>
+    <item>RO</item>    
+    <item>RU</item>
+    <item>SE</item>
+    <item>SK</item>
+    <item>SI</item>
+    <item>TR</item>
+    <item>TW</item>
+    <item>US</item>
+  </string-array>
+    <integer-array name="gplus_colors">
+        <item>@color/gplus_color_1</item>
+        <item>@color/gplus_color_2</item>
+        <item>@color/gplus_color_3</item>
+        <item>@color/gplus_color_4</item>
+    </integer-array>
+    <string-array name="preferences_front_light_options">
+    <item>@string/preferences_front_light_on</item>
+    <item>@string/preferences_front_light_auto</item>
+    <item>@string/preferences_front_light_off</item>
+  </string-array>
+    <string-array name="preferences_front_light_values" ns1:ignore="MissingTranslation">
+    <item>ON</item>
+    <item>AUTO</item>
+    <item>OFF</item>
+  </string-array>
+    <attr format="reference" name="SwipeBackLayoutStyle"/>
+    <color name="black">#000000</color>
+    <color name="black_text_normal_common">#4B4B4B</color>
+    <color name="black_trans10">#1a000000</color>
+    <color name="black_trans15">#26000000</color>
+    <color name="black_trans20">#33000000</color>
+    <color name="black_trans25">#40000000</color>
+    <color name="black_trans30">#4d000000</color>
+    <color name="black_trans40">#66000000</color>
+    <color name="black_trans50">#80000000</color>
+    <color name="black_trans60">#99000000</color>
+    <color name="black_trans70">#b3000000</color>
+    <color name="black_trans80">#CC000000</color>
+    <color name="black_trans90">#E6000000</color>
+    <color name="blue_green">#0CCDF6</color>
+    <color name="blue_green50">#800CCDF6</color>
+    <color name="blue_green60">#9A0CCDF6</color>
+    <color name="blue_ice">#72abf8</color>
+    <color name="blue_tog_btn">#397cbf</color>
+    <color name="blue_tog_btn_pressed">#286DD4</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorTimer">#009688</color>
+    <color name="colorTimerDark">#00796B</color>
+    <color name="dark_blue">#3F51B5</color>
+    <color name="dark_blue_button_pressed">#303F9F</color>
+    <color name="dark_blue_focus">#403F51B5</color>
+    <color name="dark_blue_invalidate">#993F51B5</color>
+    <color name="dark_blue_trans40">#663F51B5</color>
+    <color name="dark_gray">#989898</color>
+    <color name="dark_gray_button_pressed">#808080</color>
+    <color name="darkgray">#A9A9A9</color>
+    <color name="default_image_background">#FFDEDEDE</color>
+    <color name="gplus_color_1">#427fed</color>
+    <color name="gplus_color_2">#f4b400</color>
+    <color name="gplus_color_3">#3e802f</color>
+    <color name="gplus_color_4">#b23424</color>
+    <color name="gray_background_color">#F4F4F4</color>
+    <color name="gray_divider_line">#DDDDDD</color>
+    <color name="gray_nap_edit">#808080</color>
+    <color name="gray_record_operate_item">#D0D0D0</color>
+    <color name="gray_seekbar">#C0C0C0</color>
+    <color name="gray_tab">#989898</color>
+    <color name="memory">#ff5252</color>
+    <color name="progress_1">#448aff</color>
+    <color name="progress_2">#ff9800</color>
+    <color name="progress_3">#ff1744</color>
+    <color name="red">#E6FF0000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_trans10">#1affffff</color>
+    <color name="white_trans20">#33ffffff</color>
+    <color name="white_trans30">#4dffffff</color>
+    <color name="white_trans40">#66ffffff</color>
+    <color name="white_trans50">#80FFFFFF</color>
+    <color name="white_trans60">#99FFFFFF</color>
+    <color name="white_trans90">#e6ffffff</color>
+    <color name="yellow_hot">#f9c000</color>
+    <declare-styleable name="CircleProgress"><attr format="integer" name="circle_progress"/><attr format="integer" name="circle_max"/><attr format="color" name="circle_unfinished_color"/><attr format="color" name="circle_finished_color"/><attr format="dimension" name="circle_text_size"/><attr format="color" name="circle_text_color"/><attr format="string" name="circle_prefix_text"/><attr format="string" name="circle_suffix_text"/></declare-styleable>
+    <declare-styleable name="SwipeBackLayout"><attr format="dimension" name="edge_size"/><attr name="edge_flag">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="all" value="3"/>
+        </attr><attr format="reference" name="shadow_left"/><attr format="reference" name="shadow_right"/><attr format="reference" name="shadow_bottom"/></declare-styleable>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+    <string name="Alignment_code">对准二维码/条形码</string>
+    <string name="album">相册</string>
+    <string name="app_name">ZxingLibrary</string>
+    <string name="back_color">背景色</string>
+    <string name="bar_code">条形码：%1$s</string>
+    <string name="camera">相机</string>
+    <string name="camera_error">相机错误</string>
+    <string name="capture">拍照</string>
+    <string name="colors">颜色</string>
+    <string name="copy">复制</string>
+    <string name="decode_null">未发现二维码/条形码</string>
+    <string name="download">下载</string>
+    <string name="fore_color">前景色</string>
+    <string name="generate_qr_code">生成二维码</string>
+    <string name="generate_qrcode_please">还没有生成二维码图片呢</string>
+    <string name="identifying">正在识别…</string>
+    <string name="input_qr_code_content">输入二维码中的信息</string>
+    <string name="local_album">本地相册</string>
+    <string name="logo">Logo</string>
+    <string name="logo_open_status">打开状态下，二维码图片中央区域显示Logo</string>
+    <string name="no_browser">您的设备没有提供内置浏览器</string>
+    <string name="no_crop_action">您的设备没有提供裁剪图片功能</string>
+    <string name="no_local_album">没有本地图片</string>
+    <string name="picture">图片</string>
+    <string name="picture_already_save_to">图片已保存至%1$s</string>
+    <string name="picture_name_number">%1$s(%2$d张)</string>
+    <string name="prompt">提示</string>
+    <string name="qrcode_back_color">二维码背景色</string>
+    <string name="qrcode_fore_color">二维码前景色</string>
+    <string name="recent">最近</string>
+    <string name="reset_logo_color">重置Logo、前景色、背景色？</string>
+    <string name="restore">恢复默认</string>
+    <string name="save_fail_retry">保存失败，请重试</string>
+    <string name="save_qr_code">保存二维码到手机</string>
+    <string name="scan_code">扫码</string>
+    <string name="scan_result">扫描结果</string>
+    <string name="scanning">正在准备相册…</string>
+    <string name="screen_short">屏幕截图</string>
+    <string name="search">搜索</string>
+    <string name="select_logo">从相册选取Logo</string>
+    <string name="text_already_copied">已复制到剪贴板</string>
+    <string name="we_chat">微信</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="action_icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/bg_action_bar_button</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="action_llyt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">54dp</item>
+    </style>
+    <style name="action_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="action_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/bg_action_bar_button</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+    </style>
+    <style name="capture_padding_iv_horizontal">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/black_trans50</item>
+    </style>
+    <style name="capture_padding_iv_vertical">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@color/black_trans50</item>
+    </style>
+    <style name="dialog_llyt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:background">@drawable/shape_circle_dialog</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="dialog_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="divider_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray_divider_line</item>
+        <item name="android:layout_marginLeft">13dp</item>
+        <item name="android:layout_marginRight">13dp</item>
+    </style>
+    <style name="divider_line_full">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/gray_divider_line</item>
+    </style>
+    <style name="line_blue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@color/dark_blue</item>
+    </style>
+    <style name="progress_weather">
+        <!--<item name="android:indeterminateDrawable">@drawable/progressbar_circle_1</item>-->
+        <item name="android:minWidth">22dp</item>
+        <item name="android:minHeight">22dp</item>
+        <item name="android:maxWidth">22dp</item>
+        <item name="android:maxHeight">22dp</item>
+    </style>
+</resources>

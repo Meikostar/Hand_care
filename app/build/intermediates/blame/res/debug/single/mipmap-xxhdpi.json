@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\arrow_left.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxhdpi\\arrow_left.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\lp_img_delete.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxhdpi\\lp_img_delete.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\header_arrow_white_icon.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxhdpi\\header_arrow_white_icon.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher_round.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    }
+]

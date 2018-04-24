@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:textSize="15.5sp"
+            android:textColor="@color/blue"
+            android:text="01.26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginBottom="15dp"
+            android:id="@+id/tv_state"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="14.5sp"
+            android:textColor="@color/color8"
+            android:text="已完成"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <com.canplay.medical.view.DashView
+            android:id="@+id/line1"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_width="2dp"
+            app:lineHeight="1dp"
+            app:lineWidth="4dp"
+            app:dashWidth="0dp"
+            app:dashOrientation="1"
+            app:lineColor="@color/linecolor"
+            android:layout_height="22dp"
+            />
+
+        <com.canplay.medical.view.DashView
+            android:id="@+id/line2"
+            android:layout_marginTop="23dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="2dp"
+            app:lineHeight="1dp"
+            app:lineWidth="4dp"
+            app:dashWidth="0dp"
+            app:dashOrientation="1"
+            app:lineColor="@color/linecolor"
+            android:layout_height="100dp"
+            />
+        <ImageView
+            android:id="@+id/iv_cyc"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/hui_cycle"
+            android:layout_centerHorizontal="true"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tv_name"
+                    android:textSize="15.5sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/slow_black"
+                    android:text="测量血压"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_amout"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/reds"
+                    android:text="医生设置"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="4dp"
+                android:padding="9dp"
+                android:layout_marginLeft="10dp"
+                android:background="#f3f3f3"
+                android:layout_gravity="center"
+                android:id="@+id/tv_data"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:minHeight="39dp"
+                android:layout_marginTop="13dp"
+                android:textColor="#888"
+                android:text="收缩压：170   舒张压：120\心率 ：75"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

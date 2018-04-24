@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_search.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-mdpi\\ic_search.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    }
+]

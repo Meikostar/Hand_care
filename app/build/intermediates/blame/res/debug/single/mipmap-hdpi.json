@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\mykar_eye_nor.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-hdpi\\mykar_eye_nor.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\mykar_eye_ac.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-hdpi\\mykar_eye_ac.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    }
+]

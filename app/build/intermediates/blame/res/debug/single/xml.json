@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\Medical_app\\zxingLibrary\\unspecified\\res\\xml\\preferences.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\xml\\file_paths.xml",
+        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\xml\\file_paths.xml"
+    }
+]

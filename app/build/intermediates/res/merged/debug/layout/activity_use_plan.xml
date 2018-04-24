@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/content_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp"
+        android:id="@+id/line"/>
+    <com.canplay.medical.view.NavigationBar
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationRight_type="img"
+        app:navigationRight_img="@drawable/addss"
+        app:navigationTitle="用药计划" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/linecolor"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/zhong"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="79dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="19dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="下次吃药时间"
+                        android:textColor="@color/color6"
+                        android:textSize="14.5sp" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:text="19:30"
+                        android:textColor="@color/red_pop"
+                        android:textSize="20.5sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_hour"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/black_samll"
+                    android:gravity="center"
+                    android:text="11"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_minter"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/black_samll"
+                    android:gravity="center"
+                    android:text="21"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_second"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="14dp"
+                    android:background="@drawable/black_samll"
+                    android:gravity="center"
+                    android:text="11"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/linecolor" />
+        <TextView
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="15.5dp"
+            android:layout_marginBottom="9dp"
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01号药盒"
+            android:textColor="@color/blues"
+            android:textSize="14.5sp" />
+        <ViewStub
+            android:id="@+id/stub_gird"
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:layout="@layout/stub_gird_view" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="54dp" >
+        <ImageView
+            android:src="@drawable/bule_samll"
+            android:layout_marginLeft="15dp"
+            android:layout_width="6dp"
+            android:layout_height="18dp" />
+        <TextView
+
+            android:layout_marginLeft="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日测量记录"
+            android:textColor="@color/slow_black"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/linecolor"/>
+    <ListView
+        android:id="@+id/rl_menu"
+        style="@style/lv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="@color/white"
+        android:visibility="visible" />
+
+</LinearLayout>

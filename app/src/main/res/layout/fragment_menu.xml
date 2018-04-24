@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/content_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.001dp"
+        android:id="@+id/line"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:background="@color/color6"/>
+<com.canplay.medical.view.NavigationBar
+    app:navigationTitle="健康数据"
+    app:navigationLeft_type="gone"
+    android:id="@+id/navigationBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:id="@+id/ll_bg"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+        <TextView
+            android:text="时间轴事件"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/slow_black"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text=""
+            android:layout_marginRight="13dp"
+            android:textColor="@color/slow_black"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/arrow_left"
+            android:layout_width="8dp"
+            android:layout_height="13dp"
+            android:layout_marginRight="13dp"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/rl_list"
+        style="@style/lv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:visibility="visible" />
+</LinearLayout>

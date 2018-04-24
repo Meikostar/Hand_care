@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.canplay.medical.view.NavigationBar
+        android:id="@+id/navigationBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <WebView
+        android:layout_above="@+id/rl_rigter"
+        android:layout_below="@+id/navigationBar"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/webview_webView"/>
+
+    <include layout="@layout/web_tools"/>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_rigter"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_centerInParent="true"
+         />
+    </RelativeLayout>
+</RelativeLayout>
