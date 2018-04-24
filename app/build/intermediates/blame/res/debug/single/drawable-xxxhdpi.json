@@ -1,10 +1,10 @@
 [
     {
-        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\double_cycle.png",
-        "source": "F:\\GitWorkSpace\\Medical_app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\double_cycle.png"
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\double_cycle_org.png",
+        "source": "F:\\GitWorkSapce\\Hand_care\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\double_cycle_org.png"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\double_cycle_org.png",
-        "source": "F:\\GitWorkSpace\\Medical_app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\double_cycle_org.png"
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\double_cycle.png",
+        "source": "F:\\GitWorkSapce\\Hand_care\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\double_cycle.png"
     }
 ]

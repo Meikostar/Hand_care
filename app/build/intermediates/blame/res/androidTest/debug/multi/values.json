@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\com.android.support.test\\rules\\0.5\\res\\values\\values.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\8d127124b91a8bfbbd0feac0411d12a0605f7e01\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

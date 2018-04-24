@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hand_care.iml" filepath="$PROJECT_DIR$/Hand_care.iml" />
       <module fileurl="file://$PROJECT_DIR$/LibMarsdaemon/LibMarsdaemon.iml" filepath="$PROJECT_DIR$/LibMarsdaemon/LibMarsdaemon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Medical_app.iml" filepath="$PROJECT_DIR$/Medical_app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/gallery/gallery.iml" filepath="$PROJECT_DIR$/gallery/gallery.iml" />
       <module fileurl="file://$PROJECT_DIR$/zxingLibrary/zxingLibrary.iml" filepath="$PROJECT_DIR$/zxingLibrary/zxingLibrary.iml" />

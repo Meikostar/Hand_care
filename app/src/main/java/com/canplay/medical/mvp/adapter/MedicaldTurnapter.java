@@ -77,25 +77,18 @@ public class MedicaldTurnapter extends BaseAdapter {
         if (view == null) {
             view = View.inflate(mContext, R.layout.medical_turn_item, null);
             holder = new MedicaldTurnapter.ViewHolder();
-
             holder.name = (TextView) view.findViewById(R.id.tv_name);
             holder.number = (TextView) view.findViewById(R.id.tv_number);
+            holder.tv_count = (TextView) view.findViewById(R.id.tv_count);
             holder.ll_bg = (LinearLayout) view.findViewById(R.id.ll_bg);
             holder.img = (ImageView) view.findViewById(R.id.iv_img);
-            holder.ivClose = (ImageView) view.findViewById(R.id.iv_close);
             holder.check = (MCheckBox) view.findViewById(R.id.iv_choose);
             view.setTag(holder);
         } else {
             holder = (MedicaldTurnapter.ViewHolder) view.getTag();
         }
 
-        holder.ivClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                list.remove(position);
-                notifyDataSetChanged();
-            }
-        });
+
         holder.ll_bg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,8 +115,9 @@ public class MedicaldTurnapter extends BaseAdapter {
         TextView letter;
         TextView name;
         TextView number;
+        TextView tv_count;
         ImageView img;
-        ImageView ivClose;
+
         MCheckBox check;
         LinearLayout ll_bg;
 

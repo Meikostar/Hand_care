@@ -1,14 +1,14 @@
 [
     {
-        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
-        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
-        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\yjlogo.png",
+        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\mipmap-xxxhdpi\\yjlogo.png"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\yjlogo.png",
-        "source": "F:\\GitWorkSpace\\Medical_app\\app\\src\\main\\res\\mipmap-xxxhdpi\\yjlogo.png"
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     }
 ]

@@ -1,10 +1,10 @@
 [
     {
-        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
-        "source": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
-        "source": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     }
 ]

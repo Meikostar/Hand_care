@@ -28,6 +28,7 @@ import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.RingSelectItem;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity;
+import com.canplay.medical.mvp.adapter.MedicaldTurnapter;
 import com.canplay.medical.mvp.adapter.RingSelectAdapter;
 import com.canplay.medical.mvp.adapter.TimeAddAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
@@ -92,7 +93,7 @@ public class RemindSettingActivity extends BaseActivity implements
     HourSelector selector;
     private ListPopupWindow popupWindow;
     private RingPopupWindow popupWindow1;
-    private TimeAddAdapter adapter;
+    private MedicaldTurnapter adapter;
 
     /**
      * loader Id
@@ -120,10 +121,7 @@ public class RemindSettingActivity extends BaseActivity implements
 
                 if(SubscriptionBean.CHOOSMEDICAL==bean.type){
                     dat= (List<Medicines>) bean.content;
-                    for(Medicines medicines:dat){
-                        datas.add(medicines.name);
-                    }
-                    adapter.setData(datas);
+                     adapter.setData(dat,0);
                 }
 
 
@@ -135,7 +133,7 @@ public class RemindSettingActivity extends BaseActivity implements
             }
         });
         RxBus.getInstance().addSubscription(mSubscription);
-        adapter=new TimeAddAdapter(this);
+        adapter=new MedicaldTurnapter(this);
         lvInfo.setAdapter(adapter);
     }
 
@@ -167,8 +165,8 @@ public class RemindSettingActivity extends BaseActivity implements
                     return;
                 }
                 showProgress("添加中...");
-                for(String name:namess){
-                    medical.name=name;
+                for(Medicines name:namess){
+                    medical.name=name.name;
                     medical.when=times;
                     medical.userId= SpUtil.getInstance().getUserId();
                     medical.type="time";
@@ -364,7 +362,7 @@ public class RemindSettingActivity extends BaseActivity implements
     public void onLoaderReset(Loader<Cursor> loader) {
 
     }
-    private List<String> namess;
+    private List<Medicines> namess;
     @Override
     public <T> void toEntity(T entity, int type) {
 

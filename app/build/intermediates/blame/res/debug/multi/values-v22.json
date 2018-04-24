@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+        "outputFile": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 125
                 },
                 "from": {
-                    "file": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\values-v22\\values-v22.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\values-v22\\values-v22.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 212
                 },
                 "from": {
-                    "file": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\values-v22\\values-v22.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\values-v22\\values-v22.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -50,7 +50,7 @@
                     "endOffset": 548
                 },
                 "from": {
-                    "file": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\values-v22\\values-v22.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\values-v22\\values-v22.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -71,7 +71,7 @@
                     "endOffset": 896
                 },
                 "from": {
-                    "file": "F:\\GitWorkSpace\\Medical_app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\values-v22\\values-v22.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\values-v22\\values-v22.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,

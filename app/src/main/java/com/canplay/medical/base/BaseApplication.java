@@ -7,6 +7,7 @@ import android.content.Context;
 import android.os.Vibrator;
 import android.support.multidex.MultiDex;
 
+
 import com.canplay.medical.base.manager.AppManager;
 import com.canplay.medical.bean.Province;
 import com.canplay.medical.location.LocationUtil;

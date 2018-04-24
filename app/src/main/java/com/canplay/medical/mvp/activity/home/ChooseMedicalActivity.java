@@ -208,9 +208,11 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
     @Override
     public <T> void toEntity(T entity, int types) {
         type=1;
-        tvSearch.setText("取消");
-        data = (List<Medicines>) entity;
 
+        data = (List<Medicines>) entity;
+        if(data.size()>0){
+            tvSearch.setText("取消");
+        }
         adapter.setData(data,0);
 
     }

@@ -16,22 +16,22 @@ android {
 //            storePassword 'yicss123'
 //        }
 //    }
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    buildToolsVersion BUILD_TOOLS_VERSION
     dexOptions {
         javaMaxHeapSize "4g"
     }
     defaultConfig {
         applicationId "com.canplay.medical"
-        minSdkVersion 18
-        targetSdkVersion 25
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
         buildTypes {
             release {
                 minifyEnabled false
+                multiDexEnabled true
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             }
         }
@@ -45,7 +45,10 @@ android {
     }
     productFlavors {
     }
-
+    dexOptions {
+        javaMaxHeapSize "8g"
+        incremental true
+    }
     lintOptions {
         checkReleaseBuilds false
     }
@@ -71,7 +74,7 @@ android {
 
         //butterknife
         //dagger
-
+        compile 'com.android.support:multidex:1.0.1'
         compile 'com.android.support.constraint:constraint-layout:1.0.2'
         compile 'com.squareup.retrofit2:retrofit:2.2.0'
         compile 'com.squareup.retrofit2:converter-gson:2.2.0'
