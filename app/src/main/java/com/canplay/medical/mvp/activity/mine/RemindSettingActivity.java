@@ -26,8 +26,7 @@ import com.canplay.medical.bean.AddMedical;
 import com.canplay.medical.bean.DATA;
 import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.RingSelectItem;
-import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
-import com.canplay.medical.mvp.activity.home.SmartKitActivity;
+import com.canplay.medical.mvp.activity.home.*;
 import com.canplay.medical.mvp.adapter.MedicaldTurnapter;
 import com.canplay.medical.mvp.adapter.RingSelectAdapter;
 import com.canplay.medical.mvp.adapter.TimeAddAdapter;
@@ -147,7 +146,14 @@ public class RemindSettingActivity extends BaseActivity implements
    private List<String> times=new ArrayList<>();
     @Override
     public void bindEvents() {
-
+        adapter.setClickListener(new MedicaldTurnapter.ClickListener() {
+            @Override
+            public void clickListener(Medicines medicines, int poition) {
+                Intent intent = new Intent(RemindSettingActivity.this, MedicalDetailActivity.class);
+                intent.putExtra("name",medicines.name);
+                startActivity(intent);
+            }
+        });
 
         navigationBar.setNavigationBarListener(new NavigationBar.NavigationBarListener() {
             @Override
@@ -168,6 +174,7 @@ public class RemindSettingActivity extends BaseActivity implements
                 for(Medicines name:namess){
                     medical.name=name.name;
                     medical.when=times;
+                    medical.message=name.message;
                     medical.userId= SpUtil.getInstance().getUserId();
                     medical.type="time";
                     medical.remindingFor="Medicine";

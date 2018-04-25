@@ -8,12 +8,32 @@
         "source": "F:\\GitWorkSapce\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\beep.ogg"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\ring_weac_alarm_clock_default.mp3",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\ring_weac_alarm_clock_default.mp3"
+    },
+    {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\scan.mp3",
         "source": "F:\\GitWorkSapce\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\scan.mp3"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\record_start.mp3",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\record_start.mp3"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\beep.ogg"
+    },
+    {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\record_start.mp3",
         "source": "F:\\GitWorkSapce\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\record_start.mp3"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\scan.mp3",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\scan.mp3"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\record_stop.mp3",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\raw\\record_stop.mp3"
     },
     {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\raw\\ring_weac_alarm_clock_default.mp3",

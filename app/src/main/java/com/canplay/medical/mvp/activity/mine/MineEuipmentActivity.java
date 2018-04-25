@@ -112,7 +112,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         mWindowAddPhoto.setSureListener(new PhotoPopupWindow.ClickListener() {
             @Override
             public void clickListener(int type) {
-                if (type == 1) {//解除绑定
+                if (type == 0) {//解除绑定
                     unbind.patientDeviceId = euipt.patientDeviceId;
                     unbind.userId = user_id;
                     presenter.UnbindDevice(unbind);

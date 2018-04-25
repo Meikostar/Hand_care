@@ -103,9 +103,10 @@ public class MeasureActivity extends BaseActivity implements BaseContract.View{
                 }
 
                 datas.clear();
-                for(String time:map.values()){
-                    datas.add(time);
-                }
+//                for(String time:map.values()){
+//                    datas.add(time);
+//                }
+                datas.add(data.get(0));
                 mesure.when=datas;
                 String userId = SpUtil.getInstance().getUserId();
                 mesure.userId=userId;

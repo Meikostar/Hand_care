@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.bean.Euip;
+import com.canplay.medical.util.TextUtil;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class MedicalDetailAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return list!=null?list.size():5;
+        return list!=null?list.size():0;
     }
 
     @Override
@@ -70,7 +71,10 @@ public class MedicalDetailAdapter extends BaseAdapter {
         }else{
             holder = (ResultViewHolder) view.getTag();
         }
-
+           holder.name.setText(list.get(position).name);
+        if(TextUtil.isNotEmpty(list.get(position).dec)){
+            holder.tv_detail.setText(list.get(position).dec);
+        }
         return view;
 
 

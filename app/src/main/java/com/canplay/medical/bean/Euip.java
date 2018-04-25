@@ -9,7 +9,7 @@ public class Euip {
 //            "parent_id": "534",
 //            "type": "city"
 
-    public String upToken;
-    public String surcharge;
+    public String name;
+    public String dec;
 
 }

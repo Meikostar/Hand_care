@@ -84,7 +84,7 @@ public interface BaseApi {
      */
 
     @Headers({"Content-Type: application/json","Accept: application/json"})
-    @POST("Flow/v2/Device/Link")
+    @POST("Flow/Register")
     Observable<BASE> righter(@Body Righter body);
     /**
      * 忘记密码
@@ -144,6 +144,11 @@ public interface BaseApi {
      */
     @GET("Flow/v2/Reminder/{userId}/Measurement")
     Observable<List<Medicine>> MeasureRemindList(@Path("userId") String userId);
+    /**
+     * 测量提醒
+     */
+    @GET("Flow/v2/Reminder/{userId}/Measurement/{name}")
+    Observable<List<Medicine>> MeasureRemindDetail(@Path("userId") String userId,@Path("name") String name);
 
     /**
      * 好友列表
@@ -184,7 +189,11 @@ public interface BaseApi {
      */
     @GET("Flow/v2/MedicineCatalog/Search/{search}")
     Observable<List<Medicines> > searchMedicine(@Path("search") String search);
-
+    /**
+     * 药品名称或取药品信息
+     */
+    @GET("Flow/v2/MedicineCatalog/{search}")
+    Observable<Medicines> getMedicalDetail(@Path("search") String search);
     /**
      * 添加好友
      */
@@ -213,7 +222,12 @@ public interface BaseApi {
     @GET("Flow/v2/Timeline/{userId}/{category}/{from}/{take}")
     Observable<List<Record>> getMeasureRecord(@Path("userId") String userId, @Path("category") String category,
                                               @Path("from") String from, @Path("take") String take);
-
+    /**
+     * 事件轴
+     */
+    @GET("Flow/v2/Timeline/{userId}/{from}/{take}")
+    Observable<List<Record>> getTimeRecord(@Path("userId") String userId,
+                                              @Path("from") String from, @Path("take") String take);
 
     /**
      * 血压测量记录
@@ -223,6 +237,11 @@ public interface BaseApi {
                                               @Path("from") String from, @Path("take") String take);
 
 
+    /**
+     * 验证药监码并返回药品信息
+     */
+    @GET("Flow/v2/Medicine/Verify/{code}")
+    Observable<List<Record>> getMedicalInfo(@Path("code") String code);
     /**
      * 添加测量
      */

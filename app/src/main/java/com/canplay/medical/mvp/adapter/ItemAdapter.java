@@ -69,6 +69,7 @@ public class ItemAdapter extends BaseAdapter {
             holder.img= (ImageView) view.findViewById(R.id.iv_img);
             holder.tvCount= (TextView) view.findViewById(R.id.tv_count);
             holder.line=  view.findViewById(R.id.line);
+            holder.llbg=(LinearLayout)view.findViewById(R.id.ll_bg);
 
             view.setTag(holder);
         }else{
@@ -80,6 +81,12 @@ public class ItemAdapter extends BaseAdapter {
         if(TextUtil.isNotEmpty(list.get(position).dose)){
             holder.tvCount.setText(list.get(position).dose);
         }
+        holder.llbg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.getItem(list.get(position),position);
+            }
+        });
         return view;
 
 
@@ -94,6 +101,7 @@ public class ItemAdapter extends BaseAdapter {
         View line;
         ImageView img;
         LinearLayout ll_item;
+        LinearLayout llbg;
 
     }
 }

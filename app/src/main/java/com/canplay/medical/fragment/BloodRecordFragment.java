@@ -122,6 +122,7 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
 
     }
     public List<Record> list=new ArrayList<>();
+    public List<Record> data=new ArrayList<>();
     public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
 
         if (loadtype == TYPE_PULL_REFRESH) {
@@ -202,7 +203,13 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
 
     @Override
     public <T> void toEntity(T entity, int type) {
-        list= (List<Record>) entity;
+        List<Record>     lists= (List<Record>) entity;
+        data.clear();
+        for(Record record:lists){
+            for(Record record1:record.items){
+                data.add(record1);
+            }
+        }
         onDataLoaded(type,list.size()==cout,list);
     }
 

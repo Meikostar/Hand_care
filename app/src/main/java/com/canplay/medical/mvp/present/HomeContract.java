@@ -124,6 +124,12 @@ public class HomeContract {
          * 移除用药提醒
          */
         void removeRemind(String base);
+
+
+        /**
+         * 获取某一管理计划
+         */
+        void MeasureRemindDetail(String name);
     }
 
 

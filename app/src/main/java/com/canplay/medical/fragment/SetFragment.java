@@ -13,15 +13,21 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.mvp.activity.mine.SettingActivity;
 import com.canplay.medical.mvp.adapter.EuipmentAdapter;
+import com.canplay.medical.mvp.component.DaggerBaseComponent;
+import com.canplay.medical.mvp.present.HomeContract;
+import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.view.EditorNameDialog;
 import com.canplay.medical.view.PhotoPopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,9 +37,9 @@ import butterknife.Unbinder;
 /**
  * Created by mykar on 17/4/10.
  */
-public class SetFragment extends BaseFragment implements View.OnClickListener {
-
-
+public class SetFragment extends BaseFragment implements View.OnClickListener , HomeContract.View {
+@Inject
+HomePresenter presenter;
     Unbinder unbinder;
     @BindView(R.id.iv_box)
     ImageView ivBox;
@@ -75,18 +81,12 @@ public class SetFragment extends BaseFragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_set, null);
         unbinder = ButterKnife.bind(this, view);
+        DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
+        presenter.attachView(this);
+        presenter.getSmartList();
         adapter = new EuipmentAdapter(getActivity());
         rlMenu.setAdapter(adapter);
-        Euipt euipt = new Euipt();
-        euipt.type = 1;
-        Euipt euipt2 = new Euipt();
-        euipt2.type = 2;
-        Euipt euipt3 = new Euipt();
-        euipt3.type = 3;
-        data.add(euipt);
-        data.add(euipt2);
-        data.add(euipt3);
-        adapter.setData(data);
+
         mWindowAddPhoto = new PhotoPopupWindow(getActivity());
         mWindowAddPhoto.setCont("解除绑定", "取消");
         mWindowAddPhoto.setColor(R.color.red_pop, 0);
@@ -155,11 +155,28 @@ public class SetFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), SettingActivity.class));
                 mWindowAddPhoto.showAsDropDown(line);
                 break;
-//            case R.id.iv_code://我的二维码
+//           case R.id.iv_code://我的二维码
 //                startActivity(new Intent(getActivity(), MineCodeActivity.class));
 //                break;
         }
     }
 
+    private List<Euipt> list;
 
+    @Override
+    public <T> void toEntity(T entity) {
+        list = (List<Euipt>) entity;
+
+        adapter.setData(list);
+    }
+
+    @Override
+    public void toNextStep(int type) {
+
+    }
+
+    @Override
+    public void showTomast(String msg) {
+
+    }
 }

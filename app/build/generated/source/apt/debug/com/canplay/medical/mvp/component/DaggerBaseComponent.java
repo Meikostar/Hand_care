@@ -15,6 +15,7 @@ import com.canplay.medical.fragment.MeasureRemindFragment_MembersInjector;
 import com.canplay.medical.fragment.RemindMedicatFragment;
 import com.canplay.medical.fragment.RemindMedicatFragment_MembersInjector;
 import com.canplay.medical.fragment.SetFragment;
+import com.canplay.medical.fragment.SetFragment_MembersInjector;
 import com.canplay.medical.mvp.activity.MainActivity;
 import com.canplay.medical.mvp.activity.MainActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.account.ForgetFirstActivity;
@@ -29,12 +30,16 @@ import com.canplay.medical.mvp.activity.account.RegisteredSecondActivity;
 import com.canplay.medical.mvp.activity.account.RegisteredSecondActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
 import com.canplay.medical.mvp.activity.health.TakeMedicineActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.health.TimeXRecordActivity;
+import com.canplay.medical.mvp.activity.health.TimeXRecordActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.AddBloodDataActivity;
 import com.canplay.medical.mvp.activity.home.AddBloodDataActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
 import com.canplay.medical.mvp.activity.home.MeasureActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.home.MedicalDetailActivity;
+import com.canplay.medical.mvp.activity.home.MedicalDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MessageActivity;
 import com.canplay.medical.mvp.activity.home.MessageActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.SearchMedicalActivity;
@@ -57,6 +62,8 @@ import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.mvp.present.HomePresenter_Factory;
 import com.canplay.medical.mvp.present.LoginPresenter;
 import com.canplay.medical.mvp.present.LoginPresenter_Factory;
+import com.canplay.medical.mvp.present.OtherPresenter;
+import com.canplay.medical.mvp.present.OtherPresenter_Factory;
 import dagger.MembersInjector;
 import dagger.internal.Factory;
 import dagger.internal.MembersInjectors;
@@ -71,6 +78,12 @@ public final class DaggerBaseComponent implements BaseComponent {
   private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
   private Provider<BasesPresenter> basesPresenterProvider;
+
+  private MembersInjector<TimeXRecordActivity> timeXRecordActivityMembersInjector;
+
+  private Provider<OtherPresenter> otherPresenterProvider;
+
+  private MembersInjector<MedicalDetailActivity> medicalDetailActivityMembersInjector;
 
   private MembersInjector<RemindSettingActivity> remindSettingActivityMembersInjector;
 
@@ -116,6 +129,8 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   private MembersInjector<MainActivity> mainActivityMembersInjector;
 
+  private MembersInjector<SetFragment> setFragmentMembersInjector;
+
   private MembersInjector<HomeDoctorFragment> homeDoctorFragmentMembersInjector;
 
   private DaggerBaseComponent(Builder builder) {
@@ -148,6 +163,14 @@ public final class DaggerBaseComponent implements BaseComponent {
         LoginActivity_MembersInjector.create(loginPresenterProvider);
 
     this.basesPresenterProvider = BasesPresenter_Factory.create(apiManagerProvider);
+
+    this.timeXRecordActivityMembersInjector =
+        TimeXRecordActivity_MembersInjector.create(basesPresenterProvider);
+
+    this.otherPresenterProvider = OtherPresenter_Factory.create(apiManagerProvider);
+
+    this.medicalDetailActivityMembersInjector =
+        MedicalDetailActivity_MembersInjector.create(otherPresenterProvider);
 
     this.remindSettingActivityMembersInjector =
         RemindSettingActivity_MembersInjector.create(basesPresenterProvider);
@@ -212,6 +235,8 @@ public final class DaggerBaseComponent implements BaseComponent {
 
     this.mainActivityMembersInjector = MainActivity_MembersInjector.create(homePresenterProvider);
 
+    this.setFragmentMembersInjector = SetFragment_MembersInjector.create(homePresenterProvider);
+
     this.homeDoctorFragmentMembersInjector =
         HomeDoctorFragment_MembersInjector.create(homePresenterProvider);
   }
@@ -219,6 +244,16 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(TimeXRecordActivity binderActivity) {
+    timeXRecordActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(MedicalDetailActivity binderActivity) {
+    medicalDetailActivityMembersInjector.injectMembers(binderActivity);
   }
 
   @Override
@@ -333,7 +368,7 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   @Override
   public void inject(SetFragment binderActivity) {
-    MembersInjectors.<SetFragment>noOp().injectMembers(binderActivity);
+    setFragmentMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

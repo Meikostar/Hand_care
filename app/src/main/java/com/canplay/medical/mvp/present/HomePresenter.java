@@ -150,7 +150,6 @@ public class HomePresenter implements HomeContract.Presenter {
                     mView.showTomast(entity.message);
                 }
 
-
             }
         });
     }
@@ -178,6 +177,26 @@ public class HomePresenter implements HomeContract.Presenter {
     public void MeasureRemindList() {
         String userId = SpUtil.getInstance().getUserId();
         subscription = ApiManager.setSubscribe(contactApi.MeasureRemindList(userId), new MySubscriber<List<Medicine>>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+                if(e.toString().contains("java.io.IOException:")){
+                    mView.showTomast("账号或密码错误");
+                }
+
+            }
+
+            @Override
+            public void onNext(List<Medicine> entity){
+                mView.toEntity(entity.get(0).schedule);
+
+            }
+        });
+    }
+    @Override
+    public void MeasureRemindDetail(String name) {
+        String userId = SpUtil.getInstance().getUserId();
+        subscription = ApiManager.setSubscribe(contactApi.MeasureRemindDetail(userId,name), new MySubscriber<List<Medicine>>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);

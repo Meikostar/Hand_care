@@ -4,6 +4,10 @@
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\mykar_eye_nor.png"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
@@ -12,7 +16,19 @@
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\mykar_eye_nor.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\mykar_eye_nor.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\mykar_eye_ac.png",
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\mykar_eye_ac.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\mykar_eye_ac.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-hdpi\\mykar_eye_ac.png"
     }
 ]

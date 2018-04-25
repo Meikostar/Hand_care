@@ -67,7 +67,7 @@ public class RemindItemAdapter extends BaseAdapter {
             holder.name= (TextView) view.findViewById(R.id.tv_name);
             holder.tvNumber= (TextView) view.findViewById(R.id.tv_number);
             holder.img= (ImageView) view.findViewById(R.id.iv_img);
-            holder.tvCount= (TextView) view.findViewById(R.id.tv_count);
+            holder.tvCount= (TextView) view.findViewById(R.id.tv_cout);
             holder.line=  view.findViewById(R.id.line);
 
             view.setTag(holder);
@@ -78,7 +78,7 @@ public class RemindItemAdapter extends BaseAdapter {
             holder.name.setText(list.get(position).name);
         }
         if(TextUtil.isNotEmpty(list.get(position).message)){
-            holder.tvNumber.setText(list.get(position).message);
+            holder.tvCount.setText(list.get(position).message);
         }
          if(position==list.size()-1){
              holder.line.setVisibility(View.INVISIBLE);

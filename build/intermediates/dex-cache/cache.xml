@@ -3,75 +3,552 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\79f5b0daf180b3f9f0a8eeaf6a704a31ed689863\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_17bd35cf8779b7892ebbbe453eeddb569a69d3b5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\libs\zxing-4.7.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="8de9ca74af1dc9b963af4f072fb78eba58e9743a">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\8\zxing-4.7.3_7ad233d75fccdaecb4fa2a2c7e994e92250826a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\BaiduLBS_Android.jar"
-        jumboMode="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\BaiduLBS_Android.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="8c3900810e7530a900f7271d76ab11f8e4656616">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\BaiduLBS_Android_6300f282f35a85d62bc111911972ce89957e7b3e\classes.dex" />
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\BaiduLBS_Android_790953e9f40ebc3bcfa0544e40185e2b8fd69fdb\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        jar="C:\Users\Administrator\.android\build-cache\5a70535be1e4455de1451421e72b9e9978cc8531\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="d718558539543d0541142c15d2472fda22fb2f45">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7edaa4a5055f99783324d5eb7d0727c40895d24d\classes.dex" />
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_22e84df170d5b4b692d333c1ae3a9226362310f6\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        jar="C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c45deba266fff7b1b3b38f3154188cbee2163b47\classes.dex" />
+        sha1="49d8172be63283e93a2b261a9a36843936d93d02">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b10cace0edf4ba13770a3c9559c4383dbce92638\classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\pinyin4j-2.5.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.alibaba\fastjson\1.2.31\1ca964122c53f03f6fc3938b58c16d63b40490ab\fastjson-1.2.31.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="ae353005f973da1cd8545b54354504c2503f6865">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\pinyin4j-2.5.0_59d87aa4f8d697a54eb37c0a419856bc1a6bd31a\classes.dex" />
+        sha1="1ca964122c53f03f6fc3938b58c16d63b40490ab">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\fastjson-1.2.31_ab5b2a670e6eb898440b8756efa756f436d430b9.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\jpush-android-3.1.1.jar"
-        jumboMode="true"
+        jar="C:\Users\Administrator\.android\build-cache\4c4d298de26b7f50a757f33a62f49db938fc2cc5\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="989c1fc762c0424b2e25692444e9f1df60288a1d">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jpush-android-3.1.1_6b386cdf677c4c76ab3d5e8432af8194960d8a66\classes.dex" />
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2435c6a70376eec0d9385f4254fe712067977f1c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\9224796eb7af8230b024224dc97032da1950957d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_b71bc972f99964363dbbd2af04672c718dc089e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.dagger\dagger-compiler\2.5\96b9c749db4590549166740ba989fe3580eb0a19\dagger-compiler-2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="96b9c749db4590549166740ba989fe3580eb0a19">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\dagger-compiler-2.5_9b897e1a832f79ae92466e40260bccfe0524d264.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.2.9\cc0d879e3c75fe106aed3651fbdaebe628ac67ef\rxjava-1.2.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cc0d879e3c75fe106aed3651fbdaebe628ac67ef">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\rxjava-1.2.9_c380b6ac152f80db72fca4f278e6ca180284a1ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.2.0\a09926806199499a20b2f5168779499abfa33342\converter-gson-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a09926806199499a20b2f5168779499abfa33342">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\converter-gson-2.2.0_04baf9506aff2da76f835c7bcd98adc79126927e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.simpleframework\simple-xml\2.7.1\dd91fb744c2ff921407475cb29a1e3fee397d411\simple-xml-2.7.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="dd91fb744c2ff921407475cb29a1e3fee397d411">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\simple-xml-2.7.1_96b43fe34e3dc94102c15c428f3d0c6a495b0e3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.dagger\dagger\2.5\571f4e0451db64a7b41dbeb5f2503986fe5acdb4\dagger-2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="571f4e0451db64a7b41dbeb5f2503986fe5acdb4">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\dagger-2.5_f78c5b62c6d85b4b1a9054b506c6534ede927cff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.12.0\3742beff8024d0a0073d284b7c5e4cbf73d99b25\okio-1.12.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3742beff8024d0a0073d284b7c5e4cbf73d99b25">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\okio-1.12.0_b08f41d5c651425814124acdb4968a1e1d0b1c3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\d47bcd9b4775e228fbc462cbc0baa8ea67075e56\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_e21df453cf17b057caad7f043490c733278b8407.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\jcore-android-1.1.9.jar"
-        jumboMode="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\jcore-android-1.1.9.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="d36b4154d952a6f18fd438469929820a6e598127">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jcore-android-1.1.9_eed8923ed23544122299a806e30aa8430903887f\classes.dex" />
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jcore-android-1.1.9_22c03ca4ced4221f74af37a0c9642d9e6777f51a\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\jcore-android-1.1.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d36b4154d952a6f18fd438469929820a6e598127">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\jcore-android-1.1.9_22c03ca4ced4221f74af37a0c9642d9e6777f51a.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\d47bcd9b4775e228fbc462cbc0baa8ea67075e56\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e21df453cf17b057caad7f043490c733278b8407\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\BaiduLBS_Android.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8c3900810e7530a900f7271d76ab11f8e4656616">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\BaiduLBS_Android_790953e9f40ebc3bcfa0544e40185e2b8fd69fdb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.2.0\41e67dba73c3347e4503761642c39d0e06ca1f2\retrofit-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="041e67dba73c3347e4503761642c39d0e06ca1f2">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\retrofit-2.2.0_5127af66b76a6a65810e00277050022b19264d6f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="49d8172be63283e93a2b261a9a36843936d93d02">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_b10cace0edf4ba13770a3c9559c4383dbce92638.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\d8c3c2cfbee1ff2f0332b1cce25262355b31fd60\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9e1f42215d65ca08f201ac39ce96ce32ab37f62e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.7.0\22c61dda6d7e63a7325932c85b0a3412443b1f5a\okhttp-urlconnection-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="22c61dda6d7e63a7325932c85b0a3412443b1f5a">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.7.0_c0649693318b8fe2b3d15eb32e0680cbe59f0d84.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\f5ebc32c6f4ffe4c24dde7410b116e7da93e67b9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_7fd079f2df7c91900a1ef111a71af81abca7d431.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.7.0\9ccaeec4a3f4fae5cde9a8b8f0743ad002ad5734\logging-interceptor-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9ccaeec4a3f4fae5cde9a8b8f0743ad002ad5734">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.7.0_2fe298d3a32b1cd8a0a8acc82c06318788e1318b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-simplexml\2.2.0\3585dc3d225e2ca03af1a2cece159eb511fa0528\converter-simplexml-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3585dc3d225e2ca03af1a2cece159eb511fa0528">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\converter-simplexml-2.2.0_c630822b1ee18b80285061efa8e47241a2d79d68.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b32bf2d9c45711287eece78cdf2326acbbeb02fb">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_f9421b3be7df8d8aff01bdb50f58085859295beb\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\javax.inject-1_273da2ba53aedc2691b5c6c4485ebe7b12b6e634.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b32bf2d9c45711287eece78cdf2326acbbeb02fb">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_f9421b3be7df8d8aff01bdb50f58085859295beb.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\1aa157e52a0752f6cbbefe618510c316cc365cb6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b0f78b608c7289180f7a5af88ba595456952b3dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\jpush-android-3.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="989c1fc762c0424b2e25692444e9f1df60288a1d">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jpush-android-3.1.1_f4118149fcdfd0de85b8f772f68982b4fd3186d2\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\55925685d9f809c80be6919dc8e8d92137c54c1b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8a9ee7bc61bec4070d7412c7ea45968eef3b7d9b">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_32fb403f007c42bb209a7481b90f4a4829c3747f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\a9be0f77c30cfd845b9978aea63e2bfaf45ce082\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e6e5cb683c74a95072d8fbf47a997e64546fc284">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_fdb22424d2b078ecea16e6d4823b7e2c9b40a15f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\cddc2ba5048daba2c7e806a239fff587c1223764\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fc995c97ef1718ea9793b76cb963c9eea5b8973b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\libs\zxing-4.7.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8de9ca74af1dc9b963af4f072fb78eba58e9743a">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\8\zxing-4.7.3_9eb20143916b9d845d2c116dcf815bb8da3322e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\jpush-android-3.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="989c1fc762c0424b2e25692444e9f1df60288a1d">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\jpush-android-3.1.1_f4118149fcdfd0de85b8f772f68982b4fd3186d2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\TOOLS\ADS\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.0.0-alpha1_0b8c4a35ac96d2c3b6d7cf25ea8b97e9ee6568c9\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\libs\zxing-4.7.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8de9ca74af1dc9b963af4f072fb78eba58e9743a">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\zxing-4.7.3_9eb20143916b9d845d2c116dcf815bb8da3322e9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6b90fe0950a505c89b59eb3d9847792d1624150a">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_445d68f65e05b66e081df424fa39ac6dd8dc06df\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\27ae7f0cf3701511a86f295979c80b1d430ab845\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_7f01d43dd82e8a21dbb18437f26bbfac22f02ebe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6b90fe0950a505c89b59eb3d9847792d1624150a">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_445d68f65e05b66e081df424fa39ac6dd8dc06df.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\glide-3.7.0_1f3ddf859a86296da03fddcf50d19f29d652df81.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\butterknife-annotations-8.5.1_5290ebd889bdf836ef1f87a7f8bc931d4b8fa107.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\d6684222313a7d4308cf7ad720520a08ce20f9f7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6be03cdd18d32ad5c0075d82d064feb81b866f43\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="38c11d7a91cc9e84bd0cb724212480a8d020ecf4">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_035ccfc126bd0a605c1909845564d18ab1af597f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.2.0\d80514b6f44f0c4c6234e2d67fea783a25e77275\adapter-rxjava-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d80514b6f44f0c4c6234e2d67fea783a25e77275">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.2.0_06d987253da6a92ebebc265a6059f82a3b656623.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="38c11d7a91cc9e84bd0cb724212480a8d020ecf4">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_035ccfc126bd0a605c1909845564d18ab1af597f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\f4d54de3a336b0cf2c4f53ec4f767baa3297a486\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2ae8d5fbecedf046f52a825c06224c7daf68b0e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup\otto\1.3.8\cf615176cd1177edf71d3c9605f8dc148fede6be\otto-1.3.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cf615176cd1177edf71d3c9605f8dc148fede6be">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\otto-1.3.8_e9db0628aafd4857a0f5165f559642d620bd29bb.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\959f2075992fe84a339475fbe105e472d0178593\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_52aee8e01fd0746204d2c70e9bc33a9ac1017b75\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\a36df44345b4d5e56da4c3b481171ca3950a75ba\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_456e414105fb9ba494043d23faf42dccf764a77f\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\pinyin4j-2.5.0_cc5b17118a95cf18dcfd8cda20cbe3930a9f1b43.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\d677cb5669c6a29f7614aca8a90e07ba4dc95a49\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_98aab9f7498954c49ea590428a5bdd20df10510d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup\otto\1.3.8\cf615176cd1177edf71d3c9605f8dc148fede6be\otto-1.3.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cf615176cd1177edf71d3c9605f8dc148fede6be">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\otto-1.3.8_e9db0628aafd4857a0f5165f559642d620bd29bb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dd20a33d009134eab56ed237230faaf2db393838\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.7.0\6edbebdd8868708db718d15c09c4b28037fd487e\okhttp-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6edbebdd8868708db718d15c09c4b28037fd487e">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\okhttp-3.7.0_5fe48df42b4b143a1f7a0817ac92bb352cf626be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\19.0\6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9\guava-19.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\guava-19.0_17ae7ca79b8f5169fcac93232ebfb33f3026d9d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\728036cef145dfe45d3eb6a571d7e4324684464d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a3b3d2d4b21d2fd300777b8455255b5dc0cf6616">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_127c90d931e890f3801e7eef9e4fa5eaf3bc39a8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\pinyin4j-2.5.0_cc5b17118a95cf18dcfd8cda20cbe3930a9f1b43\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\7e1eabea27807b68066a3754ada305ffc7d63308\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2a156b99fc7cc034308f942906b09d32754a4470">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_609dd672bc801b07d97937684fc298d1002f182a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\classes_dd20a33d009134eab56ed237230faaf2db393838.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.dagger\dagger-producers\2.5\a02d8016dddbe70c7c6c2093fae96bef5cb9fdbb\dagger-producers-2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a02d8016dddbe70c7c6c2093fae96bef5cb9fdbb">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\pre-dexed\debug\dagger-producers-2.5_6e420ea6d964cdad1a69510def80f598334ad24e.jar" />
     </item>
 
 </items>

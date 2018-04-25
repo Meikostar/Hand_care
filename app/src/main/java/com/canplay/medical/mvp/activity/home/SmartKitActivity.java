@@ -1,5 +1,6 @@
 package com.canplay.medical.mvp.activity.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +16,7 @@ import com.canplay.medical.bean.Box;
 import com.canplay.medical.bean.Euip;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
+import com.canplay.medical.mvp.activity.mine.*;
 import com.canplay.medical.mvp.adapter.EuipmentAdapter;
 import com.canplay.medical.mvp.adapter.ItemAdapter;
 import com.canplay.medical.mvp.adapter.SmartCycAdapter;
@@ -90,6 +92,15 @@ public class SmartKitActivity extends BaseActivity implements BaseContract.View 
     };
     @Override
     public void bindEvents() {
+
+        adapter.setClickListener(new ItemAdapter.ItemCliks() {
+            @Override
+            public void getItem(Box menu, int type) {
+                Intent intent = new Intent(SmartKitActivity.this, MedicalDetailActivity.class);
+                intent.putExtra("name",menu.medicine);
+                startActivity(intent);
+            }
+        });
         adapters.setClickListener(new SmartCycAdapter.ItemCliks() {
             @Override
             public void getItem(Box box, int poistion) {

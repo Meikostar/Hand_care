@@ -17,6 +17,12 @@
         app:navigationRight_txt="保存"
 
         app:navigationTitle="设置提醒" />
+    <com.canplay.medical.view.HourSelector
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/selector"
+        app:hour="8"
+        app:minter="00"/>
   <com.canplay.medical.view.scrollView.StickyScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent">
@@ -24,12 +30,7 @@
           android:orientation="vertical"
           android:layout_width="match_parent"
           android:layout_height="wrap_content">
-          <com.canplay.medical.view.HourSelector
-              android:layout_width="match_parent"
-              android:layout_height="180dp"
-              android:id="@+id/selector"
-              app:hour="8"
-              app:minter="00"/>
+
           <LinearLayout
               android:layout_marginTop="10dp"
               android:background="@color/white"

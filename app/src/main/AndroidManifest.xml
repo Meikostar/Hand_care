@@ -120,6 +120,7 @@
             android:name=".mvp.activity.mine.MineHealthCenterActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".mvp.activity.mine.AddFriendActivity"
             android:theme="@style/AppTheme"
@@ -160,6 +161,11 @@
             android:name=".mvp.activity.home.UsePlanActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.activity.home.MedicalDetailActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".mvp.activity.home.MinePlanRemindActivity"
             android:theme="@style/AppTheme"

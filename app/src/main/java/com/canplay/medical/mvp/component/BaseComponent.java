@@ -17,9 +17,11 @@ import com.canplay.medical.mvp.activity.MainActivity;
 import com.canplay.medical.mvp.activity.account.RegisteredActivity;
 import com.canplay.medical.mvp.activity.account.RegisteredSecondActivity;
 import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
+import com.canplay.medical.mvp.activity.health.TimeXRecordActivity;
 import com.canplay.medical.mvp.activity.home.AddBloodDataActivity;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
+import com.canplay.medical.mvp.activity.home.MedicalDetailActivity;
 import com.canplay.medical.mvp.activity.home.MessageActivity;
 import com.canplay.medical.mvp.activity.home.SearchMedicalActivity;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity;
@@ -39,6 +41,8 @@ import dagger.Component;
 public interface BaseComponent{
 
     void inject(LoginActivity binderActivity);
+    void inject(TimeXRecordActivity binderActivity);
+    void inject(MedicalDetailActivity binderActivity);
     void inject(RemindSettingActivity binderActivity);
     void inject(ForgetPswActivity binderActivity);
     void inject(ForgetFirstActivity binderActivity);

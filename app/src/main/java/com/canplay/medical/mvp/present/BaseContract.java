@@ -28,7 +28,7 @@ public class BaseContract {
         /**
          * 测量记录
          */
-        void getMeasureRecord(String a, String b,String c, String d);
+        void getMeasureRecord( int type,String b,String c, String d);
 
         /**
          * 血压测量记录
@@ -100,5 +100,10 @@ public class BaseContract {
         void  myMedicineBox();
         void searchMedicine(String content);
         void addMediacl(AddMedical base);
+        /**
+         * 时间轴
+         *
+         */
+        void getTimeRecord( int  type,String from, String take);
     }
 }

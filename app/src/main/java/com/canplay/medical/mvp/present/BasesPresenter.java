@@ -48,8 +48,8 @@ public class BasesPresenter implements BaseContract.Presenter {
         contactApi = apiManager.createApi(BaseApi.class);
     }
     @Override
-    public void getMeasureRecord(String userId, String category,String from, String take) {
-
+    public void getMeasureRecord( final int type,String category,String from, String take) {
+        String userId = SpUtil.getInstance().getUserId();
         subscription = ApiManager.setSubscribe(contactApi.getMeasureRecord(userId,category,from,take), new MySubscriber<List<Record>>(){
             @Override
             public void onError(Throwable e){
@@ -63,7 +63,27 @@ public class BasesPresenter implements BaseContract.Presenter {
             @Override
             public void onNext(List<Record> entity){
 
-                mView.toEntity(entity,0);
+                mView.toEntity(entity,type);
+            }
+        });
+    }
+    @Override
+    public void getTimeRecord(final int  type,String from, String take) {
+        String userId = SpUtil.getInstance().getUserId();
+        subscription = ApiManager.setSubscribe(contactApi.getTimeRecord(userId,from,take), new MySubscriber<List<Record>>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+
+
+            }
+
+            @Override
+            public void onNext(List<Record> entity){
+
+                mView.toEntity(entity,type);
             }
         });
     }
@@ -86,6 +106,7 @@ public class BasesPresenter implements BaseContract.Presenter {
             }
         });
     }
+
     @Override
     public void getBloodPressList(final int  type, String from, String take) {
         String userId = SpUtil.getInstance().getUserId();

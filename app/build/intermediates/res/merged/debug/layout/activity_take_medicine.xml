@@ -21,14 +21,16 @@
         android:layout_height="0.2dp"
         android:background="@color/linecolor"/>
 
-
-    <ListView
-        android:id="@+id/rl_menu"
-        style="@style/lv_content"
+    <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:id="@+id/super_recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:background="@color/white"
-        android:visibility="visible" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_moreProgress="@layout/view_more_progress"
+        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:recyclerClipToPadding="true"
+        app:scrollbarStyle="outsideOverlay" />
 
 </LinearLayout>
