@@ -120,15 +120,18 @@ public class LoginPresenter implements LoginContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-                if(e.toString().contains("java.io.IOException:")){
-                    mView.showTomast("账号或密码错误");
-                }
+
 
             }
 
             @Override
             public void onNext(BASE entity){
-                mView.toEntity(entity,0);
+                if(entity.isSucceeded){
+                    mView.toEntity(entity,0);
+                }else {
+                    mView.showTomast(entity.message);
+                }
+
 
             }
         });
@@ -150,6 +153,8 @@ public class LoginPresenter implements LoginContract.Presenter {
             public void onNext(BASE entity){
                if(entity.isVerfied){
                    mView.toNextStep(1);
+               }else {
+                   mView.showTomast("验证码错误或失效");
                }
 
 

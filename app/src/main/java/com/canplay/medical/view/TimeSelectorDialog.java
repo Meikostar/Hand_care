@@ -169,36 +169,16 @@ public class TimeSelectorDialog {
                 String str=null;
                 String date=null;
                 str= mDataList.get(mCycleWheelViewDate.getSelection());
-                int a=0;
-                if(langue){
-                    date=year+"-"+hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu)))+"-"+minute.substring(0,minute.indexOf(mContext.getString(R.string.riis)));
+                String[] yr = str.split("年");
+                    date=yr[0]+"-"+hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu)))+"-"+minute.substring(0,minute.indexOf(mContext.getString(R.string.riis)));
 
-                }else {
-                    int i=0;
 
-                    for(String mon:lists){
-                        if(mon.equals(hour)){
-                            a=i;
-                        }
-                        i++;
-                    }
-                    date=year+"-"+(a+1)+""+"-"+minute;
-
-                }
                 int month =0;
                 int choosm =0;
 
                 month= Integer.valueOf(months);
+                choosm = Integer.valueOf(hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu))));
 
-
-                if(langue){
-
-                    choosm = Integer.valueOf(hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu))));
-
-                }else {
-                    choosm = a+1;
-
-                }
 
                 if(type==0){
                     if(choosm<month){

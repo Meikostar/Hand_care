@@ -21,6 +21,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="35dp"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -58,10 +59,37 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="19dp"
             android:layout_marginRight="19dp"
             android:layout_marginTop="3dp"
             android:background="@color/linecolor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:src="@drawable/gantan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical"
+                android:text="请填写真实姓名"
+                android:textColor="#FFFF6868"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -73,11 +101,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="19dp"
-                android:text="first name"
+                android:text="出生日期"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
-            <com.canplay.medical.view.ClearEditText
+            <TextView
                 android:id="@+id/et_fist"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
@@ -87,10 +115,7 @@
                 android:background="@null"
 
                 android:gravity="center_vertical"
-                android:hint="请输入firstname"
-                android:maxLength="11"
-                android:inputType="text"
-
+                android:hint="请选择出生日期"
                 android:text=""
                 android:textColor="@color/slow_black"
                 android:textColorHint="@color/bd"
@@ -100,6 +125,7 @@
         </LinearLayout>
 
         <View
+
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginLeft="19dp"
@@ -113,7 +139,8 @@
             android:layout_marginTop="18dp"
             android:background="@color/white"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,11 +171,13 @@
 
         <View
             android:layout_width="match_parent"
+
             android:layout_height="0.5dp"
             android:layout_marginLeft="19dp"
             android:layout_marginRight="19dp"
             android:layout_marginTop="3dp"
-            android:background="@color/linecolor" />
+            android:background="@color/linecolor"
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -199,7 +228,8 @@
             android:layout_marginTop="18dp"
             android:background="@color/white"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -236,14 +266,15 @@
             android:background="@color/linecolor" />
 
         <TextView
-
             android:id="@+id/tv_save"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
             android:layout_marginTop="45dp"
             android:background="@drawable/hui_blue_rectangle"
             android:gravity="center"
-            android:text="注册"
+            android:text="保存"
             android:textColor="@color/white"
             android:textSize="16.5sp" />
 

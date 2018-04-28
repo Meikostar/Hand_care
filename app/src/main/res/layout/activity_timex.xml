@@ -23,14 +23,13 @@
         android:layout_height="0.2dp"
         android:background="@color/linecolor"/>
     <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/navigationBar"
         android:id="@+id/super_recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_moreProgress="@layout/view_more_progress"
+        android:layout_height="fill_parent"
         app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:layout_moreProgress="@layout/view_more_progress"
         app:recyclerClipToPadding="true"
         app:scrollbarStyle="outsideOverlay" />
 </LinearLayout>

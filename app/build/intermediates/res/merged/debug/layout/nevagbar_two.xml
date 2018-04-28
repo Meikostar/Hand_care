@@ -13,12 +13,14 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
             android:id="@+id/rd_one"
             style="@style/button_item"
+            android:layout_height="48dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
             android:drawableBottom="@drawable/line_selector"
             android:text="曲线" />
+
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
@@ -26,7 +28,7 @@
         <RadioButton
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
-
+            android:layout_height="48dp"
             android:id="@+id/rd_two"
             style="@style/button_item"
             android:drawableBottom="@drawable/line_selector"

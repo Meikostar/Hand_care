@@ -204,13 +204,8 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
     @Override
     public <T> void toEntity(T entity, int type) {
         List<Record>     lists= (List<Record>) entity;
-        data.clear();
-        for(Record record:lists){
-            for(Record record1:record.items){
-                data.add(record1);
-            }
-        }
-        onDataLoaded(type,list.size()==cout,list);
+
+        onDataLoaded(type,data.size()==cout,lists);
     }
 
     @Override

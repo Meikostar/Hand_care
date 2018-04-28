@@ -206,6 +206,11 @@
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".mvp.activity.home.AddDataActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".mvp.activity.home.DoctorDetailActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait" />

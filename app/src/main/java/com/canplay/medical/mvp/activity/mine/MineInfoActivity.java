@@ -93,10 +93,17 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
         presenter.attachView(this);
         navigationBar.setNavigationBarListener(this);
         dialog=new EditorNameDialog(this,line);
-
+        selectorDialog = new TimeSelectorDialog(MineInfoActivity.this);
+        selectorDialog.setDate(new Date(System.currentTimeMillis()))
+                .setBindClickListener(new TimeSelectorDialog.BindClickListener() {
+                    @Override
+                    public void time(String time) {
+                        tvBirth.setText(time);
+                    }
+                });
         mWindowAddPhoto = new PhotoPopupWindow(this);
     }
-
+    private  TimeSelectorDialog selectorDialog;
     @Override
     public void bindEvents() {
         ivPhone.setOnClickListener(this);
@@ -109,14 +116,6 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
         llBirth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TimeSelectorDialog selectorDialog = new TimeSelectorDialog(MineInfoActivity.this);
-                selectorDialog.setDate(new Date(System.currentTimeMillis()))
-                        .setBindClickListener(new TimeSelectorDialog.BindClickListener() {
-                            @Override
-                            public void time(String time) {
-                                tvBirth.setText(time);
-                            }
-                        });
                 selectorDialog.show(findViewById(R.id.ll_area));
             }
         });

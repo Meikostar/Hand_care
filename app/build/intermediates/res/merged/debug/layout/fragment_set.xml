@@ -27,6 +27,7 @@
             android:layout_marginTop="40dp"
             android:id="@+id/card"
             tools:targetApi="lollipop"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:stateListAnimator="@drawable/lift_on_touch"
@@ -36,18 +37,22 @@
             app:cardUseCompatPadding="true"
             app:cardPreventCornerOverlap="true">
             <RelativeLayout
+                android:background="@drawable/cw0"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="196dp">
                 <ImageView
+                    android:src="@drawable/cw1"
                     android:id="@+id/iv_box"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     />
                 <ImageView
+                    android:src="@drawable/cw2"
+
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:padding="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="8dp"
                     android:id="@+id/iv_setting"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
@@ -57,15 +62,18 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="196dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
                     <ImageView
                         android:layout_marginTop="16dp"
                         android:id="@+id/iv_img"
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
+                        android:layout_width="57dp"
+                        android:layout_height="57dp"
                         />
                     <TextView
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="15dp"
                         android:id="@+id/tv_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -73,24 +81,24 @@
                         android:paddingLeft="10dp"
                         android:text="陈晨"
                         android:textColor="@color/slow_black"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
                     <TextView
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="12dp"
                         android:id="@+id/tv_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
                         android:text="18956354215"
-                        android:textColor="@color/color9"
-                        android:textSize="13.5sp" />
+                        android:textColor="@color/color8"
+                        android:textSize="14.5sp" />
                     <LinearLayout
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="24dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:background="@color/white"
+
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -99,15 +107,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@color/white"
+
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+
+                                android:layout_width="9dp"
+                                android:layout_height="11dp"
                                 android:layout_marginLeft="15dp"
-                                android:src="@drawable/bule_samll" />
+                                android:src="@drawable/cw3"
+                                />
 
                             <TextView
                                 android:id="@+id/tv_address"
@@ -117,21 +127,21 @@
                                 android:paddingLeft="10dp"
                                 android:text="广东深圳"
                                 android:textColor="@color/color9"
-                                android:textSize="13.5sp" />
+                                android:textSize="13sp" />
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@color/white"
+
                             android:gravity="center"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="10dp"
+                                android:layout_height="11dp"
                                 android:layout_marginLeft="15dp"
-                                android:src="@drawable/bule_samll" />
+                                android:src="@drawable/cw4" />
 
                             <TextView
                                 android:id="@+id/tv_birth"
@@ -144,19 +154,17 @@
                                 android:textSize="13.5sp" />
                         </LinearLayout>
                         <LinearLayout
-
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@color/white"
                             android:gravity="center"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="10dp"
+                                android:layout_height="12dp"
                                 android:layout_marginLeft="15dp"
-                                android:src="@drawable/bule_samll" />
+                                android:src="@drawable/cw5" />
 
                             <TextView
                                 android:id="@+id/tv_sex"
@@ -166,7 +174,7 @@
                                 android:paddingLeft="10dp"
                                 android:text="女"
                                 android:textColor="@color/color9"
-                                android:textSize="13.5sp" />
+                                android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
 

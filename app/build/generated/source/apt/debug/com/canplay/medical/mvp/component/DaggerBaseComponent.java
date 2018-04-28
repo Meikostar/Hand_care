@@ -34,6 +34,8 @@ import com.canplay.medical.mvp.activity.health.TimeXRecordActivity;
 import com.canplay.medical.mvp.activity.health.TimeXRecordActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.AddBloodDataActivity;
 import com.canplay.medical.mvp.activity.home.AddBloodDataActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.home.AddDataActivity;
+import com.canplay.medical.mvp.activity.home.AddDataActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
@@ -78,6 +80,8 @@ public final class DaggerBaseComponent implements BaseComponent {
   private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
   private Provider<BasesPresenter> basesPresenterProvider;
+
+  private MembersInjector<AddDataActivity> addDataActivityMembersInjector;
 
   private MembersInjector<TimeXRecordActivity> timeXRecordActivityMembersInjector;
 
@@ -164,6 +168,9 @@ public final class DaggerBaseComponent implements BaseComponent {
 
     this.basesPresenterProvider = BasesPresenter_Factory.create(apiManagerProvider);
 
+    this.addDataActivityMembersInjector =
+        AddDataActivity_MembersInjector.create(basesPresenterProvider);
+
     this.timeXRecordActivityMembersInjector =
         TimeXRecordActivity_MembersInjector.create(basesPresenterProvider);
 
@@ -244,6 +251,11 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(AddDataActivity binderActivity) {
+    addDataActivityMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

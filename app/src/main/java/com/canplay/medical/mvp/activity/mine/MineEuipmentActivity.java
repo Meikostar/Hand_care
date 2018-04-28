@@ -116,7 +116,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
                     unbind.patientDeviceId = euipt.patientDeviceId;
                     unbind.userId = user_id;
                     presenter.UnbindDevice(unbind);
-                    showProgress("正在绑定");
+                    showProgress("正在解除绑定");
                 } else {//取消
 
                 }

@@ -5,6 +5,7 @@ import com.canplay.medical.base.BaseView;
 import com.canplay.medical.bean.Add;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Medic;
+import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.unBind;
 
 public class HomeContract {
@@ -130,6 +131,8 @@ public class HomeContract {
          * 获取某一管理计划
          */
         void MeasureRemindDetail(String name);
+
+        void  addMesure(Mesure base);
     }
 
 

@@ -38,6 +38,11 @@ public class Record {
     public String payloadId;
     public String category;
     public String content;
+    public String version;
+    public String high;
+    public String low;
+    public String pulse;
+    public String timeStamp;
     public List<Record> items;
 
     public long createdDateTime;

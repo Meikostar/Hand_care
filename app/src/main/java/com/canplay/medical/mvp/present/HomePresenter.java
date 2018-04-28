@@ -13,6 +13,7 @@ import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.Message;
+import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.USER;
 import com.canplay.medical.bean.unBind;
 import com.canplay.medical.mvp.http.BaseApi;
@@ -63,6 +64,25 @@ public class HomePresenter implements HomeContract.Presenter {
 
                 mView.toEntity(entity);
 
+            }
+        });
+    }
+
+    @Override
+    public void addMesure(Mesure base) {
+
+        subscription = ApiManager.setSubscribe(contactApi.addMesure(base), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+                mView.showTomast("添加失败");
+            }
+
+            @Override
+            public void onNext(BASE entity){
+
+                mView.toNextStep(0);
             }
         });
     }

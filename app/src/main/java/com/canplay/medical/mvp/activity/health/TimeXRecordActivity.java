@@ -56,7 +56,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
     public int currpage=1;
-    private int cout=12;
+    private int cout=10;
     private int total=0;
     @Override
     public void initViews() {
@@ -68,8 +68,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
         }
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-        String userId = SpUtil.getInstance().getUserId();
-
+        mLinearLayoutManager = new LinearLayoutManager(this);
         navigationBar.setNavigationBarListener(this);
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
@@ -78,7 +77,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
         mSuperRecyclerView.setAdapter(adapter);
 
 //        reflash();
-        // mSuperRecyclerView.setRefreshing(false);
+
         reflash();
         // mSuperRecyclerView.setRefreshing(false);
         refreshListener = new SwipeRefreshLayout.OnRefreshListener() {
@@ -152,6 +151,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
     public List<Record> list=new ArrayList<>();
     public List<Record> data=new ArrayList<>();
     public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
+
 
         if (loadtype == TYPE_PULL_REFRESH) {
             currpage=1;
@@ -230,14 +230,14 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
 
     @Override
     public <T> void toEntity(T entity, int type) {
-        List<Record>     lists= (List<Record>) entity;
+        List<Record>    lists= (List<Record>) entity;
         data.clear();
          for(Record record:lists){
              for(Record record1:record.items){
                  data.add(record1);
              }
          }
-        onDataLoaded(type,list.size()==cout,data);
+        onDataLoaded(type,data.size()==cout,data);
     }
 
     @Override

@@ -70,15 +70,23 @@ public class UserTimeAdapter extends BaseRecycleViewAdapter {
         }
         if(TextUtil.isNotEmpty(record.title)){
             holder.tvName.setText(record.title);
+            if(record.title.equals("添加药物")){
+                holder.ivCyc.setImageResource(R.drawable.cyc1);
+            }else if(record.title.equals("血压测量")){
+                holder.ivCyc.setImageResource(R.drawable.cyc2);
+            }
+        }
+        if(TextUtil.isNotEmpty(record.content)){
+            holder.tvContent.setText(record.content);
         }
         if(TextUtil.isNotEmpty(record.category)){
-            holder.tvContent.setText(record.category);
+            if(record.category.equals("Medicine")){
+                holder.ivCyc.setImageResource(R.drawable.cyc1);
+            }else if(record.category.equals("Measurement")){
+                holder.ivCyc.setImageResource(R.drawable.cyc2);
+            }
         }
-        if(record.category.equals("Medicine")){
-            holder.ivCyc.setImageResource(R.drawable.cyc1);
-        }else if(record.category.equals("Measurement")){
-            holder.ivCyc.setImageResource(R.drawable.cyc2);
-        }
+
         holder.tvTime.setText(TimeUtil.formatTimss(record.createdDateTime));
     }
 

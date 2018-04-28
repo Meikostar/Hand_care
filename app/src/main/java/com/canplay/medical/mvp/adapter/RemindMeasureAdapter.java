@@ -130,7 +130,7 @@ public class RemindMeasureAdapter extends BaseAdapter {
                public void onClick(View view) {
                    swipeListLayout.setStatus(SwipeListLayout.Status.Close, true);
                    if(listener!=null){
-//                       listener.delete(list.get(position).product_id,list.size()==1?1:0,position);
+                       listener.delete(list.get(position),0,position);
                    }
 
 

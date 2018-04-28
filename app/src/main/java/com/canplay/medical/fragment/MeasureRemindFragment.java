@@ -14,14 +14,17 @@ import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Medicine;
+import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
 import com.canplay.medical.mvp.adapter.RemindMeasureAdapter;
 import com.canplay.medical.mvp.adapter.RemindMedicatAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.view.RegularListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -34,7 +37,7 @@ import rx.functions.Action1;
 
 
 /**
- * 用药提醒
+ * 测量提醒
  */
 public class MeasureRemindFragment extends BaseFragment implements HomeContract.View {
 
@@ -93,14 +96,28 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
         adapter.setListener(new RemindMeasureAdapter.selectItemListener() {
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
-                Intent intent = new Intent(getActivity(), MeasureActivity.class);
-                intent.putExtra("data",medicine);
-                startActivity(intent);
+                if(type==0){
+                    times.clear();
+                    times.add(medicine.when);
+
+                    mesure.when=times;
+                    String userId = SpUtil.getInstance().getUserId();
+                    mesure.userId=userId;
+                    mesure.type="time";
+                    mesure.remindingFor="Measurement";
+                    presenter.addMesure(mesure);
+                }else {
+                    Intent intent = new Intent(getActivity(), MeasureActivity.class);
+                    intent.putExtra("data",medicine);
+                    startActivity(intent);
+                }
+
             }
         });
 
     }
-
+    private Mesure mesure=new Mesure();
+    private List<String> times=new ArrayList<>();
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -126,10 +143,11 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
 
         adapter.setData(data);
     }
-
+    private int poition;
     @Override
     public void toNextStep(int type) {
-
+        data.remove(poition);
+        adapter.setData(data);
     }
 
     @Override

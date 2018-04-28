@@ -10,8 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
+import com.canplay.medical.bean.Record;
 import com.canplay.medical.bean.Sugar;
+import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.DashView;
+import com.google.gson.Gson;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,17 +42,45 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
         view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new DoctorItemViewHolder(view);
     }
-
+    private Gson mGson=new Gson();
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         DoctorItemViewHolder holders = (DoctorItemViewHolder) holder;
-        final Sugar data= (Sugar) datas.get(position);
-
+        final Record data= (Record) datas.get(position);
+        Record customerinfo = mGson.fromJson(data.value, Record.class);
          if(type==0){
              holders.tvData.setText("血压:"+data.value);
          }else {
              holders.tvData.setText("血糖:"+data.value);
          }
+
+
+        if(position==0){
+            String time = TimeUtil.formatToMf(data.date);
+            String[] split = time.split("##");
+            holders.tvTime.setVisibility(View.VISIBLE);
+            if(split!=null&&split.length==2){
+                holders.tvTime.setText(split[0]);
+                holders.tvTimes.setText(split[1]);
+            }
+
+        }else {
+            String time = TimeUtil.formatToMf(data.date);
+            String[] split = time.split("##");
+            Record dats= (Record) datas.get(position - 1);
+            String times = TimeUtil.formatToMf(dats.date);
+            String[] splits = times.split("##");
+            if(split!=null&&splits!=null){
+                if(split[0].equals(splits[0])){
+                    holders.tvTime.setVisibility(View.INVISIBLE);
+                    holders.tvTimes.setText(split[1]);
+                }else {
+                    holders.tvTime.setVisibility(View.VISIBLE);
+                    holders.tvTime.setText(split[0]);
+                    holders.tvTimes.setText(split[1]);
+                }
+            }
+        }
 
         if (position != 0) {
             holders.line1.setVisibility(View.VISIBLE);
@@ -59,7 +90,7 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
         }
         if (position % 2 == 0) {
 
-            holders.tvTime.setVisibility(View.VISIBLE);
+
         } else {
 
             holders.tvTime.setVisibility(View.INVISIBLE);

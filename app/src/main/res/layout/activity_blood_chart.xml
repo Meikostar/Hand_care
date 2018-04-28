@@ -14,7 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:navigationRight_type="img"
-        app:navigationRight_img="@drawable/login_selector"
+        app:navigationLeft_img="@drawable/black_left"
+
+        app:navigationRight_img="@drawable/add"
         app:navigationTitle="血压测量记录" />
 
  <com.canplay.medical.view.TwoNevgBar

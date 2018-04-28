@@ -34,15 +34,15 @@
 
                 <ImageView
                     android:src="@drawable/zhong"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="20dp" />
+                    android:layout_marginTop="21dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="79dp"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
                     android:layout_marginTop="19dp"
                     android:orientation="vertical">
@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:text="下次吃药时间"
                         android:textColor="@color/color6"
-                        android:textSize="14.5sp" />
+                        android:textSize="12.5sp" />
 
                     <TextView
                         android:id="@+id/tv_time"
@@ -61,7 +61,7 @@
                         android:layout_marginTop="13dp"
                         android:text="19:30"
                         android:textColor="@color/red_pop"
-                        android:textSize="20.5sp" />
+                        android:textSize="21sp" />
                 </LinearLayout>
 
                 <TextView
@@ -129,16 +129,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/linecolor" />
-        <TextView
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="15.5dp"
-            android:layout_marginBottom="9dp"
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="01号药盒"
-            android:textColor="@color/blues"
-            android:textSize="14.5sp" />
+      <LinearLayout
+          android:layout_marginBottom="8dp"
+          android:gravity="center_vertical"
+          android:layout_marginTop="9dp"
+          android:layout_width="wrap_content"
+          android:layout_height="28dp"
+          android:orientation="horizontal">
+          <ImageView
+              android:src="@drawable/w"
+              android:layout_marginLeft="15dp"
+              android:layout_width="26dp"
+              android:layout_height="26dp" />
+          <TextView
+
+              android:layout_marginLeft="7.5dp"
+
+              android:id="@+id/tv_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="晚"
+              android:textColor="@color/color8"
+              android:textSize="13.5sp" />
+      </LinearLayout>
         <ViewStub
             android:id="@+id/stub_gird"
             android:layout_width="match_parent"

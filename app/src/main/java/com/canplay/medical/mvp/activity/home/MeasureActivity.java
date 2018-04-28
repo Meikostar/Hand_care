@@ -106,7 +106,7 @@ public class MeasureActivity extends BaseActivity implements BaseContract.View{
 //                for(String time:map.values()){
 //                    datas.add(time);
 //                }
-                datas.add(data.get(0));
+                datas.addAll(data);
                 mesure.when=datas;
                 String userId = SpUtil.getInstance().getUserId();
                 mesure.userId=userId;
@@ -264,7 +264,6 @@ public class MeasureActivity extends BaseActivity implements BaseContract.View{
                 String selector = MeasureActivity.this.selector.getSelector();
                 String time= map.get(selector);
 
-                data.clear();
                 if(TextUtil.isEmpty(time)){
                     map.put(selector,selector);
                     data.add(selector);

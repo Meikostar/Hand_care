@@ -27,7 +27,7 @@ public class RegisteredSecondActivity_ViewBinding implements Unbinder {
 
     target.ivBack = Utils.findRequiredViewAsType(source, R.id.iv_back, "field 'ivBack'", ImageView.class);
     target.etName = Utils.findRequiredViewAsType(source, R.id.et_name, "field 'etName'", ClearEditText.class);
-    target.etFist = Utils.findRequiredViewAsType(source, R.id.et_fist, "field 'etFist'", ClearEditText.class);
+    target.etFist = Utils.findRequiredViewAsType(source, R.id.et_fist, "field 'etFist'", TextView.class);
     target.etLast = Utils.findRequiredViewAsType(source, R.id.et_last, "field 'etLast'", ClearEditText.class);
     target.etPws = Utils.findRequiredViewAsType(source, R.id.et_pws, "field 'etPws'", ClearEditText.class);
     target.etPwss = Utils.findRequiredViewAsType(source, R.id.et_pwss, "field 'etPwss'", ClearEditText.class);

@@ -57,7 +57,7 @@ public class TimeUtil {
         return format.format(new Date(time*1000));
     }
     public static String formatToMf(long time){
-        SimpleDateFormat format = new SimpleDateFormat("HH-mm");
+        SimpleDateFormat format = new SimpleDateFormat("MM.dd ## HH:mm:ss");
         return format.format(new Date(time*1000));
     }
     public static String formatToMD(long time){

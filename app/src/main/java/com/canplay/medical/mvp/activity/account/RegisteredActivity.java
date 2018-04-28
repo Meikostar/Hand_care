@@ -17,14 +17,7 @@ import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.LoginContract;
 import com.canplay.medical.mvp.present.LoginPresenter;
 import com.canplay.medical.util.TextUtil;
-import com.canplay.medical.util.gsonUtils;
 import com.canplay.medical.view.ClearEditText;
-import com.canplay.medical.view.TimeSelectorDialog;
-
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -45,14 +38,9 @@ public class RegisteredActivity extends BaseActivity implements LoginContract.Vi
     @BindView(R.id.tv_save)
     TextView tvSave;
 
-    private Subscription mSubscription;
 
-    private LinearLayoutManager mLinearLayoutManager;
-    private boolean is_time;
-    private boolean is_right;
     private TimeCount timeCount;
     private String jobId;
-    private int type=0;
 
     @Override
     public void initViews() {
@@ -60,6 +48,7 @@ public class RegisteredActivity extends BaseActivity implements LoginContract.Vi
         ButterKnife.bind(this);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
+
         //计时器
         timeCount = new TimeCount(60000, 1000);
         tvSave.setEnabled(false);
@@ -171,7 +160,7 @@ public class RegisteredActivity extends BaseActivity implements LoginContract.Vi
 
     @Override
     public void showTomast(String msg) {
-
+        showToasts(msg);
     }
 
 
@@ -191,7 +180,7 @@ public class RegisteredActivity extends BaseActivity implements LoginContract.Vi
 
         @Override
         public void onFinish() {
-            is_time = false;
+
             tvGetcode.setText(R.string.chongxinhuoqu);
             tvGetcode.setBackground(getResources().getDrawable(R.drawable.login_selector));
             tvGetcode.setEnabled(true);

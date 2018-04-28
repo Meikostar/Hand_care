@@ -16,11 +16,14 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.bean.Euipt;
+import com.canplay.medical.bean.unBind;
+import com.canplay.medical.mvp.activity.mine.MineInfoActivity;
 import com.canplay.medical.mvp.activity.mine.SettingActivity;
 import com.canplay.medical.mvp.adapter.EuipmentAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.view.EditorNameDialog;
 import com.canplay.medical.view.PhotoPopupWindow;
 
@@ -86,7 +89,7 @@ HomePresenter presenter;
         presenter.getSmartList();
         adapter = new EuipmentAdapter(getActivity());
         rlMenu.setAdapter(adapter);
-
+        user_id= SpUtil.getInstance().getUserId();
         mWindowAddPhoto = new PhotoPopupWindow(getActivity());
         mWindowAddPhoto.setCont("解除绑定", "取消");
         mWindowAddPhoto.setColor(R.color.red_pop, 0);
@@ -102,16 +105,30 @@ HomePresenter presenter;
 
     }
 
-
+    private String patientDeviceId;
+    private String user_id;
+    private unBind unbind=new unBind();
     private void initListener() {
 
         ivSetting.setOnClickListener(this);
         ivBox.setOnClickListener(this);
-
+        adapter.setClickListener(new EuipmentAdapter.ItemCliks() {
+            @Override
+            public void getItem(Euipt menu, int type) {
+                patientDeviceId=menu.patientDeviceId;
+                mWindowAddPhoto.showAsDropDown(line);
+            }
+        });
        mWindowAddPhoto.setSureListener(new PhotoPopupWindow.ClickListener() {
            @Override
            public void clickListener(int type) {
+               if(type==0){
+                   unbind.patientDeviceId = patientDeviceId;
+                   unbind.userId = user_id;
+                   presenter.UnbindDevice(unbind);
+               }else {
 
+               }
            }
        });
     }
@@ -149,11 +166,11 @@ HomePresenter presenter;
 //                break;
             case R.id.iv_setting://
                 startActivity(new Intent(getActivity(), SettingActivity.class));
-                mWindowAddPhoto.showAsDropDown(line);
+
                 break;
             case R.id.iv_box://
-                startActivity(new Intent(getActivity(), SettingActivity.class));
-                mWindowAddPhoto.showAsDropDown(line);
+                startActivity(new Intent(getActivity(), MineInfoActivity.class));
+
                 break;
 //           case R.id.iv_code://我的二维码
 //                startActivity(new Intent(getActivity(), MineCodeActivity.class));
@@ -172,7 +189,7 @@ HomePresenter presenter;
 
     @Override
     public void toNextStep(int type) {
-
+        presenter.getSmartList();
     }
 
     @Override

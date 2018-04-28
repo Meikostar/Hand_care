@@ -42,7 +42,7 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
     @BindView(R.id.et_name)
     ClearEditText etName;
     @BindView(R.id.et_fist)
-    ClearEditText etFist;
+    TextView etFist;
     @BindView(R.id.et_last)
     ClearEditText etLast;
     @BindView(R.id.et_pws)
@@ -60,14 +60,34 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
     private boolean is_right;
 
     private String jobId;
+    private String name;
+    private String date;
+    private String psw;
 
+    private  TimeSelectorDialog selectorDialog;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_registered2);
         ButterKnife.bind(this);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-
+        selectorDialog = new TimeSelectorDialog(RegisteredSecondActivity.this);
+        selectorDialog.setDate(new Date(System.currentTimeMillis()))
+                .setBindClickListener(new TimeSelectorDialog.BindClickListener() {
+                    @Override
+                    public void time(String time) {
+                      if(TextUtil.isNotEmpty(time)){
+                          etFist.setText(time);
+                          if(TextUtil.isNotEmpty(psw)&&TextUtil.isNotEmpty(name)){
+                              isSelect(true);
+                          }else {
+                              isSelect(false);
+                          }
+                      }else {
+                          isSelect(false);
+                      }
+                    }
+                });
         phone = getIntent().getStringExtra("phone");
         //计时器
         tvSave.setEnabled(false);
@@ -75,18 +95,21 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
 
     @Override
     public void bindEvents() {
-
+        etFist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeKeyBoard();
+                selectorDialog.show(findViewById(R.id.tv_save));
+            }
+        });
         tvSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!PwdCheckUtil.isContainAll(etPws.getText().toString())||etPws.getText().toString().length()<6){
+                if(!PwdCheckUtil.isContainAll(etPws.getText().toString())){
                     showToasts("密码至少6位数且包含数字，大小写字母");
                     return;
                 }
-                if(!etPws.getText().toString().equals(etPwss.getText().toString())){
-                    showToasts("两次密码输入不一致");
-                    return;
-                }
+
                 presenter.register(etName.getText().toString(),etFist.getText().toString(),etLast.getText().toString(),etPws.getText().toString(),phone);
 
             }
@@ -97,75 +120,21 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
                 finish();
             }
         });
-
-        etFist.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
-            @Override
-            public void afterTextChanged4ClearEdit(Editable s) {
-                if (TextUtil.isNotEmpty(s.toString())) {
-                    if (s.toString().length() == 6) {
-                        presenter.checkCode(jobId, s.toString());
-                    }
-                    if (a == 0) {
-                        ++count;
-                        a = 1;
-                    }
-                } else {
-                    --count;
-                    a = 0;
-                }
-                if (count == 5) {
-                    isSelect(true);
-                } else {
-                    isSelect(false);
-                }
-            }
-
-            @Override
-            public void changeText(CharSequence s) {
-
-            }
-        });
+//
         etName.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
             @Override
             public void afterTextChanged4ClearEdit(Editable s) {
-                if (TextUtil.isNotEmpty(s.toString())) {
-                    if (b == 0) {
-                        ++count;
-                        b = 1;
+                if(TextUtil.isNotEmpty(s.toString())){
+                    name=s.toString();
+                    if(TextUtil.isNotEmpty(psw)&&TextUtil.isNotEmpty(etFist.getText().toString())){
+                        isSelect(true);
+                    }else {
+                        isSelect(false);
                     }
-                } else {
-                    --count;
-                    b = 0;
-                }
-                if (count == 5) {
-                    isSelect(true);
-                } else {
+                }else {
                     isSelect(false);
                 }
-            }
 
-            @Override
-            public void changeText(CharSequence s) {
-
-            }
-        });
-        etLast.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
-            @Override
-            public void afterTextChanged4ClearEdit(Editable s) {
-                if (TextUtil.isNotEmpty(s.toString())) {
-                    if (c == 0) {
-                        ++count;
-                        c = 1;
-                    }
-                } else {
-                    --count;
-                    c = 0;
-                }
-                if (count == 5) {
-                    isSelect(true);
-                } else {
-                    isSelect(false);
-                }
             }
 
             @Override
@@ -176,18 +145,15 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
         etPws.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
             @Override
             public void afterTextChanged4ClearEdit(Editable s) {
-                if (TextUtil.isNotEmpty(s.toString())) {
-                    if (d == 0) {
-                        ++count;
-                        d = 1;
+
+                if(TextUtil.isNotEmpty(s.toString())){
+                    psw=s.toString();
+                    if(TextUtil.isNotEmpty(name)&&TextUtil.isNotEmpty(etFist.getText().toString())){
+                        isSelect(true);
+                    }else {
+                        isSelect(false);
                     }
-                } else {
-                    --count;
-                    d = 0;
-                }
-                if (count ==5) {
-                    isSelect(true);
-                } else {
+                }else {
                     isSelect(false);
                 }
             }
@@ -197,38 +163,9 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
 
             }
         });
-        etPwss.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
-            @Override
-            public void afterTextChanged4ClearEdit(Editable s) {
-                if (TextUtil.isNotEmpty(s.toString())) {
-                    if (e == 0) {
-                        ++count;
-                        e = 1;
-                    }
-                } else {
-                    --count;
-                    e = 0;
-                }
-                if (count == 5) {
-                    isSelect(true);
-                } else {
-                    isSelect(false);
-                }
-            }
 
-            @Override
-            public void changeText(CharSequence s) {
-
-            }
-        });
     }
 
-    private int count;
-    private int a;
-    private int b;
-    private int c;
-    private int d;
-    private int e;
 
     @Override
     public void initData() {
