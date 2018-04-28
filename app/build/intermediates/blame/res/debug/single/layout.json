@@ -16,20 +16,20 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\press_record_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_more_progress.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_more_progress.xml"
-    },
-    {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_remind_setting.xml",
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_remind_setting.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_more_progress.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_more_progress.xml"
     },
     {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choose_medical.xml",
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_choose_medical.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\hour_selector.xml",
@@ -1086,6 +1086,10 @@
     {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mesure_plan.xml",
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_mesure_plan.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_datas.xml",
+        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_add_datas.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",

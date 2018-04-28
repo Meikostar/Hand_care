@@ -56,12 +56,7 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         HealtCenterHolder holders = (HealtCenterHolder) holder;
 
-        holders.ll_bg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                listener.clickListener(0,null);
-            }
-        });
+
         final Friend data= (Friend) datas.get(position);
         if(type==0){
 
@@ -97,9 +92,13 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
             });
         }else {
 
-            if(TextUtil.isNotEmpty(data.userName)){
-                holders.name.setText(data.userName);
-            }  if(TextUtil.isNotEmpty(data.phone)){
+            if(TextUtil.isNotEmpty(data.nickname)){
+                holders.name.setText(data.nickname);
+            } else{
+                if(TextUtil.isNotEmpty(data.name)){
+                    holders.name.setText(data.name);
+                }
+            } if(TextUtil.isNotEmpty(data.phone)){
                 holders.phone.setText(data.phone);
             }
             Glide.with(context).load(data.avatar).asBitmap()
@@ -140,6 +139,12 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
                 holders.add.setText("已添加");
                 holders.add.setBackground(context.getResources().getDrawable(R.drawable.line_regle_blue));
             }
+            holders.ll_bg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.clickListener(0,data);//1代表未添加2代表已添加
+                }
+            });
             holders.add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

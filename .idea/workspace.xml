@@ -10,7 +10,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="e050c237-6955-48a9-9f22-cb5b86cf1e20" name="Default" comment="" />
+=======
+    <list default="true" id="f57d04d3-586e-4492-8b29-cafac1eab7c7" name="Default" comment="" />
+>>>>>>> Stashed changes
     <ignored path="Hand_care.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -5406,8 +5410,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="false" />
+=======
+<<<<<<< Updated upstream
+    <frame x="59" y="4" width="1803" height="1092" extended-state="0" />
+    <editor active="true" />
+=======
+    <frame x="187" y="48" width="1608" height="994" extended-state="1" />
+    <editor active="false" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2419175" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />

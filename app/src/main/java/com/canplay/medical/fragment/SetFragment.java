@@ -109,7 +109,13 @@ HomePresenter presenter;
     private String user_id;
     private unBind unbind=new unBind();
     private void initListener() {
+        ivImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), MineInfoActivity.class));
 
+            }
+        });
         ivSetting.setOnClickListener(this);
         ivBox.setOnClickListener(this);
         adapter.setClickListener(new EuipmentAdapter.ItemCliks() {
@@ -169,7 +175,6 @@ HomePresenter presenter;
 
                 break;
             case R.id.iv_box://
-                startActivity(new Intent(getActivity(), MineInfoActivity.class));
 
                 break;
 //           case R.id.iv_code://我的二维码

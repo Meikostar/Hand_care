@@ -17,7 +17,7 @@
             android:textSize="15.5sp"
             android:textColor="@color/blues"
             android:text="01.26"
-            android:layout_width="wrap_content"
+            android:layout_width="45dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
 

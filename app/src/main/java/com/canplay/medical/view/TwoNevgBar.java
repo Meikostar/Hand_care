@@ -23,6 +23,8 @@ import butterknife.BindView;
 public class TwoNevgBar extends LinearLayout implements View.OnClickListener {
 
     private RadioButton rdOne;
+    private ImageView imgs;
+    private ImageView img;
     private  RadioButton rdTwo;
     private  RadioGroup rdGroup;
     private Context context;
@@ -35,12 +37,16 @@ public class TwoNevgBar extends LinearLayout implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.rd_one:
                 rdGroup.check(R.id.rd_one);
+                img.setVisibility(VISIBLE);
+                imgs.setVisibility(INVISIBLE);
                 if (mListener!=null){
                     mListener.onChagne(0);
                 }
                 break;
             case R.id.rd_two:
                 rdGroup.check(R.id.rd_two);
+                imgs.setVisibility(VISIBLE);
+                img.setVisibility(INVISIBLE);
                 if (mListener!=null){
                     mListener.onChagne(1);
                 }
@@ -85,6 +91,8 @@ public class TwoNevgBar extends LinearLayout implements View.OnClickListener {
         rdOne = (RadioButton) view.findViewById(R.id.rd_one);
         rdTwo = (RadioButton) view.findViewById(R.id.rd_two);
         rdGroup = (RadioGroup) view.findViewById(R.id.rd_group);
+        img = (ImageView) view.findViewById(R.id.img0);
+        imgs = (ImageView) view.findViewById(R.id.img1);
 
         rdGroup.check(R.id.rd_one);
         rdOne.setOnClickListener(this);

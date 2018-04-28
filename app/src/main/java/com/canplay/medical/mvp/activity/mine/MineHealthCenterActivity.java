@@ -122,8 +122,13 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
         });
         adapter.setClickListener(new HealthCenterAdapter.OnItemClickListener() {
             @Override
-            public void clickListener(int poiston, Friend id) {
-                startActivity(new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class));
+            public void clickListener(int type, Friend id) {
+                if(type==0){
+                    startActivity(new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class));
+                }else {
+                    startActivity(new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class));
+                }
+
             }
         });
 
