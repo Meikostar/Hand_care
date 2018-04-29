@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:navigationRight_type="txt"
+        app:navigationLeft_img="@drawable/black_left"
         app:navigationRight_txt="刷新"
         app:navigationTitle="智能药盒" />
     <com.canplay.medical.view.scrollView.StickyScrollView

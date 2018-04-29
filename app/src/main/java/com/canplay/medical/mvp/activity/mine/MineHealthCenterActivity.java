@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.Add;
 import com.canplay.medical.bean.Euip;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.mvp.adapter.EuipmentAdapter;
@@ -23,6 +26,8 @@ import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.permission.PermissionConst;
 import com.canplay.medical.permission.PermissionGen;
 import com.canplay.medical.permission.PermissionSuccess;
+import com.canplay.medical.util.SpUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PhotoPopupWindow;
@@ -36,6 +41,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Subscription;
+import rx.functions.Action1;
 
 /**
  * 健康关爱中心
@@ -56,7 +63,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
     private PhotoPopupWindow mWindowAddPhoto;
-
+    private Subscription mSubscription;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_mine_healt_center);
@@ -71,9 +78,26 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
         mSuperRecyclerView.getMoreProgressView().getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
         adapter = new HealthCenterAdapter(this, 1);
+        adapter.setStatus(1);
         mSuperRecyclerView.setAdapter(adapter);
         presenter.getFriendList();
+        mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
+            @Override
+            public void call(SubscriptionBean.RxBusSendBean bean) {
+                if (bean == null) return;
 
+                if (bean.type == SubscriptionBean.CLOSE) {
+                    presenter.getFriendList();
+                }
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
+        RxBus.getInstance().addSubscription(mSubscription);
 //        reflash();
 
        //         mSuperRecyclerView.setRefreshing(false);
@@ -122,11 +146,24 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
         });
         adapter.setClickListener(new HealthCenterAdapter.OnItemClickListener() {
             @Override
-            public void clickListener(int type, Friend id) {
+            public void clickListener(int type, Friend friend) {
                 if(type==0){
-                    startActivity(new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class));
+                    Intent intent = new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class);
+                    intent.putExtra("type",1);
+                    intent.putExtra("id",friend.familyAndFriendsUserId);
+                    intent.putExtra("status",friend.status);
+                    startActivity(intent);
                 }else {
-                    startActivity(new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class));
+                    if(TextUtil.isNotEmpty(friend.status)){
+                        if(friend.status.equals("Waiting")){
+                           presenter.agree(friend.familyAndFriendsId);
+                        }else if(friend.status.equals("Pending")) {
+
+                        }else if(friend.status.equals("Active")) {
+
+                        }
+                    }
+
                 }
 
             }
@@ -160,6 +197,13 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
 
     public int currpage = 1;
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mSubscription!=null){
+            mSubscription.unsubscribe();
+        }
+    }
 
     @Override
     public void initData() {
@@ -211,7 +255,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
 //    }
     private List<Friend> list ;
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
 
         list= (List<Friend>) entity;
         adapter.setDatas(list);
@@ -221,10 +265,11 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     @Override
     public void toNextStep(int type) {
 
+
     }
 
     @Override
     public void showTomast(String msg) {
-
+      presenter.getFriendList();
     }
 }

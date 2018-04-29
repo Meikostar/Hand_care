@@ -9,11 +9,24 @@ import android.view.ViewGroup;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
+import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.bean.Record;
 import com.canplay.medical.mvp.adapter.recycle.PressRecordReCycleAdapter;
+import com.canplay.medical.mvp.component.DaggerBaseComponent;
+import com.canplay.medical.mvp.present.BaseContract;
+import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.util.LogUtils;
+import com.canplay.medical.util.SpUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
+import com.malinskiy.superrecyclerview.OnMoreListener;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +34,9 @@ import butterknife.ButterKnife;
 /**
  * x血压测量记录
  */
-public class BloodPressRecordActivity extends BaseActivity {
+public class BloodPressRecordActivity extends BaseActivity implements  BaseContract.View {
+    @Inject
+    BasesPresenter presenter;
 
 
     @BindView(R.id.navigationBar)
@@ -38,14 +53,20 @@ public class BloodPressRecordActivity extends BaseActivity {
     private int id;
     private int currpage=1;
 
-
+   private String userId;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_blood_press_record);
         ButterKnife.bind(this);
         navigationBar.setNavigationBarListener(this);
-
-
+        DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
+        presenter.attachView(this);
+        String id = getIntent().getStringExtra("id");
+        if(TextUtil.isNotEmpty(id)){
+            userId=id;
+        }else {
+            userId = SpUtil.getInstance().getUserId();
+        }
         navigationBar.setNavigationBarListener(this);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
@@ -54,9 +75,22 @@ public class BloodPressRecordActivity extends BaseActivity {
         adapter=new PressRecordReCycleAdapter(this,0);
         mSuperRecyclerView.setAdapter(adapter);
 
-
+        reflash();
     }
-
+    private void reflash() {
+        if (mSuperRecyclerView != null) {
+            //实现自动下拉刷新功能
+            mSuperRecyclerView.getSwipeToRefresh().post(new Runnable() {
+                @Override
+                public void run() {
+                    mSuperRecyclerView.setRefreshing(true);//执行下拉刷新的动画
+                    refreshListener.onRefresh();//执行数据加载操作
+                }
+            });
+        }
+    }
+    private int cout=10;
+    private int total=0;
     @Override
     public void bindEvents() {
         refreshListener = new SwipeRefreshLayout.OnRefreshListener() {
@@ -64,13 +98,19 @@ public class BloodPressRecordActivity extends BaseActivity {
             @Override
             public void onRefresh() {
                 // mSuperRecyclerView.showMoreProgress();
+                if(type==0){
+                    presenter.getBloodPressList(TYPE_PULL_REFRESH,total+"",cout+"",userId);
+                }else {
+                    presenter.getBloodList(TYPE_PULL_REFRESH,total+"",cout+"",userId);
+                }
 
-//                model.getOrderHistory(id,1,TYPE_PULL_REFRESH,BloodPressRecordActivity.this);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        mSuperRecyclerView.hideMoreProgress();
-                        LogUtils.e("result", "name2");
+                        if(mSuperRecyclerView!=null){
+                            mSuperRecyclerView.hideMoreProgress();
+                        }
+
                     }
                 }, 2000);
             }
@@ -78,48 +118,59 @@ public class BloodPressRecordActivity extends BaseActivity {
         mSuperRecyclerView.setRefreshListener(refreshListener);
 
     }
-//    public void onDataLoaded( int loadType, final long ServerTotalSize, List<HISTORY> datas) {
-//
-//        if (loadType == TYPE_PULL_REFRESH) {
-//            list.clear();
-//            for (HISTORY info : datas) {
-//                list.add(info);
-//            }
-//        } else {
-//            for (HISTORY info : datas) {
-//                list.add(info);
-//            }
-//        }
-//        adapter.setDatas(list);
-//        adapter.notifyDataSetChanged();
-//        mSuperRecyclerView.hideMoreProgress();
-//
-//        if (adapter.getDatas().size() < ServerTotalSize) {
-//            mSuperRecyclerView.setupMoreListener(new OnMoreListener() {
-//                @Override
-//                public void onMoreAsked(int overallItemsCount, int itemsBeforeMore, int maxLastVisiblePosition) {
-//                    currpage++;
-//                    mSuperRecyclerView.showMoreProgress();
-//
-//
-//                    new Handler().postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            if (adapter.getDatas().size() <= ServerTotalSize)
-//                                mSuperRecyclerView.hideMoreProgress();
-//                            LogUtils.e("result", "name3");
-//                            model.getOrderHistory(id,currpage,TYPE_PULL_MORE,OrderHistoryRecordActivity.this);
-//                        }
-//                    }, 2000);
-//                }
-//            }, 1);
-//        } else {
-//            mSuperRecyclerView.hideMoreProgress();
-//            mSuperRecyclerView.removeMoreListener();
-//        }
-//
-//
-//    }
+    public List<Record> list=new ArrayList<>();
+    public List<Record> data=new ArrayList<>();
+    public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
+
+        if (loadtype == TYPE_PULL_REFRESH) {
+            currpage=1;
+            list.clear();
+            for (Record info : datas) {
+                list.add(info);
+            }
+        } else {
+            for (Record info : datas) {
+                list.add(info);
+            }
+        }
+        adapter.setDatas(list);
+        adapter.notifyDataSetChanged();
+//        mSuperRecyclerView.setLoadingMore(false);
+        mSuperRecyclerView.hideMoreProgress();
+        /**
+         * 判断是否需要加载更多，与服务器的总条数比
+         */
+        if (haveNext) {
+            mSuperRecyclerView.setupMoreListener(new OnMoreListener() {
+                @Override
+                public void onMoreAsked(int overallItemsCount, int itemsBeforeMore, int maxLastVisiblePosition) {
+                    currpage++;
+                    mSuperRecyclerView.showMoreProgress();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (haveNext)
+                                mSuperRecyclerView.hideMoreProgress();
+
+                            if(type==0){
+                                presenter.getBloodPressList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
+
+                            }else {
+                                presenter.getBloodList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
+
+                            }
+
+                        }
+                    }, 2000);
+                }
+            }, 1);
+        } else {
+            mSuperRecyclerView.removeMoreListener();
+            mSuperRecyclerView.hideMoreProgress();
+
+        }
+    }
 
 
     @Override
@@ -127,4 +178,20 @@ public class BloodPressRecordActivity extends BaseActivity {
 
     }
 
+    @Override
+    public <T> void toEntity(T entity, int type) {
+        List<Record>     lists= (List<Record>) entity;
+
+        onDataLoaded(type,data.size()==cout,lists);
+    }
+
+    @Override
+    public void toNextStep(int type) {
+
+    }
+
+    @Override
+    public void showTomast(String msg) {
+
+    }
 }

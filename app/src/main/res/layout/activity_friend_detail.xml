@@ -89,7 +89,11 @@
           <TextView
               android:id="@+id/tv_bind"
               android:background="@drawable/line_regle_white"
-              android:padding="6dp"
+               android:minWidth="45dp"
+              android:paddingRight="9dp"
+              android:paddingLeft="9dp"
+              android:paddingTop="6dp"
+              android:paddingBottom="6dp"
               android:layout_marginRight="15dp"
               android:text="解除绑定"
               android:textColor="@color/white"
@@ -105,7 +109,7 @@
           android:layout_height="wrap_content">
 
           <ImageView
-
+              android:src="@drawable/qin1"
               android:id="@+id/imageView"
               android:layout_width="18dp"
               android:layout_height="18dp"
@@ -156,7 +160,7 @@
         android:layout_height="54dp"
         android:orientation="horizontal">
         <ImageView
-
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="15dp"/>
@@ -194,6 +198,7 @@
         android:layout_height="55dp"
         android:orientation="horizontal">
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="15dp"/>
@@ -227,7 +232,7 @@
         android:layout_height="55dp"
         android:orientation="horizontal">
         <ImageView
-
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="15dp"/>

@@ -97,6 +97,10 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
             } else{
                 if(TextUtil.isNotEmpty(data.name)){
                     holders.name.setText(data.name);
+                } else{
+                    if(TextUtil.isNotEmpty(data.userName)){
+                        holders.name.setText(data.userName);
+                    }
                 }
             } if(TextUtil.isNotEmpty(data.phone)){
                 holders.phone.setText(data.phone);
@@ -110,13 +114,19 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
                 holders.iv_arrow.setVisibility(View.GONE);
                 holders.add.setVisibility(View.VISIBLE);
                 if(TextUtil.isNotEmpty(data.status)){
-                    if(data.status.equals("waiting")){
-                        holders.add.setText("添加");
+                    if(data.status.equals("Waiting")){
+                        holders.add.setText("接受");
+                        holders.add.setVisibility(View.VISIBLE);
                         holders.add.setTextColor(context.getResources().getColor(R.color.white));
                         holders.add.setBackground(context.getResources().getDrawable(R.drawable.shape_bg_lin_cancel));
-                    }else {
+                    }else if(data.status.equals("Pending")) {
                         holders.add.setTextColor(context.getResources().getColor(R.color.color6));
-                        holders.add.setText("已添加");
+                        holders.add.setText("已发送");
+                        holders.add.setVisibility(View.VISIBLE);
+                        holders.add.setBackground(context.getResources().getDrawable(R.drawable.line_regle_blue));
+                    }else if(data.status.equals("Active")) {
+                        holders.add.setTextColor(context.getResources().getColor(R.color.color6));
+                        holders.add.setVisibility(View.INVISIBLE);
                         holders.add.setBackground(context.getResources().getDrawable(R.drawable.line_regle_blue));
                     }
                 }else {
@@ -127,9 +137,9 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
 
                 }
                 String userId = SpUtil.getInstance().getUserId();
-                if(userId.equals(data.userId)){
-                    holders.add.setVisibility(View.GONE);
-                }
+//                if(userId.equals(data.userId)){
+//                    holders.add.setVisibility(View.GONE);
+//                }
 
 
             }else if(status==2) {
@@ -145,6 +155,7 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
                     listener.clickListener(0,data);//1代表未添加2代表已添加
                 }
             });
+
             holders.add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

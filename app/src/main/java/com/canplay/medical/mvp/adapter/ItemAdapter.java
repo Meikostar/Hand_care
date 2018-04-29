@@ -45,7 +45,7 @@ public class ItemAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return list!=null?list.size():0;
+        return list!=null?list.size():3;
     }
 
     @Override

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.canplay.medical.R;
+import com.canplay.medical.bean.Record;
 import com.canplay.medical.mvp.adapter.viewholder.PressRecordkViewHolder;
 import com.canplay.medical.util.TimeUtil;
 
@@ -19,9 +20,8 @@ import static android.R.attr.data;
  */
 public class PressRecordReCycleAdapter extends BaseRecycleViewAdapter {
     private Context context;
-
     public PressRecordReCycleAdapter(Context context, int type){
-
+        this.type=type;
         this.context=context;
     }
     @Override
@@ -34,27 +34,52 @@ public class PressRecordReCycleAdapter extends BaseRecycleViewAdapter {
 
 
     }
-
+   private int type;
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
             PressRecordkViewHolder holders = (PressRecordkViewHolder) holder;
-            if(position!=0){
+        if(type==0){
+//            holders.tvData.setText("血压:"+data.value);
+        }else {
+//            holders.tvData.setText("血糖:"+data.value);
+        }
+
+        if(position!=0){
                 holders.line1.setVisibility(View.VISIBLE);
             }else {
                 holders.line1.setVisibility(View.GONE);
 
             }
-        if(position%2==0){
-            if(position!=0){
-                holders.line1.setVisibility(View.VISIBLE);
-            }
-            holders.iv_cyc.setVisibility(View.VISIBLE);
-        }else {
 
-            holders.iv_cyc.setVisibility(View.INVISIBLE);
+        Record data= (Record) datas.get(position);
+
+        if(position==0){
+            String time = TimeUtil.formatToMf(data.date);
+            String[] split = time.split("##");
+            holders.tvTime.setVisibility(View.VISIBLE);
+            if(split!=null&&split.length==2){
+                holders.tvTime.setText(split[0]);
+                holders.tvTimeDeal.setText(split[1]);
+            }
+
+        }else {
+            String time = TimeUtil.formatToMf(data.date);
+            String[] split = time.split("##");
+            Record dats= (Record) datas.get(position - 1);
+            String times = TimeUtil.formatToMf(dats.date);
+            String[] splits = times.split("##");
+            if(split!=null&&splits!=null){
+                if(split[0].equals(splits[0])){
+                    holders.tvTime.setVisibility(View.INVISIBLE);
+                    holders.tvTimeDeal.setText(split[1]);
+                }else {
+                    holders.tvTime.setVisibility(View.VISIBLE);
+                    holders.tvTime.setText(split[0]);
+                    holders.tvTimeDeal.setText(split[1]);
+                }
+            }
         }
-//            HISTORY data= (HISTORY) datas.get(position);
 //            if(position!=0){
 //                holders.ll_bg.setVisibility(View.VISIBLE);
 //
@@ -70,7 +95,7 @@ public class PressRecordReCycleAdapter extends BaseRecycleViewAdapter {
 
     @Override
     public int getItemCount() {
-        int count = 6;
+        int count = 0;
 
         if (datas != null && datas.size() > 0) {
             count = datas.size();

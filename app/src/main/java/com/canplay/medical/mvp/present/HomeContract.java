@@ -12,7 +12,7 @@ public class HomeContract {
     public    interface View extends BaseView {
 
 //        <T> void toList(List<T> list, int type, int... refreshType);
-        <T> void toEntity(T entity);
+        <T> void toEntity(T entity,int type);
 
         void toNextStep(int type);
 

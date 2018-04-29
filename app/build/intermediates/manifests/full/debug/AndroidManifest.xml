@@ -133,6 +133,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
+            android:name="com.canplay.medical.mvp.activity.RemindFirstDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.canplay.medical.mvp.activity.RemindSecondDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name="com.canplay.medical.mvp.activity.mine.AddFriendActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />

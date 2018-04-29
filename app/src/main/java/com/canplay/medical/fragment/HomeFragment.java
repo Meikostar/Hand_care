@@ -220,7 +220,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     }
 
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         BASE entitys = (BASE) entity;
         String time = entitys.nextTaskDueIn;
         String[] split = time.split(":");

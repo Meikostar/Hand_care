@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Add;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.mvp.adapter.recycle.HealthCenterAdapter;
@@ -38,6 +40,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Subscription;
+import rx.functions.Action1;
 
 /**
  * 添加亲友/添加医生
@@ -65,7 +69,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     private final int TYPE_REMOVE = 3;
     private PhotoPopupWindow mWindowAddPhoto;
     private int type;//0是添加医生 1,qingyou
-
+    private Subscription mSubscription;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_add_friend);
@@ -79,7 +83,23 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
         mSuperRecyclerView.getMoreProgressView().getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
 
+        mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
+            @Override
+            public void call(SubscriptionBean.RxBusSendBean bean) {
+                if (bean == null) return;
 
+                if (bean.type == SubscriptionBean.CLOSE) {
+                    finish();
+                }
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
+        RxBus.getInstance().addSubscription(mSubscription);
 
          if(type==1){
              navigationBar.setNaviTitle("亲友添加");
@@ -110,6 +130,14 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
         //config.setShowFlashLight(true);//是否显示闪光灯
         //intent.putExtra(Constant.INTENT_ZXING_CONFIG, config);
         startActivityForResult(intent, REQUEST_CODE_SCAN);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mSubscription!=null){
+            mSubscription.unsubscribe();
+        }
     }
 
     @Override
@@ -181,7 +209,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
             public void clickListener(int poiston, Friend data) {
 //                presenter.getDoctorInfo(id);
 
-                if(type==1){
+                if(type==1&&poiston==1){
                     Add add = new Add();
                     add.familyAndFriendsUserId=data.userId;
                     add.familyAndFriendsUserName=data.userName;
@@ -207,10 +235,20 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
             if (data != null) {
 
                 String content = data.getStringExtra("scan_result");
-               if(type==0){
+
+
+                if(type==0){
                    presenter.getDoctorInfo(content);
                }else {
-                   presenter.getFriendInfo(content);
+                    String[] split = content.split("###");
+                    if(split==null||split.length!=2){
+                        return;
+                    }
+                    Intent intent = new Intent(AddFriendActivity.this, FriendDetailActivity.class);
+                    intent.putExtra("id",split[1]);
+                    intent.putExtra("status","add");
+                    startActivity(intent);
+
                }
 
 //                result.setText("扫描结果为：" + content);
@@ -226,7 +264,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
    private int sta;
    private List<Friend> list;
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         list= (List<Friend>) entity;
         sta=1;
 
@@ -239,9 +277,14 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
     @Override
     public void toNextStep(int type) {
-        adapter.setStatus(2);
-        adapter.notifyDataSetChanged();
-        showToasts("添加成功");
+        if(type==6){
+
+        }else {
+            adapter.setStatus(2);
+            adapter.notifyDataSetChanged();
+            showToasts("添加成功");
+        }
+
     }
 
     @Override

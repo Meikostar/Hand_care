@@ -18,6 +18,10 @@ import com.canplay.medical.fragment.SetFragment;
 import com.canplay.medical.fragment.SetFragment_MembersInjector;
 import com.canplay.medical.mvp.activity.MainActivity;
 import com.canplay.medical.mvp.activity.MainActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.RemindFirstDetailActivity;
+import com.canplay.medical.mvp.activity.RemindFirstDetailActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.RemindSecondDetailActivity;
+import com.canplay.medical.mvp.activity.RemindSecondDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.account.ForgetFirstActivity;
 import com.canplay.medical.mvp.activity.account.ForgetFirstActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.account.ForgetPswActivity;
@@ -50,6 +54,12 @@ import com.canplay.medical.mvp.activity.home.SmartKitActivity;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.mine.BloodPressRecordActivity;
+import com.canplay.medical.mvp.activity.mine.BloodPressRecordActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.mine.BloodSugarRecordActivity;
+import com.canplay.medical.mvp.activity.mine.BloodSugarRecordActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.mine.FriendDetailActivity;
+import com.canplay.medical.mvp.activity.mine.FriendDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.MineEuipmentActivity;
 import com.canplay.medical.mvp.activity.mine.MineEuipmentActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.MineHealthCenterActivity;
@@ -81,6 +91,18 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   private Provider<BasesPresenter> basesPresenterProvider;
 
+  private MembersInjector<BloodSugarRecordActivity> bloodSugarRecordActivityMembersInjector;
+
+  private MembersInjector<BloodPressRecordActivity> bloodPressRecordActivityMembersInjector;
+
+  private Provider<HomePresenter> homePresenterProvider;
+
+  private MembersInjector<FriendDetailActivity> friendDetailActivityMembersInjector;
+
+  private MembersInjector<RemindSecondDetailActivity> remindSecondDetailActivityMembersInjector;
+
+  private MembersInjector<RemindFirstDetailActivity> remindFirstDetailActivityMembersInjector;
+
   private MembersInjector<AddDataActivity> addDataActivityMembersInjector;
 
   private MembersInjector<TimeXRecordActivity> timeXRecordActivityMembersInjector;
@@ -96,8 +118,6 @@ public final class DaggerBaseComponent implements BaseComponent {
   private MembersInjector<ForgetFirstActivity> forgetFirstActivityMembersInjector;
 
   private MembersInjector<SmartKitActivity> smartKitActivityMembersInjector;
-
-  private Provider<HomePresenter> homePresenterProvider;
 
   private MembersInjector<MeasureRemindFragment> measureRemindFragmentMembersInjector;
 
@@ -168,6 +188,23 @@ public final class DaggerBaseComponent implements BaseComponent {
 
     this.basesPresenterProvider = BasesPresenter_Factory.create(apiManagerProvider);
 
+    this.bloodSugarRecordActivityMembersInjector =
+        BloodSugarRecordActivity_MembersInjector.create(basesPresenterProvider);
+
+    this.bloodPressRecordActivityMembersInjector =
+        BloodPressRecordActivity_MembersInjector.create(basesPresenterProvider);
+
+    this.homePresenterProvider = HomePresenter_Factory.create(apiManagerProvider);
+
+    this.friendDetailActivityMembersInjector =
+        FriendDetailActivity_MembersInjector.create(homePresenterProvider);
+
+    this.remindSecondDetailActivityMembersInjector =
+        RemindSecondDetailActivity_MembersInjector.create(basesPresenterProvider);
+
+    this.remindFirstDetailActivityMembersInjector =
+        RemindFirstDetailActivity_MembersInjector.create(basesPresenterProvider);
+
     this.addDataActivityMembersInjector =
         AddDataActivity_MembersInjector.create(basesPresenterProvider);
 
@@ -190,8 +227,6 @@ public final class DaggerBaseComponent implements BaseComponent {
 
     this.smartKitActivityMembersInjector =
         SmartKitActivity_MembersInjector.create(basesPresenterProvider);
-
-    this.homePresenterProvider = HomePresenter_Factory.create(apiManagerProvider);
 
     this.measureRemindFragmentMembersInjector =
         MeasureRemindFragment_MembersInjector.create(homePresenterProvider);
@@ -251,6 +286,31 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(BloodSugarRecordActivity binderActivity) {
+    bloodSugarRecordActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(BloodPressRecordActivity binderActivity) {
+    bloodPressRecordActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(FriendDetailActivity binderActivity) {
+    friendDetailActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(RemindSecondDetailActivity binderActivity) {
+    remindSecondDetailActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(RemindFirstDetailActivity binderActivity) {
+    remindFirstDetailActivityMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

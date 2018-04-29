@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.Province;
 import com.canplay.medical.bean.avator;
 import com.canplay.medical.mvp.activity.account.LoginActivity;
@@ -80,7 +81,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     TextView tvBirth;
     @BindView(R.id.tv_area)
     TextView tv_area;
-
+    private Friend friend;
     private EditorNameDialog dialog;
     private PhotoPopupWindow mWindowAddPhoto;
     private int sex=0;
@@ -92,6 +93,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         navigationBar.setNavigationBarListener(this);
+        friend= (Friend) getIntent().getSerializableExtra("friend");
         dialog=new EditorNameDialog(this,line);
         selectorDialog = new TimeSelectorDialog(MineInfoActivity.this);
         selectorDialog.setDate(new Date(System.currentTimeMillis()))
@@ -155,7 +157,14 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     private Province prov;
     @Override
     public void initData() {
-
+        Glide.with(this).load(friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivPhone);
+        if(TextUtil.isNotEmpty(friend.userName)){
+            tvName.setText(friend.userName);
+        }   if(TextUtil.isNotEmpty(friend.dob)){
+            String[] split = friend.dob.split("//");
+            String birth=split[0]+"."+split[1]+"."+split[2];
+            tvBirth.setText(birth);
+        }
     }
     @PermissionSuccess(requestCode = PermissionConst.REQUECT_CODE_CAMERA)
     public void requestSdcardSuccess() {

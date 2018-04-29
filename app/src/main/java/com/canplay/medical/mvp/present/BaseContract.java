@@ -33,7 +33,7 @@ public class BaseContract {
         /**
          * 血压测量记录
          */
-        void getBloodPressList(int  type,String from, String take);
+        void getBloodPressList(int  type,String from, String take,String userId);
 
         /**
          * 添加提醒
@@ -47,7 +47,7 @@ public class BaseContract {
         /**
          * 血糖测量记录
          */
-        void getBloodList(final int  type, String from, String take);
+        void getBloodList(final int  type, String from, String take,String userId);
 
         /**
          * 指定天数血糖测量记录

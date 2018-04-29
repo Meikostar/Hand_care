@@ -94,7 +94,7 @@ HomePresenter presenter;
 
 
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         list= (List<Euipt>) entity;
 
     }

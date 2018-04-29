@@ -252,7 +252,7 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
     }
 
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
 
     }
 

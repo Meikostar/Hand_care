@@ -56,7 +56,7 @@ public class MineCodeActivity extends BaseActivity {
                             .centerCrop()
                             .into(500, 500)
                             .get();
-                    final Bitmap qrCode = CodeCreator.createQRCode(SpUtil.getInstance().getUserId(), 400, 400, myBitmap);
+                    final Bitmap qrCode = CodeCreator.createQRCode("user###"+SpUtil.getInstance().getUserId(), 400, 400, myBitmap);
 
                     runOnUiThread(new Runnable() {
                         @Override
@@ -72,7 +72,7 @@ public class MineCodeActivity extends BaseActivity {
                         public void run() {
                             final Bitmap qrCode;
                             try {
-                                qrCode = CodeCreator.createQRCode(SpUtil.getInstance().getUserId(), 400, 400, null);
+                                qrCode = CodeCreator.createQRCode("user###"+SpUtil.getInstance().getUserId(), 400, 400, null);
                                 ivCode.setImageBitmap(qrCode);
                             } catch (WriterException e1) {
                                 e1.printStackTrace();

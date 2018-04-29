@@ -20,6 +20,7 @@ public class SubscriptionBean {
     public static int FINISH=105;//
     public static int CHOOSMEDICAL=106;//选择药
     public static int MEDICALREFASH=107;//药物提醒列表刷新
+    public static int CLOSE=108;//药物提醒列表刷新
 
 
 

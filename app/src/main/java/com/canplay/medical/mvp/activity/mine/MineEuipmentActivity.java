@@ -173,7 +173,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
     private List<Euipt> list;
 
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         list = (List<Euipt>) entity;
 
         adapter.setData(list);

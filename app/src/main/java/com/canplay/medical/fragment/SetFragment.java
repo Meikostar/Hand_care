@@ -12,10 +12,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.bean.Euipt;
+import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.unBind;
 import com.canplay.medical.mvp.activity.mine.MineInfoActivity;
 import com.canplay.medical.mvp.activity.mine.SettingActivity;
@@ -24,6 +26,7 @@ import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.SpUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.EditorNameDialog;
 import com.canplay.medical.view.PhotoPopupWindow;
 
@@ -86,7 +89,9 @@ HomePresenter presenter;
         unbinder = ButterKnife.bind(this, view);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
+        presenter.getFriendInfo(SpUtil.getInstance().getUserId());
         presenter.getSmartList();
+
         adapter = new EuipmentAdapter(getActivity());
         rlMenu.setAdapter(adapter);
         user_id= SpUtil.getInstance().getUserId();
@@ -112,7 +117,12 @@ HomePresenter presenter;
         ivImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), MineInfoActivity.class));
+                if(friend==null){
+                    return;
+                }
+                Intent intent = new Intent(getActivity(), MineInfoActivity.class);
+                intent.putExtra("friend",friend);
+                startActivity(intent);
 
             }
         });
@@ -184,12 +194,28 @@ HomePresenter presenter;
     }
 
     private List<Euipt> list;
-
+    private Friend friend;
     @Override
-    public <T> void toEntity(T entity) {
-        list = (List<Euipt>) entity;
+    public <T> void toEntity(T entity,int type) {
+        if(type==0){
+            list = (List<Euipt>) entity;
 
-        adapter.setData(list);
+            adapter.setData(list);
+        }else {
+            friend= (Friend) entity;
+
+            Glide.with(this).load(friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivImg);
+            if(TextUtil.isNotEmpty(friend.userName)){
+                tvName.setText(friend.userName);
+            }   if(TextUtil.isNotEmpty(friend.phone)){
+                tvPhone.setText(friend.phone);
+            }  if(TextUtil.isNotEmpty(friend.dob)){
+                String[] split = friend.dob.split("//");
+                String birth=split[0]+"."+split[1]+"."+split[2];
+                tvBirth.setText(birth);
+            }
+        }
+
     }
 
     @Override

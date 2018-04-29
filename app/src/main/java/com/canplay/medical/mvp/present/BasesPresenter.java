@@ -108,8 +108,8 @@ public class BasesPresenter implements BaseContract.Presenter {
     }
 
     @Override
-    public void getBloodPressList(final int  type, String from, String take) {
-        String userId = SpUtil.getInstance().getUserId();
+    public void getBloodPressList(final int  type, String from, String take,String userId) {
+
         subscription = ApiManager.setSubscribe(contactApi.getBloodPressList(userId,from,take), new MySubscriber<List<Record>>(){
             @Override
             public void onError(Throwable e){
@@ -255,9 +255,9 @@ public class BasesPresenter implements BaseContract.Presenter {
     }
 
     @Override
-    public void getBloodList(final int  type, String from, String take) {
-        String userId = SpUtil.getInstance().getUserId();
-        subscription = ApiManager.setSubscribe(contactApi.getBloodList(userId,from,take), new MySubscriber<List<Sugar>>(){
+    public void getBloodList(final int  type, String from, String take,String userId) {
+
+        subscription = ApiManager.setSubscribe(contactApi.getBloodList(userId,from,take), new MySubscriber<List<Record>>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
@@ -266,7 +266,7 @@ public class BasesPresenter implements BaseContract.Presenter {
             }
 
             @Override
-            public void onNext(List<Sugar> entity){
+            public void onNext(List<Record> entity){
 
                 mView.toEntity(entity,type);
             }

@@ -3,66 +3,75 @@
 
     <item
         is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\BaiduLBS_Android.jar"
-        jumboMode="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\BaiduLBS_Android.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="8c3900810e7530a900f7271d76ab11f8e4656616">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\BaiduLBS_Android_6300f282f35a85d62bc111911972ce89957e7b3e\classes.dex" />
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\BaiduLBS_Android_790953e9f40ebc3bcfa0544e40185e2b8fd69fdb\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\jpush-android-3.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="989c1fc762c0424b2e25692444e9f1df60288a1d">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jpush-android-3.1.1_6b386cdf677c4c76ab3d5e8432af8194960d8a66\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c45deba266fff7b1b3b38f3154188cbee2163b47\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\jcore-android-1.1.9.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d36b4154d952a6f18fd438469929820a6e598127">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jcore-android-1.1.9_eed8923ed23544122299a806e30aa8430903887f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="a617ff1bc9e02b72b09734fe2705fcf1fcda06cf">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7edaa4a5055f99783324d5eb7d0727c40895d24d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\app\libs\pinyin4j-2.5.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="ae353005f973da1cd8545b54354504c2503f6865">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\pinyin4j-2.5.0_59d87aa4f8d697a54eb37c0a419856bc1a6bd31a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\libs\zxing-4.7.3.jar"
-        jumboMode="true"
+        jar="F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\libs\zxing-4.7.3.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="8de9ca74af1dc9b963af4f072fb78eba58e9743a">
-        <dex dex="F:\GitWorkSapce\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\8\zxing-4.7.3_7ad233d75fccdaecb4fa2a2c7e994e92250826a1\classes.dex" />
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\8\zxing-4.7.3_9eb20143916b9d845d2c116dcf815bb8da3322e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b32bf2d9c45711287eece78cdf2326acbbeb02fb">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_f9421b3be7df8d8aff01bdb50f58085859295beb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\jcore-android-1.1.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d36b4154d952a6f18fd438469929820a6e598127">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jcore-android-1.1.9_22c03ca4ced4221f74af37a0c9642d9e6777f51a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="38c11d7a91cc9e84bd0cb724212480a8d020ecf4">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_035ccfc126bd0a605c1909845564d18ab1af597f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6b90fe0950a505c89b59eb3d9847792d1624150a">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_445d68f65e05b66e081df424fa39ac6dd8dc06df\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\jpush-android-3.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="989c1fc762c0424b2e25692444e9f1df60288a1d">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\jpush-android-3.1.1_f4118149fcdfd0de85b8f772f68982b4fd3186d2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\app\libs\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\2\pinyin4j-2.5.0_cc5b17118a95cf18dcfd8cda20cbe3930a9f1b43\classes.dex" />
     </item>
 
 </items>

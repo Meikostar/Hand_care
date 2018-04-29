@@ -1,9 +1,11 @@
 package com.canplay.medical.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by mykar on 17/4/26.
  */
-public class Friend {
+public class Friend implements Serializable{
 //    {
 //        "familyAndFriendsId":"8b2f5291-ea12-e711-b9e4-2c44fd9333fc",
 //            "userId":"ccda9cf7-d871-41a5-8548-77022c54f1bf",

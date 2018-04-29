@@ -189,7 +189,7 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
 
     private List<Friend> list;
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         list= (List<Friend>) entity;
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();

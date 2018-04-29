@@ -122,7 +122,7 @@ public class SearchMedicalActivity extends BaseActivity implements HomeContract.
     private int type;
     private List<Medicines> data;
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         type=1;
         tvSearch.setText("取消");
         data= (List<Medicines>) entity;

@@ -69,7 +69,7 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
 
    private List<Message> data;
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         data= (List<Message>) entity;
         adapter.setData(data);
     }

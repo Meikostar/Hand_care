@@ -62,7 +62,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(BASE entity){
 
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -100,7 +100,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Message> entity){
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -188,7 +188,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Medicine> entity){
-                mView.toEntity(entity.get(0).schedule);
+                mView.toEntity(entity.get(0).schedule,0);
 
             }
         });
@@ -208,7 +208,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Medicine> entity){
-                mView.toEntity(entity.get(0).schedule);
+                mView.toEntity(entity.get(0).schedule,0);
 
             }
         });
@@ -228,7 +228,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Medicine> entity){
-                mView.toEntity(entity.get(0).schedule);
+                mView.toEntity(entity.get(0).schedule,0);
 
             }
         });
@@ -249,7 +249,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(BASE entity){
                 entity.type=3+"";
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -286,7 +286,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Friend> entity){
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -304,9 +304,8 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext( Friend entity){
-                List<Friend> list=new ArrayList<Friend>();
-                list.add(entity);
-                mView.toEntity(list);
+
+                mView.toEntity(entity,1);
 
             }
         });
@@ -324,7 +323,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Friend> entity){
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -344,7 +343,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(List<Euipt> entity){
 
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -367,25 +366,29 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(List<BASE> entity){
 
-                mView.toEntity(entity);
+                mView.toNextStep(6);
             }
         });
     }
 
     @Override
     public void agree(String id) {
-        subscription = ApiManager.setSubscribe(contactApi.agree(id), new MySubscriber<BASE>(){
+        subscription = ApiManager.setSubscribe(contactApi.agree(id), new MySubscriber<String>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-
+                mView.showTomast(e.getMessage());
 
             }
 
             @Override
-            public void onNext(BASE entity){
+            public void onNext(String entity){
+                if(entity.equals("true")){
+                    mView.toNextStep(4);
+                }else {
+                    mView.showTomast("操作失败");
+                }
 
-                mView.toEntity(entity);
             }
         });
     }
@@ -403,7 +406,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(BASE entity){
 
-                mView.toEntity(entity);
+                mView.toNextStep(8);
             }
         });
     }
@@ -442,7 +445,7 @@ public class HomePresenter implements HomeContract.Presenter {
                 if(entity.size()>0&&entity.get(0)!=null){
                     entity.get(0).type=1;
                 }
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -462,7 +465,7 @@ public class HomePresenter implements HomeContract.Presenter {
                 if(entity.size()>0&&entity.get(0)!=null){
                     entity.get(0).type=2;
                 }
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -480,7 +483,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(List<Medicines> entity){
 
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -498,7 +501,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(Medicines entity){
 
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });
@@ -516,7 +519,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Friend> entity){
-                mView.toEntity(entity);
+                mView.toEntity(entity,0);
 
             }
         });

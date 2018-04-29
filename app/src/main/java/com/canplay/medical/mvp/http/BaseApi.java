@@ -283,11 +283,11 @@ public interface BaseApi {
      * 同意友
      */
     @POST("Flow/v2/Circle/Approve/{familyAndFriendsId}")
-    Observable<BASE > agree(@Path("familyAndFriendsId") String familyAndFriendsId);
+    Observable<String> agree(@Path("familyAndFriendsId") String familyAndFriendsId);
     /**
      * bu不同意友/移除好友关系
      */
-    @DELETE("Flow/v2/Circle/Approve/{familyAndFriendsId}")
+    @DELETE("Flow/v2/Circle/{familyAndFriendsId}")
     Observable<BASE> dissAgree(@Path("familyAndFriendsId") String familyAndFriendsId);
 
 
@@ -321,7 +321,7 @@ public interface BaseApi {
      * 血糖数据记录
      */
     @GET("Flow/v2/BloodGlucose/{userId}/{from}/{take}")
-    Observable<List<Sugar>> getBloodList(@Path("userId") String userId,
+    Observable<List<Record>> getBloodList(@Path("userId") String userId,
                                    @Path("from") String from, @Path("take") String take);
 
     /**

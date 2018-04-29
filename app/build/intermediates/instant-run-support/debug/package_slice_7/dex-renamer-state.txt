@@ -1,4 +1,0 @@
-#Sat Apr 28 23:05:31 CST 2018
-base.0=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_7
-renamed.0=classes.dex
-file.0=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_7\\classes.dex

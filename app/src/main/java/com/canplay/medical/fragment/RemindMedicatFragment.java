@@ -122,7 +122,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
     private List<Medicine> data;
 
     @Override
-    public <T> void toEntity(T entity) {
+    public <T> void toEntity(T entity,int type) {
         data = (List<Medicine>) entity;
         adapter.setData(data);
     }

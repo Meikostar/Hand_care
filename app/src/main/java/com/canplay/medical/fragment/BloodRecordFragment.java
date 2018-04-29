@@ -23,6 +23,7 @@ import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.view.DivItemDecoration;
 import com.malinskiy.superrecyclerview.OnMoreListener;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
@@ -68,6 +69,7 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
         unbinder = ButterKnife.bind(this, view);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
+         userId = SpUtil.getInstance().getUserId();
         initView();
 
 
@@ -79,8 +81,9 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
         super.onResume();
 
     }
-    private int cout=12;
+    private int cout=10;
     private int total=0;
+    private String userId;
     private void initView() {
 
         mLinearLayoutManager = new LinearLayoutManager(getActivity());
@@ -100,9 +103,9 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
             public void onRefresh() {
                 // mSuperRecyclerView.showMoreProgress();
                 if(type==0){
-                    presenter.getBloodPressList(TYPE_PULL_REFRESH,total+"",cout+"");
+                    presenter.getBloodPressList(TYPE_PULL_REFRESH,total+"",cout+"",userId);
                 }else {
-                    presenter.getBloodList(TYPE_PULL_REFRESH,total+"",cout+"");
+                    presenter.getBloodList(TYPE_PULL_REFRESH,total+"",cout+"",userId);
                 }
 
                 new Handler().postDelayed(new Runnable() {
@@ -157,10 +160,10 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
                                 mSuperRecyclerView.hideMoreProgress();
 
                             if(type==0){
-                                presenter.getBloodPressList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"");
+                                presenter.getBloodPressList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
 
                             }else {
-                                presenter.getBloodList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"");
+                                presenter.getBloodList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
 
                             }
 
@@ -204,8 +207,7 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
     @Override
     public <T> void toEntity(T entity, int type) {
         List<Record>     lists= (List<Record>) entity;
-
-        onDataLoaded(type,data.size()==cout,lists);
+        onDataLoaded(type,lists.size()==cout,lists);
     }
 
     @Override
