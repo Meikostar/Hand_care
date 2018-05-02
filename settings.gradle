@@ -1,1 +1,1 @@
-include ':app', ':gallery', ':LibMarsdaemon', ':zxingLibrary'
+include ':app', ':gallery', ':LibMarsdaemon', ':zxingLibrary', ':litepal'

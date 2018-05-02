@@ -129,7 +129,7 @@ public class TimeSelectorDialog {
     }
 
     public interface BindClickListener{
-        void time(String time);
+        void time(String time,int poition);
     }
 
     private void initView(){
@@ -168,39 +168,13 @@ public class TimeSelectorDialog {
 
                 String str=null;
                 String date=null;
+                int selection = mCycleWheelViewDate.getSelection();
                 str= mDataList.get(mCycleWheelViewDate.getSelection());
                 String[] yr = str.split("年");
                     date=yr[0]+"-"+hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu)))+"-"+minute.substring(0,minute.indexOf(mContext.getString(R.string.riis)));
 
 
-                int month =0;
-                int choosm =0;
-
-                month= Integer.valueOf(months);
-                choosm = Integer.valueOf(hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu))));
-
-
-                if(type==0){
-                    if(choosm<month){
-                        date="";
-                    }else if(choosm==month){
-                        if(status==0){
-                            if(langue){
-                                if(Integer.valueOf(days)>Integer.valueOf(minute.substring(0,minute.indexOf(mContext.getString(R.string.riis))))){
-                                    date="";
-                                }
-                            }else {
-                                if(Integer.valueOf(days)>Integer.valueOf(minute)){
-                                    date="";
-                                }
-                            }
-
-                        }
-
-                    }
-                }
-
-                mBindClickListener.time(date);
+                mBindClickListener.time(date,selection);
 
             }
         });
@@ -234,7 +208,7 @@ public class TimeSelectorDialog {
         mCycleWheelViewDate.setLabelSize(12f);
         mCycleWheelViewDate.setAlphaGradual(0.7f);
         mCycleWheelViewDate.setCycleEnable(false);
-        mCycleWheelViewDate.setSelection(0);
+        mCycleWheelViewDate.setSelection(85);
         mCycleWheelViewDate.setLabelColor(Color.parseColor("#b3b3b3"));
         mCycleWheelViewDate.setDivider(Color.parseColor("#e3e3e3"), 1);
         mCycleWheelViewDate.setLabelSelectColor(Color.parseColor("#333333"));
@@ -290,7 +264,7 @@ public class TimeSelectorDialog {
     private void setBeforeDate(){
         List<String> mList=new ArrayList<>();
         List<Integer> mList2=new ArrayList<>();
-        for (int i =0;i<10;i++){
+        for (int i =0;i<100;i++){
             timeEnd = timeEnd - (1000*60*60*24);
             mBeforeCalendar.setTimeInMillis(timeEnd);
             month= mBeforeCalendar.get(Calendar.MONTH)+1;//月
@@ -455,11 +429,21 @@ public class TimeSelectorDialog {
     }
 
     public void show(View parentView){
-        initView();
-        mPopupWindow = new PopupWindow(mView, ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);
-        mPopupWindow.setBackgroundDrawable(new BitmapDrawable());
-        mPopupWindow.setFocusable(true);
+        if(mView==null){
+            initView();
+        }
+        if(mPopupWindow==null){
+            mPopupWindow = new PopupWindow(mView, ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT);
+            mPopupWindow.setBackgroundDrawable(new BitmapDrawable());
+            mPopupWindow.setFocusable(true);
+            if(mPopupWindow.isShowing()){
+                mPopupWindow.dismiss();
+            }else {
+                mPopupWindow.showAtLocation(parentView , Gravity.BOTTOM, 0, 0);
+            }
+        }
+
         if(mPopupWindow.isShowing()){
             mPopupWindow.dismiss();
         }else {

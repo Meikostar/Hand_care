@@ -20,6 +20,8 @@ import com.canplay.medical.util.JPushUtils;
 import com.marswin89.marsdaemon.DaemonApplication;
 import com.marswin89.marsdaemon.DaemonConfigurations;
 
+import org.litepal.LitePalApplication;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +40,7 @@ import io.valuesfeng.picker.universalimageloader.core.assist.QueueProcessingType
  * Created by peter on 2016/9/11.
  */
 
-public class BaseApplication extends DaemonApplication {
+public class BaseApplication extends DaemonApplication  {
     //全局单例
     AppComponent mAppComponent;
     public static  BaseApplication cplayApplication;

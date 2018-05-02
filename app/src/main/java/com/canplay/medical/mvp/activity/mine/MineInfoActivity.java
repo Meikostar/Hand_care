@@ -99,7 +99,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
         selectorDialog.setDate(new Date(System.currentTimeMillis()))
                 .setBindClickListener(new TimeSelectorDialog.BindClickListener() {
                     @Override
-                    public void time(String time) {
+                    public void time(String time,int poition) {
                         tvBirth.setText(time);
                     }
                 });

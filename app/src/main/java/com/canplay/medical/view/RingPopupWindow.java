@@ -70,7 +70,7 @@ public class RingPopupWindow extends PopupWindow{
                 mSystemRingAdapter.notifyDataSetChanged();
                 // 设置最后一次选中的铃声选择界面位置为系统铃声界面
                 RingSelectItem.getInstance().setRingPager(0);
-                listener.clickListener(ringName,poistion);
+                listener.clickListener(ringName,ringUrl);
                 // 播放音频文件
                 switch (ringUrl) {
                     case WeacConstants.DEFAULT_RING_URL:
@@ -99,7 +99,7 @@ public class RingPopupWindow extends PopupWindow{
    }
    private ClickListener listener;
    public interface  ClickListener{
-       void clickListener(String menu, int poistion);
+       void clickListener(String menu, String poistion);
    }
     @Override
     public void showAsDropDown(View anchor) {

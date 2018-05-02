@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#003c3b37"
+    android:background="#00000000"
     android:orientation="vertical">
 
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/content_bg"
+        android:background="#00000000"
         android:gravity="center">
 
         <FrameLayout

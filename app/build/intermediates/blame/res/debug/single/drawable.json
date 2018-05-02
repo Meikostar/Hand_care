@@ -144,6 +144,10 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\mine6.png"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_circle_toast.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\shape_circle_toast.xml"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cw4.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\cw4.png"
     },
@@ -400,12 +404,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mine7.png",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\mine7.png"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mine7.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\mine7.png"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",

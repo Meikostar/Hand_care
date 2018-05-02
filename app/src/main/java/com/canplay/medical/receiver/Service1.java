@@ -20,7 +20,7 @@ public class Service1 extends Service{
         // 获取系统的闹钟服务
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         // 触发闹钟的时间（毫秒）
-        long triggerTime = System.currentTimeMillis() + 100000000;
+        long triggerTime = System.currentTimeMillis() + 1000000000;
         Intent intent = new Intent(this, AlarmReceiver.class);
         intent.setAction("com.canplay.alarm.lxm");
         PendingIntent op = PendingIntent.getBroadcast(this, 0, intent, 0);

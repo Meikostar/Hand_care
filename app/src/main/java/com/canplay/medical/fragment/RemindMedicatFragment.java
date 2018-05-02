@@ -13,15 +13,20 @@ import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.mvp.activity.mine.RemindSettingActivity;
 import com.canplay.medical.mvp.adapter.RemindMedicatAdapter;
+import com.canplay.medical.mvp.component.AlarmClockDeleteEvent;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.AlarmClockOperate;
+import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.RegularListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -56,6 +61,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         presenter.MedicineRemindList();
+        mAlarmClockList = new ArrayList<>();
         initView();
 
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
@@ -63,7 +69,11 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
                 if(SubscriptionBean.MEDICALREFASH==bean.type){
+                    AlarmClock alarm= (AlarmClock) bean.content;
+                     addList(alarm);
                     presenter.MedicineRemindList();
+                }else if(SubscriptionBean.ALARM==bean.type){
+
                 }
 
 
@@ -117,6 +127,76 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
             mSubscription.unsubscribe();
         }
 
+    }
+    /**
+     * 保存闹钟信息的list
+     */
+    private List<AlarmClock> mAlarmClockList;
+    private void addList(AlarmClock ac) {
+        mAlarmClockList.clear();
+
+        int id = ac.getId();
+        int count = 0;
+        int position = 0;
+        List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
+        for (AlarmClock alarmClock : list) {
+            mAlarmClockList.add(alarmClock);
+
+            if (id == alarmClock.getId()) {
+                position = count;
+                if (alarmClock.isOnOff()) {
+                    MyUtil.startAlarmClock(getActivity(), alarmClock);
+                }
+            }
+            count++;
+        }
+
+        checkIsEmpty(list);
+
+
+    }
+
+    private void deleteList(int position) {
+        mAlarmClockList.clear();
+
+        List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
+        for (AlarmClock alarmClock : list) {
+            mAlarmClockList.add(alarmClock);
+        }
+
+        checkIsEmpty(list);
+
+//        mAdapter.notifyItemRangeChanged(position, mAdapter.getItemCount());
+    }
+
+    private void updateList() {
+        mAlarmClockList.clear();
+
+        List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
+        for (AlarmClock alarmClock : list) {
+            mAlarmClockList.add(alarmClock);
+
+            // 当闹钟为开时刷新开启闹钟
+            if (alarmClock.isOnOff()) {
+                MyUtil.startAlarmClock(getActivity(), alarmClock);
+            }
+        }
+
+        checkIsEmpty(list);
+
+
+    }
+
+    private void checkIsEmpty(List<AlarmClock> list) {
+        if (list.size() != 0) {
+            rlMenu.setVisibility(View.VISIBLE);
+//            mEmptyView.setVisibility(View.GONE);
+        } else {
+            rlMenu.setVisibility(View.GONE);
+//            mEmptyView.setVisibility(View.VISIBLE);
+
+
+        }
     }
 
     private List<Medicine> data;

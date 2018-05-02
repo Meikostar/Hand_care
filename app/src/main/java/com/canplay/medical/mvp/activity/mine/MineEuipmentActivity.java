@@ -1,16 +1,20 @@
 package com.canplay.medical.mvp.activity.mine;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Euip;
 import com.canplay.medical.bean.Euipt;
+import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.unBind;
 import com.canplay.medical.mvp.activity.account.LoginActivity;
 import com.canplay.medical.mvp.activity.home.SmartEquitActivity;
@@ -21,6 +25,7 @@ import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.permission.PermissionConst;
 import com.canplay.medical.permission.PermissionGen;
 import com.canplay.medical.permission.PermissionSuccess;
+import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.NavigationBar;

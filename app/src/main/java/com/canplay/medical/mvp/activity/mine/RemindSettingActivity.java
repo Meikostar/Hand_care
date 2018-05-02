@@ -23,6 +23,7 @@ import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.AddMedical;
+import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.DATA;
 import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.RingSelectItem;
@@ -33,6 +34,7 @@ import com.canplay.medical.mvp.adapter.TimeAddAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
+import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.view.HourSelector;
 import com.canplay.medical.view.ListPopupWindow;
@@ -131,6 +133,38 @@ public class RemindSettingActivity extends BaseActivity implements
                 throwable.printStackTrace();
             }
         });
+        mAlarmClock = new AlarmClock();
+        // 闹钟默认开启
+        mAlarmClock.setOnOff(true);
+        // 保存设置的音量
+        mAlarmClock.setVolume(15);
+
+        // 初始化闹钟实例的小时
+        mAlarmClock.setHour(9);
+        // 初始化闹钟实例的分钟
+        mAlarmClock.setMinute(30);
+        // 默认小睡
+        mAlarmClock.setNap(true);
+        // 小睡间隔10分钟
+        mAlarmClock.setNapInterval(5);
+        // 小睡3次
+        mAlarmClock.setNapTimes(3);
+        // 取得铃声选择配置信息
+        SharedPreferences share = getSharedPreferences(
+                WeacConstants.EXTRA_WEAC_SHARE, Activity.MODE_PRIVATE);
+        String ringName = share.getString(WeacConstants.RING_NAME,
+                getString(R.string.default_ring));
+        String ringUrl = share.getString(WeacConstants.RING_URL,
+                WeacConstants.DEFAULT_RING_URL);
+
+        // 初始化闹钟实例的铃声名
+        mAlarmClock.setRingName(ringName);
+        // 初始化闹钟实例的铃声播放地址
+        mAlarmClock.setRingUrl(ringUrl);
+        mAlarmClock.setTag("用药提醒");
+        mAlarmClock.setRepeat("每天");
+        // 响铃周期
+        mAlarmClock.setWeeks("2,3,4,5,6,7,1");
         RxBus.getInstance().addSubscription(mSubscription);
         adapter=new MedicaldTurnapter(this);
         lvInfo.setAdapter(adapter);
@@ -144,6 +178,8 @@ public class RemindSettingActivity extends BaseActivity implements
         }
     }
    private List<String> times=new ArrayList<>();
+    private int hour;
+    private int minter;
     @Override
     public void bindEvents() {
         adapter.setClickListener(new MedicaldTurnapter.ClickListener() {
@@ -164,6 +200,8 @@ public class RemindSettingActivity extends BaseActivity implements
             @Override
             public void navigationRight() {
                 namess = adapter.getData();
+                hour=Integer.valueOf(selector.getHour());
+                minter=Integer.valueOf(selector.getMinute());
                 times.add(selector.getSelector());
                 cout=0;
                 if(namess==null||namess.size()==0){
@@ -347,8 +385,11 @@ public class RemindSettingActivity extends BaseActivity implements
 //                    popupWindow1.remove();
                     popupWindow1.setSureListener(new RingPopupWindow.ClickListener() {
                         @Override
-                        public void clickListener(String menu, int poistion) {
-                            tvRing.setText(menu);
+                        public void clickListener(String ringName, String ringUrl) {
+                            mAlarmClock.setRingName(ringName);
+                            // 初始化闹钟实例的铃声播放地址
+                            mAlarmClock.setRingUrl(ringUrl);
+                            tvRing.setText(ringName);
                             popupWindow1.dismiss();
                             handler.sendMessageDelayed(handler.obtainMessage(),1200);
                         }
@@ -370,14 +411,25 @@ public class RemindSettingActivity extends BaseActivity implements
 
     }
     private List<Medicines> namess;
+    /**
+     * 闹钟实例
+     */
+    private AlarmClock mAlarmClock;
+
     @Override
     public <T> void toEntity(T entity, int type) {
 
         if(cout==namess.size()-1){
             showToasts("用药提醒添加成功");
             dimessProgress();
+
+            // 初始化闹钟实例的小时
+            mAlarmClock.setHour(hour);
+            // 初始化闹钟实例的分钟
+            mAlarmClock.setMinute(minter);
+            AlarmClockOperate.getInstance().saveAlarmClock(mAlarmClock);
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
             finish();
-            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,""));
         }
         cout++;
     }
@@ -391,4 +443,5 @@ public class RemindSettingActivity extends BaseActivity implements
     public void showTomast(String msg) {
 
     }
+
 }

@@ -65,6 +65,7 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
     private String psw;
 
     private  TimeSelectorDialog selectorDialog;
+    private int potions=85;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_registered2);
@@ -75,7 +76,8 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
         selectorDialog.setDate(new Date(System.currentTimeMillis()))
                 .setBindClickListener(new TimeSelectorDialog.BindClickListener() {
                     @Override
-                    public void time(String time) {
+                    public void time(String time,int potion) {
+                        potions=potion;
                       if(TextUtil.isNotEmpty(time)){
                           etFist.setText(time);
                           if(TextUtil.isNotEmpty(psw)&&TextUtil.isNotEmpty(name)){
@@ -109,7 +111,10 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
                     showToasts("密码至少6位数且包含数字，大小写字母");
                     return;
                 }
-
+                if(TextUtil.isEmpty(etFist.getText().toString())){
+                    showToasts("请选择出生日期");
+                    return;
+                }
                 presenter.register(etName.getText().toString(),etFist.getText().toString(),etLast.getText().toString(),etPws.getText().toString(),phone);
 
             }

@@ -181,7 +181,7 @@ public interface BaseApi {
     /**
      * 添加好友
      */
-    @GET("Flow/api/Participant/Name/{search}")
+    @GET("Flow/api/Doctor/Name/{search}")
     Observable<List<Friend> > searchDoctor(@Path("search") String search);
 
     /**
@@ -327,7 +327,6 @@ public interface BaseApi {
     /**
      *指定天数血糖数据记录
      */
-
     @GET("Flow/v2/BloodGlucose/{userId}/{days}")
     Observable<List<Sugar>> getDayBloodRecord(@Path("userId") String userId,
                                          @Path("days") String days);

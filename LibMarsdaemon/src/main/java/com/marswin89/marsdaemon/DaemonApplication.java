@@ -3,12 +3,14 @@ package com.marswin89.marsdaemon;
 import android.app.Application;
 import android.content.Context;
 
+import org.litepal.LitePalApplication;
+
 /**
  * make your Application extends it 
  * @author Mars
  *
  */
-public abstract class DaemonApplication extends Application{
+public abstract class DaemonApplication extends LitePalApplication {
 	/**
 	 * Daemon SDK needs the Daemon Configurations contains two process informations</br>
 	 * see {@link DaemonConfigurations} and {@link DaemonConfigurations.DaemonConfiguration}

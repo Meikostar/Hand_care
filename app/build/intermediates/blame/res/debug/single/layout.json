@@ -60,6 +60,10 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_blood_chart.xml"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\toast.xml"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_item.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_item.xml"
     },
@@ -612,16 +616,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_search_view.xml"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\del_friend_dailog.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\del_friend_dailog.xml"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_medical_detail.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_medical_detail.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\del_friend_dailog.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\del_friend_dailog.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
@@ -670,6 +674,10 @@
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_use_record.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_use_record.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_timer_on_time.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_timer_on_time.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_recyclerview_horizontalscroll.xml",

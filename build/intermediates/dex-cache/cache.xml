@@ -30,6 +30,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="F:\GitWorkSpace\Hand_care\litepal\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9f8dccf3958372db35c072612f8cdd920b3f33a6">
+        <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_67f96ccd7be2a3b501675a84af769437002d6af5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="F:\GitWorkSpace\Hand_care\app\libs\jcore-android-1.1.9.jar"
         jumboMode="false"
         optimize="true"
@@ -43,7 +52,7 @@
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="38c11d7a91cc9e84bd0cb724212480a8d020ecf4">
+        sha1="3f246ac625b04f985715968abdbdf52ddff9b9bd">
         <dex dex="F:\GitWorkSpace\Hand_care\app\build\intermediates\transforms\dex\debug\folders\1000\4\classes_035ccfc126bd0a605c1909845564d18ab1af597f\classes.dex" />
     </item>
     <item

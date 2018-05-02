@@ -67,6 +67,7 @@ android {
         compile project(':gallery')
         compile project(':LibMarsdaemon')
         compile project(':zxingLibrary')
+        compile project(':litepal')
 //        compile project(':zxingLibrary')
 
         //Logcat
