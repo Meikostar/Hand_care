@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu May 03 11:37:10 CST 2018
+#Thu May 03 11:43:53 CST 2018
 835.base=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\resources-debug.ap_
 100.set=JAVA_RESOURCE
 57.file=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\dialog_base_two_button.xml

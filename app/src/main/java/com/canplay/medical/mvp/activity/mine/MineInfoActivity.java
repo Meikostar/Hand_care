@@ -211,11 +211,14 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
             String birth=split[0]+"."+split[1]+"."+split[2];
             tvBirth.setText(birth);
         }
-        if(friend.gender.equals("male")){//男
-            tvSex.setText("男");
-        }else {
-            tvSex.setText("女");
+        if(TextUtil.isNotEmpty(friend.gender)){
+            if(friend.gender.equals("male")){//男
+                tvSex.setText("男");
+            }else {
+                tvSex.setText("女");
+            }
         }
+
     }
     @PermissionSuccess(requestCode = PermissionConst.REQUECT_CODE_CAMERA)
     public void requestSdcardSuccess() {
@@ -323,11 +326,11 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
          base= (BASE) entity;
          showToasts("上传成功");
          editor.avatar=base.Filename;
-         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EDITOR,editor));
+         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EDITOR,""));
         }else {
          dimessProgress();
          showToasts("编辑成功");
-         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EDITOR,editor));
+         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EDITOR,""));
          finish();
      }
     }

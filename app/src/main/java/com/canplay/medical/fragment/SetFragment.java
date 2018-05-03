@@ -96,12 +96,13 @@ HomePresenter presenter;
         unbinder = ButterKnife.bind(this, view);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-        presenter.getFriendInfo(SpUtil.getInstance().getUserId());
+        user_id= SpUtil.getInstance().getUserId();
+        presenter.getFriendInfo(user_id);
         presenter.getSmartList();
 
         adapter = new EuipmentAdapter(getActivity());
         rlMenu.setAdapter(adapter);
-        user_id= SpUtil.getInstance().getUserId();
+
         mWindowAddPhoto = new PhotoPopupWindow(getActivity());
         mWindowAddPhoto.setCont("解除绑定", "取消");
         mWindowAddPhoto.setColor(R.color.red_pop, 0);
@@ -121,7 +122,7 @@ HomePresenter presenter;
     private String user_id;
     private unBind unbind=new unBind();
     private Subscription mSubscription;
-    private Editor editor;
+
     private void initListener() {
 
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
@@ -130,16 +131,8 @@ HomePresenter presenter;
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.EDITOR) {
-                    editor= (Editor) bean.content;
-                    friend.gender=editor.gender;
-                    friend.address=editor.address;
-                    friend.dob=editor.dob;
-                    if(TextUtil.isNotEmpty(editor.avatar)){
-                        friend.avatar=editor.avatar;
-                    }
 
-                    friend.displayName=editor.displayName;
-                    setData();
+                    presenter.getFriendInfo(user_id);
 
                 }
 
