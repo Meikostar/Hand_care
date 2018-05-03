@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.baidu.platform.comapi.map.E;
 import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.ORDER;
 import com.canplay.medical.mvp.adapter.viewholder.HealtCenterHolder;
@@ -65,12 +66,12 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
             }  if(TextUtil.isNotEmpty(data.familyAndFriendsUserName)){
                 holders.phone.setText(data.familyAndFriendsUserName);
             }
-            Glide.with(context).load(data.avatar).asBitmap()
+            Glide.with(context).load(BaseApplication.avatar+data.avatar).asBitmap()
                     .placeholder(R.drawable.moren).transform(new CircleTransform(context)).into(holders.img);
             if(status==0){
                 holders.iv_arrow.setVisibility(View.VISIBLE);
                 holders.add.setVisibility(View.VISIBLE);
-                if(data.status.equals("waiting")){
+                if(data.status.equals("Waiting")){
                     holders.add.setTextColor(context.getResources().getColor(R.color.color6));
                     holders.add.setText("接受");
                     holders.add.setBackground(context.getResources().getDrawable(R.drawable.line_regle_blue));
@@ -98,14 +99,14 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
                 if(TextUtil.isNotEmpty(data.name)){
                     holders.name.setText(data.name);
                 } else{
-                    if(TextUtil.isNotEmpty(data.displayName)){
-                        holders.name.setText(data.displayName);
+                    if(TextUtil.isNotEmpty(data.userName)){
+                        holders.name.setText(data.userName);
                     }
                 }
             } if(TextUtil.isNotEmpty(data.mobile)){
                 holders.phone.setText(data.mobile);
             }
-            Glide.with(context).load(data.avatar).asBitmap()
+            Glide.with(context).load(BaseApplication.avatar+data.avatar).asBitmap()
                     .placeholder(R.drawable.moren).transform(new CircleTransform(context)).into(holders.img);
             if(status==0){
                 holders.iv_arrow.setVisibility(View.VISIBLE);

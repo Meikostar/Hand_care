@@ -10,7 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
+import com.canplay.medical.bean.Item;
 import com.canplay.medical.bean.Record;
+import com.canplay.medical.mvp.adapter.RecordItemAdapter;
 import com.canplay.medical.mvp.adapter.RemindItemAdapter;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
 import com.canplay.medical.mvp.adapter.UseTimeAdapter;
@@ -18,6 +20,7 @@ import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.DashView;
 import com.canplay.medical.view.RegularListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -43,13 +46,14 @@ public class UsePlanRecycleAdapter extends BaseRecycleViewAdapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view=null;
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_use_plan, null);
         view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_use_plan, null);
+
 
 
         return new ViewHolder(view);
     }
-
+   private List<Item> data=new ArrayList<>();
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holders, final int position) {
         ViewHolder holder = (ViewHolder) holders;
@@ -60,8 +64,11 @@ public class UsePlanRecycleAdapter extends BaseRecycleViewAdapter {
             holder.tvCout.setVisibility(View.VISIBLE);
         }
         holder.tvTime.setText(TimeUtil.formatToMs(list.date));
-        RemindItemAdapter adapter = new RemindItemAdapter(context);
+        RecordItemAdapter adapter = new RecordItemAdapter(context);
         holder.rlMenu.setAdapter(adapter);
+
+        adapter.setData(list.items);
+
         if (position != 0) {
             holder.line1.setVisibility(View.VISIBLE);
         } else {

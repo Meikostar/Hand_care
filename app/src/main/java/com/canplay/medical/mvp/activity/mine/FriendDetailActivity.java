@@ -157,15 +157,15 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     @Override
     public <T> void toEntity(T entity,int type) {
      friend= (Friend) entity;
-        Glide.with(this).load(friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivAvatar);
-        if(TextUtil.isNotEmpty(friend.displayName)){
-            tvName.setText(friend.displayName);
+        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivAvatar);
+        if(TextUtil.isNotEmpty(friend.userName)){
+            tvName.setText(friend.userName);
         }if(TextUtil.isNotEmpty(friend.address)){
             tvAddress.setText(friend.address);
         }    if(TextUtil.isNotEmpty(friend.mobile)){
             tvPhone.setText(friend.mobile);
         }  if(TextUtil.isNotEmpty(friend.dob)){
-            String[] split = friend.dob.split("//");
+            String[] split = friend.dob.split("/");
             String birth=split[0]+"."+split[1]+"."+split[2];
             tvBirth.setText(birth);
         }

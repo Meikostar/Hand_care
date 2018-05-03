@@ -152,14 +152,17 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         llBg1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), UsePlanActivity.class);
+                Intent intent = new Intent(getActivity(), MeasurePlanActivity.class);
+                intent.putExtra("time",tvHour1.getText().toString()+":"+tvMinter1.getText().toString());
                 startActivity(intent);
             }
         });
         llBg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MeasurePlanActivity.class);
+                Intent intent = new Intent(getActivity(), UsePlanActivity.class);
+                intent.putExtra("time",tvHour.getText().toString()+":"+tvMinter.getText().toString());
+
                 startActivity(intent);
             }
         });
@@ -240,6 +243,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                tvCount.setVisibility(View.VISIBLE);
                tvCount.setText(""+entitys.numberOfUnreadMessages);
            }
+        }else {
+            tvHour1.setText(split[0]);
+            tvMinter1.setText(split[1]);
         }
     }
 

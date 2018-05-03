@@ -1389,7 +1389,7 @@ int id iv_close 0x7f0f011d
 int id iv_code 0x7f0f00fc
 int id iv_cyc 0x7f0f0173
 int id iv_expend 0x7f0f0114
-int id iv_img 0x7f0f00c6
+int id iv_img 0x7f0f00cc
 int id iv_menu_img 0x7f0f0145
 int id iv_phone 0x7f0f00f4
 int id iv_scan 0x7f0f0156
@@ -1418,7 +1418,7 @@ int id ll_again 0x7f0f00ef
 int id ll_all 0x7f0f01bc
 int id ll_area 0x7f0f0102
 int id ll_back 0x7f0f00cd
-int id ll_bg 0x7f0f00c7
+int id ll_bg 0x7f0f00c6
 int id ll_bg1 0x7f0f015d
 int id ll_birth 0x7f0f0100
 int id ll_blood_press 0x7f0f00df
@@ -1615,9 +1615,9 @@ int id tv_cthree 0x7f0f014e
 int id tv_ctwo 0x7f0f014d
 int id tv_data 0x7f0f0148
 int id tv_delete 0x7f0f0175
-int id tv_department 0x7f0f00ca
+int id tv_department 0x7f0f00c9
 int id tv_des 0x7f0f0163
-int id tv_detail 0x7f0f00cc
+int id tv_detail 0x7f0f00cb
 int id tv_distance 0x7f0f00f5
 int id tv_do 0x7f0f017f
 int id tv_exit 0x7f0f0119
@@ -1625,12 +1625,12 @@ int id tv_forget 0x7f0f00eb
 int id tv_frequency 0x7f0f0110
 int id tv_getcode 0x7f0f00b6
 int id tv_have 0x7f0f010e
-int id tv_hospital 0x7f0f00cb
+int id tv_hospital 0x7f0f00ca
 int id tv_hour 0x7f0f00f8
 int id tv_hour1 0x7f0f015e
 int id tv_img 0x7f0f017e
 int id tv_item_city_listview_letter 0x7f0f0128
-int id tv_job 0x7f0f00c9
+int id tv_job 0x7f0f00c8
 int id tv_label_item_wheel 0x7f0f0177
 int id tv_less 0x7f0f01ad
 int id tv_letter_overlay 0x7f0f00bf
@@ -1663,7 +1663,7 @@ int id tv_save 0x7f0f00d3
 int id tv_scan 0x7f0f00bb
 int id tv_search 0x7f0f00bd
 int id tv_second 0x7f0f00fa
-int id tv_sex 0x7f0f00c8
+int id tv_sex 0x7f0f00c7
 int id tv_state 0x7f0f0113
 int id tv_state1 0x7f0f014f
 int id tv_state2 0x7f0f0150

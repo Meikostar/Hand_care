@@ -1,993 +1,993 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:2:1-529:12
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:2:1-529:12
 	package
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:3:5-34
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:3:5-34
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.BLUETOOTH
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:5:5-68
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:5:5-68
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:5:22-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:5:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:6:5-74
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:6:5-74
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:6:22-71
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:6:22-71
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:7:5-71
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:7:5-71
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:7:22-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:7:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:8:5-71
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:8:5-71
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:8:22-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:8:22-68
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:9:5-75
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:9:5-75
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:9:22-72
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:9:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:10:5-81
-MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:11:5-81
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:10:5-81
+MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSapce\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:10:22-78
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:10:22-78
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:11:5-84
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:11:5-84
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:11:22-81
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:11:22-81
 uses-permission#android.permission.INTERNET
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:12:5-67
-MERGED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:11:5-67
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:12:5-67
+MERGED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:12:22-64
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:12:22-64
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:13:5-73
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:13:5-73
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:13:22-70
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:13:22-70
 uses-permission#android.permission.KILL_BACKGROUND_PROCESSES
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:14:5-84
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:14:5-84
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:14:22-81
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:14:22-81
 uses-permission#android.permission.CAMERA
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:16:5-65
-MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:13:5-65
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:16:5-65
+MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:13:5-65
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:16:22-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:16:22-62
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:18:5-76
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:18:5-76
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:18:22-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:18:22-73
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:19:5-80
-MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:12:5-80
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:19:5-80
+MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSapce\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:19:22-77
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:19:22-77
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:20:5-79
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:20:5-79
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:20:22-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:20:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:21:5-81
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:21:5-81
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:21:22-78
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:21:22-78
 permission#com.canplay.medical.permission.JPUSH_MESSAGE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:26:5-28:47
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:26:5-28:47
 	android:protectionLevel
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:28:9-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:28:9-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:27:9-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:27:9-68
 uses-permission#com.canplay.repast_wear.permission.JPUSH_MESSAGE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:31:5-88
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:31:5-88
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:31:22-85
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:31:22-85
 uses-permission#android.permission.RECEIVE_USER_PRESENT
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:32:5-79
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:32:5-79
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:32:22-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:32:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:34:5-68
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:34:5-68
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:34:22-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:34:22-65
 uses-permission#android.permission.VIBRATE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:39:5-66
-MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:11:5-66
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:39:5-66
+MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:11:5-66
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:39:22-63
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:39:22-63
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:41:5-79
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:41:5-79
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:41:22-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:41:22-76
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:47:5-78
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:47:5-78
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:47:22-75
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:47:22-75
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:49:5-76
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:49:5-76
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:49:22-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:49:22-73
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:51:5-89
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:51:5-89
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:51:22-86
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:51:22-86
 uses-permission#android.permission.CHANGE_NETWORK_STATE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:52:5-79
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:52:5-79
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:52:22-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:52:22-76
 uses-permission#android.permission.GET_TASKS
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:53:5-68
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:53:5-68
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:53:22-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:53:22-65
 uses-permission#android.permission.READ_LOGS
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:67:5-68
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:67:5-68
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:67:22-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:67:22-65
 application
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:69:5-527:19
-MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:14:5-16:19
-MERGED from [Hand_care:LibMarsdaemon:unspecified] F:\GitWorkSpace\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
-MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:20:5-25:19
-MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.android\build-cache\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\output\AndroidManifest.xml:22:5-20
-MERGED from [Hand_care:litepal:unspecified] F:\GitWorkSpace\Hand_care\litepal\build\intermediates\bundles\default\AndroidManifest.xml:11:5-14:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\b21b4a8a229d67fe4c9d46878885e2f4832a3f3a\output\AndroidManifest.xml:9:5-20
-MERGED from [com.malinskiy:superrecyclerview:1.1.4] C:\Users\Administrator\.android\build-cache\55925685d9f809c80be6919dc8e8d92137c54c1b\output\AndroidManifest.xml:12:5-20
-MERGED from [com.github.castorflex.smoothprogressbar:library-circular:1.2.0] C:\Users\Administrator\.android\build-cache\a9be0f77c30cfd845b9978aea63e2bfaf45ce082\output\AndroidManifest.xml:12:5-20
-MERGED from [me.guhy:SwipeRefreshPlus:1.0.8] C:\Users\Administrator\.android\build-cache\728036cef145dfe45d3eb6a571d7e4324684464d\output\AndroidManifest.xml:11:5-14:19
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d6684222313a7d4308cf7ad720520a08ce20f9f7\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d8c3c2cfbee1ff2f0332b1cce25262355b31fd60\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\4c4d298de26b7f50a757f33a62f49db938fc2cc5\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f4d54de3a336b0cf2c4f53ec4f767baa3297a486\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\959f2075992fe84a339475fbe105e472d0178593\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a36df44345b4d5e56da4c3b481171ca3950a75ba\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d677cb5669c6a29f7614aca8a90e07ba4dc95a49\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\cddc2ba5048daba2c7e806a239fff587c1223764\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1aa157e52a0752f6cbbefe618510c316cc365cb6\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\5a70535be1e4455de1451421e72b9e9978cc8531\output\AndroidManifest.xml:26:5-20
-MERGED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:13:5-33:19
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:69:5-527:19
+MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSapce\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:14:5-16:19
+MERGED from [Hand_care:LibMarsdaemon:unspecified] F:\GitWorkSapce\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:20:5-25:19
+MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.android\build-cache\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\output\AndroidManifest.xml:22:5-20
+MERGED from [Hand_care:litepal:unspecified] F:\GitWorkSapce\Hand_care\litepal\build\intermediates\bundles\default\AndroidManifest.xml:11:5-14:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\2f51c73abbfd2c323bea2c21c7f3db96b1ab38d2\output\AndroidManifest.xml:9:5-20
+MERGED from [com.malinskiy:superrecyclerview:1.1.4] C:\Users\Administrator\.android\build-cache\d0279ca0d103ef1be4c739c0b501070c956be491\output\AndroidManifest.xml:12:5-20
+MERGED from [com.github.castorflex.smoothprogressbar:library-circular:1.2.0] C:\Users\Administrator\.android\build-cache\6b06234db826e993be359dbbad49a6dc23b0ab7f\output\AndroidManifest.xml:12:5-20
+MERGED from [me.guhy:SwipeRefreshPlus:1.0.8] C:\Users\Administrator\.android\build-cache\1d7e6342ee39a60f10d063baaf6dd80fc2e82cab\output\AndroidManifest.xml:11:5-14:19
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\6192085179e6056d54168618ede1f6f8f2213103\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\7c1dd9101d388fa07baae8a49cb1dcba822d2e8c\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2d2539e08d648f8652cb4fd2e2d6ab8457f3688d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a31fe6c091eef092e45bf301c7bee69d1af84f22\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\19f3e4dd28ddc5d555c06147aa8ebd86f624f48a\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f0a86c268533fd21ce0d8e368b40da6b05d52f03\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\534e4b1094e5a0a03bfb7b588694123a4a3b643f\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\0f68a79eb583fa062eb1f76f4ef7ab31a8fe6a79\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\de13caf9cae9e4316760a364842319ef8f8226a3\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\31268a617e55c2b32c625f1eaf39b8855827709c\output\AndroidManifest.xml:26:5-20
+MERGED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:13:5-33:19
 	android:label
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:73:9-41
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:73:9-41
 	android:supportsRtl
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:76:9-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:76:9-35
 	android:vmSafeMode
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:13:18-43
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:13:18-43
 	android:allowBackup
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:71:9-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:71:9-35
 	android:icon
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:72:9-38
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:72:9-38
 	android:largeHeap
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:74:9-33
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:74:9-33
 	android:persistent
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:75:9-34
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:75:9-34
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:77:9-40
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:77:9-40
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:70:9-64
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:70:9-64
 activity#com.canplay.medical.mvp.activity.account.LoginActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:78:9-87:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:78:9-87:20
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:81:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:81:13-49
 	android:configChanges
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:80:13-74
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:80:13-74
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:79:13-82
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:79:13-82
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:82:13-86:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:82:13-86:29
 action#android.intent.action.MAIN
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:83:17-69
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:83:17-69
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:83:25-66
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:83:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:85:17-77
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:85:17-77
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:85:27-74
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:85:27-74
 provider#android.support.v4.content.FileProvider
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:89:9-97:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:89:9-97:20
 	android:authorities
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:91:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:91:13-67
 	android:grantUriPermissions
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:93:13-47
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:93:13-47
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:92:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:92:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:90:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:90:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:94:13-96:54
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:94:13-96:54
 	android:resource
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:96:17-51
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:96:17-51
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:95:17-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:95:17-67
 activity#com.canplay.medical.mvp.activity.MainActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:99:9-102:58
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:99:9-102:58
 	android:launchMode
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:101:13-43
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:101:13-43
 	android:windowSoftInputMode
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:102:13-55
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:102:13-55
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:100:13-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:100:13-73
 activity#com.canplay.medical.mvp.activity.mine.MineCodeActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:103:9-106:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:103:9-106:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:106:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:106:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:105:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:105:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:104:13-63
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:104:13-63
 activity#com.canplay.medical.mvp.activity.mine.MineInfoActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:107:9-110:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:107:9-110:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:110:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:110:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:109:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:109:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:108:13-63
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:108:13-63
 activity#com.canplay.medical.mvp.activity.account.RegisteredSecondActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:111:9-114:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:111:9-114:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:114:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:114:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:113:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:113:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:112:13-74
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:112:13-74
 activity#com.canplay.medical.mvp.activity.TimerOnTimeActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:115:9-118:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:115:9-118:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:118:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:118:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:117:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:117:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:116:13-61
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:116:13-61
 activity#com.canplay.medical.mvp.activity.mine.MineEuipmentActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:120:9-123:51
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:120:9-123:51
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:123:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:123:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:122:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:122:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:121:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:121:13-67
 activity#com.canplay.medical.mvp.activity.mine.MineHealthCenterActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:124:9-127:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:124:9-127:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:127:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:127:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:126:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:126:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:125:13-71
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:125:13-71
 activity#com.canplay.medical.mvp.activity.RemindFirstDetailActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:128:9-131:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:128:9-131:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:131:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:131:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:130:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:130:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:129:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:129:13-67
 activity#com.canplay.medical.mvp.activity.RemindSecondDetailActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:132:9-135:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:132:9-135:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:135:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:135:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:134:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:134:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:133:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:133:13-68
 activity#com.canplay.medical.mvp.activity.mine.AddFriendActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:137:9-140:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:137:9-140:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:140:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:140:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:139:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:139:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:138:13-64
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:138:13-64
 activity#com.canplay.medical.mvp.activity.mine.FriendDetailActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:141:9-144:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:141:9-144:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:144:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:144:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:143:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:143:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:142:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:142:13-67
 activity#com.canplay.medical.mvp.activity.mine.BloodPressRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:145:9-148:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:145:9-148:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:148:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:148:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:147:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:147:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:146:13-71
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:146:13-71
 activity#com.canplay.medical.mvp.activity.mine.CollectionActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:149:9-152:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:149:9-152:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:152:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:152:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:151:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:151:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:150:13-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:150:13-65
 activity#com.canplay.medical.mvp.activity.mine.SettingActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:153:9-156:8
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:153:9-156:8
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:155:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:155:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:154:13-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:154:13-62
 activity#com.canplay.medical.mvp.activity.mine.EditorPwsActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:157:9-160:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:157:9-160:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:160:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:160:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:159:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:159:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:158:13-64
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:158:13-64
 activity#com.canplay.medical.mvp.activity.mine.BindPhoneActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:161:9-164:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:161:9-164:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:164:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:164:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:163:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:163:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:162:13-64
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:162:13-64
 activity#com.canplay.medical.mvp.activity.mine.RemindHealthActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:165:9-168:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:165:9-168:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:168:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:168:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:167:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:167:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:166:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:166:13-67
 activity#com.canplay.medical.mvp.activity.mine.RemindSettingActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:169:9-172:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:169:9-172:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:172:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:172:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:171:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:171:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:170:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:170:13-68
 activity#com.canplay.medical.mvp.activity.home.UsePlanActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:173:9-176:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:173:9-176:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:176:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:176:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:175:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:175:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:174:13-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:174:13-62
 activity#com.canplay.medical.mvp.activity.home.MedicalDetailActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:177:9-180:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:177:9-180:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:180:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:180:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:179:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:179:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:178:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:178:13-68
 activity#com.canplay.medical.mvp.activity.home.MinePlanRemindActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:182:9-185:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:182:9-185:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:185:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:185:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:184:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:184:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:183:13-69
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:183:13-69
 activity#com.canplay.medical.mvp.activity.home.MineUseRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:186:9-189:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:186:9-189:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:189:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:189:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:188:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:188:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:187:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:187:13-68
 activity#com.canplay.medical.mvp.activity.home.AddBloodDataActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:190:9-193:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:190:9-193:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:193:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:193:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:192:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:192:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:191:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:191:13-67
 activity#com.canplay.medical.mvp.activity.home.BloodMeasureRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:194:9-197:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:194:9-197:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:197:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:197:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:196:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:196:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:195:13-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:195:13-73
 activity#com.canplay.medical.mvp.activity.home.MeasurePlanActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:198:9-201:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:198:9-201:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:201:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:201:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:200:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:200:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:199:13-66
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:199:13-66
 activity#com.canplay.medical.mvp.activity.LocationBdActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:203:9-206:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:203:9-206:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:206:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:206:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:205:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:205:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:204:13-60
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:204:13-60
 activity#com.google.zxing.client.android.activity.CaptureActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:207:9-210:52
-MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:24:9-93
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:207:9-210:52
+MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:24:9-93
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:210:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:210:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:209:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:209:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:208:13-84
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:208:13-84
 activity#com.canplay.medical.mvp.activity.WebViewWitesActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:212:9-215:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:212:9-215:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:215:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:215:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:214:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:214:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:213:13-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:213:13-62
 activity#com.canplay.medical.mvp.activity.home.MessageActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:217:9-220:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:217:9-220:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:220:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:220:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:219:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:219:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:218:13-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:218:13-62
 activity#com.canplay.medical.mvp.activity.home.AddDataActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:221:9-224:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:221:9-224:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:224:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:224:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:223:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:223:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:222:13-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:222:13-62
 activity#com.canplay.medical.mvp.activity.home.DoctorDetailActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:226:9-229:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:226:9-229:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:229:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:229:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:228:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:228:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:227:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:227:13-67
 activity#com.canplay.medical.mvp.activity.health.TimeXRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:230:9-233:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:230:9-233:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:233:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:233:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:232:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:232:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:231:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:231:13-68
 activity#com.canplay.medical.mvp.activity.health.BloodChartRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:234:9-237:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:234:9-237:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:237:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:237:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:236:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:236:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:235:13-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:235:13-73
 activity#com.canplay.medical.mvp.activity.health.SugarChartRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:238:9-241:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:238:9-241:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:241:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:241:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:240:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:240:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:239:13-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:239:13-73
 activity#com.canplay.medical.mvp.activity.health.TakeMedicineActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:242:9-245:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:242:9-245:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:245:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:245:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:244:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:244:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:243:13-69
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:243:13-69
 activity#com.canplay.medical.mvp.activity.home.SmartKitActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:246:9-249:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:246:9-249:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:249:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:249:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:248:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:248:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:247:13-63
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:247:13-63
 activity#com.canplay.medical.mvp.activity.home.ChooseMedicalActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:250:9-253:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:250:9-253:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:253:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:253:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:252:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:252:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:251:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:251:13-68
 activity#com.canplay.medical.mvp.activity.home.SearchMedicalActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:254:9-257:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:254:9-257:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:257:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:257:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:256:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:256:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:255:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:255:13-68
 activity#com.canplay.medical.mvp.activity.home.MeasureActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:258:9-261:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:258:9-261:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:261:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:261:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:260:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:260:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:259:13-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:259:13-62
 activity#com.canplay.medical.mvp.activity.home.ChooseProjectActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:262:9-265:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:262:9-265:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:265:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:265:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:264:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:264:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:263:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:263:13-68
 activity#com.canplay.medical.mvp.activity.home.SmartEquitActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:266:9-269:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:266:9-269:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:269:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:269:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:268:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:268:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:267:13-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:267:13-65
 activity#com.canplay.medical.mvp.activity.home.EquipDetailActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:270:9-273:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:270:9-273:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:273:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:273:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:272:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:272:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:271:13-66
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:271:13-66
 activity#com.canplay.medical.mvp.activity.mine.UseMedicalRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:274:9-277:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:274:9-277:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:277:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:277:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:276:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:276:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:275:13-71
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:275:13-71
 activity#com.canplay.medical.mvp.activity.mine.BloodSugarRecordActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:278:9-281:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:278:9-281:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:281:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:281:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:280:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:280:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:279:13-71
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:279:13-71
 activity#com.canplay.medical.mvp.activity.mine.MedicalDetailActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:282:9-285:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:282:9-285:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:285:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:285:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:284:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:284:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:283:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:283:13-68
 activity#com.canplay.medical.mvp.activity.account.ForgetPswActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:286:9-289:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:286:9-289:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:289:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:289:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:288:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:288:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:287:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:287:13-67
 activity#com.canplay.medical.mvp.activity.account.ForgetFirstActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:290:9-293:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:290:9-293:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:293:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:293:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:292:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:292:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:291:13-69
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:291:13-69
 activity#com.canplay.medical.mvp.activity.account.ChangePhoneActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:295:9-298:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:295:9-298:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:298:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:298:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:297:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:297:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:296:13-69
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:296:13-69
 activity#com.canplay.medical.mvp.activity.mine.AlarmActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:300:9-303:52
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:300:9-303:52
 	android:screenOrientation
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:303:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:303:13-49
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:302:13-44
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:302:13-44
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:301:13-60
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:301:13-60
 receiver#com.canplay.medical.receiver.AlarmClockBroadcast
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:318:9-326:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:318:9-326:20
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:320:13-38
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:320:13-38
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:319:13-57
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:319:13-57
 receiver#com.canplay.medical.receiver.BootBroadcastReceiver
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:328:9-332:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:328:9-332:20
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:328:19-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:328:19-65
 intent-filter#android.intent.action.BOOT_COMPLETED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:329:13-331:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:329:13-331:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:330:17-78
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:330:17-78
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:330:25-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:330:25-76
 receiver#com.canplay.medical.receiver.AlarmClockProcessReceiver
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:333:9-339:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:333:9-339:20
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:335:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:335:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:334:13-63
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:334:13-63
 intent-filter#com.kaku.weac.AlarmClockOff
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:336:13-338:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:336:13-338:29
 action#com.kaku.weac.AlarmClockOff
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:337:17-69
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:337:17-69
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:337:25-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:337:25-67
 receiver#com.canplay.medical.receiver.WakeReceiver
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:348:9-355:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:348:9-355:20
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:350:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:350:13-35
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:351:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:351:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:349:13-50
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:349:13-50
 intent-filter#com.kaku.weac.wake.gray
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:352:13-354:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:352:13-354:29
 action#com.kaku.weac.wake.gray
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:353:17-65
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:353:17-65
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:353:25-63
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:353:25-63
 service#com.canplay.medical.receiver.DaemonService$DaemonInnerService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:357:9-361:40
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:357:9-361:40
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:359:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:359:13-35
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:361:13-38
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:361:13-38
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:360:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:360:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:358:13-70
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:358:13-70
 service#com.canplay.medical.receiver.WakeReceiver$WakeNotifyService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:362:9-365:39
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:362:9-365:39
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:364:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:364:13-35
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:365:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:365:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:363:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:363:13-68
 service#com.canplay.medical.receiver.WakeReceiver$WakeGrayInnerService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:367:9-370:39
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:367:9-370:39
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:369:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:369:13-35
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:370:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:370:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:368:13-71
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:368:13-71
 service#com.canplay.medical.receiver.DaemonService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:373:9-377:19
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:373:9-377:19
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:376:13-38
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:376:13-38
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:375:13-36
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:375:13-36
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:374:13-51
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:374:13-51
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:381:9-383:64
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:381:9-383:64
 	android:value
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:383:13-61
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:383:13-61
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:382:13-52
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:382:13-52
 service#com.baidu.location.f
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:386:9-389:41
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:386:9-389:41
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:388:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:388:13-35
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:389:13-38
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:389:13-38
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:387:13-48
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:387:13-48
 activity#cn.jpush.android.ui.PopWinActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:397:9-401:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:397:9-401:20
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:400:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:400:13-37
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:399:13-49
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:399:13-49
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:398:13-62
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:398:13-62
 activity#cn.jpush.android.ui.PushActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:404:9-414:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:404:9-414:20
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:408:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:408:13-37
 	android:configChanges
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:406:13-63
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:406:13-63
 	android:theme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:407:13-60
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:407:13-60
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:405:13-60
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:405:13-60
 intent-filter#android.intent.category.DEFAULT+cn.jpush.android.ui.PushActivity+com.canplay.repast_wear
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:409:13-413:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:409:13-413:29
 action#cn.jpush.android.ui.PushActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:410:17-75
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:410:17-75
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:410:25-72
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:410:25-72
 category#android.intent.category.DEFAULT
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:411:17-76
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:411:17-76
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:411:27-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:411:27-73
 category#com.canplay.repast_wear
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:412:17-68
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:412:17-68
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:412:27-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:412:27-65
 service#cn.jpush.android.service.PushService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:418:9-428:19
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:418:9-428:19
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:420:13-36
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:420:13-36
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:421:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:421:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:419:13-64
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:419:13-64
 intent-filter#cn.jpush.android.intent.PUSH_TIME+cn.jpush.android.intent.PushService+cn.jpush.android.intent.REGISTER+cn.jpush.android.intent.REPORT
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:422:13-427:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:422:13-427:29
 action#cn.jpush.android.intent.REGISTER
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:423:17-75
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:423:17-75
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:423:25-72
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:423:25-72
 action#cn.jpush.android.intent.REPORT
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:424:17-73
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:424:17-73
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:424:25-70
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:424:25-70
 action#cn.jpush.android.intent.PushService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:425:17-78
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:425:17-78
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:425:25-75
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:425:25-75
 action#cn.jpush.android.intent.PUSH_TIME
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:426:17-76
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:426:17-76
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:426:25-73
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:426:25-73
 provider#cn.jpush.android.service.DataProvider
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:429:9-433:15
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:429:9-433:15
 	android:authorities
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:430:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:430:13-67
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:432:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:432:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:431:13-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:431:13-65
 service#cn.jpush.android.service.DaemonService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:437:9-446:19
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:437:9-446:19
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:439:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:439:13-35
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:440:13-36
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:440:13-36
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:438:13-66
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:438:13-66
 intent-filter#cn.jpush.android.intent.DaemonService+com.canplay.repast_wear
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:441:13-444:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:441:13-444:29
 action#cn.jpush.android.intent.DaemonService
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:442:17-80
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:442:17-80
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:442:25-77
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:442:25-77
 provider#cn.jpush.android.service.DownloadProvider
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:448:9-452:15
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:448:9-452:15
 	android:authorities
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:449:13-71
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:449:13-71
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:451:13-36
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:451:13-36
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:450:13-69
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:450:13-69
 activity#com.canplay.medical.mvp.activity.account.RegisteredActivity
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:459:9-461:58
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:459:9-461:58
 	android:windowSoftInputMode
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:461:13-55
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:461:13-55
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:460:13-68
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:460:13-68
 receiver#cn.jpush.android.service.PushReceiver
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:464:9-483:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:464:9-483:20
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:466:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:466:13-35
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:467:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:467:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:465:13-65
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:465:13-65
 intent-filter#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+com.canplay.repast_wear
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:468:13-471:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:468:13-471:29
 	android:priority
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:468:28-51
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:468:28-51
 action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:469:17-94
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:469:17-94
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:469:25-91
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:469:25-91
 intent-filter#android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:472:13-475:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:472:13-475:29
 action#android.intent.action.USER_PRESENT
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:473:17-77
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:473:17-77
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:473:25-74
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:473:25-74
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:474:17-79
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:474:17-79
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:474:25-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:474:25-76
 intent-filter#android.intent.action.PACKAGE_ADDED+android.intent.action.PACKAGE_REMOVED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:477:13-482:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:477:13-482:29
 action#android.intent.action.PACKAGE_ADDED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:478:17-78
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:478:17-78
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:478:25-75
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:478:25-75
 action#android.intent.action.PACKAGE_REMOVED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:479:17-80
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:479:17-80
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:479:25-77
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:479:25-77
 data
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:481:17-50
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:481:17-50
 	android:scheme
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:481:23-47
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:481:23-47
 receiver#cn.jpush.android.service.AlarmReceiver
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:486:9-99
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:486:9-99
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:486:73-97
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:486:73-97
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:486:19-72
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:486:19-72
 receiver#com.canplay.medical.receiver.MyReceiver
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:490:9-502:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:490:9-502:20
 	android:enabled
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:493:13-35
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:493:13-35
 	android:exported
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:492:13-37
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:492:13-37
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:491:13-67
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:491:13-67
 intent-filter#cn.jpush.android.intent.CONNECTION+cn.jpush.android.intent.MESSAGE_RECEIVED+cn.jpush.android.intent.NOTIFICATION_OPENED+cn.jpush.android.intent.NOTIFICATION_RECEIVED+cn.jpush.android.intent.REGISTRATION+com.canplay.repast_wear
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:494:13-501:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:494:13-501:29
 action#cn.jpush.android.intent.REGISTRATION
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:495:17-79
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:495:17-79
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:495:25-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:495:25-76
 action#cn.jpush.android.intent.MESSAGE_RECEIVED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:496:17-83
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:496:17-83
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:496:25-80
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:496:25-80
 action#cn.jpush.android.intent.NOTIFICATION_RECEIVED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:497:17-88
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:497:17-88
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:497:25-85
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:497:25-85
 action#cn.jpush.android.intent.NOTIFICATION_OPENED
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:498:17-86
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:498:17-86
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:498:25-83
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:498:25-83
 action#cn.jpush.android.intent.CONNECTION
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:499:17-77
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:499:17-77
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:499:25-74
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:499:25-74
 receiver#com.canplay.medical.receiver.AlarmReceiver
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:503:9-507:20
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:503:9-507:20
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:503:19-76
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:503:19-76
 intent-filter#com.canplay.alarm.lxm
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:504:13-506:29
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:504:13-506:29
 action#com.canplay.alarm.lxm
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:505:17-63
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:505:17-63
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:505:25-61
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:505:25-61
 service#com.canplay.medical.receiver.Service1
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:509:9-100
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:509:9-100
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:509:71-98
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:509:71-98
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:509:18-70
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:509:18-70
 receiver#com.canplay.medical.receiver.Receiver1
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:510:9-102
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:510:9-102
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:510:73-100
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:510:73-100
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:510:19-72
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:510:19-72
 service#com.canplay.medical.receiver.Service2
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:511:9-100
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:511:9-100
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:511:71-98
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:511:71-98
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:511:18-70
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:511:18-70
 receiver#com.canplay.medical.receiver.Receiver2
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:512:9-102
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:512:9-102
 	android:process
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:512:73-100
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:512:73-100
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:512:19-72
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:512:19-72
 meta-data#JPUSH_CHANNEL
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:521:9-523:49
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:521:9-523:49
 	android:value
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:523:13-46
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:523:13-46
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:522:13-41
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:522:13-41
 meta-data#JPUSH_APPKEY
-ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:524:9-526:56
+ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:524:9-526:56
 	android:value
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:526:13-53
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:526:13-53
 	android:name
-		ADDED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml:525:13-40
+		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:525:13-40
 uses-sdk
-INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:multidex:1.0.1] C:\Users\Administrator\.android\build-cache\f5ebc32c6f4ffe4c24dde7410b116e7da93e67b9\output\AndroidManifest.xml:18:5-42
-MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [Hand_care:LibMarsdaemon:unspecified] F:\GitWorkSpace\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.android\build-cache\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\output\AndroidManifest.xml:20:5-43
-MERGED from [Hand_care:litepal:unspecified] F:\GitWorkSpace\Hand_care\litepal\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\b21b4a8a229d67fe4c9d46878885e2f4832a3f3a\output\AndroidManifest.xml:5:5-7:41
-MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\Administrator\.android\build-cache\9224796eb7af8230b024224dc97032da1950957d\output\AndroidManifest.xml:19:5-43
-MERGED from [com.orhanobut:logger:1.15] C:\Users\Administrator\.android\build-cache\7e1eabea27807b68066a3754ada305ffc7d63308\output\AndroidManifest.xml:6:5-43
-MERGED from [com.malinskiy:superrecyclerview:1.1.4] C:\Users\Administrator\.android\build-cache\55925685d9f809c80be6919dc8e8d92137c54c1b\output\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:recyclerview-v7:23.3.0] C:\Users\Administrator\.android\build-cache\d47bcd9b4775e228fbc462cbc0baa8ea67075e56\output\AndroidManifest.xml:20:5-43
-MERGED from [com.github.castorflex.smoothprogressbar:library-circular:1.2.0] C:\Users\Administrator\.android\build-cache\a9be0f77c30cfd845b9978aea63e2bfaf45ce082\output\AndroidManifest.xml:8:5-10:41
-MERGED from [com.jakewharton:butterknife:8.5.1] C:\Users\Administrator\.android\build-cache\27ae7f0cf3701511a86f295979c80b1d430ab845\output\AndroidManifest.xml:5:5-43
-MERGED from [me.guhy:SwipeRefreshPlus:1.0.8] C:\Users\Administrator\.android\build-cache\728036cef145dfe45d3eb6a571d7e4324684464d\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d6684222313a7d4308cf7ad720520a08ce20f9f7\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d8c3c2cfbee1ff2f0332b1cce25262355b31fd60\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\4c4d298de26b7f50a757f33a62f49db938fc2cc5\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f4d54de3a336b0cf2c4f53ec4f767baa3297a486\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\959f2075992fe84a339475fbe105e472d0178593\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a36df44345b4d5e56da4c3b481171ca3950a75ba\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d677cb5669c6a29f7614aca8a90e07ba4dc95a49\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\cddc2ba5048daba2c7e806a239fff587c1223764\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1aa157e52a0752f6cbbefe618510c316cc365cb6\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\5a70535be1e4455de1451421e72b9e9978cc8531\output\AndroidManifest.xml:20:5-44
-MERGED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:7:5-9:41
+INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSapce\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [Hand_care:LibMarsdaemon:unspecified] F:\GitWorkSapce\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.android\build-cache\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\output\AndroidManifest.xml:20:5-43
+MERGED from [Hand_care:litepal:unspecified] F:\GitWorkSapce\Hand_care\litepal\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\Administrator\.android\build-cache\79f5b0daf180b3f9f0a8eeaf6a704a31ed689863\output\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\2f51c73abbfd2c323bea2c21c7f3db96b1ab38d2\output\AndroidManifest.xml:5:5-7:41
+MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\Administrator\.android\build-cache\2ea7c8b25f3e7c37b8979c3897efc047ac6da8a9\output\AndroidManifest.xml:19:5-43
+MERGED from [com.orhanobut:logger:1.15] C:\Users\Administrator\.android\build-cache\72332a3d9094f82638532b79b13a65a9f4ebf666\output\AndroidManifest.xml:6:5-43
+MERGED from [com.malinskiy:superrecyclerview:1.1.4] C:\Users\Administrator\.android\build-cache\d0279ca0d103ef1be4c739c0b501070c956be491\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:recyclerview-v7:23.3.0] C:\Users\Administrator\.android\build-cache\57bddc77b0c4e5733cdd86c1090cf702d19194e8\output\AndroidManifest.xml:20:5-43
+MERGED from [com.github.castorflex.smoothprogressbar:library-circular:1.2.0] C:\Users\Administrator\.android\build-cache\6b06234db826e993be359dbbad49a6dc23b0ab7f\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.jakewharton:butterknife:8.5.1] C:\Users\Administrator\.android\build-cache\ade0f00b905a6196b78651d537408405f01b4bbf\output\AndroidManifest.xml:5:5-43
+MERGED from [me.guhy:SwipeRefreshPlus:1.0.8] C:\Users\Administrator\.android\build-cache\1d7e6342ee39a60f10d063baaf6dd80fc2e82cab\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\6192085179e6056d54168618ede1f6f8f2213103\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\7c1dd9101d388fa07baae8a49cb1dcba822d2e8c\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2d2539e08d648f8652cb4fd2e2d6ab8457f3688d\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a31fe6c091eef092e45bf301c7bee69d1af84f22\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\19f3e4dd28ddc5d555c06147aa8ebd86f624f48a\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f0a86c268533fd21ce0d8e368b40da6b05d52f03\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\534e4b1094e5a0a03bfb7b588694123a4a3b643f\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\0f68a79eb583fa062eb1f76f4ef7ab31a8fe6a79\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\de13caf9cae9e4316760a364842319ef8f8226a3\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\31268a617e55c2b32c625f1eaf39b8855827709c\output\AndroidManifest.xml:20:5-44
+MERGED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d6684222313a7d4308cf7ad720520a08ce20f9f7\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\6192085179e6056d54168618ede1f6f8f2213103\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
-		INJECTED from F:\GitWorkSpace\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
+		INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml
 activity#io.valuesfeng.picker.ImageSelectActivity
-ADDED from [Hand_care:gallery:unspecified] F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:15:9-77
+ADDED from [Hand_care:gallery:unspecified] F:\GitWorkSapce\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:15:9-77
 	android:name
-		ADDED from [Hand_care:gallery:unspecified] F:\GitWorkSpace\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:15:19-74
+		ADDED from [Hand_care:gallery:unspecified] F:\GitWorkSapce\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:15:19-74
 uses-feature#android.hardware.camera
-ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:15:5-60
+ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:15:5-60
 	android:name
-		ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:15:19-57
+		ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:15:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:17:5-70
+ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:17:5-70
 	android:name
-		ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSpace\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:17:19-67
+		ADDED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:17:19-67
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d6684222313a7d4308cf7ad720520a08ce20f9f7\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d8c3c2cfbee1ff2f0332b1cce25262355b31fd60\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\4c4d298de26b7f50a757f33a62f49db938fc2cc5\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f4d54de3a336b0cf2c4f53ec4f767baa3297a486\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\959f2075992fe84a339475fbe105e472d0178593\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a36df44345b4d5e56da4c3b481171ca3950a75ba\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d677cb5669c6a29f7614aca8a90e07ba4dc95a49\output\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\cddc2ba5048daba2c7e806a239fff587c1223764\output\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1aa157e52a0752f6cbbefe618510c316cc365cb6\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\5a70535be1e4455de1451421e72b9e9978cc8531\output\AndroidManifest.xml:22:5-24:41
+ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\6192085179e6056d54168618ede1f6f8f2213103\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\7c1dd9101d388fa07baae8a49cb1dcba822d2e8c\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2d2539e08d648f8652cb4fd2e2d6ab8457f3688d\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a31fe6c091eef092e45bf301c7bee69d1af84f22\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\19f3e4dd28ddc5d555c06147aa8ebd86f624f48a\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f0a86c268533fd21ce0d8e368b40da6b05d52f03\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\534e4b1094e5a0a03bfb7b588694123a4a3b643f\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\0f68a79eb583fa062eb1f76f4ef7ab31a8fe6a79\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\de13caf9cae9e4316760a364842319ef8f8226a3\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\31268a617e55c2b32c625f1eaf39b8855827709c\output\AndroidManifest.xml:22:5-24:41
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d6684222313a7d4308cf7ad720520a08ce20f9f7\output\AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\6192085179e6056d54168618ede1f6f8f2213103\output\AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\d6684222313a7d4308cf7ad720520a08ce20f9f7\output\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\6192085179e6056d54168618ede1f6f8f2213103\output\AndroidManifest.xml:26:9-47
 activity#com.antfortune.freeline.MiddlewareActivity
-ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:14:9-16:52
+ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:14:9-16:52
 	android:screenOrientation
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:16:13-49
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:16:13-49
 	android:name
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:15:13-70
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:15:13-70
 service#com.antfortune.freeline.FreelineService
-ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:18:9-21:43
+ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:18:9-21:43
 	android:process
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:21:13-40
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:21:13-40
 	android:exported
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:20:13-36
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:19:13-67
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:19:13-67
 service#com.antfortune.freeline.FreelineService$InnerService
-ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:22:9-24:43
+ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:22:9-24:43
 	android:process
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:24:13-40
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:24:13-40
 	android:name
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:23:13-80
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:23:13-80
 receiver#com.antfortune.freeline.FreelineReceiver
-ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:26:9-32:20
+ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:26:9-32:20
 	android:name
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:26:19-74
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:26:19-74
 intent-filter#android.intent.action.FreelineReceiver+android.intent.category.DEFAULT
-ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:27:13-31:29
+ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.FreelineReceiver
-ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:28:17-81
+ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:28:17-81
 	android:name
-		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\2b41b5cf48b682e72f1e6b8893dd1d94591e57a4\output\AndroidManifest.xml:28:25-78
+		ADDED from [com.antfortune.freeline:runtime:0.8.7] C:\Users\Administrator\.android\build-cache\03683e62fb23e6445f3cf19f2c83e43e9e8956a1\output\AndroidManifest.xml:28:25-78

@@ -60,7 +60,7 @@
             app:dashWidth="0dp"
             app:dashOrientation="1"
             app:lineColor="@color/linecolor"
-            android:layout_height="160dp"
+            android:layout_height="1600dp"
             />
         <ImageView
             android:id="@+id/iv_cyc"

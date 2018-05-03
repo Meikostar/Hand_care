@@ -10,6 +10,7 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
 import com.canplay.medical.mvp.adapter.UserRecordAdapter;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
 
@@ -36,8 +37,10 @@ public class MeasurePlanActivity extends BaseActivity {
     TextView tvContent;
     @BindView(R.id.rl_menu)
     ListView rlMenu;
+    @BindView(R.id.tv_time)
+    TextView tvTime;
     private UserRecordAdapter adapter;
-
+     private String time;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_mesure_plan);
@@ -45,7 +48,12 @@ public class MeasurePlanActivity extends BaseActivity {
         navigationBar.setNavigationBarListener(this);
         adapter = new UserRecordAdapter(this);
         rlMenu.setAdapter(adapter);
+        time=getIntent().getStringExtra("time");
+        if(TextUtil.isNotEmpty(time)){
+            tvTime.setText(time);
+        }
         initPopView();
+
 
     }
 

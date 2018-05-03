@@ -11,9 +11,8 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.Record;
-import com.canplay.medical.mvp.adapter.UsePlanAdapter;
+
 import com.canplay.medical.mvp.adapter.recycle.UsePlanRecycleAdapter;
-import com.canplay.medical.mvp.adapter.recycle.UserTimeAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
@@ -64,7 +63,7 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
 
-
+        mLinearLayoutManager=new LinearLayoutManager(this);
         navigationBar.setNavigationBarListener(this);
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
@@ -175,12 +174,13 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
     public <T> void toEntity(T entity, int type) {
         List<Record>     lists= (List<Record>) entity;
         data.clear();
-        for(Record record:lists){
-            for(Record record1:record.items){
-                data.add(record1);
-            }
-        }
-        onDataLoaded(type,list.size()==cout,data);
+//        for(Record record:lists){
+//            for(Record record1:record.items){
+//                record1.date=record.date;
+//                data.add(record1);
+//            }
+//        }
+        onDataLoaded(type,lists.size()==cout,lists);
     }
 
     @Override

@@ -4423,7 +4423,7 @@ containing a value of this type.
         public static final int iv_code=0x7f0f00fc;
         public static final int iv_cyc=0x7f0f0173;
         public static final int iv_expend=0x7f0f0114;
-        public static final int iv_img=0x7f0f00c6;
+        public static final int iv_img=0x7f0f00cc;
         public static final int iv_menu_img=0x7f0f0145;
         public static final int iv_phone=0x7f0f00f4;
         public static final int iv_scan=0x7f0f0156;
@@ -4452,7 +4452,7 @@ containing a value of this type.
         public static final int ll_all=0x7f0f01bc;
         public static final int ll_area=0x7f0f0102;
         public static final int ll_back=0x7f0f00cd;
-        public static final int ll_bg=0x7f0f00c7;
+        public static final int ll_bg=0x7f0f00c6;
         public static final int ll_bg1=0x7f0f015d;
         public static final int ll_birth=0x7f0f0100;
         public static final int ll_blood_press=0x7f0f00df;
@@ -4649,9 +4649,9 @@ containing a value of this type.
         public static final int tv_ctwo=0x7f0f014d;
         public static final int tv_data=0x7f0f0148;
         public static final int tv_delete=0x7f0f0175;
-        public static final int tv_department=0x7f0f00ca;
+        public static final int tv_department=0x7f0f00c9;
         public static final int tv_des=0x7f0f0163;
-        public static final int tv_detail=0x7f0f00cc;
+        public static final int tv_detail=0x7f0f00cb;
         public static final int tv_distance=0x7f0f00f5;
         public static final int tv_do=0x7f0f017f;
         public static final int tv_exit=0x7f0f0119;
@@ -4659,12 +4659,12 @@ containing a value of this type.
         public static final int tv_frequency=0x7f0f0110;
         public static final int tv_getcode=0x7f0f00b6;
         public static final int tv_have=0x7f0f010e;
-        public static final int tv_hospital=0x7f0f00cb;
+        public static final int tv_hospital=0x7f0f00ca;
         public static final int tv_hour=0x7f0f00f8;
         public static final int tv_hour1=0x7f0f015e;
         public static final int tv_img=0x7f0f017e;
         public static final int tv_item_city_listview_letter=0x7f0f0128;
-        public static final int tv_job=0x7f0f00c9;
+        public static final int tv_job=0x7f0f00c8;
         public static final int tv_label_item_wheel=0x7f0f0177;
         public static final int tv_less=0x7f0f01ad;
         public static final int tv_letter_overlay=0x7f0f00bf;
@@ -4697,7 +4697,7 @@ containing a value of this type.
         public static final int tv_scan=0x7f0f00bb;
         public static final int tv_search=0x7f0f00bd;
         public static final int tv_second=0x7f0f00fa;
-        public static final int tv_sex=0x7f0f00c8;
+        public static final int tv_sex=0x7f0f00c7;
         public static final int tv_state=0x7f0f0113;
         public static final int tv_state1=0x7f0f014f;
         public static final int tv_state2=0x7f0f0150;
@@ -5257,6 +5257,11 @@ containing a value of this type.
         public static final int Animation_AppCompat_Dialog=0x7f0a00a5;
         public static final int Animation_AppCompat_DropDownUp=0x7f0a00a6;
         public static final int Animation_Design_BottomSheetDialog=0x7f0a00a7;
+        /** &lt;!&ndash; Customize your theme here. &ndash;&gt;
+<item name="colorPrimary">@color/colorPrimary</item>
+<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+<item name="colorAccent">@color/colorAccent</item>
+         */
         public static final int AppTheme=0x7f0a00a8;
         public static final int Base_AlertDialog_AppCompat=0x7f0a00a9;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f0a00aa;
@@ -5656,6 +5661,8 @@ containing a value of this type.
         public static final int list_anim=0x7f0a0192;
         public static final int lv_content=0x7f0a0193;
         public static final int popwin_anim=0x7f0a0194;
+        /**  模糊  
+         */
         public static final int progressDialog=0x7f0a0195;
         public static final int progress_weather=0x7f0a0196;
     }
