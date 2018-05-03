@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Record;
 import com.canplay.medical.mvp.activity.home.DoctorDetailActivity;
 import com.canplay.medical.mvp.adapter.RemindMeasureAdapter;
@@ -36,6 +38,8 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import rx.Subscription;
+import rx.functions.Action1;
 
 
 /**
@@ -60,6 +64,7 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+    private Subscription mSubscription;
     public void setType(int type){
         this.type=type;
     }
@@ -72,7 +77,23 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
          userId = SpUtil.getInstance().getUserId();
         initView();
 
+        mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
+            @Override
+            public void call(SubscriptionBean.RxBusSendBean bean) {
+                if (bean == null) return;
 
+                if (bean.type == SubscriptionBean.BLOODORSUGAR) {
+                    reflash();
+                }
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
+        RxBus.getInstance().addSubscription(mSubscription);
         return view;
     }
 
@@ -201,7 +222,9 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+       if(mSubscription!=null){
+           mSubscription.unsubscribe();
+       }
     }
 
     @Override

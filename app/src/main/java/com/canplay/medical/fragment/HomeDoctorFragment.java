@@ -96,7 +96,7 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
 
-                if (bean.type == SubscriptionBean.NOFIFY) {
+                if (bean.type == SubscriptionBean.DOCTOR) {
                     reflash();
                 }
 
@@ -164,8 +164,10 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
 
         adapter.setClickListener(new HomeDoctorRecycleAdapter.OnItemClickListener() {
             @Override
-            public void clickListener(int poiston, String id) {
-                startActivity(new Intent(getActivity(), DoctorDetailActivity.class));
+            public void clickListener(int poiston, Friend data) {
+                Intent intent = new Intent(getActivity(), DoctorDetailActivity.class);
+                intent.putExtra("data",data);
+                startActivity(intent);
             }
         });
 

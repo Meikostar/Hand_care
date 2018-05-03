@@ -10,7 +10,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
+import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.bean.Friend;
+import com.canplay.medical.util.TextUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,19 +42,30 @@ public class HomeDoctorRecycleAdapter extends BaseRecycleViewAdapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         DoctorItemViewHolder holders = (DoctorItemViewHolder) holder;
-//        final ORDER data= (ORDER) datas.get(position);
+        final Friend data= (Friend) datas.get(position);
         holders.llBg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.clickListener(position, "");
+                listener.clickListener(position, data);
             }
         });
+
+        if(TextUtil.isNotEmpty(data.participant.user.displayName)){
+            holders.tvName.setText(data.participant.user.displayName);
+        }if(TextUtil.isNotEmpty(data.participant.user.mobile)){
+            holders.tvPhone.setText(data.participant.user.mobile);
+        }if(TextUtil.isNotEmpty(data.participant.hospital)){
+            holders.tvLocation.setText(data.participant.hospital);
+        }if(TextUtil.isNotEmpty(data.participant.position)){
+            holders.tvPoistion.setText(data.participant.position+(data.participant.lineManager==null?"":"|"+data.participant.lineManager));
+        }
+        Glide.with(context).load(BaseApplication.avatar+data.participant.user.avatar).asBitmap().placeholder(R.drawable.moren).into(holders.ivImg);
 
     }
 
     @Override
     public int getItemCount() {
-        int count = 5;
+        int count = 0;
 
         if (datas != null && datas.size() > 0) {
             count = datas.size();
@@ -89,6 +104,6 @@ public class HomeDoctorRecycleAdapter extends BaseRecycleViewAdapter {
     public OnItemClickListener listener;
 
     public interface OnItemClickListener {
-        void clickListener(int poiston, String id);
+        void clickListener(int poiston, Friend data);
     }
 }

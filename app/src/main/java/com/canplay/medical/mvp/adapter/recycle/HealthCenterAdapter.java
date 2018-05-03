@@ -102,8 +102,8 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
                         holders.name.setText(data.displayName);
                     }
                 }
-            } if(TextUtil.isNotEmpty(data.phone)){
-                holders.phone.setText(data.phone);
+            } if(TextUtil.isNotEmpty(data.mobile)){
+                holders.phone.setText(data.mobile);
             }
             Glide.with(context).load(data.avatar).asBitmap()
                     .placeholder(R.drawable.moren).transform(new CircleTransform(context)).into(holders.img);

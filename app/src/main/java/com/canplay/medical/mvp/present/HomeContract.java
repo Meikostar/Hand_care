@@ -133,6 +133,10 @@ public class HomeContract {
         void MeasureRemindDetail(String name);
 
         void  addMesure(Mesure base);
+        /**
+         * 移除家庭医生
+         */
+        void DelDoctor(String content);
     }
 
 

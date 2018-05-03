@@ -13,12 +13,14 @@ import android.widget.TextView;
 import com.canplay.medical.BuildConfig;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.mvp.activity.account.LoginActivity;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.StringUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.MarkaBaseDialog;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.ProgressDialog;
@@ -62,7 +64,10 @@ public class SettingActivity extends BaseActivity  {
         setContentView(R.layout.activity_setting);
         ButterKnife.bind(this);
         navigationBar.setNavigationBarListener(this);
+        if(TextUtil.isNotEmpty(BaseApplication.phone)){
+            tvPhone.setText(BaseApplication.phone);
 
+        }
 
 //        mWindowAddPhoto = new PhotoPopupWindow(this);
     }

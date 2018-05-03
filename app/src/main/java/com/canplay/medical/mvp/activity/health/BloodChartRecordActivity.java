@@ -9,6 +9,7 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.fragment.BloodRecordFragment;
 import com.canplay.medical.fragment.ChartFragment;
+import com.canplay.medical.fragment.ChartPressFragment;
 import com.canplay.medical.fragment.MeasureRemindFragment;
 import com.canplay.medical.fragment.RemindMedicatFragment;
 import com.canplay.medical.mvp.activity.home.AddBloodDataActivity;
@@ -94,12 +95,12 @@ public class BloodChartRecordActivity extends BaseActivity {
 
     }
 
-    private ChartFragment chartFragment;
+    private ChartPressFragment chartFragment;
     private BloodRecordFragment bloodRecordFragment;
 
     private void addFragment() {
         mFragments = new ArrayList<>();
-        chartFragment = new ChartFragment();
+        chartFragment = new ChartPressFragment();
         bloodRecordFragment = new BloodRecordFragment();
         mFragments.add(chartFragment);
         mFragments.add(bloodRecordFragment);

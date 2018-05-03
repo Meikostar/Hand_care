@@ -5,11 +5,19 @@ import com.canplay.medical.base.AppComponent;
 import com.canplay.medical.base.manager.ApiManager;
 import com.canplay.medical.fragment.BloodRecordFragment;
 import com.canplay.medical.fragment.BloodRecordFragment_MembersInjector;
+import com.canplay.medical.fragment.ChartFragment;
+import com.canplay.medical.fragment.ChartFragment_MembersInjector;
+import com.canplay.medical.fragment.ChartPressFragment;
+import com.canplay.medical.fragment.ChartPressFragment_MembersInjector;
 import com.canplay.medical.fragment.HealthDataFragment;
 import com.canplay.medical.fragment.HomeDoctorFragment;
 import com.canplay.medical.fragment.HomeDoctorFragment_MembersInjector;
 import com.canplay.medical.fragment.HomeFragment;
 import com.canplay.medical.fragment.HomeFragment_MembersInjector;
+import com.canplay.medical.fragment.LineCharFragment;
+import com.canplay.medical.fragment.LineCharFragment_MembersInjector;
+import com.canplay.medical.fragment.LineCharSugarFragment;
+import com.canplay.medical.fragment.LineCharSugarFragment_MembersInjector;
 import com.canplay.medical.fragment.MeasureRemindFragment;
 import com.canplay.medical.fragment.MeasureRemindFragment_MembersInjector;
 import com.canplay.medical.fragment.RemindMedicatFragment;
@@ -42,6 +50,8 @@ import com.canplay.medical.mvp.activity.home.AddDataActivity;
 import com.canplay.medical.mvp.activity.home.AddDataActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.home.DoctorDetailActivity;
+import com.canplay.medical.mvp.activity.home.DoctorDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
 import com.canplay.medical.mvp.activity.home.MeasureActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MedicalDetailActivity;
@@ -89,13 +99,23 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
+  private Provider<HomePresenter> homePresenterProvider;
+
+  private MembersInjector<DoctorDetailActivity> doctorDetailActivityMembersInjector;
+
   private Provider<BasesPresenter> basesPresenterProvider;
+
+  private MembersInjector<LineCharSugarFragment> lineCharSugarFragmentMembersInjector;
+
+  private MembersInjector<LineCharFragment> lineCharFragmentMembersInjector;
+
+  private MembersInjector<ChartPressFragment> chartPressFragmentMembersInjector;
+
+  private MembersInjector<ChartFragment> chartFragmentMembersInjector;
 
   private MembersInjector<BloodSugarRecordActivity> bloodSugarRecordActivityMembersInjector;
 
   private MembersInjector<BloodPressRecordActivity> bloodPressRecordActivityMembersInjector;
-
-  private Provider<HomePresenter> homePresenterProvider;
 
   private MembersInjector<FriendDetailActivity> friendDetailActivityMembersInjector;
 
@@ -186,15 +206,30 @@ public final class DaggerBaseComponent implements BaseComponent {
     this.loginActivityMembersInjector =
         LoginActivity_MembersInjector.create(loginPresenterProvider);
 
+    this.homePresenterProvider = HomePresenter_Factory.create(apiManagerProvider);
+
+    this.doctorDetailActivityMembersInjector =
+        DoctorDetailActivity_MembersInjector.create(homePresenterProvider);
+
     this.basesPresenterProvider = BasesPresenter_Factory.create(apiManagerProvider);
+
+    this.lineCharSugarFragmentMembersInjector =
+        LineCharSugarFragment_MembersInjector.create(basesPresenterProvider);
+
+    this.lineCharFragmentMembersInjector =
+        LineCharFragment_MembersInjector.create(basesPresenterProvider);
+
+    this.chartPressFragmentMembersInjector =
+        ChartPressFragment_MembersInjector.create(basesPresenterProvider);
+
+    this.chartFragmentMembersInjector =
+        ChartFragment_MembersInjector.create(basesPresenterProvider);
 
     this.bloodSugarRecordActivityMembersInjector =
         BloodSugarRecordActivity_MembersInjector.create(basesPresenterProvider);
 
     this.bloodPressRecordActivityMembersInjector =
         BloodPressRecordActivity_MembersInjector.create(basesPresenterProvider);
-
-    this.homePresenterProvider = HomePresenter_Factory.create(apiManagerProvider);
 
     this.friendDetailActivityMembersInjector =
         FriendDetailActivity_MembersInjector.create(homePresenterProvider);
@@ -286,6 +321,31 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(DoctorDetailActivity binderActivity) {
+    doctorDetailActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(LineCharSugarFragment binderActivity) {
+    lineCharSugarFragmentMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(LineCharFragment binderActivity) {
+    lineCharFragmentMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(ChartPressFragment binderActivity) {
+    chartPressFragmentMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(ChartFragment binderActivity) {
+    chartFragmentMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

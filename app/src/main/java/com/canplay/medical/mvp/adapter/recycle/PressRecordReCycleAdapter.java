@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import com.canplay.medical.R;
 import com.canplay.medical.bean.Record;
 import com.canplay.medical.mvp.adapter.viewholder.PressRecordkViewHolder;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 
 
@@ -39,10 +40,19 @@ public class PressRecordReCycleAdapter extends BaseRecycleViewAdapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
             PressRecordkViewHolder holders = (PressRecordkViewHolder) holder;
+        Record data= (Record) datas.get(position);
         if(type==0){
-//            holders.tvData.setText("血压:"+data.value);
+            if(TextUtil.isNotEmpty(data.high)){
+                holders.one.setText("收缩压："+data.high);
+            }  if(TextUtil.isNotEmpty(data.low)){
+                holders.two.setText("舒张压："+data.low);
+            }  if(TextUtil.isNotEmpty(data.pulse)){
+                holders.three.setText("心率："+data.pulse);
+            }
         }else {
-//            holders.tvData.setText("血糖:"+data.value);
+            holders.one.setText("血糖:"+data.bgl);
+            holders.three.setVisibility(View.GONE);
+            holders.two.setVisibility(View.GONE);
         }
 
         if(position!=0){
@@ -52,10 +62,10 @@ public class PressRecordReCycleAdapter extends BaseRecycleViewAdapter {
 
             }
 
-        Record data= (Record) datas.get(position);
+
 
         if(position==0){
-            String time = TimeUtil.formatToMf(data.date);
+            String time = TimeUtil.formatToMf(data.timeStamp);
             String[] split = time.split("##");
             holders.tvTime.setVisibility(View.VISIBLE);
             if(split!=null&&split.length==2){
@@ -64,10 +74,10 @@ public class PressRecordReCycleAdapter extends BaseRecycleViewAdapter {
             }
 
         }else {
-            String time = TimeUtil.formatToMf(data.date);
+            String time = TimeUtil.formatToMf(data.timeStamp);
             String[] split = time.split("##");
             Record dats= (Record) datas.get(position - 1);
-            String times = TimeUtil.formatToMf(dats.date);
+            String times = TimeUtil.formatToMf(dats.timeStamp);
             String[] splits = times.split("##");
             if(split!=null&&splits!=null){
                 if(split[0].equals(splits[0])){

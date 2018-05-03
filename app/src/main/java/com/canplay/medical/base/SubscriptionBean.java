@@ -24,6 +24,8 @@ public class SubscriptionBean {
     public static int ALARM=109;//闹钟
     public static int ALARM_EDITOR=110;//闹钟
     public static int EDITOR=111;//编辑用户信息
+    public static int BLOODORSUGAR=112;//编辑用户信息
+    public static int DOCTOR=113;//刷新医生列表
 
 
 

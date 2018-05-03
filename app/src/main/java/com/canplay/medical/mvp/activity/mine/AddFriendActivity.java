@@ -17,6 +17,7 @@ import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Add;
 import com.canplay.medical.bean.Friend;
+import com.canplay.medical.mvp.activity.home.DoctorDetailActivity;
 import com.canplay.medical.mvp.adapter.recycle.HealthCenterAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
@@ -238,7 +239,9 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
 
                 if(type==0){
-                   presenter.getDoctorInfo(content);
+                    Intent intent = new Intent(this, DoctorDetailActivity.class);
+                    intent.putExtra("id",content);
+                    startActivity(intent);
                }else {
                     String[] split = content.split("###");
                     if(split==null||split.length!=2){

@@ -40,9 +40,10 @@ public class Record {
     public String content;
     public String version;
     public String high;
+    public String bgl;
     public String low;
     public String pulse;
-    public String timeStamp;
+    public long timeStamp;
     public List<Record> items;
 
     public long createdDateTime;

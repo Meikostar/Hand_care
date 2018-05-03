@@ -25,6 +25,7 @@ public class Friend implements Serializable{
     public Friend participant;
     public String familyAndFriendsId;
     public String familyDoctorId;
+
     public String userId;
     public String lastName;
     public String password;
@@ -36,6 +37,7 @@ public class Friend implements Serializable{
     public String familyAndFriendsUserName;
     public String name;
     public String gender;
+    public String id;
     public String mobile;
     public String phone;
     public String nickname;
@@ -43,6 +45,7 @@ public class Friend implements Serializable{
     public String avatar;
 
     public String displayName;
+    public String userName;
     public String address;
     public String lineManager;
     public String email;

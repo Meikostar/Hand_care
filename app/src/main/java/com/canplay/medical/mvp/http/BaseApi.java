@@ -209,17 +209,22 @@ public interface BaseApi {
      * 添加好友
      */
 
-    @GET("Flow/v2/Practitioner/{userId}")
-    Observable<List<Friend> > getDoctorInfo(@Path("userId") String userId);
+    @GET("Flow/v2/Doctor/{userId}")
+    Observable<Friend> getDoctorInfo(@Path("userId") String userId);
 
 
     /**
-     * 添加好友
+     * 添加家庭医生
      */
-    @DELETE("Flow/api/FamilyDoctor/{userId}")
+    @POST("Flow/api/FamilyDoctor/{userId}")
     Observable<Friend> AddDoctor(@Path("userId") String userId);
 
 
+    /**
+     * 移除家庭医生
+     */
+    @DELETE("Flow/api/FamilyDoctor/{userId}")
+    Observable<Friend> DelDoctor(@Path("userId") String userId);
 
     /**
      * 智能设备列表

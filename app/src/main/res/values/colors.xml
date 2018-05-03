@@ -3,6 +3,7 @@
     <!--通用颜色-->
     <color name="gray">#E1E1E1</color>
     <color name="red">#F90808</color>
+    <color name="red_b">#FFFF5B74</color>
     <color name="yellow">#F1AC07</color>
     <color name="yellows">#FFe616</color>
     <color name="blue">#1098f2</color>
@@ -10,6 +11,9 @@
     <color name="blu">#FFBFE9FF</color>
     <color name="green">#78bb4f</color>
     <color name="orange">#FFA228</color>
+    <color name="one">#FF6BD419</color>
+    <color name="two">#FFA228</color>
+    <color name="three">#FF00A8FF</color>
     <color name="e6">#e6e6e6</color>
     <!-- 黑色: 40 -->
 

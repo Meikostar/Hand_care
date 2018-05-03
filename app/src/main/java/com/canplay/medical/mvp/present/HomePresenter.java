@@ -431,8 +431,8 @@ public class HomePresenter implements HomeContract.Presenter {
         });
     }
     @Override
-    public void getDoctorInfo(String content) {
-        subscription = ApiManager.setSubscribe(contactApi.getDoctorInfo(content), new MySubscriber<List<Friend>>(){
+    public void DelDoctor(String content) {
+        subscription = ApiManager.setSubscribe(contactApi.DelDoctor(content), new MySubscriber<Friend>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
@@ -441,10 +441,27 @@ public class HomePresenter implements HomeContract.Presenter {
             }
 
             @Override
-            public void onNext(List<Friend> entity){
-                if(entity.size()>0&&entity.get(0)!=null){
-                    entity.get(0).type=1;
-                }
+            public void onNext(Friend entity){
+
+
+                mView.toNextStep(2);
+
+            }
+        });
+    }
+    @Override
+    public void getDoctorInfo(String content) {
+        subscription = ApiManager.setSubscribe(contactApi.getDoctorInfo(content), new MySubscriber<Friend>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(Friend entity){
+
                 mView.toEntity(entity,0);
 
             }

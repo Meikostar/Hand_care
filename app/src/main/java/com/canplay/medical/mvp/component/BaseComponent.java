@@ -3,9 +3,13 @@ package com.canplay.medical.mvp.component;
 
 import com.canplay.medical.base.AppComponent;
 import com.canplay.medical.fragment.BloodRecordFragment;
+import com.canplay.medical.fragment.ChartFragment;
+import com.canplay.medical.fragment.ChartPressFragment;
 import com.canplay.medical.fragment.HealthDataFragment;
 import com.canplay.medical.fragment.HomeDoctorFragment;
 import com.canplay.medical.fragment.HomeFragment;
+import com.canplay.medical.fragment.LineCharFragment;
+import com.canplay.medical.fragment.LineCharSugarFragment;
 import com.canplay.medical.fragment.MeasureRemindFragment;
 import com.canplay.medical.fragment.RemindMedicatFragment;
 import com.canplay.medical.fragment.SetFragment;
@@ -23,6 +27,7 @@ import com.canplay.medical.mvp.activity.health.TimeXRecordActivity;
 import com.canplay.medical.mvp.activity.home.AddBloodDataActivity;
 import com.canplay.medical.mvp.activity.home.AddDataActivity;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
+import com.canplay.medical.mvp.activity.home.DoctorDetailActivity;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
 import com.canplay.medical.mvp.activity.home.MedicalDetailActivity;
 import com.canplay.medical.mvp.activity.home.MessageActivity;
@@ -47,6 +52,11 @@ import dagger.Component;
 public interface BaseComponent{
 
     void inject(LoginActivity binderActivity);
+    void inject(DoctorDetailActivity binderActivity);
+    void inject(LineCharSugarFragment binderActivity);
+    void inject(LineCharFragment binderActivity);
+    void inject(ChartPressFragment binderActivity);
+    void inject(ChartFragment binderActivity);
     void inject(BloodSugarRecordActivity binderActivity);
     void inject(BloodPressRecordActivity binderActivity);
     void inject(FriendDetailActivity binderActivity);

@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Press;
 import com.canplay.medical.bean.Sug;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
@@ -20,6 +22,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Subscription;
 
 /**
  * 添加血压测试值/添加血糖测试值
@@ -115,8 +118,12 @@ public class AddBloodDataActivity extends BaseActivity implements BaseContract.V
     @Override
     public <T> void toEntity(T entity, int type) {
          if(type==1){//添加血糖记录成功
+
+             RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.BLOODORSUGAR,""));
              finish();
          }else if(type==2){//添加血压记录成功
+
+             RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.BLOODORSUGAR,""));
              finish();
          }
     }

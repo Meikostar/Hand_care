@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
-                        android:text="陈晨"
+                        android:text=""
                         android:textColor="@color/slow_black"
                         android:textSize="18sp" />
                     <TextView
@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
-                        android:text="18956354215"
+                        android:text=""
                         android:textColor="@color/color8"
                         android:textSize="14.5sp" />
                     <LinearLayout

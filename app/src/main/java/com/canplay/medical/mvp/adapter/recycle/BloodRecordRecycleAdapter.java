@@ -49,14 +49,15 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
         final Record data= (Record) datas.get(position);
         Record customerinfo = mGson.fromJson(data.value, Record.class);
          if(type==0){
-             holders.tvData.setText("血压:"+data.value);
+           String datas=("收缩压："+( data.high==null?"":data.high))+("舒张压："+(data.low==null?"":data.low))+("心率："+(data.pulse==null?"":data.pulse));
+             holders.tvData.setText(datas);
          }else {
-             holders.tvData.setText("血糖:"+data.value);
+             holders.tvData.setText("血糖:"+data.bgl);
          }
 
 
         if(position==0){
-            String time = TimeUtil.formatToMf(data.date);
+            String time = TimeUtil.formatToMf(data.timeStamp);
             String[] split = time.split("##");
             holders.tvTime.setVisibility(View.VISIBLE);
             if(split!=null&&split.length==2){
@@ -65,10 +66,10 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
             }
 
         }else {
-            String time = TimeUtil.formatToMf(data.date);
+            String time = TimeUtil.formatToMf(data.timeStamp);
             String[] split = time.split("##");
             Record dats= (Record) datas.get(position - 1);
-            String times = TimeUtil.formatToMf(dats.date);
+            String times = TimeUtil.formatToMf(dats.timeStamp);
             String[] splits = times.split("##");
             if(split!=null&&splits!=null){
                 if(split[0].equals(splits[0])){

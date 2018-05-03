@@ -20,16 +20,18 @@ public class ChartFragment_ViewBinding implements Unbinder {
   public ChartFragment_ViewBinding(ChartFragment target, View source) {
     this.target = target;
 
+    target.viewpagerMain = Utils.findRequiredViewAsType(source, R.id.viewpager_main, "field 'viewpagerMain'", NoScrollViewPager.class);
     target.tvPress = Utils.findRequiredViewAsType(source, R.id.tv_press, "field 'tvPress'", TextView.class);
     target.tvData = Utils.findRequiredViewAsType(source, R.id.tv_data, "field 'tvData'", TextView.class);
-    target.tvRate = Utils.findRequiredViewAsType(source, R.id.tv_rate, "field 'tvRate'", TextView.class);
+    target.textView = Utils.findRequiredViewAsType(source, R.id.textView, "field 'textView'", TextView.class);
     target.llCenter = Utils.findRequiredViewAsType(source, R.id.ll_center, "field 'llCenter'", LinearLayout.class);
-    target.tvOne = Utils.findRequiredViewAsType(source, R.id.tv_one, "field 'tvOne'", TextView.class);
-    target.tvTwo = Utils.findRequiredViewAsType(source, R.id.tv_two, "field 'tvTwo'", TextView.class);
     target.tvCone = Utils.findRequiredViewAsType(source, R.id.tv_cone, "field 'tvCone'", TextView.class);
     target.tvCtwo = Utils.findRequiredViewAsType(source, R.id.tv_ctwo, "field 'tvCtwo'", TextView.class);
     target.tvCthree = Utils.findRequiredViewAsType(source, R.id.tv_cthree, "field 'tvCthree'", TextView.class);
-    target.viewpagerMain = Utils.findRequiredViewAsType(source, R.id.viewpager_main, "field 'viewpagerMain'", NoScrollViewPager.class);
+    target.tvState2 = Utils.findRequiredViewAsType(source, R.id.tv_state2, "field 'tvState2'", TextView.class);
+    target.tvState1 = Utils.findRequiredViewAsType(source, R.id.tv_state1, "field 'tvState1'", TextView.class);
+    target.tvState = Utils.findRequiredViewAsType(source, R.id.tv_state, "field 'tvState'", TextView.class);
+    target.tvTime = Utils.findRequiredViewAsType(source, R.id.tv_time, "field 'tvTime'", TextView.class);
   }
 
   @Override
@@ -39,15 +41,17 @@ public class ChartFragment_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
+    target.viewpagerMain = null;
     target.tvPress = null;
     target.tvData = null;
-    target.tvRate = null;
+    target.textView = null;
     target.llCenter = null;
-    target.tvOne = null;
-    target.tvTwo = null;
     target.tvCone = null;
     target.tvCtwo = null;
     target.tvCthree = null;
-    target.viewpagerMain = null;
+    target.tvState2 = null;
+    target.tvState1 = null;
+    target.tvState = null;
+    target.tvTime = null;
   }
 }

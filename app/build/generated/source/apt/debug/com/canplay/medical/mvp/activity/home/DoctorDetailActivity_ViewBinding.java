@@ -4,6 +4,7 @@ package com.canplay.medical.mvp.activity.home;
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -36,6 +37,8 @@ public class DoctorDetailActivity_ViewBinding implements Unbinder {
     target.llBg = Utils.findRequiredViewAsType(source, R.id.ll_bg, "field 'llBg'", LinearLayout.class);
     target.tvDetail = Utils.findRequiredViewAsType(source, R.id.tv_detail, "field 'tvDetail'", TextView.class);
     target.ll_back = Utils.findRequiredViewAsType(source, R.id.ll_back, "field 'll_back'", LinearLayout.class);
+    target.tvAdd = Utils.findRequiredViewAsType(source, R.id.tv_add, "field 'tvAdd'", TextView.class);
+    target.topviewRightLayout = Utils.findRequiredViewAsType(source, R.id.topview_right_layout, "field 'topviewRightLayout'", FrameLayout.class);
   }
 
   @Override
@@ -56,5 +59,7 @@ public class DoctorDetailActivity_ViewBinding implements Unbinder {
     target.llBg = null;
     target.tvDetail = null;
     target.ll_back = null;
+    target.tvAdd = null;
+    target.topviewRightLayout = null;
   }
 }

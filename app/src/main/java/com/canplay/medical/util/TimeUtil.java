@@ -54,15 +54,19 @@ public class TimeUtil {
     }
     public static String formatToMs(long time){
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-        return format.format(new Date(time*1000));
+        return format.format(new Date(time));
     }
     public static String formatToMf(long time){
         SimpleDateFormat format = new SimpleDateFormat("MM.dd ## HH:mm:ss");
-        return format.format(new Date(time*1000));
+        return format.format(new Date(time));
     }
     public static String formatToMD(long time){
         SimpleDateFormat format = new SimpleDateFormat("MM-dd");
         return format.format(new Date(time*1000));
+    }
+    public static String formatToNew(long time){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        return format.format(new Date(time));
     }
     public static String format(long time,String pattern){
         SimpleDateFormat format = new SimpleDateFormat(pattern);

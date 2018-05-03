@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/tv_time"
         android:layout_marginRight="6dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="11dp"
         android:layout_marginTop="16dp"
         android:textSize="15.5sp"
         android:textColor="@color/blue"
@@ -84,7 +84,7 @@
                 android:gravity="center_vertical"
 
                 android:textColor="@color/slow_black"
-                android:text="收缩压130"
+                android:text=""
                 android:layout_width="30dp"
                 android:layout_height="wrap_content" />
             <TextView
@@ -94,7 +94,7 @@
                 android:gravity="center_vertical"
 
                 android:textColor="@color/slow_black"
-                android:text="舒张压120"
+                android:text=""
                 android:layout_width="30dp"
                 android:layout_height="wrap_content" />
             <TextView
@@ -104,7 +104,7 @@
                 android:gravity="center_vertical"
 
                 android:textColor="@color/slow_black"
-                android:text="心率：73"
+                android:text=""
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 

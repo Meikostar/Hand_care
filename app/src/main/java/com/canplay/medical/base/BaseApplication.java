@@ -45,6 +45,7 @@ public class BaseApplication extends DaemonApplication  {
     AppComponent mAppComponent;
     public static  BaseApplication cplayApplication;
     public static  String avatar="http://qsgx-pt.com:8091/Flow/avatar/";
+    public static  String phone="";
     public static Map<String,String> map=new HashMap<>();
     public static BaseApplication getInstance() {
         if (cplayApplication == null) {
