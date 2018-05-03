@@ -60,16 +60,16 @@ public class ForgetFirstActivity extends BaseActivity implements LoginContract.V
         recovery=new Recovery();
         tvSave.setEnabled(false);
     }
-   private String username;
+   private String displayName;
     @Override
     public void bindEvents() {
 
         tvGetcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                username = etPhone.getText().toString();
-                if (TextUtil.isNotEmpty(username) ) {
-                    presenter.getRecoveryCode(username);
+                displayName = etPhone.getText().toString();
+                if (TextUtil.isNotEmpty(displayName) ) {
+                    presenter.getRecoveryCode(displayName);
 
                 }
             }
@@ -77,15 +77,15 @@ public class ForgetFirstActivity extends BaseActivity implements LoginContract.V
         tvSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtil.isNotEmpty(username)){
-                    if(!username.equals(etPhone.getText().toString())){
+                if(TextUtil.isNotEmpty(displayName)){
+                    if(!displayName.equals(etPhone.getText().toString())){
                         showToasts("用户名已更改重新获取验证码");
                         return;
                     }
                 }
                 recovery.jobId=jobId;
                 recovery.code=etCode.getText().toString();
-                recovery.username=username;
+                recovery.displayName=displayName;
                 presenter.checkCodeRecovery(recovery);
 
             }
@@ -161,7 +161,7 @@ public class ForgetFirstActivity extends BaseActivity implements LoginContract.V
             BaseResult base = (BaseResult) entity;
             Intent intent = new Intent(ForgetFirstActivity.this, ForgetPswActivity.class);
             intent.putExtra("passwordResetToken",base.object);
-            intent.putExtra("username",username);
+            intent.putExtra("username",displayName);
             startActivity(intent);
             finish();
         }

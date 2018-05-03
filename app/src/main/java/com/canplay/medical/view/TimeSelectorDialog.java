@@ -129,7 +129,7 @@ public class TimeSelectorDialog {
     }
 
     public interface BindClickListener{
-        void time(String time,int poition);
+        void time(String time,int poition,String times);
     }
 
     private void initView(){
@@ -168,13 +168,15 @@ public class TimeSelectorDialog {
 
                 String str=null;
                 String date=null;
+                String dates=null;
                 int selection = mCycleWheelViewDate.getSelection();
                 str= mDataList.get(mCycleWheelViewDate.getSelection());
                 String[] yr = str.split("年");
                     date=yr[0]+"-"+hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu)))+"-"+minute.substring(0,minute.indexOf(mContext.getString(R.string.riis)));
+                    dates=yr[0]+"."+hour.substring(0,hour.indexOf(mContext.getString(R.string.yeu)))+"."+minute.substring(0,minute.indexOf(mContext.getString(R.string.riis)));
 
 
-                mBindClickListener.time(date,selection);
+                mBindClickListener.time(date,selection,dates);
 
             }
         });

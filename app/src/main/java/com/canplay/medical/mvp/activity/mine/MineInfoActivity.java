@@ -17,6 +17,10 @@ import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.BASE;
+import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.Province;
 import com.canplay.medical.bean.avator;
@@ -30,6 +34,7 @@ import com.canplay.medical.permission.PermissionSuccess;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.AddressSelectBindDialog;
+import com.canplay.medical.view.CircleTransform;
 import com.canplay.medical.view.EditorNameDialog;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PhotoPopupWindow;
@@ -86,6 +91,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     private PhotoPopupWindow mWindowAddPhoto;
     private int sex=0;
     private String name="";
+    private Editor editor=new Editor();
     @Override
     public void initViews() {
         setContentView(R.layout.activity_mine_info);
@@ -95,17 +101,20 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
         navigationBar.setNavigationBarListener(this);
         friend= (Friend) getIntent().getSerializableExtra("friend");
         dialog=new EditorNameDialog(this,line);
+
         selectorDialog = new TimeSelectorDialog(MineInfoActivity.this);
         selectorDialog.setDate(new Date(System.currentTimeMillis()))
                 .setBindClickListener(new TimeSelectorDialog.BindClickListener() {
                     @Override
-                    public void time(String time,int poition) {
-                        tvBirth.setText(time);
+                    public void time(String data,int poition,String times) {
+                        time=data;
+                        tvBirth.setText(times);
                     }
                 });
         mWindowAddPhoto = new PhotoPopupWindow(this);
     }
     private  TimeSelectorDialog selectorDialog;
+    private  String time;
     @Override
     public void bindEvents() {
         ivPhone.setOnClickListener(this);
@@ -119,6 +128,41 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
             @Override
             public void onClick(View v) {
                 selectorDialog.show(findViewById(R.id.ll_area));
+            }
+        });
+        navigationBar.setNavigationBarListener(new NavigationBar.NavigationBarListener() {
+            @Override
+            public void navigationLeft() {
+                finish();
+            }
+
+            @Override
+            public void navigationRight() {
+               if(TextUtil.isNotEmpty(tv_area.getText().toString())){
+                   editor.address=tv_area.getText().toString();
+               }else {
+                   editor.address="";
+               } if(TextUtil.isNotEmpty(tvName.getText().toString())){
+                    editor.displayName=tvName.getText().toString();
+                }else {
+                    editor.displayName="";
+                } if(TextUtil.isNotEmpty(time)){
+                    editor.dob=time;
+                }else {
+                    editor.dob="";
+                }if(tvSex.getText().toString().equals("男")){
+                    editor.gender="male";
+                }else {
+                    editor.gender="female";
+                }
+                editor.userId=SpUtil.getInstance().getUserId();
+                showProgress("修改中...");
+                presenter.editorUser(editor);
+            }
+
+            @Override
+            public void navigationimg() {
+
             }
         });
         dialog.setBindClickListener(new EditorNameDialog.BindClickListener() {
@@ -157,13 +201,20 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     private Province prov;
     @Override
     public void initData() {
-        Glide.with(this).load(friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivPhone);
-        if(TextUtil.isNotEmpty(friend.userName)){
-            tvName.setText(friend.userName);
-        }   if(TextUtil.isNotEmpty(friend.dob)){
-            String[] split = friend.dob.split("//");
+        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().placeholder(R.drawable.moren).transform(new CircleTransform(this)).into(ivPhone);
+        if(TextUtil.isNotEmpty(friend.displayName)){
+            tvName.setText(friend.displayName);
+        }   if(TextUtil.isNotEmpty(friend.address)){
+            tv_area.setText(friend.address);
+        } if(TextUtil.isNotEmpty(friend.dob)){
+            String[] split = friend.dob.split("/");
             String birth=split[0]+"."+split[1]+"."+split[2];
             tvBirth.setText(birth);
+        }
+        if(friend.gender.equals("male")){//男
+            tvSex.setText("男");
+        }else {
+            tvSex.setText("女");
         }
     }
     @PermissionSuccess(requestCode = PermissionConst.REQUECT_CODE_CAMERA)
@@ -201,8 +252,9 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
                     String photo = Base64.encodeToString(buffer, 0, buffer.length,Base64.DEFAULT);
                     ava.image=photo;
                     ava.ext="png";
+                    showProgress("上传头像...");
                     presenter.upPhotos(ava);
-                    Glide.with(this).load(path).asBitmap().into(ivPhone);
+                    Glide.with(this).load(path).asBitmap().transform(new CircleTransform(this)).into(ivPhone);
 //                    presenter.getToken(path);
                     break;
 
@@ -260,14 +312,24 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
         }
         mSelectBindDialog.show();
     }
-
+   private BASE base;
     @Override
     public <T> void toEntity(T entity, int type) {
      if(type==0){
+         dimessProgress();
          showToasts("上传失败");
      } else if(type==1){
-            showToasts("上传成功");
-        }
+         dimessProgress();
+         base= (BASE) entity;
+         showToasts("上传成功");
+         editor.avatar=base.Filename;
+         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EDITOR,editor));
+        }else {
+         dimessProgress();
+         showToasts("编辑成功");
+         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EDITOR,editor));
+         finish();
+     }
     }
 
     @Override

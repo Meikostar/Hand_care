@@ -12,6 +12,7 @@ import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
+import com.canplay.medical.view.CircleImageView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -24,7 +25,7 @@ public class SetFragment_ViewBinding implements Unbinder {
 
     target.ivBox = Utils.findRequiredViewAsType(source, R.id.iv_box, "field 'ivBox'", ImageView.class);
     target.ivSetting = Utils.findRequiredViewAsType(source, R.id.iv_setting, "field 'ivSetting'", ImageView.class);
-    target.ivImg = Utils.findRequiredViewAsType(source, R.id.iv_img, "field 'ivImg'", ImageView.class);
+    target.ivImg = Utils.findRequiredViewAsType(source, R.id.iv_img, "field 'ivImg'", CircleImageView.class);
     target.tvName = Utils.findRequiredViewAsType(source, R.id.tv_name, "field 'tvName'", TextView.class);
     target.tvPhone = Utils.findRequiredViewAsType(source, R.id.tv_phone, "field 'tvPhone'", TextView.class);
     target.tvAddress = Utils.findRequiredViewAsType(source, R.id.tv_address, "field 'tvAddress'", TextView.class);

@@ -23,6 +23,7 @@ public class SubscriptionBean {
     public static int CLOSE=108;//药物提醒列表刷新
     public static int ALARM=109;//闹钟
     public static int ALARM_EDITOR=110;//闹钟
+    public static int EDITOR=111;//编辑用户信息
 
 
 

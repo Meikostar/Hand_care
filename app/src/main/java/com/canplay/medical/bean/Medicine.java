@@ -78,7 +78,7 @@ public class Medicine extends BaseData implements Serializable{
     public String remindingFor;
     public String messageId;
     public String userId;
-    public String userName;
+    public String displayName;
     public String tystatuspe;
     public String version;
     public String from;

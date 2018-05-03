@@ -10,7 +10,7 @@ public class Add {
 //    userId:"ccda9cf7-d871-41a5-8548-77022c54f1bf",
 //    name:"张俊",
 //    familyAndFriendsUserId:"5c920653-14ed-435a-a83a-54d9349f78f2",
-//    familyAndFriendsUserName:"严桂宁"
+//    familyAndFriendsdisplayName:"严桂宁"
 
     public String userId;
     public String name;

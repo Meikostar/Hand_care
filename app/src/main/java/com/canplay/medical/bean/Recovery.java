@@ -14,7 +14,7 @@ public class Recovery {
 
     public String jobId;
     public String code;
-    public String username;
+    public String displayName;
 
 
 }

@@ -51,7 +51,7 @@
                     android:textColorHint="@color/color8"
                     android:inputType="text"
                     android:singleLine="true"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/slow_black"
                     android:textSize="14sp"
                     tools:ignore="RtlHardcoded" />
 

@@ -21,7 +21,7 @@ public class Test {
 
     private String patientDeviceId;
     private String userId;
-    private String userName;
+    private String displayName;
     private String serialNo;
     private String deviceType;
     private String deviceTypeDisplayName;
@@ -47,11 +47,11 @@ public class Test {
     }
 
     public String getUserName() {
-        return userName;
+        return displayName;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.displayName = userName;
     }
 
     public String getSerialNo() {

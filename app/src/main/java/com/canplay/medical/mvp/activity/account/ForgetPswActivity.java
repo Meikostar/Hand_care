@@ -46,7 +46,7 @@ public class ForgetPswActivity extends BaseActivity implements LoginContract.Vie
     private Subscription mSubscription;
     private LinearLayoutManager mLinearLayoutManager;
     private int type;
-    private String username;
+    private String displayName;
     private String passwordResetToken;
 
     private boolean is_time;
@@ -60,10 +60,10 @@ public class ForgetPswActivity extends BaseActivity implements LoginContract.Vie
         presenter.attachView(this);
         type = getIntent().getIntExtra("type", 0);
         passwordResetToken = getIntent().getStringExtra("passwordResetToken");
-        username = getIntent().getStringExtra("username");
+        displayName = getIntent().getStringExtra("username");
         recoveryPsw=new RecoveryPsw();
         recoveryPsw.passwordResetToken=passwordResetToken;
-        recoveryPsw.username=username;
+        recoveryPsw.displayName=displayName;
 
     }
 

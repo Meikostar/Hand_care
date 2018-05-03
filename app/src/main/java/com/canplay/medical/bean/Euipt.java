@@ -25,7 +25,7 @@ public class Euipt {
     public Boolean isCompleted;
     public String patientDeviceId;
     public String userId;
-    public String userName;
+    public String displayName;
     public String serialNo;
     public String deviceType;
 

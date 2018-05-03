@@ -49,11 +49,11 @@ public class USER {
     }
 
     public String getUserName() {
-        return userName;
+        return displayName;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.displayName = userName;
     }
 
     public String getFirstName() {
@@ -96,7 +96,7 @@ public class USER {
     public String token_type;
     public String expires_in;
     public String userId;
-    public String userName;
+    public String displayName;
     public String firstName;
     public String lastName;
 

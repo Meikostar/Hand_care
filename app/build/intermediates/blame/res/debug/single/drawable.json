@@ -140,12 +140,12 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\message.png"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mine6.png",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\mine6.png"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_circle_toast.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\shape_circle_toast.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mine6.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\mine6.png"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cw4.png",
@@ -388,12 +388,12 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\shape_circle_btn_cancel_pressed.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_circle_progress_bar.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\shape_circle_progress_bar.xml"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_circle_progress_bar.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\shape_circle_progress_bar.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\uncheck.png",

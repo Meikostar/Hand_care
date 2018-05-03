@@ -672,12 +672,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_use_record.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_use_record.xml"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_timer_on_time.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_timer_on_time.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_use_record.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_use_record.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_recyclerview_horizontalscroll.xml",

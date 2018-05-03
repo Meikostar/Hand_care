@@ -10,6 +10,7 @@ import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.BaseData;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Box;
+import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
@@ -177,7 +178,7 @@ public class BasesPresenter implements BaseContract.Presenter {
 
             @Override
             public void onNext(BASE entity){
-                if (entity.isSucceeded){
+                if (entity.IsSucceeded){
                     mView.toEntity(entity,1);
                 }else {
                     mView.toEntity(entity,0);
@@ -328,7 +329,25 @@ public class BasesPresenter implements BaseContract.Presenter {
             }
         });
     }
+    @Override
+    public void editorUser(Editor name) {
+        subscription = ApiManager.setSubscribe(contactApi.editorUser(name), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
 
+
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
+
+                mView.toEntity(entity,3);
+            }
+        });
+    }
     @Override
     public void addMediacl(AddMedical base) {
 

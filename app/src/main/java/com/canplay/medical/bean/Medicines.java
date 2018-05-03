@@ -59,7 +59,7 @@ public class Medicines extends BaseData implements Serializable{
     public String storage;
     public String  pack;
 
-    public String userName;
+    public String displayName;
     public String createdBy;
     public String toxicology;
     public String standard;

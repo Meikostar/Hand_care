@@ -9,6 +9,7 @@ import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.BaseData;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Box;
+import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
@@ -75,6 +76,25 @@ public class OtherPresenter implements OtherContract.Presenter {
 
             @Override
             public void onNext(Medicines entity){
+
+                mView.toEntity(entity,0);
+            }
+        });
+    }
+    @Override
+    public void editorUser(Editor name) {
+        subscription = ApiManager.setSubscribe(contactApi.editorUser(name), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
 
                 mView.toEntity(entity,0);
             }

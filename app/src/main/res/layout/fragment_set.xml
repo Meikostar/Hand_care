@@ -66,7 +66,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true">
-                    <ImageView
+                    <com.canplay.medical.view.CircleImageView
                         android:layout_marginTop="16dp"
                         android:id="@+id/iv_img"
                         android:layout_width="57dp"
@@ -125,11 +125,13 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="10dp"
-                                android:text="广东深圳"
+                                android:text=""
+                                android:singleLine="true"
                                 android:textColor="@color/color9"
                                 android:textSize="13sp" />
                         </LinearLayout>
                         <LinearLayout
+                            android:minWidth="80dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -154,6 +156,7 @@
                                 android:textSize="13.5sp" />
                         </LinearLayout>
                         <LinearLayout
+                            android:minWidth="80dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

@@ -9,7 +9,7 @@ package com.canplay.medical.bean;
 public class Righter {
 //    {"isSucceeded":true,"jobId":"f01f9358-6aa3-40a4-a1f4-2f9c23e6bbd9","message":""
     public String DisplayName;
-    public String username;
+    public String displayName;
     public String confirmPassword;
     public String email;
     public String dob;

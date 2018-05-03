@@ -16,6 +16,9 @@ import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.unBind;
@@ -27,6 +30,8 @@ import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.view.CircleImageView;
+import com.canplay.medical.view.CircleTransform;
 import com.canplay.medical.view.EditorNameDialog;
 import com.canplay.medical.view.PhotoPopupWindow;
 
@@ -38,6 +43,8 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import rx.Subscription;
+import rx.functions.Action1;
 
 
 /**
@@ -52,7 +59,7 @@ HomePresenter presenter;
     @BindView(R.id.iv_setting)
     ImageView ivSetting;
     @BindView(R.id.iv_img)
-    ImageView ivImg;
+    CircleImageView ivImg;
     @BindView(R.id.tv_name)
     TextView tvName;
     @BindView(R.id.tv_phone)
@@ -113,7 +120,37 @@ HomePresenter presenter;
     private String patientDeviceId;
     private String user_id;
     private unBind unbind=new unBind();
+    private Subscription mSubscription;
+    private Editor editor;
     private void initListener() {
+
+        mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
+            @Override
+            public void call(SubscriptionBean.RxBusSendBean bean) {
+                if (bean == null) return;
+
+                if (bean.type == SubscriptionBean.EDITOR) {
+                    editor= (Editor) bean.content;
+                    friend.gender=editor.gender;
+                    friend.address=editor.address;
+                    friend.dob=editor.dob;
+                    if(TextUtil.isNotEmpty(editor.avatar)){
+                        friend.avatar=editor.avatar;
+                    }
+
+                    friend.displayName=editor.displayName;
+                    setData();
+
+                }
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
+        RxBus.getInstance().addSubscription(mSubscription);
         ivImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -157,6 +194,9 @@ HomePresenter presenter;
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        if(mSubscription!=null){
+            mSubscription.unsubscribe();
+        }
     }
 
     @Override
@@ -203,21 +243,31 @@ HomePresenter presenter;
             adapter.setData(list);
         }else {
             friend= (Friend) entity;
-
-            Glide.with(this).load(friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivImg);
-            if(TextUtil.isNotEmpty(friend.userName)){
-                tvName.setText(friend.userName);
-            }   if(TextUtil.isNotEmpty(friend.phone)){
-                tvPhone.setText(friend.phone);
-            }  if(TextUtil.isNotEmpty(friend.dob)){
-                String[] split = friend.dob.split("//");
-                String birth=split[0]+"."+split[1]+"."+split[2];
-                tvBirth.setText(birth);
-            }
+            setData();
         }
 
     }
+    public void setData(){
+        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.moren).into(ivImg);
+        if(TextUtil.isNotEmpty(friend.displayName)){
+            tvName.setText(friend.displayName);
+        }   if(TextUtil.isNotEmpty(friend.phone)){
+            tvPhone.setText(friend.phone);
+        }  if(TextUtil.isNotEmpty(friend.dob)){
+            String[] split = friend.dob.split("/");
+            String birth=split[0]+"."+split[1]+"."+split[2];
+            tvBirth.setText(birth);
+        }
+        if(TextUtil.isNotEmpty(friend.address)){
+            tvAddress.setText(friend.address);
+        }
 
+        if(friend.gender.equals("male")){//男
+            tvSex.setText("男");
+        }else {
+            tvSex.setText("女");
+        }
+    }
     @Override
     public void toNextStep(int type) {
         presenter.getSmartList();

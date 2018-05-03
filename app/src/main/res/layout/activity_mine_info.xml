@@ -13,6 +13,10 @@
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:navigationLeft_img="@drawable/black_left"
+        app:navigationRight_type="txt"
+        app:navigationRight_txt_color="@color/slow_black"
+        app:navigationRight_txt="保存"
         app:navigationTitle="个人信息" />
 
 
@@ -81,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="13dp"
-            android:text="张三"
+            android:text=""
             android:textColor="@color/slow_black"
             android:textSize="15sp" />
         <ImageView

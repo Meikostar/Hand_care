@@ -146,9 +146,9 @@ public class Medicaldapter extends BaseAdapter {
         Glide.with(mContext).load(mCities.get(position).image).asBitmap().placeholder(R.drawable.moren).into(holder.img);
 //        String city = null;
 //        if (status != 0) {
-//            city = mCities.get(position).userName;
+//            city = mCities.get(position).displayName;
 //        } else {
-//            city = mCities.get(position).userName;
+//            city = mCities.get(position).displayName;
 //        }
 //
 //        if (position >= 1) {

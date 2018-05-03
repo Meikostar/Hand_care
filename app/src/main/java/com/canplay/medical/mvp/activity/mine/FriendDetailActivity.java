@@ -130,7 +130,7 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
                 }
                 Add add = new Add();
                 add.familyAndFriendsUserId=friend.userId;
-                add.familyAndFriendsUserName=friend.userName;
+                add.familyAndFriendsUserName=friend.displayName;
                 add.userId= SpUtil.getInstance().getUserId();
                 add.name=SpUtil.getInstance().getUser();
                 if(type==0){
@@ -158,14 +158,21 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     public <T> void toEntity(T entity,int type) {
      friend= (Friend) entity;
         Glide.with(this).load(friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivAvatar);
-        if(TextUtil.isNotEmpty(friend.userName)){
-            tvName.setText(friend.userName);
-        }   if(TextUtil.isNotEmpty(friend.phone)){
+        if(TextUtil.isNotEmpty(friend.displayName)){
+            tvName.setText(friend.displayName);
+        }if(TextUtil.isNotEmpty(friend.address)){
+            tvAddress.setText(friend.address);
+        }    if(TextUtil.isNotEmpty(friend.phone)){
             tvPhone.setText(friend.phone);
         }  if(TextUtil.isNotEmpty(friend.dob)){
             String[] split = friend.dob.split("//");
             String birth=split[0]+"."+split[1]+"."+split[2];
             tvBirth.setText(birth);
+        }
+        if(friend.gender.equals("male")){//男
+
+        }else {
+
         }
     }
 

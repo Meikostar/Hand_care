@@ -41,7 +41,9 @@ public class Friend implements Serializable{
     public String nickname;
     public String position;
     public String avatar;
-    public String userName;
+
+    public String displayName;
+    public String address;
     public String lineManager;
     public String email;
     public String dob;

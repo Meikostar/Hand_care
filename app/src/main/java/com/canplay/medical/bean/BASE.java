@@ -49,10 +49,10 @@ public class BASE {
 //    passwordResetToken:"wCIAuLqgkAGBVAR5OMDRcAdWefbWh22PnQSlJE2QlNqfLsu+Z68MRY1uaPYRXsxbHH6MqU7UKg4oVXgcE6tloTKbCeHXpCBA2PvA41eIXs7mPqNRu9bnTukijo7KAlkYlQAOX7zRqTvVBPLCa+jpyEbjiSZu1y11gdbuG0fF+3LjTxfHPfaiRl9Mt7vnC8hikpW0BBkb3XkHSBZqGDTX4w==",
 //    username:"zhangj"
 
-    public Boolean isSucceeded;
-    public Boolean isVerfied;
-    public Boolean isCompleted;
-    public String userName;
+    public boolean isSucceeded;
+    public boolean isVerfied;
+    public boolean isCompleted;
+    public String displayName;
 
     public String code;
     public String serialNo;

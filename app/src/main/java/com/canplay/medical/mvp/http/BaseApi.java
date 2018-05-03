@@ -9,6 +9,7 @@ import com.canplay.medical.bean.BaseData;
 import com.canplay.medical.bean.BaseResult;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Box;
+import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.Medic;
@@ -86,6 +87,16 @@ public interface BaseApi {
     @Headers({"Content-Type: application/json","Accept: application/json"})
     @POST("Flow/Register")
     Observable<BASE> righter(@Body Righter body);
+
+
+    /**
+     * 编辑用户信息
+     */
+
+    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @POST("Flow/v2/user")
+    Observable<BASE> editorUser(@Body Editor body);
+
     /**
      * 忘记密码
      */

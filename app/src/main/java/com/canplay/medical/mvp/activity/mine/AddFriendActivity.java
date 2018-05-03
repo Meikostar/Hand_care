@@ -212,7 +212,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
                 if(type==1&&poiston==1){
                     Add add = new Add();
                     add.familyAndFriendsUserId=data.userId;
-                    add.familyAndFriendsUserName=data.userName;
+                    add.familyAndFriendsUserName=data.displayName;
                     add.userId= SpUtil.getInstance().getUserId();
                     add.name=SpUtil.getInstance().getUser();
                     presenter.addFriend(add);

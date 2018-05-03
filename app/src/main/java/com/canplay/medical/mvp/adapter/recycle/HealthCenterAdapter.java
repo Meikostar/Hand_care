@@ -98,8 +98,8 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
                 if(TextUtil.isNotEmpty(data.name)){
                     holders.name.setText(data.name);
                 } else{
-                    if(TextUtil.isNotEmpty(data.userName)){
-                        holders.name.setText(data.userName);
+                    if(TextUtil.isNotEmpty(data.displayName)){
+                        holders.name.setText(data.displayName);
                     }
                 }
             } if(TextUtil.isNotEmpty(data.phone)){

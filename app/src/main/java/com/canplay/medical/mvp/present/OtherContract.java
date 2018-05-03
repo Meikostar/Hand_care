@@ -4,6 +4,7 @@ import com.canplay.medical.base.BasePresenter;
 import com.canplay.medical.base.BaseView;
 import com.canplay.medical.bean.AddMedical;
 import com.canplay.medical.bean.Bind;
+import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.Press;
@@ -33,6 +34,9 @@ public class OtherContract {
          * 药品名称或取药品信息
          */
         void getMedicalDetail(String verifyCode);
-
+        /**
+         * 编辑用户信息
+         */
+        void editorUser(Editor name);
     }
 }
