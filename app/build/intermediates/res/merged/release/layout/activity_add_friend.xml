@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/content_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp"
+        android:id="@+id/line"/>
+    <com.canplay.medical.view.NavigationBar
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationRight_type="img"
+        app:navigationRight_img="@drawable/home"
+        app:navigationTitle="添加医生" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/linecolor"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginLeft="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/location_bg" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/search" />
+            <com.canplay.medical.view.ClearEditText
+                android:textSize="14sp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="12dp"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:text=""
+                android:hint="搜索亲友手机号"
+                android:id="@+id/et_search"
+                android:maxLength="11"
+                android:textColor="@color/slow_black"
+                android:textColorHint="#bdbdbd"/>
+        </FrameLayout>
+        <TextView
+            android:padding="7dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="搜索"
+            android:id="@+id/search"
+            android:textColor="@color/blue"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+
+    <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:id="@+id/super_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_moreProgress="@layout/view_more_progress"
+        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:recyclerClipToPadding="true"
+        app:scrollbarStyle="outsideOverlay" />
+
+</LinearLayout>

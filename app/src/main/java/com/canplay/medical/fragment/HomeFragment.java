@@ -3,6 +3,7 @@ package com.canplay.medical.fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,8 @@ import com.canplay.medical.mvp.adapter.HomeAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.banner.BannerView;
 
 import javax.inject.Inject;
@@ -228,25 +231,84 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         String time = entitys.nextTaskDueIn;
         String[] split = time.split(":");
 
-        if (entitys.type.equals("1")) {
-            tvHour.setText(split[0]);
-            tvMinter.setText(split[1]);
-            tvState.setText(entitys.isCompleted ? "已完成" : "未完成");
-        } else if(entitys.type.equals("2")) {
-            tvHour1.setText(split[0]);
-            tvMinter1.setText(split[1]);
-            tvState1.setText(entitys.isCompleted ? "已完成" : "未完成");
-        }else if(entitys.type.equals("3")) {
-           if(entitys.numberOfUnreadMessages==0){
-               tvCount.setVisibility(View.GONE);
-           }else {
-               tvCount.setVisibility(View.VISIBLE);
-               tvCount.setText(""+entitys.numberOfUnreadMessages);
-           }
-        }else {
-            tvHour1.setText(split[0]);
-            tvMinter1.setText(split[1]);
-        }
+            if (type==1) {
+               int  hour=Integer.valueOf(split[0]);
+                int  minter=Integer.valueOf(split[1]);
+
+               long times = hour*3600*1000+minter*60*1000;
+
+                CountDownTimer   countDownTimer = new CountDownTimer(times, 1000*60) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                        String[] times = timeStr.split(",");
+                        if(tvHour!=null&&times!=null){
+                            tvHour.setText(times[1]);
+                            tvMinter.setText(times[2]);
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        if(tvHour!=null){
+                            tvHour.setText(00);
+                            tvMinter.setText(00);
+                        }
+
+
+
+                    }
+                }.start();
+                tvHour.setText(split[0]);
+                tvMinter.setText(split[1]);
+                tvState.setText(entitys.isCompleted ? "已完成" : "未完成");
+            } else if(type==2) {
+                int  hour=Integer.valueOf(split[0]);
+                int  minter=Integer.valueOf(split[1]);
+
+                long times = hour*3600*1000+minter*60*1000;
+
+                CountDownTimer   countDownTimer = new CountDownTimer(times, 1000*60) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                        String[] times = timeStr.split(",");
+
+                        if(tvHour1!=null&&times!=null){
+                            tvHour1.setText(times[1]);
+                            tvMinter1.setText(times[2]);
+                        }
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        if(tvHour1!=null){
+                            tvHour1.setText(00);
+                            tvMinter1.setText(00);
+                        }
+
+
+
+                    }
+                }.start();
+                tvHour1.setText(split[0]);
+                tvMinter1.setText(split[1]);
+                tvState1.setText(entitys.isCompleted ? "已完成" : "未完成");
+            }else if(type==3) {
+                if(entitys.numberOfUnreadMessages==0){
+                    tvCount.setVisibility(View.GONE);
+                }else {
+                    tvCount.setVisibility(View.VISIBLE);
+                    tvCount.setText(""+entitys.numberOfUnreadMessages);
+                }
+            }else {
+                tvHour1.setText(split[0]);
+                tvMinter1.setText(split[1]);
+            }
+
+
     }
 
     @Override

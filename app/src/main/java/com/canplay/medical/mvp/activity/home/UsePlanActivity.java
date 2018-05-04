@@ -2,6 +2,7 @@ package com.canplay.medical.mvp.activity.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewStub;
@@ -16,6 +17,8 @@ import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.bean.BASEBEAN;
 import com.canplay.medical.mvp.adapter.OrderGridAdapter;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
+import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
 
@@ -49,7 +52,13 @@ public class UsePlanActivity extends BaseActivity {
     @BindView(R.id.stub_gird)
     ViewStub stubGird;
     private UsePlanAdapter adapter;
-
+    private String time;
+    private CountDownTimer countDownTimer;
+    private long times;
+    private int  hour;
+    private int  hours;
+    private int minter;
+    private int minters;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_use_plan);
@@ -57,6 +66,46 @@ public class UsePlanActivity extends BaseActivity {
         navigationBar.setNavigationBarListener(this);
         adapter = new UsePlanAdapter(this);
         rlMenu.setAdapter(adapter);
+        time=getIntent().getStringExtra("time");
+        if(TextUtil.isNotEmpty(time)){
+
+            String date = TimeUtil.formatHour(System.currentTimeMillis());
+            String[] split = date.split(":");
+            String[] splits = time.split(":");
+              hours=(Integer.valueOf(split[0])+Integer.valueOf(splits[0]));
+               minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
+            if(Integer.valueOf(split[1])+Integer.valueOf(splits[1])>=60){
+                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1])-60);
+                hours=hours+1;
+            }else {
+                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
+            }
+            tvTime.setText(hours+":"+(minters<10?0+""+minters:minters));
+            hour=Integer.valueOf(splits[0]);
+            minter=Integer.valueOf(splits[1]);
+            times = hour*3600*1000+minter*60*1000;
+            if (times>0&&times < (60 * 60 * 24 * 1000)) {
+                countDownTimer = new CountDownTimer( times, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                        String[] times = timeStr.split(",");
+                        tvHour.setText(times[1]);
+                        tvMinter.setText(times[2]);
+                        tvSecond.setText(times[3]);
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        tvHour.setText(00);
+                        tvMinter.setText(00);
+                        tvSecond.setText(00);
+
+                    }
+                }.start();
+            }
+        }
         initPopView();
         showGirdView(null);
     }

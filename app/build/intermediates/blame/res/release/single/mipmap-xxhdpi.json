@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\lp_img_delete.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\lp_img_delete.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\arrow_left.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\arrow_left.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\header_arrow_white_icon.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\header_arrow_white_icon.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\ic_launcher_round.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    }
+]

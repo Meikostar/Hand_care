@@ -15,6 +15,30 @@ import java.util.List;
  ***/
 
 public class TimeUtil {
+
+
+    public static String getTimeFormat(long total_seconds) {
+        String timeStr;
+        if (total_seconds <= 0) {
+            timeStr = "00,00,00,00";
+        } else {
+            long days = Math.abs(total_seconds / (24 * 60 * 60));
+            long hours = Math.abs((total_seconds - days * 24 * 60 * 60) / (60 * 60));
+            long minutes = Math.abs((total_seconds - days * 24 * 60 * 60 - hours * 60 * 60) / 60);
+            long seconds = Math.abs((total_seconds - days * 24 * 60 * 60 - hours * 60 * 60 - minutes * 60));
+            timeStr = forMatString(days) + "," + forMatString(hours) + "," + forMatString(minutes) + "," + forMatString(seconds);
+        }
+        return timeStr;
+    }
+    private static String forMatString(long days) {
+        String str;
+        if (days < 10) {
+            str = "0" + days;
+        } else {
+            str = "" + days;
+        }
+        return str;
+    }
     /*将字符串转为时间戳*/
  public static long getStringToDate(String time) {
      SimpleDateFormat  sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -66,6 +90,10 @@ public class TimeUtil {
     }
     public static String formatToNew(long time){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        return format.format(new Date(time));
+    }
+    public static String formatHour(long time){
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
         return format.format(new Date(time));
     }
     public static String format(long time,String pattern){

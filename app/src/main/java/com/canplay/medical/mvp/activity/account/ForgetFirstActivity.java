@@ -85,7 +85,7 @@ public class ForgetFirstActivity extends BaseActivity implements LoginContract.V
                 }
                 recovery.jobId=jobId;
                 recovery.code=etCode.getText().toString();
-                recovery.displayName=displayName;
+                recovery.username=displayName;
                 presenter.checkCodeRecovery(recovery);
 
             }

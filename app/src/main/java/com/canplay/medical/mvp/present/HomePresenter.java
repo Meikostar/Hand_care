@@ -62,7 +62,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(BASE entity){
 
-                mView.toEntity(entity,0);
+                mView.toEntity(entity,type);
 
             }
         });

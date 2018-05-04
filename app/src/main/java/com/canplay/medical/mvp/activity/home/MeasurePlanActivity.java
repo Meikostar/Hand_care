@@ -2,6 +2,7 @@ package com.canplay.medical.mvp.activity.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -11,11 +12,14 @@ import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
 import com.canplay.medical.mvp.adapter.UserRecordAdapter;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static android.R.attr.order;
 
 /**
  * 测量计划
@@ -41,6 +45,12 @@ public class MeasurePlanActivity extends BaseActivity {
     TextView tvTime;
     private UserRecordAdapter adapter;
      private String time;
+    private CountDownTimer countDownTimer;
+    private long times;
+    private int  hour;
+    private int  hours;
+    private int minter;
+    private int minters;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_mesure_plan);
@@ -50,7 +60,43 @@ public class MeasurePlanActivity extends BaseActivity {
         rlMenu.setAdapter(adapter);
         time=getIntent().getStringExtra("time");
         if(TextUtil.isNotEmpty(time)){
-            tvTime.setText(time);
+            String date = TimeUtil.formatHour(System.currentTimeMillis());
+            String[] split = date.split(":");
+            String[] splits = time.split(":");
+            hours=(Integer.valueOf(split[0])+Integer.valueOf(splits[0]));
+
+            if(Integer.valueOf(split[1])+Integer.valueOf(splits[1])>=60){
+                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1])-60);
+                hours=hours+1;
+            }else {
+                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
+            }
+
+            hour=Integer.valueOf(splits[0]);
+            minter=Integer.valueOf(splits[1]);
+            tvTime.setText(hours+":"+(minters<10?0+""+minters:minters));
+            times = hour*3600*1000+minter*60*1000;
+
+                countDownTimer = new CountDownTimer(times, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                        String[] times = timeStr.split(",");
+                      tvHour.setText(times[1]);
+                      tvMinter.setText(times[2]);
+                      tvSecond.setText(times[3]);
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        tvHour.setText(00);
+                        tvMinter.setText(00);
+                        tvSecond.setText(00);
+
+                    }
+                }.start();
+
         }
         initPopView();
 

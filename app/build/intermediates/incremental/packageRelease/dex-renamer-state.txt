@@ -1,0 +1,7 @@
+#Fri May 04 11:57:38 CST 2018
+base.0=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex
+base.1=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
+file.0=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes2.dex

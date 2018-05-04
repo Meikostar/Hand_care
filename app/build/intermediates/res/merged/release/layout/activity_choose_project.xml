@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/content_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp"
+        android:id="@+id/line"/>
+    <com.canplay.medical.view.NavigationBar
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationRight_type="txt"
+        app:navigationRight_txt="保存"
+        app:navigationTitle="选择测量项目" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/linecolor"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:id="@+id/ll_press"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <com.canplay.medical.view.MCheckBox
+            app:isCheckeds="true"
+            android:focusable="false"
+            android:clickable="false"
+            app:canNoClick="true"
+            android:layout_gravity="center_vertical"
+            android:padding="9dp"
+           android:layout_marginLeft="8dp"
+            android:id="@+id/cb_press"
+            app:drawablechoose="@drawable/check"
+            app:drawables="@drawable/uncheck"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <TextView
+            android:text="血压"
+            android:layout_weight="1"
+            android:textColor="@color/slow_black"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/linecolor"/>
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/ll_sugar"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <com.canplay.medical.view.MCheckBox
+            app:drawablechoose="@drawable/check"
+            app:drawables="@drawable/uncheck"
+            android:focusable="false"
+            android:clickable="false"
+            app:canNoClick="true"
+            android:layout_gravity="center_vertical"
+            android:padding="9dp"
+            android:id="@+id/cb_sugar"
+            android:layout_marginLeft="8dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <TextView
+            android:text="血糖"
+            android:layout_weight="1"
+            android:textColor="@color/slow_black"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

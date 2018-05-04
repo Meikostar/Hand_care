@@ -1,7 +1,7 @@
-#Thu May 03 23:32:08 CST 2018
-base.0=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_c45deba266fff7b1b3b38f3154188cbee2163b47
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_7edaa4a5055f99783324d5eb7d0727c40895d24d\\classes.dex
-base.1=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_7edaa4a5055f99783324d5eb7d0727c40895d24d
-file.0=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_c45deba266fff7b1b3b38f3154188cbee2163b47\\classes.dex
+#Fri May 04 11:54:02 CST 2018
+base.0=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes2.dex
+base.1=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+file.0=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

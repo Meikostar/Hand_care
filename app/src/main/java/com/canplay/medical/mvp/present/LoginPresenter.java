@@ -162,7 +162,7 @@ public class LoginPresenter implements LoginContract.Presenter {
         });
     }
     @Override
-    public void register(String name,String email,String birth,String pwd,String phone) {
+    public void register(String name,String birth,String email ,String pwd,String phone) {
 
         Righter righter = new Righter();
         righter.DisplayName=name;

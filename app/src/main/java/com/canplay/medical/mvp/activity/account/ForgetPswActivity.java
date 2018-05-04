@@ -184,6 +184,6 @@ public class ForgetPswActivity extends BaseActivity implements LoginContract.Vie
 
     @Override
     public void showTomast(String msg) {
-
+        showToasts(msg);
     }
 }

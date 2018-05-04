@@ -53,7 +53,7 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
                 AlarmClockOperate.getInstance().updateAlarmClock(false,
                         alarmClock.getId());
 
-                Intent i = new Intent("com.kaku.weac.AlarmClockOff");
+                Intent i = new Intent("com.canplay.medical.AlarmClockOff");
                 context.sendBroadcast(i);
             } else {
                 // 重复周期闹钟
