@@ -24,20 +24,20 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_more_progress.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choose_medical.xml",
         "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_choose_medical.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_blooe_measure.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_blooe_measure.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\hour_selector.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\hour_selector.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_blooe_measure.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_blooe_measure.xml"
     },
     {
         "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_remind_health.xml",

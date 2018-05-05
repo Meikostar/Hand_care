@@ -69,6 +69,7 @@ public class BASE {
     public String patientDeviceId;
     public String familyAndFriendsUserId;
     public String reminderId;
+    public String nice;
     public String nickname;
 
     public String remindingFor;

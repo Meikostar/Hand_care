@@ -66,6 +66,7 @@ public class LineCharFragment extends BaseFragment implements BaseContract.View 
 
         if (type == 1) {
             presenter.getDayBloodPressRecord(7);
+//            presenter.getDayBloodPressRecord(7);
         } else if (type == 2) {
             presenter.getDayBloodPressRecord(15);
         } else {
@@ -83,6 +84,9 @@ public class LineCharFragment extends BaseFragment implements BaseContract.View 
                         presenter.getDayBloodPressRecord(15);
                     } else {
                         presenter.getDayBloodPressRecord(30);
+//                        presenter.getDayBloodPressRecord(30);
+//                        presenter.getDayBloodPressRecord(30);
+//                        presenter.getDayBloodPressRecord(30);
                     }
                     ;
                 }
