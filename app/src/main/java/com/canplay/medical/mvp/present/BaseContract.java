@@ -53,7 +53,7 @@ public class BaseContract {
         /**
          * 指定天数血糖测量记录
          */
-        void getDayBloodRecord( String day);
+        void getDayBloodRecord( int day);
 
         /**
          * 指定天数血糖测量记录
@@ -63,7 +63,7 @@ public class BaseContract {
         /**
          * 指定天数血压测量记录
          */
-        void getDayBloodPressRecord( String day);
+        void getDayBloodPressRecord( int day);
 
         /**
          * 药物列表

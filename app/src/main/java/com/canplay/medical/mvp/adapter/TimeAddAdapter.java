@@ -81,9 +81,10 @@ public class TimeAddAdapter extends BaseAdapter {
         holder.close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                list.remove(position);
+                listener.getItem(list.get(position),position);
+//                list.remove(position);
                 notifyDataSetChanged();
-//                listener.getItem(list.get(position),position);
+
             }
         });
         return view;

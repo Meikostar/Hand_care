@@ -7,7 +7,7 @@ import android.view.View;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
-import com.canplay.medical.view.HistogramView;
+import com.canplay.medical.view.HistogramPressView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -18,7 +18,7 @@ public class LineCharFragment_ViewBinding implements Unbinder {
   public LineCharFragment_ViewBinding(LineCharFragment target, View source) {
     this.target = target;
 
-    target.hgmKpiFirst = Utils.findRequiredViewAsType(source, R.id.hgm_kpi_first, "field 'hgmKpiFirst'", HistogramView.class);
+    target.hgmKpiFirst = Utils.findRequiredViewAsType(source, R.id.hgm_kpi_first, "field 'hgmKpiFirst'", HistogramPressView.class);
   }
 
   @Override

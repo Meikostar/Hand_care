@@ -31,6 +31,7 @@ public class HistogramPressView extends View {
     private Paint pointLinePaint1;// 折线
     private Paint pointLinePaint2;// 折线
     private Paint pointLinePaint3;// 折线
+    private Paint pointLinePaint;// 折线
     private Paint paint;// 矩形画笔 柱状图的样式信息
     private int[] progress = {2000, 5000, 6000, 8000, 500, 6000, 9000};// 7
     // 条，显示各个柱状的数据
@@ -68,45 +69,18 @@ public class HistogramPressView extends View {
     private List<KPI> data3=new ArrayList<>();
     int max = 0;
 
-    public void setDatas(List<KPI> list) {
+    public void setDatas(List<KPI> list,List<KPI> list1,List<KPI> list2,String[] xWeeks) {
         this.data = list;
-
-//        "month": "Dec",
-//                "y_axis": 0
+        this.data2 = list1;
+        this.data3= list2;
+        this.xWeeks= xWeeks;
     }
 
     private void init() {
 
-        ySteps = new String[]{"240", "210", "190", "160", "130", "100", "70", "40"};
+        ySteps = new String[]{"240", "210", "190", "160", "130", "100", "70", "40","0"};
         xWeeks = new String[]{"1", "2", "3", "4", "5", "6", "7"};
-        KPI kpi = new KPI();
-        kpi.xdata=1;
-        kpi.ydata=65;
-        KPI kpi1 = new KPI();
-        kpi1.xdata=2;
-        kpi1.ydata=75;
-        KPI kpi2 = new KPI();
-        kpi2.xdata=3;
-        kpi2.ydata=86;
-        KPI kpi3 = new KPI();
-        kpi3.xdata=4;
-        kpi3.ydata=70;
-        KPI kpi4 = new KPI();
-        kpi4.xdata=5;
-        kpi4.ydata=90;
-        KPI kpi5 = new KPI();
-        kpi5.xdata=6;
-        kpi5.ydata=165;
-        KPI kpi6 = new KPI();
-        kpi6.xdata=7;
-        kpi6.ydata=145;
-        data.add(kpi);
-        data.add(kpi1);
-        data.add(kpi2);
-        data.add(kpi3);
-        data.add(kpi4);
-        data.add(kpi5);
-        data.add(kpi6);
+
         text = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         aniProgress = new int[]{500, 300, 900, 350, 680, 690, 720, 900, 350, 680, 690, 720};
         ani = new HistogramAnimation();
@@ -124,6 +98,7 @@ public class HistogramPressView extends View {
         pointLinePaint1 = new Paint();
         pointLinePaint2 = new Paint();
         pointLinePaint3 = new Paint();
+        pointLinePaint = new Paint();
 
         paint = new Paint();
 
@@ -142,27 +117,32 @@ public class HistogramPressView extends View {
         chartLinePaint1.setColor(getResources().getColor(R.color.one));//(1)黄色
         chartLinePaint1.setAntiAlias(true);
         chartLinePaint1.setStyle(Paint.Style.FILL);
-        chartLinePaint1.setStrokeWidth(6);
-        chartLinePaint1.setColor(getResources().getColor(R.color.red));//(1)黄色
-        chartLinePaint1.setAntiAlias(true);
+        pointLinePaint1.setStyle(Paint.Style.FILL);
+        pointLinePaint1.setStrokeWidth(6);
+        pointLinePaint1.setColor(getResources().getColor(R.color.one));//(1)黄色
+        pointLinePaint1.setAntiAlias(true);
 
         chartLinePaint2.setStyle(Paint.Style.FILL);
         chartLinePaint2.setStrokeWidth(3);
         chartLinePaint2.setColor(getResources().getColor(R.color.two));//(1)黄色
         chartLinePaint2.setAntiAlias(true);
-        chartLinePaint2.setStyle(Paint.Style.FILL);
-        chartLinePaint2.setStrokeWidth(6);
-        chartLinePaint2.setColor(getResources().getColor(R.color.two));//(1)黄色
-        chartLinePaint2.setAntiAlias(true);
+        pointLinePaint2.setStyle(Paint.Style.FILL);
+        pointLinePaint2.setStrokeWidth(6);
+        pointLinePaint2.setColor(getResources().getColor(R.color.two));//(1)黄色
+        pointLinePaint2.setAntiAlias(true);
 
         chartLinePaint3.setStyle(Paint.Style.FILL);
         chartLinePaint3.setStrokeWidth(3);
         chartLinePaint3.setColor(getResources().getColor(R.color.three));//(1)黄色
         chartLinePaint3.setAntiAlias(true);
-        chartLinePaint3.setStyle(Paint.Style.FILL);
-        chartLinePaint3.setStrokeWidth(6);
-        chartLinePaint3.setColor(getResources().getColor(R.color.one));//(1)黄色
-        chartLinePaint3.setAntiAlias(true);
+        pointLinePaint3.setStyle(Paint.Style.FILL);
+        pointLinePaint3.setStrokeWidth(6);
+        pointLinePaint3.setColor(getResources().getColor(R.color.three));//(1)黄色
+        pointLinePaint3.setAntiAlias(true);
+        pointLinePaint.setStyle(Paint.Style.FILL);
+        pointLinePaint.setStrokeWidth(6);
+        pointLinePaint.setColor(getResources().getColor(R.color.red));//(1)黄色
+        pointLinePaint.setAntiAlias(true);
 
     }
 
@@ -180,7 +160,7 @@ public class HistogramPressView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        float width = getWidth() - dp2px(68);
+        float width = getWidth() - dp2px(53);
         float height = getHeight() - dp2px(25);
 
         float hPerHeight = (height ) / (ySteps.length - 0.6f);// 分成四部分
@@ -190,7 +170,7 @@ public class HistogramPressView extends View {
         canvas.drawLine(dp2px(28), dp2px(2), dp2px(28), height, hLinePaint);
         hLinePaint.setTextAlign(Align.CENTER);
         // 设置四条虚线
-        for (int i = 0; i < ySteps.length - 1; i++) {
+        for (int i = 0; i < ySteps.length ; i++) {
 
             canvas.drawLine(dp2px(30), i * hPerHeight + hPerHeight*0.4f, width
                     , i * hPerHeight + hPerHeight*0.4f, hLinePaints);
@@ -204,43 +184,74 @@ public class HistogramPressView extends View {
         titlePaint.setAntiAlias(true);
         titlePaint.setStyle(Paint.Style.FILL);
         // 设置左部的数字
-        for (int i = 0; i < ySteps.length; i++) {
-            canvas.drawText(ySteps[i], dp2px(25), hPerHeight*0.4f+dp2px(2) + i * (hPerHeight),
-                    titlePaint);
-        }
+        if(ySteps.length==30){
+            for (int i = 0; i < ySteps.length; i++) {
+                if(i%2==0){
+                    canvas.drawText(ySteps[i], dp2px(25), hPerHeight*0.4f+dp2px(2) + i * (hPerHeight),
+                            titlePaint);
+                }
 
+            }
+        }else {
+            for (int i = 0; i < ySteps.length; i++) {
+                canvas.drawText(ySteps[i], dp2px(25), hPerHeight*0.4f+dp2px(2) + i * (hPerHeight),
+                        titlePaint);
+            }
+        }
         // 绘制 X 周 做坐标
 
         int columCount = xWeeks.length;
         float step = (width - dp2px(14)) / (columCount);
         xsqr = step;
 //            // 设置底部的数字
-        for (int i = 0; i < xWeeks.length; i++) {
-            // text, baseX, baseY, textPaint
-            canvas.drawText(xWeeks[i], dp2px(29) + step * (i), height + dp2px(18), titlePaint);
-            if(i!=xWeeks.length-1){
-                canvas.drawLine(dp2px(28) + step * (i + 1), height, dp2px(28) + step * (i + 1), height - dp2px(6), xLinePaint);
+        if(xWeeks.length==30){
+            for (int i = 0; i < xWeeks.length; i++) {
+                // text, baseX, baseY, textPaint
+                if(i%2==0){
+                    canvas.drawText(xWeeks[i], dp2px(29) + step * (i), height + dp2px(18), titlePaint);
+                }
+
+                if(i!=xWeeks.length-1){
+                    canvas.drawLine(dp2px(28) + step * (i + 1), height, dp2px(28) + step * (i + 1), height - dp2px(6), xLinePaint);
+                }
+
             }
+        }else {
+            for (int i = 0; i < xWeeks.length; i++) {
+                // text, baseX, baseY, textPaint
+                canvas.drawText(xWeeks[i], dp2px(29) + step * (i), height + dp2px(18), titlePaint);
+                if(i!=xWeeks.length-1){
+                    canvas.drawLine(dp2px(28) + step * (i + 1), height, dp2px(28) + step * (i + 1), height - dp2px(6), xLinePaint);
+                }
+
+            }
+        }
+
+        canvas.drawText("时间", dp2px(35) + width, dp2px(10) + height, titlePaint);
+        if(data.size()>0){
+                    canvas.drawCircle(dp2px(28) +(float) (0)*xsqr , height- (float) (data.get(0).ydata)*ysqr, 10, data.get(0).colorType==0?pointLinePaint1:pointLinePaint);
+        canvas.drawCircle(dp2px(28) +(float) (0)*xsqr , height- (float) (data2.get(0).ydata)*ysqr, 10, data2.get(0).colorType==0?pointLinePaint2:pointLinePaint);
+        canvas.drawCircle(dp2px(28) +(float) (0)*xsqr , height- (float) (data3.get(0).ydata)*ysqr, 10, data3.get(0).colorType==0?pointLinePaint3:pointLinePaint);
 
         }
-        canvas.drawText("时间", dp2px(35) + width, dp2px(10) + height, titlePaint);
+
         for(int i=1;i<data.size();i++){
-            if(data.get(i).ydata>NorValue){
-                canvas.drawCircle(dp2px(28) +(float) (data.get(i).xdata-1)*xsqr , height- (float) (data.get(i).ydata)*ysqr, 10, pointLinePaint1);
-            }
-            canvas.drawLine(dp2px(28) +(float) ((data.get(i-1).xdata-1)*xsqr),height- (float) (data.get(i-1).ydata)*ysqr,dp2px(28) + (float) (data.get(i).xdata-1)*xsqr, height- (float) (data.get(i).ydata)*ysqr, chartLinePaint1);
+
+                canvas.drawCircle(dp2px(28) +(float) (data.get(i).xdata)*xsqr , height- (float) (data.get(i).ydata)*ysqr, 10, data.get(i).colorType==0?pointLinePaint1:pointLinePaint);
+
+            canvas.drawLine(dp2px(28) +(float) ((data.get(i-1).xdata)*xsqr),height- (float) (data.get(i-1).ydata)*ysqr,dp2px(28) + (float) (data.get(i).xdata)*xsqr, height- (float) (data.get(i).ydata)*ysqr, chartLinePaint1);
         }
-        for(int i=1;i<data.size();i++){
-            if(data.get(i).ydata>NorValue){
-                canvas.drawCircle(dp2px(28) +(float) (data.get(i).xdata-1)*xsqr , height- (float) (data.get(i).ydata)*ysqr, 10, pointLinePaint2);
-            }
-            canvas.drawLine(dp2px(28) +(float) ((data.get(i-1).xdata-1)*xsqr),height- (float) (data.get(i-1).ydata)*ysqr,dp2px(28) + (float) (data.get(i).xdata-1)*xsqr, height- (float) (data.get(i).ydata)*ysqr, chartLinePaint2);
+        for(int i=1;i<data2.size();i++){
+
+                canvas.drawCircle(dp2px(28) +(float) (data2.get(i).xdata)*xsqr , height- (float) (data2.get(i).ydata)*ysqr, 10, data2.get(i).colorType==0?pointLinePaint2:pointLinePaint);
+
+            canvas.drawLine(dp2px(28) +(float) ((data2.get(i-1).xdata)*xsqr),height- (float) (data2.get(i-1).ydata)*ysqr,dp2px(28) + (float) (data2.get(i).xdata)*xsqr, height- (float) (data2.get(i).ydata)*ysqr, chartLinePaint2);
         }
-        for(int i=1;i<data.size();i++){
-            if(data.get(i).ydata>NorValue){
-                canvas.drawCircle(dp2px(28) +(float) (data.get(i).xdata-1)*xsqr , height- (float) (data.get(i).ydata)*ysqr, 10, pointLinePaint3);
-            }
-            canvas.drawLine(dp2px(28) +(float) ((data.get(i-1).xdata-1)*xsqr),height- (float) (data.get(i-1).ydata)*ysqr,dp2px(28) + (float) (data.get(i).xdata-1)*xsqr, height- (float) (data.get(i).ydata)*ysqr, chartLinePaint3);
+        for(int i=1;i<data3.size();i++){
+
+                canvas.drawCircle(dp2px(28) +(float) (data3.get(i).xdata)*xsqr , height- (float) (data3.get(i).ydata)*ysqr, 10, data3.get(i).colorType==0?pointLinePaint3:pointLinePaint);
+
+            canvas.drawLine(dp2px(28) +(float) ((data3.get(i-1).xdata)*xsqr),height- (float) (data3.get(i-1).ydata)*ysqr,dp2px(28) + (float) (data3.get(i).xdata)*xsqr, height- (float) (data3.get(i).ydata)*ysqr, chartLinePaint3);
         }
 
 

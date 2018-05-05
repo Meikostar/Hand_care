@@ -253,8 +253,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     @Override
                     public void onFinish() {
                         if(tvHour!=null){
-                            tvHour.setText(00);
-                            tvMinter.setText(00);
+                            tvHour.setText("00");
+                            tvMinter.setText("00");
                         }
 
 
@@ -285,8 +285,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     @Override
                     public void onFinish() {
                         if(tvHour1!=null){
-                            tvHour1.setText(00);
-                            tvMinter1.setText(00);
+                            tvHour1.setText("00");
+                            tvMinter1.setText("00");
                         }
 
 

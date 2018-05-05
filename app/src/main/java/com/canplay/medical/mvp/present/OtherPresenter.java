@@ -14,7 +14,9 @@ import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.Mesure;
+import com.canplay.medical.bean.Phone;
 import com.canplay.medical.bean.Press;
+import com.canplay.medical.bean.Pws;
 import com.canplay.medical.bean.Record;
 import com.canplay.medical.bean.Sug;
 import com.canplay.medical.bean.Sugar;
@@ -57,6 +59,49 @@ public class OtherPresenter implements OtherContract.Presenter {
 
             @Override
             public void onNext(List<Record> entity){
+
+                mView.toEntity(entity,0);
+            }
+        });
+    }
+
+
+
+
+    @Override
+    public void editorPhone(Phone name){
+        subscription = ApiManager.setSubscribe(contactApi.editorPhone(name), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
+
+                mView.toEntity(entity,0);
+            }
+        });
+    }
+
+    @Override
+    public void editorPsd(Pws name){
+        subscription = ApiManager.setSubscribe(contactApi.editorPsw(name), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+               mView.showTomast(e.getMessage());
+
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
 
                 mView.toEntity(entity,0);
             }

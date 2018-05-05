@@ -205,9 +205,9 @@ public class ChartPressFragment extends BaseFragment implements BaseContract.Vie
 
     private void addFragment() {
         mFragments = new ArrayList<>();
-        fragment1 = new LineCharFragment();
-        fragment2 = new LineCharFragment();
-        fragment3 = new LineCharFragment();
+        fragment1 = new LineCharFragment(1);
+        fragment2 = new LineCharFragment(2);
+        fragment3 = new LineCharFragment(3);
 
         mFragments.add(fragment1);
         mFragments.add(fragment2);

@@ -21,6 +21,7 @@ import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.view.CircleTransform;
 import com.canplay.medical.view.EditorNameDialog;
 import com.canplay.medical.view.PhotoPopupWindow;
 
@@ -60,6 +61,7 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     @BindView(R.id.ll_Medical_plan)
     LinearLayout llMedicalPlan;
     private String userId;
+    private String familyAndFriendsId;
     private String status;
     private int type;
     @Override
@@ -69,6 +71,7 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         userId=getIntent().getStringExtra("id");
+        familyAndFriendsId=getIntent().getStringExtra("familyAndFriendsId");
         status=getIntent().getStringExtra("status");
         if(TextUtil.isNotEmpty(status)){
             if(status.equals("Waiting")){
@@ -81,6 +84,7 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
                 tvBind.setText("绑定");
             }
         }
+        String ids = SpUtil.getInstance().getUserId();
         type=getIntent().getIntExtra("type",0);
         presenter.getFriendInfo(userId);
     }
@@ -136,12 +140,12 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
                 if(type==0){
                     presenter.addFriend(add);
                 }else {
-                    String userId = SpUtil.getInstance().getUserId();
+
                     if(TextUtil.isNotEmpty(status)){
                         if(status.equals("Waiting")){
-                            presenter.agree(friend.userId);
+                            presenter.agree(familyAndFriendsId);
                         }else if(status.equals("Active")) {
-                            presenter.disAgree(friend.userId);
+                            presenter.disAgree(familyAndFriendsId);
                         }
                     }
 
@@ -157,23 +161,26 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     @Override
     public <T> void toEntity(T entity,int type) {
      friend= (Friend) entity;
-        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().placeholder(R.drawable.moren).into(ivAvatar);
-        if(TextUtil.isNotEmpty(friend.userName)){
-            tvName.setText(friend.userName);
-        }if(TextUtil.isNotEmpty(friend.address)){
-            tvAddress.setText(friend.address);
-        }    if(TextUtil.isNotEmpty(friend.mobile)){
-            tvPhone.setText(friend.mobile);
-        }  if(TextUtil.isNotEmpty(friend.dob)){
-            String[] split = friend.dob.split("/");
-            String birth=split[0]+"."+split[1]+"."+split[2];
-            tvBirth.setText(birth);
-        }
-        if(friend.gender.equals("male")){//男
+        if(friend!=null){
+            Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(this)).placeholder(R.drawable.moren).into(ivAvatar);
+            if(TextUtil.isNotEmpty(friend.userName)){
+                tvName.setText(friend.userName);
+            }if(TextUtil.isNotEmpty(friend.address)){
+                tvAddress.setText(friend.address);
+            }    if(TextUtil.isNotEmpty(friend.mobile)){
+                tvPhone.setText(friend.mobile);
+            }  if(TextUtil.isNotEmpty(friend.dob)){
+                String[] split = friend.dob.split("/");
+                String birth=split[0]+"."+split[1]+"."+split[2];
+                tvBirth.setText(birth);
+            }
+            if(friend.gender.equals("male")){//男
 
-        }else {
+            }else {
 
+            }
         }
+
     }
 
     @Override
@@ -181,6 +188,7 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
        if(type==8){
            finish();
            showToasts("解除成功");
+           RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE,""));
        }else if(type==6){
            showToasts("已发送添加好友请求");
            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE,""));

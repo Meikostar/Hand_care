@@ -70,9 +70,9 @@ public class ChartFragment extends BaseFragment implements BaseContract.View {
     @BindView(R.id.tv_time)
     TextView tvTime;
 
-    private LineCharFragment fragment1;
-    private LineCharFragment fragment2;
-    private LineCharFragment fragment3;
+    private LineCharSugarFragment fragment1;
+    private LineCharSugarFragment fragment2;
+    private LineCharSugarFragment fragment3;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -198,9 +198,9 @@ public class ChartFragment extends BaseFragment implements BaseContract.View {
 
     private void addFragment() {
         mFragments = new ArrayList<>();
-        fragment1 = new LineCharFragment(1);
-        fragment2 = new LineCharFragment(2);
-        fragment3 = new LineCharFragment(3);
+        fragment1 = new LineCharSugarFragment(1);
+        fragment2 = new LineCharSugarFragment(2);
+        fragment3 = new LineCharSugarFragment(3);
 
         mFragments.add(fragment1);
         mFragments.add(fragment2);

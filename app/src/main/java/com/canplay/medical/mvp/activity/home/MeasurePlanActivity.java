@@ -74,7 +74,7 @@ public class MeasurePlanActivity extends BaseActivity {
 
             hour=Integer.valueOf(splits[0]);
             minter=Integer.valueOf(splits[1]);
-            tvTime.setText(hours+":"+(minters<10?0+""+minters:minters));
+            tvTime.setText((hours>=24?(hours-24):hours)+":"+(minters<10?0+""+minters:minters));
             times = hour*3600*1000+minter*60*1000;
 
                 countDownTimer = new CountDownTimer(times, 1000) {

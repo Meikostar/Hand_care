@@ -11,4 +11,5 @@ public class KPI {
 
     public double xdata;
     public double ydata;
+    public int colorType;
 }

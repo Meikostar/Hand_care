@@ -17,6 +17,7 @@ import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.Message;
 import com.canplay.medical.bean.Mesure;
+import com.canplay.medical.bean.Phone;
 import com.canplay.medical.bean.Press;
 import com.canplay.medical.bean.Record;
 import com.canplay.medical.bean.Recovery;
@@ -26,12 +27,12 @@ import com.canplay.medical.bean.Sug;
 import com.canplay.medical.bean.Sugar;
 import com.canplay.medical.bean.USER;
 import com.canplay.medical.bean.avator;
+import com.canplay.medical.bean.Pws;
 import com.canplay.medical.bean.unBind;
 
 import java.util.List;
 import java.util.Map;
 
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.FieldMap;
@@ -40,7 +41,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import retrofit2.http.QueryMap;
 import rx.Observable;
 
 
@@ -273,6 +273,24 @@ public interface BaseApi {
     @POST("Flow/v2/Reminder")
     Observable<BaseData> addMedical(@Body AddMedical body);
 
+
+    /**
+     * 更换手机号
+     * @param body
+     * @return
+     */
+    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @POST("flow/v2/user")
+    Observable<BASE> editorPhone(@Body Phone body);
+
+    /**
+     * 更换密码
+     * @param body
+     * @return
+     */
+    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @POST("Flow/v2/ChangePassword")
+    Observable<BASE> editorPsw(@Body Pws body);
     /**
      * bu不同意友/移除好友关系
      */
@@ -344,7 +362,7 @@ public interface BaseApi {
      *指定天数血糖数据记录
      */
     @GET("Flow/v2/BloodGlucose/{userId}/{days}")
-    Observable<List<Sugar>> getDayBloodRecord(@Path("userId") String userId,
+    Observable<List<Record>> getDayBloodRecord(@Path("userId") String userId,
                                          @Path("days") String days);
 
     /**
@@ -352,7 +370,7 @@ public interface BaseApi {
      */
 
     @GET("Flow/v2/BloodPressure/{userId}/{days}")
-    Observable<List<Sugar>> getDayBloodPressRecord(@Path("userId") String userId,
+    Observable<List<Record>> getDayBloodPressRecord(@Path("userId") String userId,
                                               @Path("days") String days);
 
     /**

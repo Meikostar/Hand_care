@@ -244,9 +244,9 @@ HomePresenter presenter;
         Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.moren).into(ivImg);
         if(TextUtil.isNotEmpty(friend.displayName)){
             tvName.setText(friend.displayName);
-        }   if(TextUtil.isNotEmpty(friend.phone)){
-            tvPhone.setText(friend.phone);
-            BaseApplication.phone=friend.phone;
+        }   if(TextUtil.isNotEmpty(friend.mobile)){
+            tvPhone.setText(friend.mobile);
+            BaseApplication.phone=friend.mobile;
         }  if(TextUtil.isNotEmpty(friend.dob)){
             String[] split = friend.dob.split("/");
             String birth=split[0]+"."+split[1]+"."+split[2];

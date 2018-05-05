@@ -151,6 +151,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
                     Intent intent = new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class);
                     intent.putExtra("type",1);
                     intent.putExtra("id",friend.familyAndFriendsUserId);
+                    intent.putExtra("familyAndFriendsId",friend.familyAndFriendsId);
                     intent.putExtra("status",friend.status);
                     startActivity(intent);
                 }else {

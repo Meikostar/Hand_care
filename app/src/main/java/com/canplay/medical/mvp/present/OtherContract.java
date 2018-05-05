@@ -7,7 +7,9 @@ import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Mesure;
+import com.canplay.medical.bean.Phone;
 import com.canplay.medical.bean.Press;
+import com.canplay.medical.bean.Pws;
 import com.canplay.medical.bean.Sug;
 import com.canplay.medical.bean.avator;
 
@@ -38,5 +40,15 @@ public class OtherContract {
          * 编辑用户信息
          */
         void editorUser(Editor name);
+
+        /**
+         * 编辑用户信息
+         */
+        void editorPhone(Phone name);
+
+        /**
+         * 编辑用户密码
+         */
+        void editorPsd(Pws name);
     }
 }

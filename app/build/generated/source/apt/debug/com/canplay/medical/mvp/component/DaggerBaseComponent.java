@@ -64,10 +64,14 @@ import com.canplay.medical.mvp.activity.home.SmartKitActivity;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.mine.BindPhoneActivity;
+import com.canplay.medical.mvp.activity.mine.BindPhoneActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.BloodPressRecordActivity;
 import com.canplay.medical.mvp.activity.mine.BloodPressRecordActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.BloodSugarRecordActivity;
 import com.canplay.medical.mvp.activity.mine.BloodSugarRecordActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.mine.EditorPwsActivity;
+import com.canplay.medical.mvp.activity.mine.EditorPwsActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.FriendDetailActivity;
 import com.canplay.medical.mvp.activity.mine.FriendDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.MineEuipmentActivity;
@@ -99,6 +103,12 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
+  private Provider<OtherPresenter> otherPresenterProvider;
+
+  private MembersInjector<EditorPwsActivity> editorPwsActivityMembersInjector;
+
+  private MembersInjector<BindPhoneActivity> bindPhoneActivityMembersInjector;
+
   private Provider<HomePresenter> homePresenterProvider;
 
   private MembersInjector<DoctorDetailActivity> doctorDetailActivityMembersInjector;
@@ -126,8 +136,6 @@ public final class DaggerBaseComponent implements BaseComponent {
   private MembersInjector<AddDataActivity> addDataActivityMembersInjector;
 
   private MembersInjector<TimeXRecordActivity> timeXRecordActivityMembersInjector;
-
-  private Provider<OtherPresenter> otherPresenterProvider;
 
   private MembersInjector<MedicalDetailActivity> medicalDetailActivityMembersInjector;
 
@@ -206,6 +214,14 @@ public final class DaggerBaseComponent implements BaseComponent {
     this.loginActivityMembersInjector =
         LoginActivity_MembersInjector.create(loginPresenterProvider);
 
+    this.otherPresenterProvider = OtherPresenter_Factory.create(apiManagerProvider);
+
+    this.editorPwsActivityMembersInjector =
+        EditorPwsActivity_MembersInjector.create(otherPresenterProvider);
+
+    this.bindPhoneActivityMembersInjector =
+        BindPhoneActivity_MembersInjector.create(otherPresenterProvider);
+
     this.homePresenterProvider = HomePresenter_Factory.create(apiManagerProvider);
 
     this.doctorDetailActivityMembersInjector =
@@ -245,8 +261,6 @@ public final class DaggerBaseComponent implements BaseComponent {
 
     this.timeXRecordActivityMembersInjector =
         TimeXRecordActivity_MembersInjector.create(basesPresenterProvider);
-
-    this.otherPresenterProvider = OtherPresenter_Factory.create(apiManagerProvider);
 
     this.medicalDetailActivityMembersInjector =
         MedicalDetailActivity_MembersInjector.create(otherPresenterProvider);
@@ -321,6 +335,16 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(EditorPwsActivity binderActivity) {
+    editorPwsActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(BindPhoneActivity binderActivity) {
+    bindPhoneActivityMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

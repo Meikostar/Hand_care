@@ -274,9 +274,9 @@ public class BasesPresenter implements BaseContract.Presenter {
         });
     }
     @Override
-    public void getDayBloodRecord( String day) {
+    public void getDayBloodRecord( final int day) {
         String userId = SpUtil.getInstance().getUserId();
-        subscription = ApiManager.setSubscribe(contactApi.getDayBloodRecord(userId,day), new MySubscriber<List<Sugar>>(){
+        subscription = ApiManager.setSubscribe(contactApi.getDayBloodRecord(userId,day+""), new MySubscriber<List<Record>>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
@@ -285,17 +285,17 @@ public class BasesPresenter implements BaseContract.Presenter {
             }
 
             @Override
-            public void onNext(List<Sugar> entity){
+            public void onNext(List<Record> entity){
 
-                mView.toEntity(entity,0);
+                mView.toEntity(entity,day);
             }
         });
     }
 
     @Override
-    public void getDayBloodPressRecord( String day) {
+    public void getDayBloodPressRecord( final int day) {
         String userId = SpUtil.getInstance().getUserId();
-        subscription = ApiManager.setSubscribe(contactApi.getDayBloodPressRecord(userId,day), new MySubscriber<List<Sugar>>(){
+        subscription = ApiManager.setSubscribe(contactApi.getDayBloodPressRecord(userId,day+""), new MySubscriber<List<Record>>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
@@ -304,9 +304,9 @@ public class BasesPresenter implements BaseContract.Presenter {
             }
 
             @Override
-            public void onNext(List<Sugar> entity){
+            public void onNext(List<Record> entity){
 
-                mView.toEntity(entity,0);
+                mView.toEntity(entity,day);
             }
         });
     }
