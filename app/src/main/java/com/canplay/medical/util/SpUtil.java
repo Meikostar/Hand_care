@@ -24,6 +24,7 @@ public class SpUtil{
     public static final String USERNAME="userName";//国家
     public static final String FIRSTNAME="firstName";//国家
     public static final String LASTNAME="lastName";//国家
+    public static final String AVATOR="avator";//国家
     private static SharedPreferences settings;
     public static String USER_ID="merchantId";
 
@@ -51,6 +52,7 @@ public class SpUtil{
         editor.putString(USERNAME, location.getUserName());
         editor.putString(FIRSTNAME, location.getFirstName());
         editor.putString(LASTNAME, location.getLastName());
+        editor.putString(AVATOR, location.getUserName());
         return editor.commit();
     }
 
@@ -86,6 +88,9 @@ public class SpUtil{
     }
     public String getUser(){
         return settings.getString(USERNAME, "");
+    }
+    public String getAva(){
+        return settings.getString(AVATOR, "");
     }
     /**
      * put string preferences

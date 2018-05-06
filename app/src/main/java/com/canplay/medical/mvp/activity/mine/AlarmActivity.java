@@ -14,6 +14,7 @@ import android.os.Build;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.NotificationCompat;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -23,16 +24,22 @@ import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.WeacStatus;
 import com.canplay.medical.mvp.activity.AlarmClockNapNotificationActivity;
+import com.canplay.medical.mvp.component.DaggerBaseComponent;
+import com.canplay.medical.mvp.present.BaseContract;
+import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.receiver.AlarmClockBroadcast;
 import com.canplay.medical.util.AudioPlayer;
 import com.google.zxing.client.android.utils.LogUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,8 +48,9 @@ import butterknife.ButterKnife;
 /**
  * 闹铃
  */
-public class AlarmActivity extends BaseActivity {
-
+public class AlarmActivity extends BaseActivity implements BaseContract.View {
+    @Inject
+    BasesPresenter presenter;
     @BindView(R.id.iv_close)
     ImageView ivClose;
     @BindView(R.id.img)
@@ -125,7 +133,8 @@ public class AlarmActivity extends BaseActivity {
     public void initViews() {
         setContentView(R.layout.alarm_pop);
         ButterKnife.bind(this);
-
+        DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
+        presenter.attachView(this);
         // 启动的Activity个数加1
         WeacStatus.sActivityNumber++;
 
@@ -165,9 +174,22 @@ public class AlarmActivity extends BaseActivity {
         tvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finishActivitys();
+               presenter.confirmEat();
+
+//                finishActivitys();
             }
         });
+    }
+
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
     /**
      * 执行结束当前Activity操作
@@ -342,5 +364,20 @@ public class AlarmActivity extends BaseActivity {
 
         // 下拉列表显示小睡信息
         mNotificationManager.notify(mAlarmClock.getId(), notification);
+    }
+
+    @Override
+    public <T> void toEntity(T entity, int type) {
+        finishActivitys();
+    }
+
+    @Override
+    public void toNextStep(int type) {
+
+    }
+
+    @Override
+    public void showTomast(String msg) {
+
     }
 }

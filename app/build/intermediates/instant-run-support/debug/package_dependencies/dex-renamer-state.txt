@@ -1,4 +1,4 @@
-#Thu May 03 20:26:53 CST 2018
+#Sun May 06 07:57:34 CST 2018
 file.48=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_150fc83d71a73ad18730fe5acb9e44f08c80cf06\\classes.dex
 file.47=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_07f1f489ad5e1dfd1120d35af44601bb1afcda7b\\classes.dex
 file.46=F\:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_1f9891e837984fe1e17a6c460648ead33e30f8e5\\classes.dex

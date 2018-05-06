@@ -48,13 +48,16 @@ public class BASE {
 //    newPassword:"xxxxxx",
 //    passwordResetToken:"wCIAuLqgkAGBVAR5OMDRcAdWefbWh22PnQSlJE2QlNqfLsu+Z68MRY1uaPYRXsxbHH6MqU7UKg4oVXgcE6tloTKbCeHXpCBA2PvA41eIXs7mPqNRu9bnTukijo7KAlkYlQAOX7zRqTvVBPLCa+jpyEbjiSZu1y11gdbuG0fF+3LjTxfHPfaiRl9Mt7vnC8hikpW0BBkb3XkHSBZqGDTX4w==",
 //    username:"zhangj"
-
+//"reminderType":"Medicine",
+//           "responseStatus":"0",
+//           "responseDateTime":"xxxx"
     public boolean isSucceeded;
     public boolean isVerfied;
     public boolean isCompleted;
     public String displayName;
 
     public String code;
+
     public String serialNo;
     public String reminderType;
     public String deviceType;
@@ -83,11 +86,13 @@ public class BASE {
 
     public long createdDateTime;
     public long lastModified;
-    public long responseDateTime;
+    public String responseDateTime;
     public String nextTaskDueIn;
     public String jobId;
     public String status;
     public String userFullName;
 
-
+//    "reminderType": "Medicine",
+//            "responseStatus": "0",
+//            "responseDateTime": "1525574674368.11"
 }

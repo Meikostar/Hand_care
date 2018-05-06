@@ -32,7 +32,7 @@ public class MineCodeActivity extends BaseActivity {
     TextView tvName;
     @BindView(R.id.iv_code)
     ImageView ivCode;
-    private String imgs="http://www.qqxoo.com/uploads/allimg/180311/1P6002620-11.png";
+    private String imgs;
 
 
     @Override
@@ -40,7 +40,7 @@ public class MineCodeActivity extends BaseActivity {
         setContentView(R.layout.activity_mine_code);
         ButterKnife.bind(this);
         navigationBar.setNavigationBarListener(this);
-
+        imgs=SpUtil.getInstance().getAva();
 
         Glide.with(this).load(imgs).asBitmap().placeholder(R.drawable.moren).into(img);
 

@@ -48,7 +48,7 @@ public class BloodMeasureRecordActivity extends BaseActivity {
         type = getIntent().getIntExtra("type", 0);
         navigationBar.setNavigationBarListener(this);
         adapter = new BloodMeasureRecordAdapter(this);
-
+        mFragments=new ArrayList<>();
         if (type != 0) {
             navigationBar.setNaviTitle("血糖测量记录");
         }

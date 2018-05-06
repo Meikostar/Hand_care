@@ -281,7 +281,10 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     @Override
     public void toNextStep(int type) {
         if(type==6){
-
+            adapter.setStatus(2);
+//            adapter.notifyDataSetChanged();
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE,""));
+            showToasts("添加成功");
         }else {
             adapter.setStatus(2);
             adapter.notifyDataSetChanged();

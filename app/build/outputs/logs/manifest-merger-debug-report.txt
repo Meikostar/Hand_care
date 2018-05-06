@@ -930,12 +930,12 @@ ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:533:9-535:
 		ADDED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml:534:13-40
 uses-sdk
 INJECTED from F:\GitWorkSapce\Hand_care\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:multidex:1.0.1] C:\Users\Administrator\.android\build-cache\79f5b0daf180b3f9f0a8eeaf6a704a31ed689863\output\AndroidManifest.xml:18:5-42
 MERGED from [Hand_care:gallery:unspecified] F:\GitWorkSapce\Hand_care\gallery\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [Hand_care:LibMarsdaemon:unspecified] F:\GitWorkSapce\Hand_care\LibMarsdaemon\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [Hand_care:zxingLibrary:unspecified] F:\GitWorkSapce\Hand_care\zxingLibrary\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.android\build-cache\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\output\AndroidManifest.xml:20:5-43
 MERGED from [Hand_care:litepal:unspecified] F:\GitWorkSapce\Hand_care\litepal\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\Administrator\.android\build-cache\79f5b0daf180b3f9f0a8eeaf6a704a31ed689863\output\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\2f51c73abbfd2c323bea2c21c7f3db96b1ab38d2\output\AndroidManifest.xml:5:5-7:41
 MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\Administrator\.android\build-cache\2ea7c8b25f3e7c37b8979c3897efc047ac6da8a9\output\AndroidManifest.xml:19:5-43
 MERGED from [com.orhanobut:logger:1.15] C:\Users\Administrator\.android\build-cache\72332a3d9094f82638532b79b13a65a9f4ebf666\output\AndroidManifest.xml:6:5-43

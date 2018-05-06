@@ -242,6 +242,10 @@ HomePresenter presenter;
     }
     public void setData(){
         Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.moren).into(ivImg);
+        if(TextUtil.isNotEmpty(friend.avatar)){
+            SpUtil.getInstance().putString("avator",friend.avatar);
+        }
+
         if(TextUtil.isNotEmpty(friend.displayName)){
             tvName.setText(friend.displayName);
         }   if(TextUtil.isNotEmpty(friend.mobile)){

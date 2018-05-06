@@ -64,6 +64,8 @@ import com.canplay.medical.mvp.activity.home.SmartKitActivity;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.mine.AlarmActivity;
+import com.canplay.medical.mvp.activity.mine.AlarmActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.BindPhoneActivity;
 import com.canplay.medical.mvp.activity.mine.BindPhoneActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.BloodPressRecordActivity;
@@ -103,6 +105,10 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
+  private Provider<BasesPresenter> basesPresenterProvider;
+
+  private MembersInjector<AlarmActivity> alarmActivityMembersInjector;
+
   private Provider<OtherPresenter> otherPresenterProvider;
 
   private MembersInjector<EditorPwsActivity> editorPwsActivityMembersInjector;
@@ -112,8 +118,6 @@ public final class DaggerBaseComponent implements BaseComponent {
   private Provider<HomePresenter> homePresenterProvider;
 
   private MembersInjector<DoctorDetailActivity> doctorDetailActivityMembersInjector;
-
-  private Provider<BasesPresenter> basesPresenterProvider;
 
   private MembersInjector<LineCharSugarFragment> lineCharSugarFragmentMembersInjector;
 
@@ -214,6 +218,11 @@ public final class DaggerBaseComponent implements BaseComponent {
     this.loginActivityMembersInjector =
         LoginActivity_MembersInjector.create(loginPresenterProvider);
 
+    this.basesPresenterProvider = BasesPresenter_Factory.create(apiManagerProvider);
+
+    this.alarmActivityMembersInjector =
+        AlarmActivity_MembersInjector.create(basesPresenterProvider);
+
     this.otherPresenterProvider = OtherPresenter_Factory.create(apiManagerProvider);
 
     this.editorPwsActivityMembersInjector =
@@ -226,8 +235,6 @@ public final class DaggerBaseComponent implements BaseComponent {
 
     this.doctorDetailActivityMembersInjector =
         DoctorDetailActivity_MembersInjector.create(homePresenterProvider);
-
-    this.basesPresenterProvider = BasesPresenter_Factory.create(apiManagerProvider);
 
     this.lineCharSugarFragmentMembersInjector =
         LineCharSugarFragment_MembersInjector.create(basesPresenterProvider);
@@ -335,6 +342,11 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(AlarmActivity binderActivity) {
+    alarmActivityMembersInjector.injectMembers(binderActivity);
   }
 
   @Override
