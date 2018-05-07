@@ -148,12 +148,15 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
             @Override
             public void clickListener(int type, Friend friend) {
                 if(type==0){
-                    Intent intent = new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class);
-                    intent.putExtra("type",1);
-                    intent.putExtra("id",friend.familyAndFriendsUserId);
-                    intent.putExtra("familyAndFriendsId",friend.familyAndFriendsId);
-                    intent.putExtra("status",friend.status);
-                    startActivity(intent);
+                    if(friend.status.equals("Active")){
+                        Intent intent = new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class);
+                        intent.putExtra("type",1);
+                        intent.putExtra("id",friend.familyAndFriendsUserId);
+                        intent.putExtra("familyAndFriendsId",friend.familyAndFriendsId);
+                        intent.putExtra("status",friend.status);
+                        startActivity(intent);
+                    }
+
                 }else {
                     if(TextUtil.isNotEmpty(friend.status)){
                         if(friend.status.equals("Waiting")){

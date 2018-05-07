@@ -35,6 +35,8 @@ import butterknife.ButterKnife;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import rx.Subscription;
+import rx.functions.Action1;
 
 /**
  * 设置
@@ -58,7 +60,7 @@ public class SettingActivity extends BaseActivity  {
     LinearLayout llVersion;
     @BindView(R.id.tv_exit)
     TextView tvExit;
-
+   private Subscription mSubscription;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_setting);
@@ -69,6 +71,23 @@ public class SettingActivity extends BaseActivity  {
 
         }
 
+        mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
+            @Override
+            public void call(SubscriptionBean.RxBusSendBean bean) {
+                if (bean == null) return;
+                if(SubscriptionBean.FINISH==bean.type){
+                    finish();
+                }
+
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
+        RxBus.getInstance().addSubscription(mSubscription);
 //        mWindowAddPhoto = new PhotoPopupWindow(this);
     }
 
@@ -101,6 +120,13 @@ public class SettingActivity extends BaseActivity  {
       });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mSubscription!=null){
+            mSubscription.unsubscribe();
+        }
+    }
 
     @Override
     public void initData() {

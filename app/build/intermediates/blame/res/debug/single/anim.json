@@ -1,107 +1,91 @@
 [
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\list_show.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\list_show.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_right_out.xml"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_fade_out.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_fade_out.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\list_hide.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\list_hide.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim\\design_fab_in.xml"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_right_in.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_in.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_bottom_in.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\zoomout.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\anim\\zoomout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_fade_in.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_fade_in.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pop_up_to_down_exit_anim.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\pop_up_to_down_exit_anim.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pop_up_to_down_exit_anim.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\pop_up_to_down_exit_anim.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\push_left_in.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_fade_in.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_fade_in.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\popw_hide.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\popw_hide.xml"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\push_left_out.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\popw_show.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\popw_show.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_left_in.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pop_up_to_down_anim.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\pop_up_to_down_anim.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_up.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_up.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_out.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\push_bottom_out.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\zoomin.xml",
@@ -112,12 +96,12 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_left_out.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_in.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\push_bottom_in.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\popw_hide.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\popw_hide.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_down.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_down.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
@@ -136,128 +120,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_up.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_up.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\popw_show.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\popw_show.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\zoomin.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\anim\\zoomin.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_down.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_down.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\list_show.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\list_show.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\zoomout.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\anim\\zoomout.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_right_out.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pop_up_to_down_anim.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\pop_up_to_down_anim.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\list_hide.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\list_hide.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_in.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_bottom_in.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim\\design_fab_out.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\anim\\design_snackbar_out.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\push_right_in.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\push_right_out.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\push_left_in.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\list_hide.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\list_hide.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\list_show.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\anim\\list_show.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_up.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_up.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_fade_out.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_fade_out.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\popw_hide.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\anim\\popw_hide.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\listview_down.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\anim\\listview_down.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_out.xml",
@@ -266,9 +134,5 @@
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\anim\\abc_popup_exit.xml"
     }
 ]

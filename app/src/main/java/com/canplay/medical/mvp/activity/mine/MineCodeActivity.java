@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.NavigationBar;
@@ -40,7 +41,7 @@ public class MineCodeActivity extends BaseActivity {
         setContentView(R.layout.activity_mine_code);
         ButterKnife.bind(this);
         navigationBar.setNavigationBarListener(this);
-        imgs=SpUtil.getInstance().getAva();
+        imgs= BaseApplication.avatar+SpUtil.getInstance().getAva();
 
         Glide.with(this).load(imgs).asBitmap().placeholder(R.drawable.moren).into(img);
 

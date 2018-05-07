@@ -304,10 +304,9 @@
 
                     <TextView
                         android:layout_width="40dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="15dp"
-                        android:layout_marginTop="8dp"
                         android:gravity="center"
                         android:text="吃药"
                         android:textColor="@color/slow_black"
@@ -460,10 +459,9 @@
                     <TextView
 
                         android:layout_width="40dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="15dp"
-                        android:layout_marginTop="8dp"
                         android:gravity="center"
                         android:text="测量"
                         android:textColor="@color/slow_black"
@@ -513,7 +511,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="6dp"
                                 android:gravity="center_vertical"
-                                android:text="距离下一次吃药"
+                                android:text="距离下一次测量还有"
                                 android:textColor="@color/color8"
                                 android:textSize="12sp" />
                         </LinearLayout>

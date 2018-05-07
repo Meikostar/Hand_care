@@ -6,13 +6,5 @@
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\xml\\preferences.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\xml\\preferences.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\xml\\file_paths.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\xml\\file_paths.xml"
     }
 ]

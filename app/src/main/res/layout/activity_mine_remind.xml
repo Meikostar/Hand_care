@@ -15,17 +15,16 @@
         android:layout_height="wrap_content"
          app:navigationLeft_img="@drawable/black_left"
         app:navigationTitle="我的用药提醒" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.2dp"
         android:background="@color/linecolor"/>
-    <ListView
-        android:id="@+id/rl_menu"
-        style="@style/lv_content"
+
+    <com.canplay.medical.view.NoScrollViewPager
+        android:id="@+id/viewpager_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:background="@color/white"
-        android:visibility="visible" />
+        android:layout_height="match_parent"
+        android:background="@color/white" />
 
 </LinearLayout>

@@ -155,6 +155,10 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
                         presenter.SearFriend(s.toString());
                     }
 
+                }else {
+                    search.setText("搜索");
+                    etSearch.setText("");
+                    sta=0;
                 }
             }
 
@@ -174,8 +178,10 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
                         }else {
                             presenter.SearFriend(etSearch.getText().toString());
                         }
+                        search.setText("取消");
+                        sta=1;
                     }
-                    search.setText("取消");
+
                 }else {
                     search.setText("搜索");
                     etSearch.setText("");

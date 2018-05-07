@@ -9,6 +9,7 @@ android {
         targetSdkVersion TARGET_SDK_VERSION as int
         versionCode 1
         versionName "1.0"
+//        Error:com.google.common.util.concurrent.UncheckedExecutionException: java.lang.RuntimeException: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 3 column 2
     }
     buildTypes {
         release {
@@ -28,5 +29,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':litepal')
 
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:26.+'
+
 }

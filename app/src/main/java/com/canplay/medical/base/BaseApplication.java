@@ -4,6 +4,8 @@ import android.app.Application;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Vibrator;
 import android.support.multidex.MultiDex;
 
@@ -71,7 +73,7 @@ public class BaseApplication extends DaemonApplication  {
         LocationUtil.initUtil(this);
         locationUtil = LocationUtil.shareInstance();
         mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
-
+        unSppuortSystemFont();
         //全局异常处理
         initImageLoader(this);
         new ExceptionHandler().init(this);
@@ -84,6 +86,13 @@ public class BaseApplication extends DaemonApplication  {
     }
 
 
+
+    public void unSppuortSystemFont() {
+        Resources res = super.getResources();
+        Configuration config = new Configuration();
+        config.setToDefaults();
+        res.updateConfiguration(config, res.getDisplayMetrics());
+    }
 
     /**
      * you can override this method instead of {@link android.app.Application attachBaseContext}

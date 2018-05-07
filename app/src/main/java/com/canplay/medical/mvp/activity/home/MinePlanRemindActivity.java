@@ -1,16 +1,26 @@
 package com.canplay.medical.mvp.activity.home;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ListView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
+import com.canplay.medical.fragment.BloodRecordFragment;
+import com.canplay.medical.fragment.RemindMedicatFragment;
+import com.canplay.medical.mvp.adapter.FragmentViewPagerAdapter;
 import com.canplay.medical.mvp.adapter.RemindMedicatAdapter;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.NoScrollViewPager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.canplay.medical.R.layout.activity_mine_remind;
 
 /**
  * 我的用药提醒
@@ -22,22 +32,32 @@ public class MinePlanRemindActivity extends BaseActivity {
     View line;
     @BindView(R.id.navigationBar)
     NavigationBar navigationBar;
-    @BindView(R.id.rl_menu)
-    ListView rlMenu;
+    @BindView(R.id.viewpager_main)
+    NoScrollViewPager viewpagerMain;
 
-
-    private RemindMedicatAdapter adapter;
+   private RemindMedicatFragment  fragment;
+    private FragmentViewPagerAdapter mainViewPagerAdapter;
+    private List<Fragment> mFragments;
     @Override
     public void initViews() {
-        setContentView(R.layout.activity_mine_remind);
+        setContentView(activity_mine_remind);
         ButterKnife.bind(this);
         navigationBar.setNavigationBarListener(this);
-        adapter=new RemindMedicatAdapter(this,null,rlMenu);
-        rlMenu.setAdapter(adapter);
-
+        mFragments=new ArrayList<>();
+        addFragment();
+        mainViewPagerAdapter = new FragmentViewPagerAdapter(getSupportFragmentManager(), mFragments);
+        viewpagerMain.setAdapter(mainViewPagerAdapter);
+        viewpagerMain.setOffscreenPageLimit(1);//设置缓存view 的个数
+        viewpagerMain.setCurrentItem(0);
+        viewpagerMain.setScanScroll(false);
     }
 
+    private void addFragment() {
+        fragment = new RemindMedicatFragment();
 
+        mFragments.add(fragment);
+
+    }
     @Override
     public void bindEvents() {
 
