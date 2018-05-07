@@ -367,9 +367,9 @@ public class MyUtil {
                     routsum += sir[0];
                     goutsum += sir[1];
                     boutsum += sir[2];
+                    ginsum -= sir[1];
 
                     rinsum -= sir[0];
-                    ginsum -= sir[1];
                     binsum -= sir[2];
 
                     yi++;
@@ -515,7 +515,7 @@ public class MyUtil {
                 alarmClock.getMinute(), alarmClock.getWeeks());
         // 设置闹钟
         // 当前版本为19（4.4）或以上使用精准闹钟
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, nextTime, pi);
         } else {
             alarmManager.set(AlarmManager.RTC_WAKEUP, nextTime, pi);

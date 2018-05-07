@@ -41,6 +41,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/tv_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -65,32 +66,33 @@
                         android:id="@+id/tv_times"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="18dp"
+                        android:layout_marginTop="30dp"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
                         android:text="13:00"
                         android:textColor="@color/slow_black"
-                        android:textSize="36sp" />
+                        android:textSize="46sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:gravity="center_vertical"
-                        android:id="@+id/tv_state"
-                        android:text="早"
-                        android:textColor="@color/blue"
-                        android:textSize="14.5sp" />
+
 
                     <ImageView
                         android:id="@+id/iv_img"
-                        android:layout_width="77dp"
-                        android:layout_height="77dp"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="7dp"
-                        android:src="@drawable/zz" />
+                        android:src="@drawable/yaohe" />
 
-
+                    <TextView
+                        android:id="@+id/tv_state"
+                        android:layout_width="99dp"
+                        android:layout_height="16dp"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="16dp"
+                        android:text="请服用01药杯 "
+                        android:textColor="@color/color8"
+                        android:textSize="16dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -116,6 +118,7 @@
                     android:textColor="@color/slow_black"
                     android:textSize="15sp" />
                 <ImageView
+                    android:visibility="gone"
                     android:padding="10dp"
                     android:id="@+id/iv_expend"
                     android:layout_width="37dp"
@@ -154,6 +157,7 @@
                 android:layout_height="1dp" />
 
             <LinearLayout
+                android:visibility="gone"
                 android:background="@color/content_bg"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"

@@ -268,7 +268,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
 
     @Override
     public void toNextStep(int type) {
-
+        presenter.getFriendList();
 
     }
 

@@ -480,7 +480,7 @@ public class MeasureActivity extends BaseActivity  implements
             // 初始化闹钟实例的分钟
             mAlarmClock.setMinute(Integer.valueOf(split[1]));
             AlarmClockOperate.getInstance().saveAlarmClock(mAlarmClock);
-            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESUREREFASH,mAlarmClock));
         }
         finish();
     }

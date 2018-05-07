@@ -19,6 +19,7 @@ import com.canplay.medical.bean.unBind;
 import com.canplay.medical.mvp.http.BaseApi;
 import com.canplay.medical.net.MySubscriber;
 import com.canplay.medical.util.SpUtil;
+import com.canplay.medical.util.TextUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -383,11 +384,17 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(String entity){
-                if(entity.equals("true")){
-                    mView.toNextStep(4);
+                if(TextUtil.isNotEmpty(entity)){
+                    if(entity.equals("true")){
+                        mView.toNextStep(4);
+                    }else {
+                        mView.showTomast("操作失败");
+                    }
                 }else {
                     mView.showTomast("操作失败");
+
                 }
+
 
             }
         });

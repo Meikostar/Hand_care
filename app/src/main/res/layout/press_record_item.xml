@@ -80,9 +80,9 @@
             <TextView
                 android:layout_weight="1"
                 android:id="@+id/tv_one"
-                android:textSize="14sp"
+                android:textSize="12.5sp"
                 android:gravity="center_vertical"
-
+                android:singleLine="true"
                 android:textColor="@color/slow_black"
                 android:text=""
                 android:layout_width="30dp"
@@ -90,9 +90,9 @@
             <TextView
                 android:layout_weight="1"
                 android:id="@+id/tv_two"
-                android:textSize="14sp"
+                android:textSize="12.5sp"
                 android:gravity="center_vertical"
-
+                android:singleLine="true"
                 android:textColor="@color/slow_black"
                 android:text=""
                 android:layout_width="30dp"
@@ -100,11 +100,11 @@
             <TextView
                 android:layout_weight="1"
                 android:id="@+id/tv_three"
-                android:textSize="14sp"
+                android:textSize="12.5sp"
                 android:gravity="center_vertical"
-
                 android:textColor="@color/slow_black"
                 android:text=""
+                android:singleLine="true"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 

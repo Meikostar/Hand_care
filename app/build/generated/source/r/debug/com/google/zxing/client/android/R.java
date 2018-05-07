@@ -747,20 +747,20 @@ public final class R {
         public static final int notification_bg_normal = 0x7f0200c3;
         public static final int notification_bg_normal_pressed = 0x7f0200c4;
         public static final int notification_icon_background = 0x7f0200c5;
-        public static final int notification_template_icon_bg = 0x7f020104;
-        public static final int notification_template_icon_low_bg = 0x7f020105;
+        public static final int notification_template_icon_bg = 0x7f020106;
+        public static final int notification_template_icon_low_bg = 0x7f020107;
         public static final int notification_tile_bg = 0x7f0200c6;
         public static final int notify_panel_notification_icon_bg = 0x7f0200c7;
-        public static final int scan_line = 0x7f0200d8;
-        public static final int shadow_bottom = 0x7f0200dc;
-        public static final int shadow_left = 0x7f0200dd;
-        public static final int shadow_right = 0x7f0200de;
-        public static final int shape_circle_btn_cancel_normal = 0x7f0200e0;
-        public static final int shape_circle_btn_cancel_pressed = 0x7f0200e1;
-        public static final int shape_circle_btn_sure_normal = 0x7f0200e2;
-        public static final int shape_circle_btn_sure_pressed = 0x7f0200e3;
-        public static final int shape_circle_dialog = 0x7f0200e4;
-        public static final int shape_circle_progress_bar = 0x7f0200e5;
+        public static final int scan_line = 0x7f0200d9;
+        public static final int shadow_bottom = 0x7f0200dd;
+        public static final int shadow_left = 0x7f0200de;
+        public static final int shadow_right = 0x7f0200df;
+        public static final int shape_circle_btn_cancel_normal = 0x7f0200e1;
+        public static final int shape_circle_btn_cancel_pressed = 0x7f0200e2;
+        public static final int shape_circle_btn_sure_normal = 0x7f0200e3;
+        public static final int shape_circle_btn_sure_pressed = 0x7f0200e4;
+        public static final int shape_circle_dialog = 0x7f0200e5;
+        public static final int shape_circle_progress_bar = 0x7f0200e6;
     }
     public static final class id {
         public static final int action0 = 0x7f0f0194;

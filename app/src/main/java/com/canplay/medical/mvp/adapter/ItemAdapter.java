@@ -45,7 +45,7 @@ public class ItemAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return list!=null?list.size():0;
+        return list!=null?list.size():3;
     }
 
     @Override
@@ -75,18 +75,18 @@ public class ItemAdapter extends BaseAdapter {
         }else{
             holder = (ResultViewHolder) view.getTag();
         }
-        if(TextUtil.isNotEmpty(list.get(position).medicine)){
-            holder.name.setText(list.get(position).medicine);
-        }
-        if(TextUtil.isNotEmpty(list.get(position).dose)){
-            holder.tvCount.setText(list.get(position).dose);
-        }
-        holder.llbg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.getItem(list.get(position),position);
-            }
-        });
+//        if(TextUtil.isNotEmpty(list.get(position).medicine)){
+//            holder.name.setText(list.get(position).medicine);
+//        }
+//        if(TextUtil.isNotEmpty(list.get(position).dose)){
+//            holder.tvCount.setText(list.get(position).dose);
+//        }
+//        holder.llbg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                listener.getItem(list.get(position),position);
+//            }
+//        });
         return view;
 
 

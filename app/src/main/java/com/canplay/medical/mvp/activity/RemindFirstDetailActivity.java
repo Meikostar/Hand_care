@@ -50,28 +50,29 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
     TextView tvTime;
     @BindView(R.id.tv_times)
     TextView tvTimes;
-    @BindView(R.id.tv_state)
-    TextView tvState;
     @BindView(R.id.iv_img)
     ImageView ivImg;
+    @BindView(R.id.tv_state)
+    TextView tvState;
     @BindView(R.id.tv_type)
     TextView tvType;
+    @BindView(R.id.iv_expend)
+    ImageView ivExpend;
     @BindView(R.id.tv_count)
     TextView tvCount;
     @BindView(R.id.rl_menu)
     RegularListView rlMenu;
     @BindView(R.id.tv_sure)
     TextView tvSure;
-    @BindView(R.id.iv_expend)
-    ImageView ivExpend;
 
     private ItemAdapter adapter;
     private SmartCycAdapter adapters;
     private List<Medicines> list = new ArrayList<>();
     private Box boxs;
     private boolean isShow;
-    private  Animation animationhide;
-    private  Animation animationshow;
+    private Animation animationhide;
+    private Animation animationshow;
+
     @Override
     public void initViews() {
         setContentView(R.layout.remind_first_activity);
@@ -85,7 +86,6 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         rlMenu.setAdapter(adapter);
         animationhide = AnimationUtils.loadAnimation(this, R.anim.list_hide);
         animationshow = AnimationUtils.loadAnimation(this, R.anim.list_show);
-
 
 
     }
@@ -107,12 +107,12 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         ivExpend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isShow){
-                    isShow=false;
+                if (isShow) {
+                    isShow = false;
                     rlMenu.startAnimation(animationhide);
                     rlMenu.setVisibility(View.GONE);
-                }else {
-                    isShow=true;
+                } else {
+                    isShow = true;
                     rlMenu.startAnimation(animationshow);
                     rlMenu.setVisibility(View.VISIBLE);
                 }
@@ -207,4 +207,10 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
     }
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

@@ -13,6 +13,7 @@ import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
@@ -21,6 +22,8 @@ import com.canplay.medical.mvp.adapter.RemindMedicatAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.AlarmClockOperate;
+import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.view.RegularListView;
 
@@ -82,6 +85,10 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                 if (bean == null) return;
                 if(SubscriptionBean.MESURE==bean.type){
                     presenter.MeasureRemindList();
+                }else if(SubscriptionBean.MESUREREFASH==bean.type){
+                    AlarmClock alarm= (AlarmClock) bean.content;
+                    addList(alarm);
+                    presenter.MedicineRemindList();
                 }
 
 
@@ -118,14 +125,52 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
     }
     private Mesure mesure=new Mesure();
     private List<String> times=new ArrayList<>();
+
+
+    /**
+     * 保存闹钟信息的list
+     */
+    private List<AlarmClock> mAlarmClockList;
+    private void addList(AlarmClock ac) {
+        mAlarmClockList.clear();
+
+        int id = ac.getId();
+        int count = 0;
+        int position = 0;
+        List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
+        for (AlarmClock alarmClock : list) {
+            mAlarmClockList.add(alarmClock);
+
+            if (id == alarmClock.getId()) {
+                position = count;
+                if (alarmClock.isOnOff()) {
+                    MyUtil.startAlarmClock(getActivity(), alarmClock);
+                }
+            }
+            count++;
+        }
+
+        checkIsEmpty(list);
+
+
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
 
     }
+    private void checkIsEmpty(List<AlarmClock> list) {
+        if (list.size() != 0) {
+            rlMenu.setVisibility(View.VISIBLE);
+//            mEmptyView.setVisibility(View.GONE);
+        } else {
+            rlMenu.setVisibility(View.GONE);
+//            mEmptyView.setVisibility(View.VISIBLE);
 
 
+        }
+    }
     @Override
     public void onDestroy() {
         super.onDestroy();

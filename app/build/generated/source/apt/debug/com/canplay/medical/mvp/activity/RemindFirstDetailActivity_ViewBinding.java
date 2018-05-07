@@ -30,13 +30,13 @@ public class RemindFirstDetailActivity_ViewBinding implements Unbinder {
     target.navigationBar = Utils.findRequiredViewAsType(source, R.id.navigationBar, "field 'navigationBar'", NavigationBar.class);
     target.tvTime = Utils.findRequiredViewAsType(source, R.id.tv_time, "field 'tvTime'", TextView.class);
     target.tvTimes = Utils.findRequiredViewAsType(source, R.id.tv_times, "field 'tvTimes'", TextView.class);
-    target.tvState = Utils.findRequiredViewAsType(source, R.id.tv_state, "field 'tvState'", TextView.class);
     target.ivImg = Utils.findRequiredViewAsType(source, R.id.iv_img, "field 'ivImg'", ImageView.class);
+    target.tvState = Utils.findRequiredViewAsType(source, R.id.tv_state, "field 'tvState'", TextView.class);
     target.tvType = Utils.findRequiredViewAsType(source, R.id.tv_type, "field 'tvType'", TextView.class);
+    target.ivExpend = Utils.findRequiredViewAsType(source, R.id.iv_expend, "field 'ivExpend'", ImageView.class);
     target.tvCount = Utils.findRequiredViewAsType(source, R.id.tv_count, "field 'tvCount'", TextView.class);
     target.rlMenu = Utils.findRequiredViewAsType(source, R.id.rl_menu, "field 'rlMenu'", RegularListView.class);
     target.tvSure = Utils.findRequiredViewAsType(source, R.id.tv_sure, "field 'tvSure'", TextView.class);
-    target.ivExpend = Utils.findRequiredViewAsType(source, R.id.iv_expend, "field 'ivExpend'", ImageView.class);
   }
 
   @Override
@@ -50,12 +50,12 @@ public class RemindFirstDetailActivity_ViewBinding implements Unbinder {
     target.navigationBar = null;
     target.tvTime = null;
     target.tvTimes = null;
-    target.tvState = null;
     target.ivImg = null;
+    target.tvState = null;
     target.tvType = null;
+    target.ivExpend = null;
     target.tvCount = null;
     target.rlMenu = null;
     target.tvSure = null;
-    target.ivExpend = null;
   }
 }

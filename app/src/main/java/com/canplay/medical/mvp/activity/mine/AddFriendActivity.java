@@ -154,10 +154,10 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
                     }else {
                         presenter.SearFriend(s.toString());
                     }
-
+                    search.setText("取消");
+                    sta=1;
                 }else {
                     search.setText("搜索");
-                    etSearch.setText("");
                     sta=0;
                 }
             }
