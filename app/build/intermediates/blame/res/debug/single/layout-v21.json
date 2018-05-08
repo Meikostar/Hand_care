@@ -1,18 +1,18 @@
 [
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout-v21\\notification_action.xml"
+        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\layout-v21\\notification_action.xml"
     }
 ]

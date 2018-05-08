@@ -85,7 +85,7 @@ public interface BaseApi {
      */
 
     @Headers({"Content-Type: application/json","Accept: application/json"})
-    @POST("Flow/Register")
+    @POST("flow/v2/register")
     Observable<BASE> righter(@Body Righter body);
 
 

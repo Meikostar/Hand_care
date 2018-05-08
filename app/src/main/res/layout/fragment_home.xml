@@ -122,7 +122,6 @@
                             android:layout_width="57dp"
                             android:layout_height="57dp"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginRight="7dp"
                             android:layout_marginTop="7dp"
                             android:src="@drawable/home2" />
 
@@ -159,7 +158,6 @@
                             android:layout_width="57dp"
                             android:layout_height="57dp"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginRight="7dp"
                             android:layout_marginTop="7dp"
                             android:src="@drawable/home3" />
 
@@ -196,7 +194,6 @@
                             android:layout_width="57dp"
                             android:layout_height="57dp"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginRight="7dp"
                             android:layout_marginTop="7dp"
                             android:src="@drawable/home4" />
 
@@ -231,7 +228,6 @@
                             android:layout_width="57dp"
                             android:layout_height="57dp"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginRight="7dp"
                             android:layout_marginTop="7dp"
                             android:src="@drawable/home5" />
 
@@ -280,16 +276,16 @@
                 android:background="@color/linecolor" />
 
             <LinearLayout
-                android:background="@color/white"
                 android:id="@+id/ll_bg"
                 android:layout_width="match_parent"
                 android:layout_height="92dp"
+                android:background="@color/white"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:background="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -308,7 +304,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="15dp"
                         android:gravity="center"
-                        android:text="吃药"
+                        android:text="服药"
                         android:textColor="@color/slow_black"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -442,9 +438,9 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:background="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">
 

@@ -82,17 +82,23 @@ public class MeasurePlanActivity extends BaseActivity {
                     public void onTick(long millisUntilFinished) {
                         String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
                         String[] times = timeStr.split(",");
-                      tvHour.setText(times[1]);
-                      tvMinter.setText(times[2]);
-                      tvSecond.setText(times[3]);
+                        if(tvHour!=null){
+                            tvHour.setText(times[1]);
+                            tvMinter.setText(times[2]);
+                            tvSecond.setText(times[3]);
+                        }
+
 
                     }
 
                     @Override
                     public void onFinish() {
-                        tvHour.setText(00);
-                        tvMinter.setText(00);
-                        tvSecond.setText(00);
+                        if(tvHour!=null){
+                            tvHour.setText("00");
+                            tvMinter.setText("00");
+                            tvSecond.setText("00");
+                        }
+
 
                     }
                 }.start();
@@ -162,10 +168,5 @@ public class MeasurePlanActivity extends BaseActivity {
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }

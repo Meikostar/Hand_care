@@ -31,7 +31,7 @@
                 android:layout_marginTop="8dp"
                 android:textSize="15sp"
                 android:textColor="@color/slow_black"
-                android:text="吃药"
+                android:text="服药"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>

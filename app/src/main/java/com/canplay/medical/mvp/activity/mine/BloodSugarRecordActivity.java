@@ -65,7 +65,8 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
         mSuperRecyclerView.getMoreProgressView().getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
-        adapter=new PressRecordReCycleAdapter(this,0);
+        adapter=new PressRecordReCycleAdapter(this,1);
+
         mSuperRecyclerView.setAdapter(adapter);
         String id = getIntent().getStringExtra("id");
         if(TextUtil.isNotEmpty(id)){
@@ -73,7 +74,20 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
         }else {
             userId = SpUtil.getInstance().getUserId();
         }
+        reflash();
+    }
 
+    private void reflash() {
+        if (mSuperRecyclerView != null) {
+            //实现自动下拉刷新功能
+            mSuperRecyclerView.getSwipeToRefresh().post(new Runnable() {
+                @Override
+                public void run() {
+                    mSuperRecyclerView.setRefreshing(true);//执行下拉刷新的动画
+                    refreshListener.onRefresh();//执行数据加载操作
+                }
+            });
+        }
     }
     private int cout=10;
     private int total=0;
