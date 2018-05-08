@@ -382,7 +382,7 @@ public class BasesPresenter implements BaseContract.Presenter {
             @Override
             public void onNext(BASE entity){
 
-                mView.toEntity(entity,2);
+                mView.toNextStep(2);
             }
         });
     }

@@ -139,7 +139,7 @@ public class MeasureActivity extends BaseActivity  implements
         mAlarmClock.setRingName(ringName);
         // 初始化闹钟实例的铃声播放地址
         mAlarmClock.setRingUrl(ringUrl);
-        mAlarmClock.setTag("用药提醒");
+        mAlarmClock.setTag("1");
         mAlarmClock.setRepeat("每天");
         // 响铃周期
         mAlarmClock.setWeeks("2,3,4,5,6,7,1");
@@ -479,8 +479,9 @@ public class MeasureActivity extends BaseActivity  implements
             mAlarmClock.setHour(Integer.valueOf(split[0]));
             // 初始化闹钟实例的分钟
             mAlarmClock.setMinute(Integer.valueOf(split[1]));
+            mAlarmClock.setTag("1");
             AlarmClockOperate.getInstance().saveAlarmClock(mAlarmClock);
-            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESUREREFASH,mAlarmClock));
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
         }
         finish();
     }

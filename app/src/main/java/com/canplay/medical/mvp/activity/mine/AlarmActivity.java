@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.NotificationCompat;
 import android.text.TextUtils;
@@ -29,14 +31,19 @@ import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.WeacStatus;
 import com.canplay.medical.mvp.activity.AlarmClockNapNotificationActivity;
+import com.canplay.medical.mvp.activity.RemindFirstDetailActivity;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.receiver.AlarmClockBroadcast;
+import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.AudioPlayer;
+import com.canplay.medical.util.Parcelables;
+import com.canplay.medical.util.TimeUtil;
 import com.google.zxing.client.android.utils.LogUtil;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -60,7 +67,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     @BindView(R.id.tv_add)
     TextView tvAdd;
     private int sex = 0;
-    private String name = "";
+
 
     /**
      * Log tag ：AlarmClockOntimeFragment
@@ -123,12 +130,16 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     private int mCurrentVolume;
 
 
-
+    private byte[] bytes;
+    private String name;
     private ViewGroup mWeatherInfoGroup;
     private ProgressBar mWeatherPbar;
     private TextView mWeatherTypeTv;
     private TextView mUmbrellaTv;
     private String mCurrentTimeDisplay = "";
+
+    private int hour;
+    private int minture;
     @Override
     public void initViews() {
         setContentView(R.layout.alarm_pop);
@@ -144,8 +155,24 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                         | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
                         | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        mAlarmClock = getIntent()
-                .getParcelableExtra(WeacConstants.ALARM_CLOCK);
+        bytes = getIntent()
+                .getByteArrayExtra(WeacConstants.ALARM_CLOCK);
+
+        if(bytes!=null){
+            mAlarmClock = Parcelables.toParcelable(bytes, AlarmClock.CREATOR);
+        }else {
+            List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+            String s = TimeUtil.formatHour(System.currentTimeMillis());
+            String[] split = s.split(":");
+            hour=Integer.valueOf(split[0]);
+            minture=Integer.valueOf(split[1]);
+            for(AlarmClock alarmClock:alarmClocks){
+                if(alarmClock.getHour()==hour&&minture==alarmClock.getMinute()){
+                    mAlarmClock=alarmClock;
+                }
+            }
+        }
+
         if (mAlarmClock != null) {
             // 取得小睡间隔
             mNapInterval = mAlarmClock.getNapInterval();
@@ -174,9 +201,14 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         tvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               presenter.confirmEat();
 
-//                finishActivitys();
+                if(mAlarmClock.getTag().equals("1")){
+                    finishActivitys();
+                }else {
+                    startActivity(new Intent(AlarmActivity.this, RemindFirstDetailActivity.class));
+                    finishActivitys();
+                }
+
             }
         });
     }
@@ -301,7 +333,8 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
 
         // 设置小睡相关信息
         Intent intent = new Intent(this, AlarmClockBroadcast.class);
-        intent.putExtra(WeacConstants.ALARM_CLOCK, mAlarmClock);
+        byte[] bytes = Parcelables.toByteArray(mAlarmClock);
+        intent.putExtra(WeacConstants.ALARM_CLOCK, bytes);
         intent.putExtra(WeacConstants.NAP_RAN_TIMES, mNapTimesRan);
         PendingIntent pi = PendingIntent.getBroadcast(this,
                 -mAlarmClock.getId(), intent,
@@ -324,12 +357,13 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         // 设置通知相关信息
         Intent it = new Intent(this,
                 AlarmClockNapNotificationActivity.class);
-        it.putExtra(WeacConstants.ALARM_CLOCK, mAlarmClock);
+        byte[] bytess = Parcelables.toByteArray(mAlarmClock);
+        intent.putExtra(WeacConstants.ALARM_CLOCK, bytess);
         // FLAG_UPDATE_CURRENT 点击通知有时不会跳转！！
         // FLAG_ONE_SHOT 清除列表只响应一个
         PendingIntent napCancel = PendingIntent.getActivity(this,
                 mAlarmClock.getId(), it,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT);
         // 下拉列表通知显示的时间
         CharSequence time = new SimpleDateFormat("HH:mm", Locale.getDefault())
                 .format(nextTime);

@@ -27,6 +27,7 @@ import com.canplay.medical.bean.WeacStatus;
 import com.canplay.medical.mvp.activity.mine.AlarmActivity;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.MyUtil;
+import com.canplay.medical.util.Parcelables;
 import com.google.zxing.client.android.utils.LogUtil;
 
 
@@ -45,8 +46,12 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        AlarmClock alarmClock = intent
-                .getParcelableExtra(WeacConstants.ALARM_CLOCK);
+//        AlarmClock alarmClock = intent
+//                .getParcelableExtra(WeacConstants.ALARM_CLOCK);
+      byte[]  bytes = intent
+                .getByteArrayExtra(WeacConstants.ALARM_CLOCK);
+        String stringExtra = intent.getStringExtra(WeacConstants.ALARM_ID);
+        AlarmClock alarmClock = Parcelables.toParcelable(bytes, AlarmClock.CREATOR);
         if (alarmClock != null) {
             // 单次响铃
             if (alarmClock.getWeeks() == null) {
@@ -100,7 +105,9 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
             // 小睡已执行次数
             it.putExtra(WeacConstants.NAP_RAN_TIMES, napTimesRan);
         }
-        it.putExtra(WeacConstants.ALARM_CLOCK, alarmClock);
+        byte[] bytess = Parcelables.toByteArray(alarmClock);
+        intent.putExtra(WeacConstants.ALARM_CLOCK, bytess);
+        intent.putExtra(WeacConstants.ALARM_ID, stringExtra);
         // 清除栈顶的Activity
         it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);

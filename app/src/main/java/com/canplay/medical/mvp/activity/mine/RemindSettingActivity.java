@@ -161,7 +161,7 @@ public class RemindSettingActivity extends BaseActivity implements
         mAlarmClock.setRingName(ringName);
         // 初始化闹钟实例的铃声播放地址
         mAlarmClock.setRingUrl(ringUrl);
-        mAlarmClock.setTag("用药提醒");
+        mAlarmClock.setTag("2");
         mAlarmClock.setRepeat("每天");
         // 响铃周期
         mAlarmClock.setWeeks("2,3,4,5,6,7,1");
@@ -427,6 +427,7 @@ public class RemindSettingActivity extends BaseActivity implements
             mAlarmClock.setHour(hour);
             // 初始化闹钟实例的分钟
             mAlarmClock.setMinute(minter);
+            mAlarmClock.setTag("2");
             AlarmClockOperate.getInstance().saveAlarmClock(mAlarmClock);
             RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
             finish();

@@ -85,10 +85,6 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                 if (bean == null) return;
                 if(SubscriptionBean.MESURE==bean.type){
                     presenter.MeasureRemindList();
-                }else if(SubscriptionBean.MESUREREFASH==bean.type){
-                    AlarmClock alarm= (AlarmClock) bean.content;
-                    addList(alarm);
-                    presenter.MedicineRemindList();
                 }
 
 

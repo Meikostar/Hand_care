@@ -501,12 +501,14 @@ public class MyUtil {
     public static void startAlarmClock(Context context, AlarmClock alarmClock) {
 //        Intent intent = new Intent("com.kaku.weac.broadcast.ALARM_CLOCK_ONTIME");
         Intent intent = new Intent(context, AlarmClockBroadcast.class);
-        intent.putExtra(WeacConstants.ALARM_CLOCK, alarmClock);
+        byte[] bytes = Parcelables.toByteArray(alarmClock);
+        intent.putExtra(WeacConstants.ALARM_CLOCK, bytes);
+        intent.putExtra(WeacConstants.ALARM_ID, "meiko");
         // FLAG_UPDATE_CURRENT：如果PendingIntent已经存在，保留它并且只替换它的extra数据。
         // FLAG_CANCEL_CURRENT：如果PendingIntent已经存在，那么当前的PendingIntent会取消掉，然后产生一个新的PendingIntent。
         PendingIntent pi = PendingIntent.getBroadcast(context,
                 alarmClock.getId(), intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context
                 .getSystemService(Context.ALARM_SERVICE);
 
@@ -515,7 +517,7 @@ public class MyUtil {
                 alarmClock.getMinute(), alarmClock.getWeeks());
         // 设置闹钟
         // 当前版本为19（4.4）或以上使用精准闹钟
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, nextTime, pi);
         } else {
             alarmManager.set(AlarmManager.RTC_WAKEUP, nextTime, pi);

@@ -153,6 +153,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         tvSure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                presenter.confirmEat();
                 if (datas != null) {
                     for (Box box : datas) {
                         Medicines medicines = new Medicines();
@@ -179,6 +180,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
 
     @Override
     public <T> void toEntity(T entity, int type) {
+
         Box box = (Box) entity;
         data = box.cups;
         tvTime.setText(TimeUtil.formatTims(box.planCreatedDateTime));
@@ -198,7 +200,8 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
 
     @Override
     public void toNextStep(int type) {
-
+       showTomast("用药已确认");
+        finish();
     }
 
     @Override
@@ -207,10 +210,5 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }
