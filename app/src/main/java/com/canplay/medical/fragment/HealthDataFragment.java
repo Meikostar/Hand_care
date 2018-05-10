@@ -10,18 +10,26 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.canplay.medical.R;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.Health;
 import com.canplay.medical.bean.Message;
 import com.canplay.medical.mvp.activity.health.BloodChartRecordActivity;
 import com.canplay.medical.mvp.activity.health.SugarChartRecordActivity;
 import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
 import com.canplay.medical.mvp.activity.health.TimeXRecordActivity;
 import com.canplay.medical.mvp.adapter.HealthDataAdapter;
+import com.canplay.medical.mvp.component.DaggerBaseComponent;
+import com.canplay.medical.mvp.present.HomeContract;
+import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.view.NavigationBar;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,7 +41,9 @@ import rx.functions.Action1;
 /**
  * 健康数据
  */
-public class HealthDataFragment extends BaseFragment implements View.OnClickListener {
+public class HealthDataFragment extends BaseFragment implements View.OnClickListener ,HomeContract.View {
+    @Inject
+    HomePresenter presenter;
 
 
     Unbinder unbinder;
@@ -56,7 +66,9 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_menu, null);
         unbinder = ButterKnife.bind(this, view);
-
+        DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
+        presenter.attachView(this);
+        presenter.getHealthData();
         initView();
         initListener();
 
@@ -78,6 +90,8 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
+                }else if(SubscriptionBean.BLOODORSUGAR==bean.type){
+                    presenter.getHealthData();
                 }
 
             }
@@ -134,10 +148,35 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-
+   private Health health;
     @Override
     public void onDestroy() {
         super.onDestroy();
         mSubscription.unsubscribe();
+    }
+    private List<Health> list=new ArrayList<>();
+    @Override
+    public <T> void toEntity(T entity, int type) {
+        health= (Health) entity;
+        if(health!=null){
+            if(health.bloodPressure!=null){
+                list.add(health.bloodPressure);
+            } if(health.bloodGlucoseLevel!=null){
+                list.add(health.bloodGlucoseLevel);
+            } if(health.medicineRecord!=null){
+                list.add(health.medicineRecord);
+            }
+        }
+        adapter.setData(list);
+    }
+
+    @Override
+    public void toNextStep(int type) {
+
+    }
+
+    @Override
+    public void showTomast(String msg) {
+
     }
 }

@@ -9,6 +9,7 @@ import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
+import com.canplay.medical.bean.Health;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
@@ -177,19 +178,19 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void MedicineRemindList() {
         String userId = SpUtil.getInstance().getUserId();
-        subscription = ApiManager.setSubscribe(contactApi.MedicineRemindList(userId), new MySubscriber<List<Medicine>>(){
+        subscription = ApiManager.setSubscribe(contactApi.MedicineRemindList(userId), new MySubscriber<Medicine>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-                if(e.toString().contains("java.io.IOException:")){
-                    mView.showTomast("账号或密码错误");
-                }
+
+                    mView.showTomast(e.getMessage());
+
 
             }
 
             @Override
-            public void onNext(List<Medicine> entity){
-                mView.toEntity(entity.get(0).schedule,0);
+            public void onNext(Medicine entity){
+                mView.toEntity(entity.schedule,0);
 
             }
         });
@@ -197,7 +198,7 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void MeasureRemindList() {
         String userId = SpUtil.getInstance().getUserId();
-        subscription = ApiManager.setSubscribe(contactApi.MeasureRemindList(userId), new MySubscriber<List<Medicine>>(){
+        subscription = ApiManager.setSubscribe(contactApi.MeasureRemindList(userId), new MySubscriber<Medicine>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
@@ -208,8 +209,8 @@ public class HomePresenter implements HomeContract.Presenter {
             }
 
             @Override
-            public void onNext(List<Medicine> entity){
-                mView.toEntity(entity.get(0).schedule,0);
+            public void onNext(Medicine entity){
+                mView.toEntity(entity.schedule,0);
 
             }
         });
@@ -350,6 +351,25 @@ public class HomePresenter implements HomeContract.Presenter {
         });
     }
 
+    @Override
+    public void getHealthData() {
+        String userId = SpUtil.getInstance().getUserId();
+        subscription = ApiManager.setSubscribe(contactApi.getHealthData(userId), new MySubscriber<Health>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(Health entity){
+
+                mView.toEntity(entity,0);
+
+            }
+        });
+    }
 
 
 

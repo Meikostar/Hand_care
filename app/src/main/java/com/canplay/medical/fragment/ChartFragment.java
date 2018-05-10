@@ -241,7 +241,7 @@ public class ChartFragment extends BaseFragment implements BaseContract.View {
             tvState.setText("异常");
             tvState.setTextColor(getResources().getColor(R.color.red_b));
         }
-         tvTime.setText(TimeUtil.formatToNew(lists.get(0).timeStamp));
+         tvTime.setText(TimeUtil.formatToNew((long)lists.get(0).timeStamp));
 
     }
 

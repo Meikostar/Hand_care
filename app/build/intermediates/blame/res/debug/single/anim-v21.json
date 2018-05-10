@@ -1,10 +1,10 @@
 [
     {
-        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\CanPlay\\.android\\build-cache\\8ebb13756ba1100806a17b3f0e10a36f2cfd61ae\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\CanPlay\\.android\\build-cache\\8ebb13756ba1100806a17b3f0e10a36f2cfd61ae\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     }
 ]

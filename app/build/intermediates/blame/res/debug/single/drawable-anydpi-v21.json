@@ -1,10 +1,10 @@
 [
     {
-        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\double_cycle_org.xml",
-        "source": "D:\\Android\\Hand_care\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\double_cycle_org.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\double_cycle.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\double_cycle.xml"
     },
     {
-        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\double_cycle.xml",
-        "source": "D:\\Android\\Hand_care\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\double_cycle.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\double_cycle_org.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\double_cycle_org.xml"
     }
 ]

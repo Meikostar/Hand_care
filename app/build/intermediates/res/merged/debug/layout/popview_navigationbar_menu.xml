@@ -31,7 +31,7 @@
             android:layout_marginLeft="5dp"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:text="我的用药提醒"
+            android:text="我的服药提醒"
             />
         <View
             android:layout_marginLeft="17dp"
@@ -48,7 +48,7 @@
             android:layout_marginLeft="5dp"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:text="我的用药记录"
+            android:text="我的服药记录"
             />
 
 

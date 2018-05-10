@@ -11,7 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
+import com.canplay.medical.bean.Health;
 import com.canplay.medical.bean.Message;
+import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.util.TimeUtil;
 
 import java.util.List;
 
@@ -21,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class HealthDataAdapter extends BaseAdapter {
     private Context mContext;
-    private List<Message> list;
+    private List<Health> list;
     private int type = 0;//1是用药记录item
 
     public HealthDataAdapter(Context mContext) {
@@ -39,7 +42,7 @@ public class HealthDataAdapter extends BaseAdapter {
         this.listener = listener;
     }
 
-    public void setData(List<Message> list) {
+    public void setData(List<Health> list) {
         this.list = list;
         notifyDataSetChanged();
     }
@@ -52,7 +55,7 @@ public class HealthDataAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return list != null ? list.size() : 3;
+        return list != null ? list.size() : 0;
     }
 
     @Override
@@ -76,18 +79,53 @@ public class HealthDataAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        if(position==0){
+        Health health = list.get(position);
+        if(TextUtil.isNotEmpty(health.high)){
             holder.tvType.setText(" 血压测量记录");
+            if (Double.valueOf(health.high) > 90 && Double.valueOf(health.high) < 139) {
+                holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+            }else {
+                holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+            }    if ( Double.valueOf(health.low) >60 && Double.valueOf(health.low) < 90) {
+                holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+            }else {
+                holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+            }    if ( Double.valueOf(health.pulse) > 60 && Double.valueOf(health.pulse) < 100) {
+                holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+            }else {
+                holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+            }
+            holder.tvOne.setText(health.high);
+            holder.tvTwo.setText(health.low);
+            holder.tvThree.setText(health.pulse);
             holder.llOne.setVisibility(View.VISIBLE);
             holder.llTwo.setVisibility(View.GONE);
-        }else if(position==1){
+        }else if(TextUtil.isNotEmpty(health.bgl)){
             holder.tvType.setText(" 血糖测量记录");
             holder.llOne.setVisibility(View.VISIBLE);
             holder.llTwo.setVisibility(View.GONE);
-        }else if(position==2){
+            holder.tvOne.setVisibility(View.INVISIBLE);
+            holder.tvOnes.setVisibility(View.INVISIBLE);
+            holder.tvThree.setVisibility(View.INVISIBLE);
+            holder.tvContent.setVisibility(View.INVISIBLE);
+           if ( Double.valueOf(health.bgl) > 3.1 && Double.valueOf(health.bgl) < 8.1) {
+                holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+            }else {
+                holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+            }
+            holder.tvTwos.setText(TimeUtil.formatToMD(health.timeStamp));
+            holder.tvTwo.setText(health.bgl);
+        }else if(TextUtil.isNotEmpty(health.medicineName)){
             holder.tvType.setText(" 服药记录");
             holder.llOne.setVisibility(View.GONE);
             holder.llTwo.setVisibility(View.VISIBLE);
+            if(TextUtil.isNotEmpty(health.medicineName)){
+                holder.tvName.setText(health.medicineName);
+            }
         }
         holder.llbg.setOnClickListener(new View.OnClickListener() {
             @Override

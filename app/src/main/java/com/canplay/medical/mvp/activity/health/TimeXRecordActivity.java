@@ -55,7 +55,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
     private final int TYPE_PULL_REFRESH = 1;
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
-    public int currpage=1;
+    public int currpage=0;
     private int cout=10;
     private int total=0;
     @Override
@@ -154,7 +154,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
 
 
         if (loadtype == TYPE_PULL_REFRESH) {
-            currpage=1;
+            currpage=0;
             list.clear();
             for (Record info : datas) {
                 list.add(info);

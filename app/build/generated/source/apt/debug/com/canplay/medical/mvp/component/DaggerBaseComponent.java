@@ -10,6 +10,7 @@ import com.canplay.medical.fragment.ChartFragment_MembersInjector;
 import com.canplay.medical.fragment.ChartPressFragment;
 import com.canplay.medical.fragment.ChartPressFragment_MembersInjector;
 import com.canplay.medical.fragment.HealthDataFragment;
+import com.canplay.medical.fragment.HealthDataFragment_MembersInjector;
 import com.canplay.medical.fragment.HomeDoctorFragment;
 import com.canplay.medical.fragment.HomeDoctorFragment_MembersInjector;
 import com.canplay.medical.fragment.HomeFragment;
@@ -94,7 +95,6 @@ import com.canplay.medical.mvp.present.OtherPresenter;
 import com.canplay.medical.mvp.present.OtherPresenter_Factory;
 import dagger.MembersInjector;
 import dagger.internal.Factory;
-import dagger.internal.MembersInjectors;
 import dagger.internal.Preconditions;
 import javax.inject.Provider;
 
@@ -184,6 +184,8 @@ public final class DaggerBaseComponent implements BaseComponent {
   private MembersInjector<RegisteredSecondActivity> registeredSecondActivityMembersInjector;
 
   private MembersInjector<MainActivity> mainActivityMembersInjector;
+
+  private MembersInjector<HealthDataFragment> healthDataFragmentMembersInjector;
 
   private MembersInjector<SetFragment> setFragmentMembersInjector;
 
@@ -332,6 +334,9 @@ public final class DaggerBaseComponent implements BaseComponent {
         RegisteredSecondActivity_MembersInjector.create(loginPresenterProvider);
 
     this.mainActivityMembersInjector = MainActivity_MembersInjector.create(homePresenterProvider);
+
+    this.healthDataFragmentMembersInjector =
+        HealthDataFragment_MembersInjector.create(homePresenterProvider);
 
     this.setFragmentMembersInjector = SetFragment_MembersInjector.create(homePresenterProvider);
 
@@ -531,7 +536,7 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   @Override
   public void inject(HealthDataFragment binderActivity) {
-    MembersInjectors.<HealthDataFragment>noOp().injectMembers(binderActivity);
+    healthDataFragmentMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

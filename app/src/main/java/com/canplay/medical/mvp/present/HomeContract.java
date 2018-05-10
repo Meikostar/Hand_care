@@ -137,6 +137,9 @@ public class HomeContract {
          * 移除家庭医生
          */
         void DelDoctor(String content);
+
+
+        void getHealthData();
     }
 
 

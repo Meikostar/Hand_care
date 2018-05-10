@@ -176,14 +176,19 @@ public class LoginPresenter implements LoginContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-                mView.toNextStep(0);
-                mView.showTomast("稍后再试");
+
+                mView.showTomast(e.getMessage());
 
             }
 
             @Override
             public void onNext(BASE entity){
-                mView.toNextStep(2);
+                if(entity.isSucceeded){
+                    mView.toNextStep(2);
+                }else {
+                    mView.showTomast(entity.message);
+                }
+
 
             }
         });

@@ -27,6 +27,7 @@ public class SubscriptionBean {
     public static int EDITOR=111;//编辑用户信息
     public static int BLOODORSUGAR=112;//编辑用户信息
     public static int DOCTOR=113;//刷新医生列表
+    public static int EUIP_REFASH=114;//刷新医生列表
 
 
 

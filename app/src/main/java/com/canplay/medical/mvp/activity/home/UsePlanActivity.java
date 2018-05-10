@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.BASEBEAN;
 import com.canplay.medical.mvp.adapter.OrderGridAdapter;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
@@ -85,7 +86,7 @@ public class UsePlanActivity extends BaseActivity {
             minter=Integer.valueOf(splits[1]);
             times = hour*3600*1000+minter*60*1000;
             if (times>0&&times < (60 * 60 * 24 * 1000)) {
-                countDownTimer = new CountDownTimer( times, 1000) {
+                countDownTimer = new CountDownTimer(BaseApplication.time1==0? times:BaseApplication.time1, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
@@ -98,9 +99,9 @@ public class UsePlanActivity extends BaseActivity {
 
                     @Override
                     public void onFinish() {
-                        tvHour.setText(00);
-                        tvMinter.setText(00);
-                        tvSecond.setText(00);
+                        tvHour.setText("00");
+                        tvMinter.setText("00");
+                        tvSecond.setText("00");
 
                     }
                 }.start();

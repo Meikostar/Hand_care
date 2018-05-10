@@ -90,7 +90,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     private EditorNameDialog dialog;
     private PhotoPopupWindow mWindowAddPhoto;
     private int sex=0;
-    private String name="";
+
     private Editor editor=new Editor();
     @Override
     public void initViews() {
@@ -199,11 +199,14 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     }
 
     private Province prov;
+    private String name;
+    private String names;
     @Override
     public void initData() {
         Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().placeholder(R.drawable.moren).transform(new CircleTransform(this)).into(ivPhone);
         if(TextUtil.isNotEmpty(friend.displayName)){
             tvName.setText(friend.displayName);
+            names=friend.displayName;
         }   if(TextUtil.isNotEmpty(friend.address)){
             tv_area.setText(friend.address);
         } if(TextUtil.isNotEmpty(friend.dob)){
@@ -243,7 +246,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
 
                     try {
                         //将bitmap一字节流输出 Bitmap.CompressFormat.PNG 压缩格式，100：压缩率，baos：字节流
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 90, baos);
                         baos.close();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -293,8 +296,10 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
             case R.id.ll_area://
                 showAddressSelector();
                 break;
-            case R.id.ll_code://
-                startActivity(new Intent(MineInfoActivity.this, MineCodeActivity.class));
+            case R.id.ll_code://names
+                Intent intent = new Intent(MineInfoActivity.this, MineCodeActivity.class);
+                intent.putExtra("name",names);
+                startActivity(intent);
                 break;
 
         }
@@ -326,6 +331,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
          base= (BASE) entity;
          showToasts("上传成功");
          editor.avatar=base.Filename;
+         BaseApplication.avatar=base.Filename;
          RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EDITOR,""));
         }else {
          dimessProgress();

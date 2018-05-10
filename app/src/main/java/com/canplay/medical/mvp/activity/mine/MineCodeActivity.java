@@ -35,15 +35,19 @@ public class MineCodeActivity extends BaseActivity {
     ImageView ivCode;
     private String imgs;
 
-
+    private String name;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_mine_code);
         ButterKnife.bind(this);
         navigationBar.setNavigationBarListener(this);
         imgs= BaseApplication.avatar+SpUtil.getInstance().getAva();
-
-        Glide.with(this).load(imgs).asBitmap().placeholder(R.drawable.moren).into(img);
+        name=getIntent().getStringExtra("name");
+        if(TextUtil.isNotEmpty(name)){
+            tvName.setText(name);
+        }
+        Bitmap qrImage = CodeCreator.createQRImage("user###" + SpUtil.getInstance().getUserId(), 400, 400);
+        ivCode.setImageBitmap(qrImage);
 
         new Thread(new Runnable() {
             @Override
@@ -57,6 +61,7 @@ public class MineCodeActivity extends BaseActivity {
                             .centerCrop()
                             .into(500, 500)
                             .get();
+                     img.setImageBitmap(myBitmap);
                     final Bitmap qrCode = CodeCreator.createQRCode("user###"+SpUtil.getInstance().getUserId(), 400, 400, myBitmap);
 
                     runOnUiThread(new Runnable() {
@@ -65,7 +70,6 @@ public class MineCodeActivity extends BaseActivity {
                             ivCode.setImageBitmap(qrCode);
                         }
                     });
-
                 } catch (Exception e) {
                     e.printStackTrace();
                     runOnUiThread(new Runnable() {

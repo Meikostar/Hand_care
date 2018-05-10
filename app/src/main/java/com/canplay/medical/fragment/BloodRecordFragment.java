@@ -150,7 +150,7 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
     public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
 
         if (loadtype == TYPE_PULL_REFRESH) {
-            currpage=1;
+            currpage=0;
             list.clear();
             for (Record info : datas) {
                 list.add(info);
@@ -181,10 +181,10 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
                                 mSuperRecyclerView.hideMoreProgress();
 
                             if(type==0){
-                                presenter.getBloodPressList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
+                                presenter.getBloodPressList(TYPE_PULL_MORE,cout*currpage+"",cout+"",userId);
 
                             }else {
-                                presenter.getBloodList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
+                                presenter.getBloodList(TYPE_PULL_MORE,cout*currpage+"",cout+"",userId);
 
                             }
 
@@ -198,7 +198,7 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
 
         }
     }
-    public int currpage=1;
+    public int currpage=0;
     private void reflash() {
         if (mSuperRecyclerView != null) {
             //实现自动下拉刷新功能

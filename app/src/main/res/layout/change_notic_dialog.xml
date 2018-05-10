@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textColor="@color/white"
-            android:text="变更用药计划"
+            android:text="变更服药计划"
             />
         <LinearLayout
 

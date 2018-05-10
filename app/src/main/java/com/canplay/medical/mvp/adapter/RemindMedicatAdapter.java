@@ -123,9 +123,9 @@ public class RemindMedicatAdapter extends BaseAdapter {
         }
         String con="";
         if(position<10){
-            con="0"+position;
+            con="0"+(position+1);
         }else {
-            con=""+position;
+            con=""+(position+1);
         }
         if(TextUtil.isNotEmpty(list.get(position).type)){
             holder.tvContent.setText(con+","+list.get(position).type);

@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Euip;
@@ -28,6 +31,7 @@ import com.canplay.medical.permission.PermissionSuccess;
 import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.view.MarkaBaseDialog;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PhotoPopupWindow;
 import com.canplay.medical.view.RegularListView;
@@ -56,7 +60,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
     RegularListView rlMenu;
     private EuipmentAdapter adapter;
     private PhotoPopupWindow mWindowAddPhoto;
-    private String title;
+    private String titles;
 
     @Override
     public void initViews() {
@@ -65,9 +69,9 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         presenter.getSmartList();
-        title = getIntent().getStringExtra("name");
-        if (TextUtil.isNotEmpty(title)) {
-            navigationBar.setNaviTitle(title);
+        titles = getIntent().getStringExtra("name");
+        if (TextUtil.isNotEmpty(titles)) {
+            navigationBar.setNaviTitle(titles);
         }
         user_id = SpUtil.getInstance().getUserId();
         navigationBar.setNavigationBarListener(this);
@@ -106,7 +110,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
             public void getItem(Euipt menu, int type) {
                 euipt = menu;
                 if (type == 1) {//点击事件
-                    startActivity(new Intent(MineEuipmentActivity.this, SmartEquitActivity.class));
+//                    startActivity(new Intent(MineEuipmentActivity.this, SmartEquitActivity.class));
                 } else {//长按事件
 
                     mWindowAddPhoto.showAsDropDown(line);
@@ -143,14 +147,46 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         if (requestCode == REQUEST_CODE_SCAN && resultCode == RESULT_OK) {
             if (data != null) {
                 String content = data.getStringExtra("scan_result");
-                bind.serialNo = content;
-                bind.userId = user_id;
-                presenter.bindDevice(bind);
+                showPopwindow(content);
 //                result.setText("扫描结果为：" + content);
             }
         }
     }
+    private View views=null;
+    private TextView sure = null;
+    private TextView cancel = null;
+    private TextView title = null;
+    private EditText reson = null;
+    public void showPopwindow(final String content) {
 
+        views = View.inflate(this, R.layout.add_euip, null);
+        sure = (TextView) views.findViewById(R.id.txt_sure);
+        cancel = (TextView) views.findViewById(R.id.txt_cancel);
+        title = (TextView) views.findViewById(R.id.tv_title);
+        reson = (EditText) views.findViewById(R.id.edit_reson);
+        title.setText("设备号："+content+"添加到到设备吗?");
+        final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(this).setMessageView(views).create();
+        dialog.show();
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        final EditText finalReson = reson;
+        sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bind.serialNo = content;
+                bind.userId = user_id;
+                presenter.bindDevice(bind);
+
+                dialog.dismiss();
+            }
+        });
+
+
+    }
     @Override
     public void initData() {
 

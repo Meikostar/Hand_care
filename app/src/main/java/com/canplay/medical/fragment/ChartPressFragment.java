@@ -254,13 +254,30 @@ public class ChartPressFragment extends BaseFragment implements BaseContract.Vie
                 three = Float.valueOf(lists.get(0).pulse);
             }
         }
+        if (one > 90 && one < 139) {
+            tvState.setTextColor(getResources().getColor(R.color.slow_black));
+        }else {
+            tvState.setTextColor(getResources().getColor(R.color.red_b));
+
+        }    if ( two >60 && two < 90) {
+            tvData.setTextColor(getResources().getColor(R.color.slow_black));
+        }else {
+            tvData.setTextColor(getResources().getColor(R.color.red_b));
+
+        }    if ( three > 60 && three < 100) {
+            tvRate.setTextColor(getResources().getColor(R.color.slow_black));
+        }else {
+            tvRate.setTextColor(getResources().getColor(R.color.red_b));
+
+        }
+
         if (one > 90 && one < 139 && two > 3.1 && two < 8.1 && three > 60 && three < 100) {
             tvState.setText("正常");
         } else {
             tvState.setText("异常");
             tvState.setTextColor(getResources().getColor(R.color.red_b));
         }
-        tvTime.setText(TimeUtil.formatToNew(lists.get(0).timeStamp));
+        tvTime.setText(TimeUtil.formatToNew((long)lists.get(0).timeStamp));
 
     }
 

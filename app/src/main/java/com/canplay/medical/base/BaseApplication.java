@@ -48,6 +48,8 @@ public class BaseApplication extends DaemonApplication  {
     public static  BaseApplication cplayApplication;
     public static  String avatar="http://qsgx-pt.com:8091/Flow/avatar/";
     public static  String phone="";
+    public static  long time1=0;
+    public static  long time2=0;
     public static Map<String,String> map=new HashMap<>();
     public static BaseApplication getInstance() {
         if (cplayApplication == null) {

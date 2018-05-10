@@ -145,7 +145,7 @@
                         android:id="@+id/tv_content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="01.10"
+                        android:text="心率"
                         android:textColor="@color/color9"
                         android:textSize="13.5sp"
                         />

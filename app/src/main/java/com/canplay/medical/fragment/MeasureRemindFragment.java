@@ -25,6 +25,7 @@ import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.RegularListView;
 
 import java.util.ArrayList;
@@ -84,6 +85,10 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
                 if(SubscriptionBean.MESURE==bean.type){
+                  String cont= (String) bean.content;
+                    if(TextUtil.isNotEmpty(cont)){
+                        return;
+                    }
                     presenter.MeasureRemindList();
                 }
 

@@ -237,7 +237,7 @@
             android:layout_height="30dp"
             android:layout_marginLeft="15dp"/>
         <TextView
-            android:text="用药计划"
+            android:text="服药计划"
             android:layout_weight="1"
             android:layout_marginLeft="13dp"
             android:textColor="@color/slow_black"

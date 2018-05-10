@@ -213,7 +213,7 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
 
     @Override
     public void showTomast(String msg) {
-
+       showToasts(msg);
     }
 
 

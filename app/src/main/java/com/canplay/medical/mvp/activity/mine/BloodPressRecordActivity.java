@@ -51,7 +51,7 @@ public class BloodPressRecordActivity extends BaseActivity implements  BaseContr
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
     private int id;
-    private int currpage=1;
+    private int currpage=0;
 
    private String userId;
     @Override
@@ -123,7 +123,7 @@ public class BloodPressRecordActivity extends BaseActivity implements  BaseContr
     public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
 
         if (loadtype == TYPE_PULL_REFRESH) {
-            currpage=1;
+            currpage=0;
             list.clear();
             for (Record info : datas) {
                 list.add(info);
@@ -154,10 +154,10 @@ public class BloodPressRecordActivity extends BaseActivity implements  BaseContr
                                 mSuperRecyclerView.hideMoreProgress();
 
                             if(type==0){
-                                presenter.getBloodPressList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
+                                presenter.getBloodPressList(TYPE_PULL_MORE,cout*currpage+"",cout+"",userId);
 
                             }else {
-                                presenter.getBloodList(TYPE_PULL_REFRESH,cout*currpage+"",cout+"",userId);
+                                presenter.getBloodList(TYPE_PULL_MORE,cout*currpage+"",cout+"",userId);
 
                             }
 

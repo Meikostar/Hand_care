@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
 import com.canplay.medical.mvp.adapter.UserRecordAdapter;
 import com.canplay.medical.util.TextUtil;
@@ -77,7 +78,7 @@ public class MeasurePlanActivity extends BaseActivity {
             tvTime.setText((hours>=24?(hours-24):hours)+":"+(minters<10?0+""+minters:minters));
             times = hour*3600*1000+minter*60*1000;
 
-                countDownTimer = new CountDownTimer(times, 1000) {
+                countDownTimer = new CountDownTimer(BaseApplication.time2==0? times:BaseApplication.time2, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);

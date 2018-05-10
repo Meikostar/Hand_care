@@ -134,6 +134,8 @@ HomePresenter presenter;
 
                     presenter.getFriendInfo(user_id);
 
+                }else if(bean.type==SubscriptionBean.EUIP_REFASH){
+                    presenter.getSmartList();
                 }
 
             }
@@ -161,8 +163,11 @@ HomePresenter presenter;
         adapter.setClickListener(new EuipmentAdapter.ItemCliks() {
             @Override
             public void getItem(Euipt menu, int type) {
-                patientDeviceId=menu.patientDeviceId;
-                mWindowAddPhoto.showAsDropDown(line);
+                if(type==2){
+                    patientDeviceId=menu.patientDeviceId;
+                    mWindowAddPhoto.showAsDropDown(line);
+                }
+
             }
         });
        mWindowAddPhoto.setSureListener(new PhotoPopupWindow.ClickListener() {

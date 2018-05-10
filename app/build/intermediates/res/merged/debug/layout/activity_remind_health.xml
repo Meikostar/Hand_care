@@ -36,7 +36,7 @@
             <TextView
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="用药提醒"
+                android:text="服药提醒"
                 android:id="@+id/tv_use"
                 android:textSize="15sp"
 
@@ -84,14 +84,14 @@
         android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:id="@+id/viewpager_main"
-        android:background="@color/white"
+        android:background="@color/content_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
     <TextView
         android:visibility="gone"
         android:layout_marginTop="15dp"
         android:gravity="center"
-        android:text="添加用药提醒"
+        android:text="添加服药提醒"
         android:id="@+id/tv_add"
         android:textSize="16.5sp"
         android:background="@drawable/blue_selector"

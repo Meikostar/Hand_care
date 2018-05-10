@@ -102,14 +102,15 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
                 if(type==1){
-                    startActivity(new Intent(getActivity(), RemindSettingActivity.class));
+                    Intent intent = new Intent(getActivity(), RemindSettingActivity.class);
+                    intent.putExtra("data",medicine);
+                    startActivity(intent);
                 }else if(type==2){
-                   presenter.removeRemind(medicine.reminderId);
+                   presenter.removeRemind(medicine.reminderTimeId);
                 }
 
             }
         });
-
     }
 
     @Override

@@ -43,7 +43,7 @@ public class Record {
     public String bgl;
     public String low;
     public String pulse;
-    public long timeStamp;
+    public double timeStamp;
     public List<Record> items;
 
     public long createdDateTime;

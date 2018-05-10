@@ -90,8 +90,8 @@ public class AddBloodDataActivity extends BaseActivity implements BaseContract.V
                  presenter.addBloodSugar(sug);
              }else {
                  per.userId=SpUtil.getInstance().getUserId();
-                 per.high=etTwo.getText().toString().trim();
-                 per.Low=etOne.getText().toString().trim();
+                 per.Low=etTwo.getText().toString().trim();
+                 per.high=etOne.getText().toString().trim();
                  per.pulse=etThree.getText().toString().trim();
                  per.timeStamp=""+System.currentTimeMillis();
                  presenter.addBloodPress(per);

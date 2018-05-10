@@ -49,6 +49,7 @@
             android:layout_height="13dp"
             android:layout_marginRight="13dp"/>
     </LinearLayout>
+
     <ListView
         android:id="@+id/rl_list"
         style="@style/lv_content"

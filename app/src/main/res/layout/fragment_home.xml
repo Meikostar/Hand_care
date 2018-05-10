@@ -352,7 +352,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="6dp"
                                 android:gravity="center_vertical"
-                                android:text="距离下一次吃药"
+                                android:text="距离下一次服药"
                                 android:textColor="@color/color8"
                                 android:textSize="12sp" />
                         </LinearLayout>

@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
-        "source": "D:\\Android\\Hand_care\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "D:\\Android\\Hand_care\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Android\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_search.png",
-        "source": "D:\\Android\\Hand_care\\app\\src\\main\\res\\mipmap-mdpi\\ic_search.png"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_search.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-mdpi\\ic_search.png"
     }
 ]

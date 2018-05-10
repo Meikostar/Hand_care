@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Android\\Hand_care\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v12\\values-v12.xml",
+        "outputFile": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v12\\values-v12.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 274
                 },
                 "from": {
-                    "file": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\values-v12\\values-v12.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\values-v12\\values-v12.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 474
                 },
                 "from": {
-                    "file": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\values-v12\\values-v12.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\values-v12\\values-v12.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -53,7 +53,7 @@
                     "endOffset": 593
                 },
                 "from": {
-                    "file": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\values-v12\\values-v12.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\values-v12\\values-v12.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -72,7 +72,7 @@
                     "endOffset": 688
                 },
                 "from": {
-                    "file": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\values-v12\\values-v12.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\values-v12\\values-v12.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,

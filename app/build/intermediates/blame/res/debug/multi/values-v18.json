@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Android\\Hand_care\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+        "outputFile": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "C:\\Users\\CanPlay\\.android\\build-cache\\718fd7bb68df394a1f2a9a4d6850e88b5b40b432\\output\\res\\values-v18\\values-v18.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\values-v18\\values-v18.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

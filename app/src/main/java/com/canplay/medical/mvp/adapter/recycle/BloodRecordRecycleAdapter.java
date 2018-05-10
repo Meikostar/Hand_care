@@ -57,7 +57,7 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
 
 
         if(position==0){
-            String time = TimeUtil.formatToMf(data.timeStamp);
+            String time = TimeUtil.formatToMf((long)data.timeStamp);
             String[] split = time.split("##");
             holders.tvTime.setVisibility(View.VISIBLE);
             if(split!=null&&split.length==2){
@@ -66,10 +66,10 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
             }
 
         }else {
-            String time = TimeUtil.formatToMf(data.timeStamp);
+            String time = TimeUtil.formatToMf((long)data.timeStamp);
             String[] split = time.split("##");
             Record dats= (Record) datas.get(position - 1);
-            String times = TimeUtil.formatToMf(dats.timeStamp);
+            String times = TimeUtil.formatToMf((long)dats.timeStamp);
             String[] splits = times.split("##");
             if(split!=null&&splits!=null){
                 if(split[0].equals(splits[0])){

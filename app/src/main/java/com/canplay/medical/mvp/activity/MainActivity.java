@@ -11,6 +11,8 @@ import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 import com.baidu.platform.comapi.map.A;
@@ -18,15 +20,20 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseAllActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.AlarmClock;
+import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Province;
 import com.canplay.medical.bean.WeacConstants;
+import com.canplay.medical.bean.unBind;
 import com.canplay.medical.fragment.HomeDoctorFragment;
 import com.canplay.medical.fragment.HomeFragment;
 import com.canplay.medical.fragment.HealthDataFragment;
 import com.canplay.medical.fragment.SetFragment;
+import com.canplay.medical.mvp.activity.mine.AddFriendActivity;
+import com.canplay.medical.mvp.activity.mine.FriendDetailActivity;
 import com.canplay.medical.mvp.activity.mine.MineInfoActivity;
 import com.canplay.medical.mvp.adapter.FragmentViewPagerAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
@@ -39,9 +46,11 @@ import com.canplay.medical.permission.PermissionSuccess;
 import com.canplay.medical.receiver.AlarmReceiver;
 import com.canplay.medical.receiver.Service1;
 import com.canplay.medical.util.MyUtil;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.BottonNevgBar;
 import com.canplay.medical.view.ChangeNoticeDialog;
+import com.canplay.medical.view.MarkaBaseDialog;
 import com.canplay.medical.view.NoScrollViewPager;
 import com.google.gson.Gson;
 import com.google.zxing.client.android.activity.CaptureActivity;
@@ -88,6 +97,7 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
 
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
+        user_id = SpUtil.getInstance().getUserId();
         viewpagerMain = (NoScrollViewPager) findViewById(R.id.viewpager_main);
         viewpagerMain.setScanScroll(false);
         dialog=new ChangeNoticeDialog(this,line);
@@ -229,7 +239,8 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
         //intent.putExtra(Constant.INTENT_ZXING_CONFIG, config);
         startActivityForResult(intent, REQUEST_CODE_SCAN);
     }
-
+    private String user_id;
+    private Bind bind = new Bind();
     private int REQUEST_CODE_SCAN=6;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -240,7 +251,19 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
             if (data != null) {
 
                 String content = data.getStringExtra("scan_result");
-                showToasts("扫描结果为：" +content);
+                if(TextUtil.isNotEmpty(content)){
+                    String[] split = content.split("###");
+                    if(split!=null&&split.length==2){
+
+                        Intent intent = new Intent(MainActivity.this, FriendDetailActivity.class);
+                        intent.putExtra("id",split[1]);
+                        intent.putExtra("status","add");
+                        startActivity(intent);
+                    }else {
+                        showPopwindow(content);
+                    }
+                }
+//                showToasts("扫描结果为：" +content);
 //                result.setText("扫描结果为：" + content);
             }
         }
@@ -263,13 +286,50 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
 
     @Override
     public void toNextStep(int type) {
-
+       showToasts("绑定成功");
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EUIP_REFASH,""));
     }
 
     @Override
     public void showTomast(String msg) {
+        showToasts(msg);
+    }
+
+    private View views=null;
+    private TextView sure = null;
+    private TextView cancel = null;
+    private TextView title = null;
+    private EditText reson = null;
+    public void showPopwindow(final String content) {
+
+        views = View.inflate(this, R.layout.add_euip, null);
+        sure = (TextView) views.findViewById(R.id.txt_sure);
+        cancel = (TextView) views.findViewById(R.id.txt_cancel);
+        title = (TextView) views.findViewById(R.id.tv_title);
+        reson = (EditText) views.findViewById(R.id.edit_reson);
+        title.setText("设备号："+content+"添加到到设备吗?");
+        final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(this).setMessageView(views).create();
+        dialog.show();
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        final EditText finalReson = reson;
+        sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bind.serialNo = content;
+                bind.userId = user_id;
+                presenter.bindDevice(bind);
+                dialog.dismiss();
+            }
+        });
+
 
     }
+
 //
 //    //屏蔽返回键的代码:
 //    public boolean onKeyDown(int keyCode,KeyEvent event)

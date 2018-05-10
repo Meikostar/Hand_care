@@ -80,10 +80,14 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
                 tvBind.setVisibility(View.INVISIBLE);
             }else if(status.equals("Active")) {
                 tvBind.setText("解除绑定");
-            }else {
+            }else if(status.equals("add")){
                 tvBind.setText("绑定");
+                llBloodPress.setVisibility(View.GONE);
+                llBloodSugar.setVisibility(View.GONE);
+                llMedicalPlan.setVisibility(View.GONE);
             }
         }
+
         String ids = SpUtil.getInstance().getUserId();
         type=getIntent().getIntExtra("type",0);
         presenter.getFriendInfo(userId);
@@ -163,9 +167,14 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
      friend= (Friend) entity;
         if(friend!=null){
             Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(this)).placeholder(R.drawable.moren).into(ivAvatar);
-            if(TextUtil.isNotEmpty(friend.userName)){
-                tvName.setText(friend.userName);
-            }if(TextUtil.isNotEmpty(friend.address)){
+            if(TextUtil.isNotEmpty(friend.displayName)){
+                tvName.setText(friend.displayName);
+            }else {
+                if(TextUtil.isNotEmpty(friend.userName)){
+                    tvName.setText(friend.userName);
+                }
+            }
+           if(TextUtil.isNotEmpty(friend.address)){
                 tvAddress.setText(friend.address);
             }    if(TextUtil.isNotEmpty(friend.mobile)){
                 tvPhone.setText(friend.mobile);

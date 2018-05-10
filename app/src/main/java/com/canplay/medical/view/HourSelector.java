@@ -54,17 +54,23 @@ public class HourSelector extends LinearLayout {
             minter=mTypedArray.getInteger(R.styleable.HourSelector_minter,0);
 
         }
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View mView = inflater.inflate( R.layout.hour_selector, this);
+        mCycleWheelViewHour = (CycleWheelView)mView.findViewById(R.id.cwv_hour);
+        mCycleWheelViewMinute = (CycleWheelView)mView.findViewById(R.id.cwv_minute);
         init();
     }
     private CycleWheelView mCycleWheelViewHour;
     private CycleWheelView mCycleWheelViewMinute;
     public void init(){
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-       View mView = inflater.inflate( R.layout.hour_selector, this);
-        mCycleWheelViewHour = (CycleWheelView)mView.findViewById(R.id.cwv_hour);
-        mCycleWheelViewMinute = (CycleWheelView)mView.findViewById(R.id.cwv_minute);
+
         setHour();
         setMinute();
+    }
+    public void setDatas(int hour,int minter){
+        this.hour=hour;
+        this.minter=minter;
+        init();
     }
     private String months;
     /**
@@ -84,13 +90,11 @@ public class HourSelector extends LinearLayout {
             e.printStackTrace();
         }
         SimpleDateFormat sDateFormat = new SimpleDateFormat("HH");
-        if(hour==12){
+        if(hour==0){
             String date = sDateFormat.format(new Date());
             hour=Integer.valueOf(date);
         }
-        if(hour==00){
-            hour=23;
-        }
+
         mCycleWheelViewHour.setLabelSelectSize(16f);
 
         mCycleWheelViewHour.setLabelSize(14f);

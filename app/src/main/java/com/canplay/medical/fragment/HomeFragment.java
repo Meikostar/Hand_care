@@ -140,6 +140,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
+                }else if(SubscriptionBean.MESURE==bean.type){
+                    presenter.getUserData(1);
+                    presenter.getUserData(2);
+                    presenter.getMessageCout();
                 }
 
             }
@@ -224,7 +228,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
 
     }
-
+   private CountDownTimer countDownTimer1;
+   private CountDownTimer countDownTimer2;
     @Override
     public <T> void toEntity(T entity,int type) {
         BASE entitys = (BASE) entity;
@@ -236,10 +241,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 int  minter=Integer.valueOf(split[1]);
 
                long times = hour*3600*1000+minter*60*1000;
-
-                CountDownTimer   countDownTimer = new CountDownTimer(times, 1000*60) {
+                if(countDownTimer1!=null){
+                    countDownTimer1.cancel();
+                }
+                countDownTimer1 = new CountDownTimer(times, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
+                        BaseApplication.time1=millisUntilFinished;
                         String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
                         String[] times = timeStr.split(",");
                         if(tvHour!=null&&times!=null){
@@ -269,10 +277,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 int  minter=Integer.valueOf(split[1]);
 
                 long times = hour*3600*1000+minter*60*1000;
-
-                CountDownTimer   countDownTimer = new CountDownTimer(times, 1000*60) {
+                if(countDownTimer2!=null){
+                    countDownTimer2.cancel();
+                }
+                countDownTimer2 = new CountDownTimer(times, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
+                        BaseApplication.time2=millisUntilFinished;
                         String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
                         String[] times = timeStr.split(",");
 

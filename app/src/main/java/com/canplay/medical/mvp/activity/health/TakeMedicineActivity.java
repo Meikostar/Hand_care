@@ -50,7 +50,7 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
     private final int TYPE_PULL_REFRESH = 1;
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
-    public int currpage=1;
+    public int currpage=0;
     private int cout=12;
     private int total=0;
     private String category="Medicine";
@@ -102,7 +102,7 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
     public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
 
         if (loadtype == TYPE_PULL_REFRESH) {
-            currpage=1;
+            currpage=0;
             list.clear();
             for (Record info : datas) {
                 list.add(info);

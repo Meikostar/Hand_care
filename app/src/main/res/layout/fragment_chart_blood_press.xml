@@ -45,11 +45,11 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="19dp"
-                android:layout_width="113dp"
+                android:layout_width="110dp"
                 android:layout_height="59dp">
                 <ImageView
                     android:src="@drawable/char_bg"
-                    android:layout_width="113dp"
+                    android:layout_width="110dp"
                     android:layout_height="59dp"
                     />
                 <TextView
@@ -74,8 +74,9 @@
                 <TextView
                     android:id="@+id/tv_press"
                     android:text=""
+                    android:singleLine="true"
                     android:textColor="@color/slow_black"
-                    android:textSize="28sp"
+                    android:textSize="24sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -98,8 +99,10 @@
                 <TextView
                     android:id="@+id/tv_data"
                     android:text=""
+                    android:singleLine="true"
+
                     android:textColor="@color/slow_black"
-                    android:textSize="28sp"
+                    android:textSize="24sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -120,10 +123,11 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:singleLine="true"
                     android:id="@+id/tv_rate"
                     android:text=""
                     android:textColor="#FF5B74"
-                    android:textSize="28sp"
+                    android:textSize="24sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 

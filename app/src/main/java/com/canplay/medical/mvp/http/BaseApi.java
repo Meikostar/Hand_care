@@ -12,6 +12,7 @@ import com.canplay.medical.bean.Box;
 import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
+import com.canplay.medical.bean.Health;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
@@ -149,12 +150,12 @@ public interface BaseApi {
      * 用药提醒
      */
     @GET("Flow/v2/Reminder/{userId}/Medicine")
-    Observable<List<Medicine>> MedicineRemindList(@Path("userId") String userId);
+    Observable<Medicine> MedicineRemindList(@Path("userId") String userId);
     /**
      * 测量提醒
      */
     @GET("Flow/v2/Reminder/{userId}/Measurement")
-    Observable<List<Medicine>> MeasureRemindList(@Path("userId") String userId);
+    Observable<Medicine> MeasureRemindList(@Path("userId") String userId);
     /**
      * 测量提醒
      */
@@ -232,6 +233,11 @@ public interface BaseApi {
     @GET("Flow/v2/Device/{userId}")
     Observable<List<Euipt>> getSmartList(@Path("userId") String userId);
 
+    /**
+     * 智能设备列表
+     */
+    @GET("flow/v2/Timeline/Summary/{userId}")
+    Observable<Health> getHealthData(@Path("userId") String userId);
     /**
      * 测量记录
      */

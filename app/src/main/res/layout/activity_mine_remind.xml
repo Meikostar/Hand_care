@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          app:navigationLeft_img="@drawable/black_left"
-        app:navigationTitle="我的用药提醒" />
+        app:navigationTitle="我的服药提醒" />
 
     <View
         android:layout_width="match_parent"

@@ -75,7 +75,7 @@
                         android:textSize="12sp"
                         android:gravity="center_vertical"
                         android:textColor="@color/color8"
-                        android:text="距离下一次吃药"
+                        android:text="距离下一次服药"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>

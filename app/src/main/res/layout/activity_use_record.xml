@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        app:navigationTitle="我的用药记录" />
+        app:navigationTitle="我的服药记录" />
 
     <View
         android:layout_width="match_parent"

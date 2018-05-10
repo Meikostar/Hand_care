@@ -25,6 +25,8 @@ import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.AddMedical;
 import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.DATA;
+import com.canplay.medical.bean.Item;
+import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.RingSelectItem;
 import com.canplay.medical.mvp.activity.home.*;
@@ -36,6 +38,7 @@ import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.SpUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.HourSelector;
 import com.canplay.medical.view.ListPopupWindow;
 import com.canplay.medical.view.NavigationBar;
@@ -95,7 +98,7 @@ public class RemindSettingActivity extends BaseActivity implements
     private ListPopupWindow popupWindow;
     private RingPopupWindow popupWindow1;
     private MedicaldTurnapter adapter;
-
+    private Medicine medicine;
     /**
      * loader Id
      */
@@ -108,10 +111,20 @@ public class RemindSettingActivity extends BaseActivity implements
     public void initViews() {
         setContentView(R.layout.activity_remind_setting);
         ButterKnife.bind(this);
+
+        medicine= (Medicine) getIntent().getSerializableExtra("data");
         navigationBar.setNavigationBarListener(this);
         LoaderManager loaderManager = getSupportLoaderManager();
         // 注册Loader
+        if(medicine!=null){
+            if(TextUtil.isNotEmpty(medicine.when)){
 
+            }
+           String[] split = medicine.when.split(":");
+           if(split!=null&&split.length==2){
+               selector.setDatas((Integer.valueOf(split[0])-1),Integer.valueOf(split[1]));
+           }
+       }
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         loaderManager.initLoader(LOADER_ID, null, this);
@@ -168,6 +181,16 @@ public class RemindSettingActivity extends BaseActivity implements
         RxBus.getInstance().addSubscription(mSubscription);
         adapter=new MedicaldTurnapter(this);
         lvInfo.setAdapter(adapter);
+        if(medicine!=null){
+            for(Item item:medicine.items){
+                Medicines medicines = new Medicines();
+                medicines.name=item.name;
+                medicines.message=item.message;
+                medicines.isCheck=true;
+                dat.add(medicines);
+            }
+            adapter.setData(dat,0);
+        }
     }
 
     @Override
@@ -432,6 +455,7 @@ public class RemindSettingActivity extends BaseActivity implements
             RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
             finish();
         }
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,"data"));
         cout++;
     }
 
