@@ -68,7 +68,6 @@ public class RecordItemAdapter extends BaseAdapter {
             holder.img= (ImageView) view.findViewById(R.id.iv_img);
             holder.tvCount= (TextView) view.findViewById(R.id.tv_cout);
             holder.line=  view.findViewById(R.id.line);
-
             view.setTag(holder);
         }else{
             holder = (ResultViewHolder) view.getTag();

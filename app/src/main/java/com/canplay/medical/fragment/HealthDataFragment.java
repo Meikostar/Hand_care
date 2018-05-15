@@ -159,6 +159,7 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
     @Override
     public <T> void toEntity(T entity, int type) {
         health= (Health) entity;
+        list.clear();
         if(health!=null){
             if(health.bloodPressure!=null){
                 list.add(health.bloodPressure);

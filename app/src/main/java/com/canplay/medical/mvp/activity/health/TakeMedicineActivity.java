@@ -82,7 +82,6 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
                 // mSuperRecyclerView.showMoreProgress();
                     presenter.getMeasureRecord(TYPE_PULL_REFRESH,category,total+"",cout+"");
 
-
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {

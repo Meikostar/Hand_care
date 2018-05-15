@@ -68,7 +68,10 @@ public class BloodMeasureRecordActivity extends BaseActivity {
 
             @Override
             public void navigationRight() {
-                startActivity(new Intent(BloodMeasureRecordActivity.this, AddBloodDataActivity.class));
+                Intent intent = new Intent(BloodMeasureRecordActivity.this, AddBloodDataActivity.class);
+                intent.putExtra("type",type);
+                startActivity(intent);
+
             }
 
             @Override

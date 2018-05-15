@@ -150,7 +150,6 @@
                 android:divider="#00000000"
                 android:dividerHeight="0dip"
                 android:listSelector="@android:color/transparent"
-                android:visibility="gone"
                 />
 
             <View

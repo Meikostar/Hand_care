@@ -16,6 +16,7 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.BASEBEAN;
+import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
 import com.canplay.medical.mvp.adapter.OrderGridAdapter;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
 import com.canplay.medical.util.TextUtil;
@@ -151,7 +152,7 @@ public class UsePlanActivity extends BaseActivity {
                         startActivity(new Intent(UsePlanActivity.this, MinePlanRemindActivity.class));
                         break;
                     case 1://我的用药记录
-                        startActivity(new Intent(UsePlanActivity.this, MineUseRecordActivity.class));
+                        startActivity(new Intent(UsePlanActivity.this, TakeMedicineActivity.class));
                         break;
 
                 }

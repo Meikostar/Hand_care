@@ -45,7 +45,9 @@ public class Record {
     public String pulse;
     public double timeStamp;
     public List<Record> items;
-
+    public String image;
+    public String dosage;
+    public String specs;
     public long createdDateTime;
     public long date;
 
