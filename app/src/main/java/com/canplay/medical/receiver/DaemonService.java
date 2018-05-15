@@ -61,8 +61,8 @@ public class DaemonService extends Service {
         startTimeTask();
         grayGuard();
 
-        // Notification notification = new Notification();
-        // startForeground(-1, notification);
+         Notification notification = new Notification();
+         startForeground(-1, notification);
     }
 
     private void startTimeTask() {

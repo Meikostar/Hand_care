@@ -9,6 +9,7 @@ import com.canplay.medical.bean.BaseData;
 import com.canplay.medical.bean.BaseResult;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Box;
+import com.canplay.medical.bean.Detail;
 import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
@@ -201,6 +202,12 @@ public interface BaseApi {
      */
     @GET("Flow/v2/MedicineCatalog/Search/{search}")
     Observable<List<Medicines> > searchMedicine(@Path("search") String search);
+
+    /**
+     * 体醒详情
+     */
+    @GET("Flow/v2/ReminderSummary/{reminderTimeId}")
+    Observable<Detail> getDetail(@Path("reminderTimeId") String reminderTimeId);
     /**
      * 药品名称或取药品信息
      */
@@ -313,12 +320,16 @@ public interface BaseApi {
 
 
 
+//    /**
+//     * 同意友
+//     */
+//    @POST("Flow/v2/ReminderResponse/Confirm/Medicine")
+//    Observable<BASE > confirmEat(@Path("familyAndFriendsId") String familyAndFriendsId);
     /**
      * 同意友
      */
-    @POST("Flow/v2/ReminderResponse/Confirm/Medicine")
-    Observable<BASE > confirmEat();
-
+    @POST("flow/v2/medication/confirm/{reminderTimeId}")
+    Observable<BASE > confirmEat(@Path("reminderTimeId") String reminderTimeId);
     /**
      * 同意友
      */

@@ -184,7 +184,7 @@
                         android:id="@+id/tv_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="阿莫西林"
+                        tools:text="阿莫西林"
                         android:textColor="@color/slow_black"
                         android:textSize="14.5sp"
                         />
@@ -193,7 +193,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="250mg"
+                        tools:text="250mg"
                         android:textColor="@color/color9"
                         android:textSize="12sp"
                         />

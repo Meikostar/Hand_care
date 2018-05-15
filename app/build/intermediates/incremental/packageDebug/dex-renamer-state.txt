@@ -1,4 +1,4 @@
-#Thu May 10 17:01:59 CST 2018
+#Tue May 15 18:29:00 CST 2018
 file.53=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_dd20a33d009134eab56ed237230faaf2db393838\\classes.dex
 file.52=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\retrofit-2.2.0_5127af66b76a6a65810e00277050022b19264d6f\\classes.dex
 file.51=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_7fd079f2df7c91900a1ef111a71af81abca7d431\\classes.dex

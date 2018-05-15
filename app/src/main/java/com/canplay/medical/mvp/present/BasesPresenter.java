@@ -10,6 +10,7 @@ import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.BaseData;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Box;
+import com.canplay.medical.bean.Detail;
 import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
@@ -108,6 +109,24 @@ public class BasesPresenter implements BaseContract.Presenter {
         });
     }
 
+    @Override
+    public void getDetail(String id) {
+        subscription = ApiManager.setSubscribe(contactApi.getDetail(id), new MySubscriber<Detail>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(Detail entity){
+
+                mView.toEntity(entity,1);
+
+            }
+        });
+    }
     @Override
     public void getBloodPressList(final int  type, String from, String take,String userId) {
 
@@ -369,9 +388,9 @@ public class BasesPresenter implements BaseContract.Presenter {
 
 
     @Override
-    public void confirmEat() {
+    public void confirmEat(String reminderTimeId) {
 
-        subscription = ApiManager.setSubscribe(contactApi.confirmEat(), new MySubscriber<BASE>(){
+        subscription = ApiManager.setSubscribe(contactApi.confirmEat(reminderTimeId), new MySubscriber<BASE>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);

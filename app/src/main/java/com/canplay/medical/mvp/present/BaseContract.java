@@ -93,7 +93,7 @@ public class BaseContract {
         /**
          * 确认服药
          */
-        void confirmEat();
+        void confirmEat(String reminderTimeId) ;
         /**
          * 智能药盒
          *
@@ -110,5 +110,10 @@ public class BaseContract {
          * 编辑用户信息
          */
         void editorUser(Editor name);
+        /**
+         * 提醒详情
+         *
+         */
+        void getDetail(String id);
     }
 }

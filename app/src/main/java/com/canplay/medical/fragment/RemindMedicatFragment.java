@@ -1,5 +1,7 @@
 package com.canplay.medical.fragment;
 
+import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,8 +25,10 @@ import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.MyUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.RegularListView;
+import com.google.zxing.client.android.utils.OttoAppConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,11 +73,14 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
                 if(SubscriptionBean.MEDICALREFASH==bean.type){
-                    AlarmClock alarm= (AlarmClock) bean.content;
-                     addList(alarm);
+                     alarm= (AlarmClock) bean.content;
+
                     presenter.MedicineRemindList();
                 }else if(SubscriptionBean.ALARM==bean.type){
 
+                }else if(SubscriptionBean.MESUREREFASH==bean.type){
+                    datas= (List<AlarmClock>) bean.content;
+                    presenter.MeasureRemindList();
                 }
 
 
@@ -107,6 +114,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
                     startActivity(intent);
                 }else if(type==2){
                    presenter.removeRemind(medicine.reminderTimeId);
+                    time=medicine.when;
                 }
 
             }
@@ -142,7 +150,6 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
         List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
         for (AlarmClock alarmClock : list) {
             mAlarmClockList.add(alarmClock);
-
             if (id == alarmClock.getId()) {
                 position = count;
                 if (alarmClock.isOnOff()) {
@@ -200,18 +207,80 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
         }
     }
 
+    private List<AlarmClock> datas;
     private List<Medicine> data;
-
+    private List<Medicine> dta;
+    private AlarmClock alarm;
+    private String time;
     @Override
     public <T> void toEntity(T entity,int type) {
-        data = (List<Medicine>) entity;
-        adapter.setData(data);
+        if(type==66){
+            dta = (List<Medicine>) entity;
+            for(Medicine medicine:dta){
+                if(TextUtil.isNotEmpty(medicine.when)){
+                    String[] split = medicine.when.split(":");
+                    if(split!=null&&split.length==2){
+                        for(AlarmClock alarmClock:datas){
+                            if(alarmClock.getHour()==Integer.valueOf(split[0])&&alarmClock.getMinute()==Integer.valueOf(split[1])){
+                                alarmClock.setTag(1+":"+medicine.reminderTimeId+":"+medicine.items.get(0).name!=null?medicine.items.get(0).name:"血压");
+                                AlarmClockOperate.getInstance().saveAlarmClock(alarmClock);
+                                addList(alarmClock);
+
+                            }
+                        }
+
+                    }
+                }
+            }
+        }else {
+            data = (List<Medicine>) entity;
+            adapter.setData(data);
+            for(Medicine medicine:data){
+                if(TextUtil.isNotEmpty(medicine.when)){
+                    String[] split = medicine.when.split(":");
+                    if(split!=null&&split.length==2){
+                        if(alarm!=null){
+                            if(alarm.getHour()==Integer.valueOf(split[0])&&alarm.getMinute()==Integer.valueOf(split[1])){
+                                alarm.setTag(2+":"+medicine.reminderTimeId);
+                                AlarmClockOperate.getInstance().saveAlarmClock(alarm);
+                                addList(alarm);
+                                return;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+        }
+
     }
 
     @Override
     public void toNextStep(int type) {
 //        showToast("删除成功");
      presenter.MedicineRemindList();
+        List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+        for(AlarmClock alarmClock:alarmClocks){
+            if(TextUtil.isNotEmpty(time)){
+                String[] split = time.split(":");
+                if(alarmClock.getHour()==Integer.valueOf(split[0])&&alarmClock.getMinute()==Integer.valueOf(split[1])){
+                    AlarmClockOperate.getInstance().deleteAlarmClock(alarmClock);
+
+                    // 关闭闹钟
+                    MyUtil.cancelAlarmClock(getActivity(),
+                            alarmClock.getId());
+                    // 关闭小睡
+                    MyUtil.cancelAlarmClock(getActivity(),
+                            -alarmClock.getId());
+
+                    NotificationManager notificationManager = (NotificationManager) getActivity()
+                            .getSystemService(Activity.NOTIFICATION_SERVICE);
+                    // 取消下拉列表通知消息
+                    notificationManager.cancel(alarmClock.getId());
+                }
+            }
+        }
     }
 
     @Override

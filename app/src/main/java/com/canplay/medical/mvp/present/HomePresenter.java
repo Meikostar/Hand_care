@@ -84,7 +84,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(BASE entity){
 
-                mView.toNextStep(0);
+                mView.toEntity(entity,6);
             }
         });
     }
@@ -202,15 +202,15 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-                if(e.toString().contains("java.io.IOException:")){
-                    mView.showTomast("账号或密码错误");
-                }
+
+                    mView.showTomast(e.getMessage());
+
 
             }
 
             @Override
             public void onNext(Medicine entity){
-                mView.toEntity(entity.schedule,0);
+                mView.toEntity(entity.schedule,66);
 
             }
         });

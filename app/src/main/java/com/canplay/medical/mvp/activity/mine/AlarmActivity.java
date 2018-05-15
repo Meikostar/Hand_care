@@ -31,7 +31,9 @@ import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.WeacStatus;
 import com.canplay.medical.mvp.activity.AlarmClockNapNotificationActivity;
+import com.canplay.medical.mvp.activity.MainActivity;
 import com.canplay.medical.mvp.activity.RemindFirstDetailActivity;
+import com.canplay.medical.mvp.activity.account.LoginActivity;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
@@ -66,9 +68,9 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     TextView tvName;
     @BindView(R.id.tv_add)
     TextView tvAdd;
+    @BindView(R.id.tv_content)
+    TextView tvContent;
     private int sex = 0;
-
-
     /**
      * Log tag ：AlarmClockOntimeFragment
      */
@@ -173,6 +175,22 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
             }
         }
 
+        if(mAlarmClock!=null){
+            String tag = mAlarmClock.getTag();
+            String[] split = tag.split(":");
+            if(split!=null&&split.length==2){
+                if(Integer.valueOf(split[0])==1){
+                    tvContent.setText("快去测量您的"+split[2]);
+                }else  if(Integer.valueOf(split[0])==2){
+                    Intent intent = new Intent(this, RemindFirstDetailActivity.class);
+                    intent.putExtra("data",mAlarmClock);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+
+        }
         if (mAlarmClock != null) {
             // 取得小睡间隔
             mNapInterval = mAlarmClock.getNapInterval();
@@ -194,7 +212,10 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         }
 
     }
-
+    @Override
+    public <T> void toEntity(T entity, int type) {
+        finishActivitys();
+    }
     @Override
     public void bindEvents() {
 
@@ -202,13 +223,8 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
             @Override
             public void onClick(View v) {
 
-                if(mAlarmClock.getTag().equals("1")){
-                    finishActivitys();
-                }else {
-                    startActivity(new Intent(AlarmActivity.this, RemindFirstDetailActivity.class));
-                    finishActivitys();
-                }
-
+               startActivity(new Intent(AlarmActivity.this, LoginActivity.class));
+               finishAffinity();
             }
         });
     }
@@ -400,10 +416,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         mNotificationManager.notify(mAlarmClock.getId(), notification);
     }
 
-    @Override
-    public <T> void toEntity(T entity, int type) {
-        finishActivitys();
-    }
+
 
     @Override
     public void toNextStep(int type) {

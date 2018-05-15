@@ -88,10 +88,11 @@
                     android:textSize="17sp" />
 
                 <TextView
+                    android:id="@+id/tv_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
-                    android:text="点击添加测量数据"
+                    android:text=""
                     android:textColor="#333"
                     android:textSize="15sp" />
 
@@ -104,7 +105,7 @@
                     android:layout_marginTop="34dp"
                     android:background="@drawable/login_selector"
                     android:gravity="center"
-                    android:text="确认服药"
+                    android:text="确认"
                     android:textColor="#fff"
                     android:textSize="16sp" />
             </LinearLayout>

@@ -1,8 +1,11 @@
 package com.canplay.medical.fragment;
 
+import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.AlarmClock;
+import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
@@ -107,12 +111,15 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                 if(type==0){
                     times.clear();
                     times.add(medicine.when);
-
+                    time=medicine.when;
+                    name=medicine.name;
                     mesure.when=times;
+                    mesure.name=medicine.items.get(0).name;
                     String userId = SpUtil.getInstance().getUserId();
                     mesure.userId=userId;
                     mesure.type="time";
                     mesure.remindingFor="Measurement";
+
                     presenter.addMesure(mesure);
                 }else {
                     Intent intent = new Intent(getActivity(), MeasureActivity.class);
@@ -124,6 +131,8 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
         });
 
     }
+    private String name="";
+    private String time="";
     private Mesure mesure=new Mesure();
     private List<String> times=new ArrayList<>();
 
@@ -182,19 +191,64 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
     }
 
     private List<Medicine> data;
-
+    private int i=0;
     @Override
     public <T> void toEntity(T entity,int type) {
-        data= (List<Medicine>) entity;
+        if(type==6){
+            BASE base= (BASE) entity;
+            if(base.isSucceeded){
+                data.remove(poition);
+                adapter.setData(data);
+                List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+                for(AlarmClock alarmClock:alarmClocks){
+                    if(TextUtil.isNotEmpty(time)){
+                        String[] split = time.split(":");
+                        if(alarmClock.getHour()==Integer.valueOf(split[0])&&alarmClock.getMinute()==Integer.valueOf(split[1])){
+                            AlarmClockOperate.getInstance().deleteAlarmClock(alarmClock);
 
-        adapter.setData(data);
+                            // 关闭闹钟
+                            MyUtil.cancelAlarmClock(getActivity(),
+                                    alarmClock.getId());
+                            // 关闭小睡
+                            MyUtil.cancelAlarmClock(getActivity(),
+                                    -alarmClock.getId());
+
+                            NotificationManager notificationManager = (NotificationManager) getActivity()
+                                    .getSystemService(Activity.NOTIFICATION_SERVICE);
+                            // 取消下拉列表通知消息
+                            notificationManager.cancel(alarmClock.getId());
+                        }
+                    }
+                }
+
+            }else {
+                if(i!=0){
+                    return;
+                }
+                i++;
+                times.clear();
+                times.addAll(base.when);
+                mesure.name=name;
+                mesure.when=times;
+                String userId = SpUtil.getInstance().getUserId();
+                mesure.userId=userId;
+                mesure.type="time";
+                mesure.remindingFor="Measurement";
+                presenter.addMesure(mesure);
+            }
+        }else {
+            data= (List<Medicine>) entity;
+
+            adapter.setData(data);
+        }
+
     }
     private int poition;
     @Override
     public void toNextStep(int type) {
-        data.remove(poition);
-        adapter.setData(data);
+
     }
+
 
     @Override
     public void showTomast(String msg) {

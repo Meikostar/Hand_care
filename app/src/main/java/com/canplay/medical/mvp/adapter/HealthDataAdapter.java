@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
 import com.canplay.medical.bean.Health;
 import com.canplay.medical.bean.Message;
@@ -103,29 +104,89 @@ public class HealthDataAdapter extends BaseAdapter {
             holder.tvThree.setText(health.pulse);
             holder.llOne.setVisibility(View.VISIBLE);
             holder.llTwo.setVisibility(View.GONE);
-        }else if(TextUtil.isNotEmpty(health.bgl)){
+        }else if(health.bloodGlucoseLevels!=null){
             holder.tvType.setText(" 血糖测量记录");
             holder.llOne.setVisibility(View.VISIBLE);
-            holder.llTwo.setVisibility(View.GONE);
-            holder.tvOne.setVisibility(View.INVISIBLE);
-            holder.tvOnes.setVisibility(View.INVISIBLE);
-            holder.tvThree.setVisibility(View.INVISIBLE);
-            holder.tvContent.setVisibility(View.INVISIBLE);
-           if ( Double.valueOf(health.bgl) > 3.1 && Double.valueOf(health.bgl) < 8.1) {
-                holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.slow_black));
-            }else {
-                holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.red_b));
 
+            if(health.bloodGlucoseLevels.size()==1){
+                holder.llTwo.setVisibility(View.GONE);
+                holder.tvOne.setVisibility(View.INVISIBLE);
+                holder.tvOnes.setVisibility(View.INVISIBLE);
+                holder.tvThree.setVisibility(View.INVISIBLE);
+                holder.tvContent.setVisibility(View.INVISIBLE);
+                holder.tvTwos.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
+                holder.tvTwo.setText(health.bloodGlucoseLevels.get(0).bgl);
+                if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
+                    holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+                }else {
+                    holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+                }
+            }else   if(health.bloodGlucoseLevels.size()==1){
+                holder.llTwo.setVisibility(View.GONE);
+                holder.tvOne.setVisibility(View.VISIBLE);
+                holder.tvOnes.setVisibility(View.VISIBLE);
+                holder.tvThree.setVisibility(View.INVISIBLE);
+                holder.tvContent.setVisibility(View.INVISIBLE);
+                holder.tvTwos.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(1).timeStamp));
+                holder.tvOnes.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
+                holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl);
+                holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl);
+                if ( Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) < 8.1) {
+                    holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+                }else {
+                    holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+                } if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
+                    holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+                }else {
+                    holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+                }
+            }else {
+                holder.llTwo.setVisibility(View.GONE);
+                holder.tvOne.setVisibility(View.VISIBLE);
+                holder.tvOnes.setVisibility(View.VISIBLE);
+                holder.tvThree.setVisibility(View.VISIBLE);
+                holder.tvContent.setVisibility(View.VISIBLE);
+                holder.tvTwos.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(1).timeStamp));
+                holder.tvOnes.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
+                holder.tvContent.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(2).timeStamp));
+                holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl);
+                holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl);
+                holder.tvThree.setText(health.bloodGlucoseLevels.get(2).bgl);
+                if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
+                    holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+                }else {
+                    holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+                }     if ( Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) < 8.1) {
+                    holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+                }else {
+                    holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+                }     if ( Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) < 8.1) {
+                    holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.slow_black));
+                }else {
+                    holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.red_b));
+
+                }
             }
-            holder.tvTwos.setText(TimeUtil.formatToMD(health.timeStamp));
-            holder.tvTwo.setText(health.bgl);
+
+
         }else if(TextUtil.isNotEmpty(health.medicineName)){
             holder.tvType.setText(" 服药记录");
             holder.llOne.setVisibility(View.GONE);
             holder.llTwo.setVisibility(View.VISIBLE);
             if(TextUtil.isNotEmpty(health.medicineName)){
                 holder.tvName.setText(health.medicineName);
+            }  if(TextUtil.isNotEmpty(health.spec)){
+                holder.tvNumber.setText(health.spec);
+            }  if(TextUtil.isNotEmpty(health.dosage)){
+                holder.tvCout.setText(health.dosage);
             }
+            Glide.with(mContext).load(health.image).asBitmap().placeholder(R.drawable.moren).into(holder.ivImg);
+
         }
         holder.llbg.setOnClickListener(new View.OnClickListener() {
             @Override

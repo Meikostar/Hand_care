@@ -44,6 +44,7 @@ import com.canplay.medical.permission.PermissionConst;
 import com.canplay.medical.permission.PermissionGen;
 import com.canplay.medical.permission.PermissionSuccess;
 import com.canplay.medical.receiver.AlarmReceiver;
+import com.canplay.medical.receiver.DaemonService;
 import com.canplay.medical.receiver.Service1;
 import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
@@ -94,7 +95,7 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
         setContentView(R.layout.activity_main);
         bnbHome = (BottonNevgBar) findViewById(R.id.bnb_home);
         line =  findViewById(R.id.line);
-
+        startService(new Intent(this, DaemonService.class));
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         user_id = SpUtil.getInstance().getUserId();

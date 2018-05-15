@@ -155,14 +155,17 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
         mSubscription.unsubscribe();
     }
     private List<Health> list=new ArrayList<>();
+    private Health healths=new Health();
     @Override
     public <T> void toEntity(T entity, int type) {
         health= (Health) entity;
         if(health!=null){
             if(health.bloodPressure!=null){
                 list.add(health.bloodPressure);
-            } if(health.bloodGlucoseLevel!=null){
-                list.add(health.bloodGlucoseLevel);
+            } if(health.bloodGlucoseLevels!=null){
+
+                healths.bloodGlucoseLevels=health.bloodGlucoseLevels;
+                list.add(healths);
             } if(health.medicineRecord!=null){
                 list.add(health.medicineRecord);
             }

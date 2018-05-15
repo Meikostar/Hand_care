@@ -1,5 +1,7 @@
 package com.canplay.medical.bean;
 
+import java.util.List;
+
 /***
  * 功能描述:
  * 作者:chenwei
@@ -26,7 +28,7 @@ public class Health {
 //    }
 
     public Health bloodPressure;
-    public Health bloodGlucoseLevel;
+    public List<Bgl> bloodGlucoseLevels;
     public Health medicineRecord;
     public long timeStamp;
     public String medicineName;
@@ -35,5 +37,8 @@ public class Health {
     public String pulse;
     public String low;
     public String high;
+    public String image;
+    public String dosage;
+    public String spec;
 
 }
