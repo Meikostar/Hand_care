@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewStub;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,15 +17,24 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.BASEBEAN;
+import com.canplay.medical.bean.Medil;
 import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
 import com.canplay.medical.mvp.adapter.OrderGridAdapter;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
+import com.canplay.medical.mvp.adapter.UsesPlanAdapter;
+import com.canplay.medical.mvp.component.DaggerBaseComponent;
+import com.canplay.medical.mvp.present.OtherContract;
+import com.canplay.medical.mvp.present.OtherPresenter;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
+import com.canplay.medical.view.RegularListView;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,9 +42,9 @@ import butterknife.ButterKnife;
 /**
  * 用药计划
  */
-public class UsePlanActivity extends BaseActivity {
-
-
+public class UsePlanActivity extends BaseActivity implements OtherContract.View {
+    @Inject
+    OtherPresenter presenter;
     @BindView(R.id.line)
     View line;
     @BindView(R.id.navigationBar)
@@ -46,68 +56,37 @@ public class UsePlanActivity extends BaseActivity {
     @BindView(R.id.tv_second)
     TextView tvSecond;
     @BindView(R.id.rl_menu)
-    ListView rlMenu;
+    RegularListView rlMenu;
     @BindView(R.id.tv_time)
     TextView tvTime;
     @BindView(R.id.tv_name)
     TextView tvName;
     @BindView(R.id.stub_gird)
     ViewStub stubGird;
-    private UsePlanAdapter adapter;
+    @BindView(R.id.iv_state)
+    ImageView ivState;
+    private UsesPlanAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
     private long times;
-    private int  hour;
-    private int  hours;
+    private int hour;
+    private int hours;
     private int minter;
     private int minters;
+
     @Override
     public void initViews() {
         setContentView(R.layout.activity_use_plan);
         ButterKnife.bind(this);
         navigationBar.setNavigationBarListener(this);
-        adapter = new UsePlanAdapter(this);
+        adapter = new UsesPlanAdapter(this);
         rlMenu.setAdapter(adapter);
-        time=getIntent().getStringExtra("time");
-        if(TextUtil.isNotEmpty(time)){
+        DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
+        presenter.attachView(this);
+        showProgress("加载中...");
+        presenter.getDetails("Medicine");
+        time = getIntent().getStringExtra("time");
 
-            String date = TimeUtil.formatHour(System.currentTimeMillis());
-            String[] split = date.split(":");
-            String[] splits = time.split(":");
-              hours=(Integer.valueOf(split[0])+Integer.valueOf(splits[0]));
-               minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
-            if(Integer.valueOf(split[1])+Integer.valueOf(splits[1])>=60){
-                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1])-60);
-                hours=hours+1;
-            }else {
-                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
-            }
-            tvTime.setText((hours>=24?(hours-24):hours)+":"+(minters<10?0+""+minters:minters));
-            hour=Integer.valueOf(splits[0]);
-            minter=Integer.valueOf(splits[1]);
-            times = hour*3600*1000+minter*60*1000;
-            if (times>0&&times < (60 * 60 * 24 * 1000)) {
-                countDownTimer = new CountDownTimer(BaseApplication.time1==0? times:BaseApplication.time1, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
-                        String[] times = timeStr.split(",");
-                        tvHour.setText(times[1]);
-                        tvMinter.setText(times[2]);
-                        tvSecond.setText(times[3]);
-
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        tvHour.setText("00");
-                        tvMinter.setText("00");
-                        tvSecond.setText("00");
-
-                    }
-                }.start();
-            }
-        }
         initPopView();
         showGirdView(null);
     }
@@ -167,21 +146,23 @@ public class UsePlanActivity extends BaseActivity {
 
     }
 
-   private OrderGridAdapter adapters;
-   private GridView gridView;
-    public void showGirdView(List<BASEBEAN> list) {//有图片是展示
+    private OrderGridAdapter adapters;
+    private GridView gridView;
+
+    public void showGirdView(List<Medil> list) {//有图片是展示
         View view = stubGird.inflate();
         gridView = (GridView) view.findViewById(R.id.grid);
         adapters = new OrderGridAdapter(this);
-        iniGridView(list);
-    }
-    private void iniGridView(final List<BASEBEAN> list) {
 
-        int length = 90;  //定义一个长度
-        int size = 7;  //得到集合长度
+    }
+
+    private void iniGridView(final List<Medil> list) {
+
+        int length = 85;  //定义一个长度
+        int size = list.size();  //得到集合长度
         //获得屏幕分辨路
         DisplayMetrics dm = new DisplayMetrics();
-       getWindowManager().getDefaultDisplay().getMetrics(dm);
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
         float density = dm.density;
 
         int gridviewWidth = (int) (size * (length + 10) * density);
@@ -189,13 +170,13 @@ public class UsePlanActivity extends BaseActivity {
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 gridviewWidth, LinearLayout.LayoutParams.MATCH_PARENT);
-        params.setMargins(2,0,0,0);
+        params.setMargins(2, 0, 0, 0);
         gridView.setLayoutParams(params); // 设置GirdView布局参数,横向布局的关键
         gridView.setColumnWidth(itemWidth); // 设置列表项宽
         gridView.setHorizontalSpacing(2); // 设置列表项水平间距
         gridView.setStretchMode(GridView.NO_STRETCH);
         gridView.setNumColumns(size); // 设置列数量=列表集合数
-//        adapters.setDatas(list);
+        adapters.setDatas(list);
         gridView.setAdapter(adapters);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -204,4 +185,94 @@ public class UsePlanActivity extends BaseActivity {
             }
         });
     }
+
+    private Medil medil;
+
+    @Override
+    public <T> void toEntity(T entity, int type) {
+        medil = (Medil) entity;
+        dimessProgress();
+
+        if(TextUtil.isNotEmpty(medil.nextPlan.code)){
+            if(medil.nextPlan.code.equals("早")){
+                ivState.setImageResource(R.drawable.z);
+            }else if(medil.nextPlan.code.equals("中")){
+                ivState.setImageResource(R.drawable.zz);
+            }else if(medil.nextPlan.code.equals("晚")){
+                ivState.setImageResource(R.drawable.w);
+            }
+            tvName.setText(medil.nextPlan.code);
+        }
+        iniGridView(medil.nextPlan.items);
+        if(TextUtil.isNotEmpty(medil.nextPlan.when)){
+            time=   TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
+            String date = TimeUtil.formatHour(System.currentTimeMillis());
+            String[] split = date.split(":");
+            String[] splits = time.split(":");
+            hours=(-Integer.valueOf(split[0])+Integer.valueOf(splits[0]));
+            if(hours<0){
+                hours=hours+24;
+            }
+            minters=(-Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
+            if(minters<0){
+
+                minters=minters+60;
+            }
+
+            tvTime.setText(time);
+            times = hours*3600*1000+minters*60*1000;
+            if(BaseApplication.time1==0){
+                BaseApplication.time1=times;
+            }
+            countDownTimer = new CountDownTimer(BaseApplication.time1==0? times:BaseApplication.time1, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                    String[] times = timeStr.split(",");
+                    if(tvHour!=null){
+                        tvHour.setText(times[1]);
+                        tvMinter.setText(times[2]);
+                        tvSecond.setText(times[3]);
+                    }
+
+
+                }
+
+                @Override
+                public void onFinish() {
+                    if(tvHour!=null){
+                        tvHour.setText("00");
+                        tvMinter.setText("00");
+                        tvSecond.setText("00");
+                    }
+
+
+                }
+            }.start();
+
+        }
+        if(medil.plans!=null){
+            datas.clear();
+            for(Medil medils:medil.plans){
+                if(medils.status.equals("completed")){
+                    datas.add(medils);
+                }
+            }
+            adapter.setData(datas);
+        }
+
+
+    }
+    private List<Medil> datas=new ArrayList<>();
+    @Override
+    public void toNextStep(int type) {
+
+    }
+
+    @Override
+    public void showTomast(String msg) {
+
+    }
+
+
 }

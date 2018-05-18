@@ -111,38 +111,7 @@ public class MeasureActivity extends BaseActivity  implements
         adapter=new TimeAddAdapter(this);
         listview.setAdapter(adapter);
         initPopWind();
-        mAlarmClock = new AlarmClock();
-        // 闹钟默认开启
-        mAlarmClock.setOnOff(true);
-        // 保存设置的音量
-        mAlarmClock.setVolume(15);
-
-        // 初始化闹钟实例的小时
-        mAlarmClock.setHour(9);
-        // 初始化闹钟实例的分钟
-        mAlarmClock.setMinute(30);
-        // 默认小睡
-        mAlarmClock.setNap(true);
-        // 小睡间隔10分钟
-        mAlarmClock.setNapInterval(5);
-        // 小睡3次
-        mAlarmClock.setNapTimes(3);
-        // 取得铃声选择配置信息
-        SharedPreferences share = getSharedPreferences(
-                WeacConstants.EXTRA_WEAC_SHARE, Activity.MODE_PRIVATE);
-        String ringName = share.getString(WeacConstants.RING_NAME,
-                getString(R.string.default_ring));
-        String ringUrl = share.getString(WeacConstants.RING_URL,
-                WeacConstants.DEFAULT_RING_URL);
-
-        // 初始化闹钟实例的铃声名
-        mAlarmClock.setRingName(ringName);
-        // 初始化闹钟实例的铃声播放地址
-        mAlarmClock.setRingUrl(ringUrl);
-        mAlarmClock.setTag("1");
-        mAlarmClock.setRepeat("每天");
-        // 响铃周期
-        mAlarmClock.setWeeks("2,3,4,5,6,7,1");
+        mAlarmClock=BaseApplication.getInstance().mAlarmClock;
 
     }
     private int type=1;
@@ -484,7 +453,7 @@ public class MeasureActivity extends BaseActivity  implements
 //
 
         }
-        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESUREREFASH,dat));
+//        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESUREREFASH,dat));
         finish();
     }
 

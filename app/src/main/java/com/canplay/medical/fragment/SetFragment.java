@@ -158,6 +158,19 @@ HomePresenter presenter;
 
             }
         });
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(friend==null){
+                    return;
+                }
+                Intent intent = new Intent(getActivity(), MineInfoActivity.class);
+                intent.putExtra("friend",friend);
+                startActivity(intent);
+
+            }
+        });
+
         ivSetting.setOnClickListener(this);
         ivBox.setOnClickListener(this);
         adapter.setClickListener(new EuipmentAdapter.ItemCliks() {

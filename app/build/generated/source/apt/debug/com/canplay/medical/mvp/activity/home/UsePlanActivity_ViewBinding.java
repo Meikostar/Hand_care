@@ -5,12 +5,13 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
 import android.view.ViewStub;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.RegularListView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -31,10 +32,11 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.tvHour = Utils.findRequiredViewAsType(source, R.id.tv_hour, "field 'tvHour'", TextView.class);
     target.tvMinter = Utils.findRequiredViewAsType(source, R.id.tv_minter, "field 'tvMinter'", TextView.class);
     target.tvSecond = Utils.findRequiredViewAsType(source, R.id.tv_second, "field 'tvSecond'", TextView.class);
-    target.rlMenu = Utils.findRequiredViewAsType(source, R.id.rl_menu, "field 'rlMenu'", ListView.class);
+    target.rlMenu = Utils.findRequiredViewAsType(source, R.id.rl_menu, "field 'rlMenu'", RegularListView.class);
     target.tvTime = Utils.findRequiredViewAsType(source, R.id.tv_time, "field 'tvTime'", TextView.class);
     target.tvName = Utils.findRequiredViewAsType(source, R.id.tv_name, "field 'tvName'", TextView.class);
     target.stubGird = Utils.findRequiredViewAsType(source, R.id.stub_gird, "field 'stubGird'", ViewStub.class);
+    target.ivState = Utils.findRequiredViewAsType(source, R.id.iv_state, "field 'ivState'", ImageView.class);
   }
 
   @Override
@@ -53,5 +55,6 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.tvTime = null;
     target.tvName = null;
     target.stubGird = null;
+    target.ivState = null;
   }
 }

@@ -33,7 +33,9 @@ import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.RegularListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -142,26 +144,7 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
      */
     private List<AlarmClock> mAlarmClockList;
     private void addList(AlarmClock ac) {
-        mAlarmClockList.clear();
-
-        int id = ac.getId();
-        int count = 0;
-        int position = 0;
-        List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
-        for (AlarmClock alarmClock : list) {
-            mAlarmClockList.add(alarmClock);
-
-            if (id == alarmClock.getId()) {
-                position = count;
-                if (alarmClock.isOnOff()) {
-                    MyUtil.startAlarmClock(getActivity(), alarmClock);
-                }
-            }
-            count++;
-        }
-
-        checkIsEmpty(list);
-
+        MyUtil.startAlarmClock(getActivity(), ac);
 
     }
     @Override
@@ -191,6 +174,8 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
     }
 
     private List<Medicine> data;
+    private AlarmClock arm;
+    private Map<String ,AlarmClock> map=new HashMap<>();
     private int i=0;
     @Override
     public <T> void toEntity(T entity,int type) {
@@ -240,6 +225,39 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
             data= (List<Medicine>) entity;
 
             adapter.setData(data);
+            List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+
+            map.clear();
+            for(AlarmClock alarmClock:alarmClocks){
+                map.put((alarmClock.getHour()+":"+alarmClock.getMinute()),alarmClock);
+            }
+
+            for(Medicine medicine:data){
+                if(TextUtil.isNotEmpty(medicine.when)){
+                    if(map.size()==0){
+                        String[] split = medicine.when.split(":");
+                        arm=BaseApplication.getInstance().mAlarmClock;
+                        arm.setHour(Integer.valueOf(split[0]));
+                        arm.setMinute(Integer.valueOf(split[1]));
+
+                        arm.setTag(1+":"+medicine.reminderTimeId+":"+medicine.items.get(0).name!=null?medicine.items.get(0).name:"血压");
+                        AlarmClockOperate.getInstance().saveAlarmClock(arm);
+                        addList(arm);
+                    }else {
+                        AlarmClock alarmClock = map.get(medicine.when);
+                        if(alarmClock==null){
+                            String[] split = medicine.when.split(":");
+                            arm=BaseApplication.getInstance().mAlarmClock;
+                            arm.setTag(1+":"+medicine.reminderTimeId+":"+medicine.items.get(0).name!=null?medicine.items.get(0).name:"血压");
+                            arm.setHour(Integer.valueOf(split[0]));
+                            arm.setMinute(Integer.valueOf(split[1]));
+                            AlarmClockOperate.getInstance().saveAlarmClock(arm);
+                            addList(arm);
+                        }
+                    }
+
+                }
+            }
         }
 
     }

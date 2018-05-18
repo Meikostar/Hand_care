@@ -1,16 +1,20 @@
 package com.canplay.medical.base;
 
+import android.app.Activity;
 import android.app.Application;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Vibrator;
 import android.support.multidex.MultiDex;
 
 
+import com.canplay.medical.R;
 import com.canplay.medical.base.manager.AppManager;
+import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.Province;
 import com.canplay.medical.location.LocationUtil;
 import com.canplay.medical.receiver.Receiver1;
@@ -19,6 +23,7 @@ import com.canplay.medical.receiver.Service1;
 import com.canplay.medical.receiver.Service2;
 import com.canplay.medical.util.ExceptionHandler;
 import com.canplay.medical.util.JPushUtils;
+import com.google.zxing.client.android.decode.WeacConstants;
 import com.marswin89.marsdaemon.DaemonApplication;
 import com.marswin89.marsdaemon.DaemonConfigurations;
 
@@ -50,6 +55,7 @@ public class BaseApplication extends DaemonApplication  {
     public static  String phone="";
     public static  long time1=0;
     public static  long time2=0;
+    public  AlarmClock mAlarmClock;
     public static Map<String,String> map=new HashMap<>();
     public static BaseApplication getInstance() {
         if (cplayApplication == null) {
@@ -84,7 +90,37 @@ public class BaseApplication extends DaemonApplication  {
         String androidId = android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
         JPushUtils.shareInstance().setAlias(androidId,11);
 //        JPushInterface.setLatestNotificationNumber(this, 1);
+        mAlarmClock = new AlarmClock();
+        // 闹钟默认开启
+        mAlarmClock.setOnOff(true);
+        // 保存设置的音量
+        mAlarmClock.setVolume(15);
 
+        // 初始化闹钟实例的小时
+        mAlarmClock.setHour(9);
+        // 初始化闹钟实例的分钟
+        mAlarmClock.setMinute(30);
+        // 默认小睡
+        mAlarmClock.setNap(true);
+        // 小睡间隔10分钟
+        mAlarmClock.setNapInterval(5);
+        // 小睡3次
+
+        // 取得铃声选择配置信息
+        SharedPreferences share = getSharedPreferences(
+                WeacConstants.EXTRA_WEAC_SHARE, Activity.MODE_PRIVATE);
+        String ringName = share.getString(WeacConstants.RING_NAME,
+                getString(R.string.default_ring));
+        String ringUrl = share.getString(WeacConstants.RING_URL,
+                WeacConstants.DEFAULT_RING_URL);
+
+        // 初始化闹钟实例的铃声名
+        mAlarmClock.setRingName(ringName);
+        // 初始化闹钟实例的铃声播放地址
+        mAlarmClock.setRingUrl(ringUrl);
+        mAlarmClock.setRepeat("每天");
+        // 响铃周期
+        mAlarmClock.setWeeks("2,3,4,5,6,7,1");
     }
 
 

@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Daemon: service daemon.
  *
- * @author Vincent Cheung
+ * @author Vincent CheungCommand
  * @since  Jan. 19, 2015
  */
 public class Daemon {

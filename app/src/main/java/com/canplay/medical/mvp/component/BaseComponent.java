@@ -29,10 +29,12 @@ import com.canplay.medical.mvp.activity.home.AddDataActivity;
 import com.canplay.medical.mvp.activity.home.ChooseMedicalActivity;
 import com.canplay.medical.mvp.activity.home.DoctorDetailActivity;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
+import com.canplay.medical.mvp.activity.home.MeasurePlanActivity;
 import com.canplay.medical.mvp.activity.home.MedicalDetailActivity;
 import com.canplay.medical.mvp.activity.home.MessageActivity;
 import com.canplay.medical.mvp.activity.home.SearchMedicalActivity;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity;
+import com.canplay.medical.mvp.activity.home.UsePlanActivity;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity;
 import com.canplay.medical.mvp.activity.mine.AlarmActivity;
 import com.canplay.medical.mvp.activity.mine.BindPhoneActivity;
@@ -55,6 +57,8 @@ import dagger.Component;
 public interface BaseComponent{
 
     void inject(LoginActivity binderActivity);
+    void inject(UsePlanActivity binderActivity);
+    void inject(MeasurePlanActivity binderActivity);
     void inject(AlarmActivity binderActivity);
     void inject(EditorPwsActivity binderActivity);
     void inject(BindPhoneActivity binderActivity);

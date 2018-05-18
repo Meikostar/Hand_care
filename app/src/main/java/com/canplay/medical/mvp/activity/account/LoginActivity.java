@@ -87,7 +87,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
             public void onClick(View v) {
                 String user = etUser.getText().toString();
                 String password = etPws.getText().toString();
-                 presenter.getCode("18166036747");
+
                 if (TextUtil.isEmpty(user)) {
                     showToasts(getString(R.string.qingshurusjh));
                     return;

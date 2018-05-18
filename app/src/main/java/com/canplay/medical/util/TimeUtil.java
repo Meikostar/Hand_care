@@ -41,7 +41,7 @@ public class TimeUtil {
     }
     /*将字符串转为时间戳*/
  public static long getStringToDate(String time) {
-     SimpleDateFormat  sdf = new SimpleDateFormat("yyyy-MM-dd");
+     SimpleDateFormat  sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         Date date = new Date();
         try{
             date = sdf.parse(time);
@@ -86,7 +86,7 @@ public class TimeUtil {
     }
     public static String formatToMD(long time){
         SimpleDateFormat format = new SimpleDateFormat("MM-dd");
-        return format.format(new Date(time*1000));
+        return format.format(new Date(time));
     }
     public static String formatToNew(long time){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");

@@ -9,7 +9,7 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.fragment.RemindMedicatFragment;
 import com.canplay.medical.mvp.adapter.FragmentViewPagerAdapter;
-import com.canplay.medical.mvp.adapter.RemindMedicatAdapter;
+
 import com.canplay.medical.mvp.adapter.UserRecordAdapter;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.NoScrollViewPager;

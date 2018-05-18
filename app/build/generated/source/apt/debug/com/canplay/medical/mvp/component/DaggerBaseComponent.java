@@ -55,6 +55,8 @@ import com.canplay.medical.mvp.activity.home.DoctorDetailActivity;
 import com.canplay.medical.mvp.activity.home.DoctorDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MeasureActivity;
 import com.canplay.medical.mvp.activity.home.MeasureActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.home.MeasurePlanActivity;
+import com.canplay.medical.mvp.activity.home.MeasurePlanActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MedicalDetailActivity;
 import com.canplay.medical.mvp.activity.home.MedicalDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.MessageActivity;
@@ -63,6 +65,8 @@ import com.canplay.medical.mvp.activity.home.SearchMedicalActivity;
 import com.canplay.medical.mvp.activity.home.SearchMedicalActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity;
 import com.canplay.medical.mvp.activity.home.SmartKitActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.home.UsePlanActivity;
+import com.canplay.medical.mvp.activity.home.UsePlanActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.mine.AlarmActivity;
@@ -105,11 +109,15 @@ public final class DaggerBaseComponent implements BaseComponent {
 
   private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
+  private Provider<OtherPresenter> otherPresenterProvider;
+
+  private MembersInjector<UsePlanActivity> usePlanActivityMembersInjector;
+
+  private MembersInjector<MeasurePlanActivity> measurePlanActivityMembersInjector;
+
   private Provider<BasesPresenter> basesPresenterProvider;
 
   private MembersInjector<AlarmActivity> alarmActivityMembersInjector;
-
-  private Provider<OtherPresenter> otherPresenterProvider;
 
   private MembersInjector<EditorPwsActivity> editorPwsActivityMembersInjector;
 
@@ -220,12 +228,18 @@ public final class DaggerBaseComponent implements BaseComponent {
     this.loginActivityMembersInjector =
         LoginActivity_MembersInjector.create(loginPresenterProvider);
 
+    this.otherPresenterProvider = OtherPresenter_Factory.create(apiManagerProvider);
+
+    this.usePlanActivityMembersInjector =
+        UsePlanActivity_MembersInjector.create(otherPresenterProvider);
+
+    this.measurePlanActivityMembersInjector =
+        MeasurePlanActivity_MembersInjector.create(otherPresenterProvider);
+
     this.basesPresenterProvider = BasesPresenter_Factory.create(apiManagerProvider);
 
     this.alarmActivityMembersInjector =
         AlarmActivity_MembersInjector.create(basesPresenterProvider);
-
-    this.otherPresenterProvider = OtherPresenter_Factory.create(apiManagerProvider);
 
     this.editorPwsActivityMembersInjector =
         EditorPwsActivity_MembersInjector.create(otherPresenterProvider);
@@ -347,6 +361,16 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(UsePlanActivity binderActivity) {
+    usePlanActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(MeasurePlanActivity binderActivity) {
+    measurePlanActivityMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

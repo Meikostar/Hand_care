@@ -17,6 +17,7 @@ import com.canplay.medical.bean.Health;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
+import com.canplay.medical.bean.Medil;
 import com.canplay.medical.bean.Message;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.Phone;
@@ -271,6 +272,13 @@ public interface BaseApi {
      */
     @GET("Flow/v2/Medicine/Verify/{code}")
     Observable<List<Record>> getMedicalInfo(@Path("code") String code);
+    /**
+     * 验证药监码并返回药品信息
+     */
+    @GET("flow/v2/plan/{type}")
+    Observable<Medil> getDetails(@Path("type") String type);
+
+
     /**
      * 添加测量
      */

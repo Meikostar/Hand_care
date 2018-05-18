@@ -13,6 +13,7 @@ import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
+import com.canplay.medical.bean.Medil;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.Phone;
 import com.canplay.medical.bean.Press;
@@ -64,7 +65,24 @@ public class OtherPresenter implements OtherContract.Presenter {
             }
         });
     }
+    @Override
+    public void getDetails(String type) {
 
+        subscription = ApiManager.setSubscribe(contactApi.getDetails(type), new MySubscriber<Medil>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(Medil entity){
+
+                mView.toEntity(entity.object,0);
+            }
+        });
+    }
 
 
 

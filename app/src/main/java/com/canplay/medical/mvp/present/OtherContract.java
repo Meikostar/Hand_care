@@ -50,5 +50,10 @@ public class OtherContract {
          * 编辑用户密码
          */
         void editorPsd(Pws name);
+
+        /**
+         *
+         */
+        void getDetails(String type);
     }
 }

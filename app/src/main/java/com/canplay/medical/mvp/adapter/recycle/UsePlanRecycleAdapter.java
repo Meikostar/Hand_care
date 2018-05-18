@@ -63,7 +63,7 @@ public class UsePlanRecycleAdapter extends BaseRecycleViewAdapter {
         }else {
             holder.tvCout.setVisibility(View.VISIBLE);
         }
-        holder.tvTime.setText(TimeUtil.formatToMs(list.date));
+        holder.tvTime.setText(TimeUtil.formatToMD(list.date));
         RecordItemAdapter adapter = new RecordItemAdapter(context);
         holder.rlMenu.setAdapter(adapter);
 

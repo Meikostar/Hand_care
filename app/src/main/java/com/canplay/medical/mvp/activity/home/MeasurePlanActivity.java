@@ -10,12 +10,19 @@ import android.widget.TextView;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.bean.Medil;
+import com.canplay.medical.mvp.adapter.MesureAdapter;
 import com.canplay.medical.mvp.adapter.UsePlanAdapter;
 import com.canplay.medical.mvp.adapter.UserRecordAdapter;
+import com.canplay.medical.mvp.component.DaggerBaseComponent;
+import com.canplay.medical.mvp.present.OtherContract;
+import com.canplay.medical.mvp.present.OtherPresenter;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,9 +32,9 @@ import static android.R.attr.order;
 /**
  * 测量计划
  */
-public class MeasurePlanActivity extends BaseActivity {
-
-
+public class MeasurePlanActivity extends BaseActivity implements OtherContract.View{
+    @Inject
+    OtherPresenter presenter;
     @BindView(R.id.line)
     View line;
     @BindView(R.id.navigationBar)
@@ -44,7 +51,7 @@ public class MeasurePlanActivity extends BaseActivity {
     ListView rlMenu;
     @BindView(R.id.tv_time)
     TextView tvTime;
-    private UserRecordAdapter adapter;
+    private MesureAdapter adapter;
      private String time;
     private CountDownTimer countDownTimer;
     private long times;
@@ -56,55 +63,15 @@ public class MeasurePlanActivity extends BaseActivity {
     public void initViews() {
         setContentView(R.layout.activity_mesure_plan);
         ButterKnife.bind(this);
+        DaggerBaseComponent.builder().appComponent(((BaseApplication)getApplication()).getAppComponent()).build().inject(this);
+        presenter.attachView(this);
         navigationBar.setNavigationBarListener(this);
-        adapter = new UserRecordAdapter(this);
+        showProgress("加载中...");
+        presenter.getDetails("Measurement");
+        adapter = new MesureAdapter(this);
         rlMenu.setAdapter(adapter);
         time=getIntent().getStringExtra("time");
-        if(TextUtil.isNotEmpty(time)){
-            String date = TimeUtil.formatHour(System.currentTimeMillis());
-            String[] split = date.split(":");
-            String[] splits = time.split(":");
-            hours=(Integer.valueOf(split[0])+Integer.valueOf(splits[0]));
 
-            if(Integer.valueOf(split[1])+Integer.valueOf(splits[1])>=60){
-                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1])-60);
-                hours=hours+1;
-            }else {
-                minters=(Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
-            }
-
-            hour=Integer.valueOf(splits[0]);
-            minter=Integer.valueOf(splits[1]);
-            tvTime.setText((hours>=24?(hours-24):hours)+":"+(minters<10?0+""+minters:minters));
-            times = hour*3600*1000+minter*60*1000;
-
-                countDownTimer = new CountDownTimer(BaseApplication.time2==0? times:BaseApplication.time2, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
-                        String[] times = timeStr.split(",");
-                        if(tvHour!=null){
-                            tvHour.setText(times[1]);
-                            tvMinter.setText(times[2]);
-                            tvSecond.setText(times[3]);
-                        }
-
-
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        if(tvHour!=null){
-                            tvHour.setText("00");
-                            tvMinter.setText("00");
-                            tvSecond.setText("00");
-                        }
-
-
-                    }
-                }.start();
-
-        }
         initPopView();
 
 
@@ -168,6 +135,68 @@ public class MeasurePlanActivity extends BaseActivity {
 
     }
 
+   private Medil medil;
+    @Override
+    public <T> void toEntity(T entity, int type) {
+         medil= (Medil) entity;
+         dimessProgress();
+            if(TextUtil.isNotEmpty(medil.nextPlan.when)){
+                time=   TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
+                String date = TimeUtil.formatHour(System.currentTimeMillis());
+                String[] split = date.split(":");
+                String[] splits = time.split(":");
+                hours=(-Integer.valueOf(split[0])+Integer.valueOf(splits[0]));
+                if(hours<0){
+                    hours=hours+24;
+                }
+                minters=(-Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
+                if(minters<0){
+
+                    minters=minters+60;
+                }
+
+                tvTime.setText(time);
+                times = hours*3600*1000+minters*60*1000;
+                if(BaseApplication.time2==0){
+                    BaseApplication.time2=times;
+                }
+                countDownTimer = new CountDownTimer(BaseApplication.time2==0? times:BaseApplication.time2, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                        String[] times = timeStr.split(",");
+                        if(tvHour!=null){
+                            tvHour.setText(times[1]);
+                            tvMinter.setText(times[2]);
+                            tvSecond.setText(times[3]);
+                        }
 
 
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        if(tvHour!=null){
+                            tvHour.setText("00");
+                            tvMinter.setText("00");
+                            tvSecond.setText("00");
+                        }
+
+
+                    }
+                }.start();
+
+            }
+        adapter.setData(medil.actions);
+    }
+
+    @Override
+    public void toNextStep(int type) {
+
+    }
+
+    @Override
+    public void showTomast(String msg) {
+
+    }
 }

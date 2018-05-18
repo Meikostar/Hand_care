@@ -169,7 +169,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), UsePlanActivity.class);
                 intent.putExtra("time",tvHour.getText().toString()+":"+tvMinter.getText().toString());
-
                 startActivity(intent);
             }
         });
