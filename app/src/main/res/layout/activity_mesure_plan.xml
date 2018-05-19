@@ -23,6 +23,7 @@
         android:layout_height="0.2dp"
         android:background="@color/linecolor"/>
     <com.canplay.medical.view.scrollView.StickyScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -52,6 +53,7 @@
                         android:layout_marginTop="19dp"
                         android:orientation="horizontal">
                         <ImageView
+                            android:focusable="true"
                             android:src="@drawable/zhong"
                             android:layout_width="13dp"
                             android:layout_height="13dp"

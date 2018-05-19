@@ -12,6 +12,7 @@ import butterknife.internal.Utils;
 import com.canplay.medical.R;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.RegularListView;
+import com.canplay.medical.view.scrollView.StickyScrollView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -37,6 +38,7 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.tvName = Utils.findRequiredViewAsType(source, R.id.tv_name, "field 'tvName'", TextView.class);
     target.stubGird = Utils.findRequiredViewAsType(source, R.id.stub_gird, "field 'stubGird'", ViewStub.class);
     target.ivState = Utils.findRequiredViewAsType(source, R.id.iv_state, "field 'ivState'", ImageView.class);
+    target.scrollView = Utils.findRequiredViewAsType(source, R.id.scrollView, "field 'scrollView'", StickyScrollView.class);
   }
 
   @Override
@@ -56,5 +58,6 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.tvName = null;
     target.stubGird = null;
     target.ivState = null;
+    target.scrollView = null;
   }
 }

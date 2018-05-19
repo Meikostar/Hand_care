@@ -99,9 +99,9 @@ public class UsesPlanAdapter extends BaseAdapter {
         }  if(TextUtil.isNotEmpty(list.get(position).code)){
             String poi="";
             if(position<10){
-                poi="0"+position;
+                poi="0"+position+1;
             }else {
-                poi=""+position;
+                poi=""+position+1;
             }
             holder.tvCout.setText(list.get(position).code+"\n"+poi);
         }

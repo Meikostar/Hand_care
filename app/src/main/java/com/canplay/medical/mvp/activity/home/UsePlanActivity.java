@@ -10,17 +10,17 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
-import com.canplay.medical.bean.BASEBEAN;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Medil;
 import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
 import com.canplay.medical.mvp.adapter.OrderGridAdapter;
-import com.canplay.medical.mvp.adapter.UsePlanAdapter;
 import com.canplay.medical.mvp.adapter.UsesPlanAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.OtherContract;
@@ -30,6 +30,7 @@ import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
 import com.canplay.medical.view.RegularListView;
+import com.canplay.medical.view.scrollView.StickyScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Subscription;
+import rx.functions.Action1;
 
 /**
  * 用药计划
@@ -65,6 +68,8 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     ViewStub stubGird;
     @BindView(R.id.iv_state)
     ImageView ivState;
+    @BindView(R.id.scrollView)
+    StickyScrollView scrollView;
     private UsesPlanAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -73,7 +78,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     private int hours;
     private int minter;
     private int minters;
-
+    private Subscription mSubscription;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_use_plan);
@@ -86,11 +91,39 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         showProgress("加载中...");
         presenter.getDetails("Medicine");
         time = getIntent().getStringExtra("time");
+        tvTime.setFocusable(true);
+        tvTime.setFocusableInTouchMode(true);
+        tvTime.requestFocus(); scrollView.setFocusable(false);
+        scrollView.setFocusable(false);
+        mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
+            @Override
+            public void call(SubscriptionBean.RxBusSendBean bean) {
+                if (bean == null) return;
 
+                if (bean.type == SubscriptionBean.MENU_REFASHS) {
+                }else if(SubscriptionBean.BLOODORSUGAR==bean.type){
+                    presenter.getDetails("Medicine");
+                }
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
+        RxBus.getInstance().addSubscription(mSubscription);
         initPopView();
         showGirdView(null);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mSubscription!=null){
+            mSubscription.unsubscribe();
+        }
+    }
 
     @Override
     public void bindEvents() {
@@ -193,43 +226,43 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         medil = (Medil) entity;
         dimessProgress();
 
-        if(TextUtil.isNotEmpty(medil.nextPlan.code)){
-            if(medil.nextPlan.code.equals("早")){
+        if (TextUtil.isNotEmpty(medil.nextPlan.code)) {
+            if (medil.nextPlan.code.equals("早")) {
                 ivState.setImageResource(R.drawable.z);
-            }else if(medil.nextPlan.code.equals("中")){
+            } else if (medil.nextPlan.code.equals("中")) {
                 ivState.setImageResource(R.drawable.zz);
-            }else if(medil.nextPlan.code.equals("晚")){
+            } else if (medil.nextPlan.code.equals("晚")) {
                 ivState.setImageResource(R.drawable.w);
             }
             tvName.setText(medil.nextPlan.code);
         }
         iniGridView(medil.nextPlan.items);
-        if(TextUtil.isNotEmpty(medil.nextPlan.when)){
-            time=   TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
+        if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
+            time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
             String date = TimeUtil.formatHour(System.currentTimeMillis());
             String[] split = date.split(":");
             String[] splits = time.split(":");
-            hours=(-Integer.valueOf(split[0])+Integer.valueOf(splits[0]));
-            if(hours<0){
-                hours=hours+24;
+            hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
+            if (hours < 0) {
+                hours = hours + 24;
             }
-            minters=(-Integer.valueOf(split[1])+Integer.valueOf(splits[1]));
-            if(minters<0){
+            minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
+            if (minters < 0) {
 
-                minters=minters+60;
+                minters = minters + 60;
             }
 
             tvTime.setText(time);
-            times = hours*3600*1000+minters*60*1000;
-            if(BaseApplication.time1==0){
-                BaseApplication.time1=times;
+            times = hours * 3600 * 1000 + minters * 60 * 1000;
+            if (BaseApplication.time1 == 0) {
+                BaseApplication.time1 = times;
             }
-            countDownTimer = new CountDownTimer(BaseApplication.time1==0? times:BaseApplication.time1, 1000) {
+            countDownTimer = new CountDownTimer(BaseApplication.time1 == 0 ? times : BaseApplication.time1, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
                     String[] times = timeStr.split(",");
-                    if(tvHour!=null){
+                    if (tvHour != null) {
                         tvHour.setText(times[1]);
                         tvMinter.setText(times[2]);
                         tvSecond.setText(times[3]);
@@ -240,7 +273,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
 
                 @Override
                 public void onFinish() {
-                    if(tvHour!=null){
+                    if (tvHour != null) {
                         tvHour.setText("00");
                         tvMinter.setText("00");
                         tvSecond.setText("00");
@@ -251,19 +284,23 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             }.start();
 
         }
-        if(medil.plans!=null){
+        if (medil.plans != null) {
             datas.clear();
-            for(Medil medils:medil.plans){
-                if(medils.status.equals("completed")){
+            for (Medil medils : medil.plans) {
+                if (medils.status.equals("completed")) {
                     datas.add(medils);
                 }
             }
             adapter.setData(datas);
+            scrollView.fullScroll(ScrollView.FOCUS_UP);
+
         }
 
 
     }
-    private List<Medil> datas=new ArrayList<>();
+
+    private List<Medil> datas = new ArrayList<>();
+
     @Override
     public void toNextStep(int type) {
 
@@ -273,6 +310,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     public void showTomast(String msg) {
 
     }
+
 
 
 }
