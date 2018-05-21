@@ -140,6 +140,8 @@ public class HomeContract {
 
 
         void getHealthData();
+
+        void myMedicineBox();
     }
 
 

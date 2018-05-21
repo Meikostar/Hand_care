@@ -70,6 +70,10 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     ImageView ivState;
     @BindView(R.id.scrollView)
     StickyScrollView scrollView;
+    @BindView(R.id.tv_state)
+    TextView tvState;
+    @BindView(R.id.ll_bg)
+    LinearLayout llBg;
     private UsesPlanAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -79,6 +83,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     private int minter;
     private int minters;
     private Subscription mSubscription;
+
     @Override
     public void initViews() {
         setContentView(R.layout.activity_use_plan);
@@ -93,15 +98,15 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         time = getIntent().getStringExtra("time");
         tvTime.setFocusable(true);
         tvTime.setFocusableInTouchMode(true);
-        tvTime.requestFocus(); scrollView.setFocusable(false);
-        scrollView.setFocusable(false);
+        tvTime.requestFocus();
+
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
             @Override
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
-                }else if(SubscriptionBean.BLOODORSUGAR==bean.type){
+                } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
                     presenter.getDetails("Medicine");
                 }
 
@@ -114,13 +119,13 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         });
         RxBus.getInstance().addSubscription(mSubscription);
         initPopView();
-        showGirdView(null);
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(mSubscription!=null){
+        if (mSubscription != null) {
             mSubscription.unsubscribe();
         }
     }
@@ -225,7 +230,11 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     public <T> void toEntity(T entity, int type) {
         medil = (Medil) entity;
         dimessProgress();
-
+        if (medil != null) {
+            showGirdView(null);
+            llBg.setVisibility(View.VISIBLE);
+            tvState.setText("下次服药时间");
+        }
         if (TextUtil.isNotEmpty(medil.nextPlan.code)) {
             if (medil.nextPlan.code.equals("早")) {
                 ivState.setImageResource(R.drawable.z);
@@ -256,6 +265,9 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             times = hours * 3600 * 1000 + minters * 60 * 1000;
             if (BaseApplication.time1 == 0) {
                 BaseApplication.time1 = times;
+            }
+            if(countDownTimer!=null){
+                countDownTimer.cancel();
             }
             countDownTimer = new CountDownTimer(BaseApplication.time1 == 0 ? times : BaseApplication.time1, 1000) {
                 @Override
@@ -312,5 +324,10 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     }
 
 
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

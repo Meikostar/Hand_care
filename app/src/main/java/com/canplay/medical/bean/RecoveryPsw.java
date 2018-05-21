@@ -15,7 +15,7 @@ public class RecoveryPsw {
 
     public String newPassword;
     public String passwordResetToken;
-    public String displayName;
+    public String username;
 
 
 }

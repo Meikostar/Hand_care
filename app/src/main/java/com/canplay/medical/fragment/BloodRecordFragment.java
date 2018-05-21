@@ -230,6 +230,9 @@ public class BloodRecordFragment extends BaseFragment implements  BaseContract.V
     @Override
     public <T> void toEntity(T entity, int type) {
         List<Record>     lists= (List<Record>) entity;
+        if(lists.size()==0){
+            showToast("暂无记录");
+        }
         onDataLoaded(type,lists.size()==cout,lists);
     }
 

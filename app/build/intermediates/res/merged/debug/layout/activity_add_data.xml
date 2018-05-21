@@ -40,14 +40,15 @@
             android:textSize="15.5sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/tv_type"
-            android:text="血压"
-            android:layout_marginRight="13dp"
-            android:textColor="@color/slow_black"
-            android:textSize="15.5sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="13dp"
+            android:text="血压"
+            android:textColor="@color/slow_black"
+            android:textSize="15.5sp" />
 
     </LinearLayout>
     <View
@@ -89,6 +90,14 @@
             android:textColor="@color/slow_black"
             android:hint="请输入数值"
             android:textColorHint="#E0E0E0"/>
+        <TextView
+            android:id="@+id/tv_type1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="13dp"
+            android:text="mmHg"
+            android:textColor="@color/color8"
+            android:textSize="15.5sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -135,6 +144,13 @@
                 android:textColor="@color/slow_black"
                 android:hint="请输入数值"
                 android:textColorHint="#E0E0E0"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="13dp"
+                android:text="mmHg"
+                android:textColor="@color/color8"
+                android:textSize="15.5sp" />
         </LinearLayout>
         <View
             android:layout_marginLeft="16dp"
@@ -173,6 +189,14 @@
                 android:textColor="@color/slow_black"
                 android:hint="请输入数值"
                 android:textColorHint="#E0E0E0"/>
+            <TextView
+                android:id="@+id/tv_type3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="13dp"
+                android:text="次/分钟"
+                android:textColor="@color/color8"
+                android:textSize="15.5sp" />
         </LinearLayout>
 
     </LinearLayout>

@@ -18,6 +18,7 @@ import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.mvp.activity.account.LoginActivity;
+import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.StringUtil;
 import com.canplay.medical.util.TextUtil;
@@ -112,6 +113,7 @@ public class SettingActivity extends BaseActivity  {
           @Override
           public void onClick(View v) {
               SpUtil.getInstance().clearData();
+              AlarmClockOperate.getInstance().deleteAll();
               Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
               startActivity(intent);
               RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));

@@ -179,6 +179,9 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
 //                data.add(record1);
 //            }
 //        }
+        if(data.size()==0){
+            showToasts("暂无记录");
+        }
         onDataLoaded(type,lists.size()==cout,lists);
     }
 

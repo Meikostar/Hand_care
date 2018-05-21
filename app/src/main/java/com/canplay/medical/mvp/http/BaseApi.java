@@ -9,6 +9,7 @@ import com.canplay.medical.bean.BaseData;
 import com.canplay.medical.bean.BaseResult;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Box;
+import com.canplay.medical.bean.Boxs;
 import com.canplay.medical.bean.Detail;
 import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Euipt;
@@ -195,7 +196,7 @@ public interface BaseApi {
     /**
      * 添加好友
      */
-    @GET("Flow/api/Doctor/Name/{search}")
+    @GET("flow/v2/doctor/name/{search}")
     Observable<List<Friend> > searchDoctor(@Path("search") String search);
 
     /**
@@ -223,16 +224,16 @@ public interface BaseApi {
 
 
     /**
-     * 添加家庭医生
+     * 添加家庭医生flow/v2/familydoctor/
      */
-    @POST("Flow/api/FamilyDoctor/{userId}")
+    @POST("flow/v2/familydoctor/{userId}")
     Observable<Friend> AddDoctor(@Path("userId") String userId);
 
 
     /**
      * 移除家庭医生
      */
-    @DELETE("Flow/api/FamilyDoctor/{userId}")
+    @DELETE("Flow/v2/FamilyDoctor/{userId}")
     Observable<Friend> DelDoctor(@Path("userId") String userId);
 
     /**
@@ -410,7 +411,16 @@ public interface BaseApi {
      */
 
     @GET("Flow/v2/MedicineBox/Status/{userId}")
-    Observable<Box> myMedicineBox(@Path("userId") String userId);
+    Observable<Boxs> myMedicineBox(@Path("userId") String userId);
+
+
+    /**
+     *药物列表
+     */
+
+    @GET("Flow/v2/MedicineBox/{userId}")
+    Observable<Box> isMedicineBox(@Path("userId") String userId);
+
 
     /**
      *扫描添加

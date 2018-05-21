@@ -10,6 +10,7 @@ import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.BaseData;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Box;
+import com.canplay.medical.bean.Boxs;
 import com.canplay.medical.bean.Detail;
 import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
@@ -409,7 +410,7 @@ public class BasesPresenter implements BaseContract.Presenter {
     @Override
     public void myMedicineBox() {
         String id=SpUtil.getInstance().getUserId();
-        subscription = ApiManager.setSubscribe(contactApi.myMedicineBox(id), new MySubscriber<Box>(){
+        subscription = ApiManager.setSubscribe(contactApi.myMedicineBox(id), new MySubscriber<Boxs>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);
@@ -418,7 +419,7 @@ public class BasesPresenter implements BaseContract.Presenter {
             }
 
             @Override
-            public void onNext(Box entity){
+            public void onNext(Boxs entity){
 
                 mView.toEntity(entity,1);
             }

@@ -56,8 +56,8 @@ public class Friend implements Serializable{
     public String status;
     public String message;
     public String notificationRegId;
-    public Long createdDateTime;
-    public Long lastModified;
+    public double createdDateTime;
+    public double lastModified;
     public int type;
     public Boolean hasData;
 

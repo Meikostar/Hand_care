@@ -35,7 +35,7 @@
                android:id="@+id/tv_name"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Lxm"
+               android:text=""
                android:textColor="@color/slow_black"
                android:textSize="16.5sp"
                />
@@ -45,14 +45,14 @@
                android:id="@+id/tv_phone"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="125424455"
+               android:text=""
                android:textColor="@color/color6"
                android:textSize="13.5sp"
                />
 
        </LinearLayout>
        <LinearLayout
-           android:layout_marginTop="12dp"
+           android:layout_marginTop="10dp"
            android:layout_marginBottom="15dp"
            android:layout_marginLeft="12dp"
            android:gravity="center_vertical"
@@ -64,7 +64,7 @@
                android:id="@+id/tv_des"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="高级护师"
+               android:text=""
                android:textColor="#575757"
                android:textSize="13.5sp"
                />
@@ -73,9 +73,9 @@
                android:layout_marginTop="9dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="中山火炬开发区"
+               android:text=""
                android:textColor="@color/color6"
-               android:textSize="13.5sp"
+               android:textSize="13sp"
                />
 
        </LinearLayout>

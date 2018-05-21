@@ -242,22 +242,22 @@ public class ChartPressFragment extends BaseFragment implements BaseContract.Vie
         lists = (List<Record>) entity;
         if (lists != null && lists.size() == 1) {
             if (TextUtil.isNotEmpty(lists.get(0).high)) {
-                tvPress.setText(lists.get(0).high);
+                tvPress.setText(lists.get(0).high+"\nmmHg");
                 one = Float.valueOf(lists.get(0).high);
             }
             if (TextUtil.isNotEmpty(lists.get(0).low)) {
-                tvData.setText(lists.get(0).low);
+                tvData.setText(lists.get(0).low+"\nmmHg");
                 two = Float.valueOf(lists.get(0).low);
             }
             if (TextUtil.isNotEmpty(lists.get(0).pulse)) {
-                tvRate.setText(lists.get(0).pulse);
+                tvRate.setText(lists.get(0).pulse+"\n次/分钟");
                 three = Float.valueOf(lists.get(0).pulse);
             }
         }
         if (one > 90 && one < 139) {
-            tvState.setTextColor(getResources().getColor(R.color.slow_black));
+            tvPress.setTextColor(getResources().getColor(R.color.slow_black));
         }else {
-            tvState.setTextColor(getResources().getColor(R.color.red_b));
+            tvPress.setTextColor(getResources().getColor(R.color.red_b));
 
         }    if ( two >60 && two < 90) {
             tvData.setTextColor(getResources().getColor(R.color.slow_black));
@@ -271,7 +271,7 @@ public class ChartPressFragment extends BaseFragment implements BaseContract.Vie
 
         }
 
-        if (one > 90 && one < 139 && two > 3.1 && two < 8.1 && three > 60 && three < 100) {
+        if (one > 90 && one < 139 && two > 60 && two < 90 && three > 60 && three < 100) {
             tvState.setText("正常");
         } else {
             tvState.setText("异常");

@@ -25,6 +25,7 @@ import com.canplay.medical.mvp.activity.home.UsePlanActivity;
 import com.canplay.medical.mvp.activity.mine.MineEuipmentActivity;
 import com.canplay.medical.mvp.activity.mine.MineHealthCenterActivity;
 import com.canplay.medical.mvp.activity.mine.RemindHealthActivity;
+import com.canplay.medical.mvp.adapter.BannerAdapter;
 import com.canplay.medical.mvp.adapter.HomeAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
@@ -32,6 +33,9 @@ import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.banner.BannerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -85,6 +89,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     LinearLayout llBg1;
     @BindView(R.id.tv_count)
     TextView tvCount;
+    @BindView(R.id.ll_m1)
+    LinearLayout llM1;
+    @BindView(R.id.ll_m2)
+    LinearLayout llM2;
+    @BindView(R.id.ll_m3)
+    LinearLayout llM3;
+    @BindView(R.id.ll_m4)
+    LinearLayout llM4;
 
 
     public interface ScanListener {
@@ -93,12 +105,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     public ScanListener listener;
     private HomeAdapter adapter;
-
+    private List<Integer> list=new ArrayList<>();
+    private int[] img={R.drawable.bg1,R.drawable.bg2};
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
+     private BannerAdapter adapters;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, null);
@@ -107,6 +120,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         presenter.attachView(this);
         bannerView.requestFocus();
         bannerView.setFocusableInTouchMode(true);
+        adapters=new BannerAdapter(getActivity());
+        list.add(R.drawable.bg1);
+        list.add(R.drawable.bg2);
+        adapters.setData(list);
+        bannerView.setAdapter(adapters);
         initView();
         initListener();
 
@@ -140,7 +158,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
-                }else if(SubscriptionBean.MESURE==bean.type){
+                } else if (SubscriptionBean.MESURE == bean.type) {
                     presenter.getUserData(1);
                     presenter.getUserData(2);
                     presenter.getMessageCout();
@@ -160,7 +178,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MeasurePlanActivity.class);
-                intent.putExtra("time",tvHour1.getText().toString()+":"+tvMinter1.getText().toString());
+                intent.putExtra("time", tvHour1.getText().toString() + ":" + tvMinter1.getText().toString());
                 startActivity(intent);
             }
         });
@@ -168,7 +186,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), UsePlanActivity.class);
-                intent.putExtra("time",tvHour.getText().toString()+":"+tvMinter.getText().toString());
+                intent.putExtra("time", tvHour.getText().toString() + ":" + tvMinter.getText().toString());
                 startActivity(intent);
             }
         });
@@ -221,102 +239,146 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     }
 
     private void initView() {
+        showProgress("加载中...");
         presenter.getUserData(1);
         presenter.getUserData(2);
         presenter.getMessageCout();
 
 
     }
-   private CountDownTimer countDownTimer1;
-   private CountDownTimer countDownTimer2;
+
+    private CountDownTimer countDownTimer1;
+    private CountDownTimer countDownTimer2;
+
     @Override
-    public <T> void toEntity(T entity,int type) {
+    public <T> void toEntity(T entity, int type) {
+        dimessProgress();
         BASE entitys = (BASE) entity;
+        if(entitys==null|| TextUtil.isEmpty(entitys.nextTaskDueIn)){
+            if (type == 1) {
+
+                    llM1.setVisibility(View.VISIBLE);
+                    llM2.setVisibility(View.GONE);
+                    tvState.setVisibility(View.GONE);
+
+
+
+            } else if (type == 2) {
+
+                    llM3.setVisibility(View.VISIBLE);
+                    llM4.setVisibility(View.GONE);
+                    tvState1.setVisibility(View.GONE);
+
+
+
+            }
+            return;
+        }
         String time = entitys.nextTaskDueIn;
+
         String[] split = time.split(":");
 
-            if (type==1) {
-               int  hour=Integer.valueOf(split[0]);
-                int  minter=Integer.valueOf(split[1]);
+        if (type == 1) {
+            int hour = Integer.valueOf(split[0]);
+            int minter = Integer.valueOf(split[1]);
+            if(hour==0&&minter==0){
 
-               long times = hour*3600*1000+minter*60*1000;
-                if(countDownTimer1!=null){
-                    countDownTimer1.cancel();
-                }
-                countDownTimer1 = new CountDownTimer(times, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        BaseApplication.time1=millisUntilFinished;
-                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
-                        String[] times = timeStr.split(",");
-                        if(tvHour!=null&&times!=null){
-                            tvHour.setText(times[1]);
-                            tvMinter.setText(times[2]);
-                        }
-
-
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        if(tvHour!=null){
-                            tvHour.setText("00");
-                            tvMinter.setText("00");
-                        }
-
-
-
-                    }
-                }.start();
-                tvHour.setText(split[0]);
-                tvMinter.setText(split[1]);
-                tvState.setText(entitys.isCompleted ? "已完成" : "未完成");
-            } else if(type==2) {
-                int  hour=Integer.valueOf(split[0]);
-                int  minter=Integer.valueOf(split[1]);
-
-                long times = hour*3600*1000+minter*60*1000;
-                if(countDownTimer2!=null){
-                    countDownTimer2.cancel();
-                }
-                countDownTimer2 = new CountDownTimer(times, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        BaseApplication.time2=millisUntilFinished;
-                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
-                        String[] times = timeStr.split(",");
-
-                        if(tvHour1!=null&&times!=null){
-                            tvHour1.setText(times[1]);
-                            tvMinter1.setText(times[2]);
-                        }
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        if(tvHour1!=null){
-                            tvHour1.setText("00");
-                            tvMinter1.setText("00");
-                        }
-
-
-
-                    }
-                }.start();
-                tvHour1.setText(split[0]);
-                tvMinter1.setText(split[1]);
-                tvState1.setText(entitys.isCompleted ? "已完成" : "未完成");
-            }else if(type==3) {
-                if(entitys.numberOfUnreadMessages==0){
-                    tvCount.setVisibility(View.GONE);
-                }else {
-                    tvCount.setVisibility(View.VISIBLE);
-                    tvCount.setText(""+entitys.numberOfUnreadMessages);
-                }
+                llM1.setVisibility(View.VISIBLE);
+                llM2.setVisibility(View.GONE);
+                tvState.setVisibility(View.GONE);
             }else {
-                tvHour1.setText(split[0]);
-                tvMinter1.setText(split[1]);
+                llM1.setVisibility(View.GONE);
+                llM2.setVisibility(View.VISIBLE);
+                tvState.setVisibility(View.VISIBLE);
+
             }
+            long times = hour * 3600 * 1000 + minter * 60 * 1000;
+            if (countDownTimer1 != null) {
+                countDownTimer1.cancel();
+            }
+            countDownTimer1 = new CountDownTimer(times, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    BaseApplication.time1 = millisUntilFinished;
+                    String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                    String[] times = timeStr.split(",");
+                    if (tvHour != null && times != null) {
+                        tvHour.setText(times[1]);
+                        tvMinter.setText(times[2]);
+                    }
+
+
+                }
+
+                @Override
+                public void onFinish() {
+                    if (tvHour != null) {
+                        tvHour.setText("00");
+                        tvMinter.setText("00");
+                    }
+
+
+                }
+            }.start();
+            tvHour.setText(split[0]);
+            tvMinter.setText(split[1]);
+            tvState.setText(entitys.isCompleted ? "已完成" : "未完成");
+        } else if (type == 2) {
+            int hour = Integer.valueOf(split[0]);
+            int minter = Integer.valueOf(split[1]);
+            if(hour==0&&minter==0){
+
+                llM3.setVisibility(View.VISIBLE);
+                llM4.setVisibility(View.GONE);
+                tvState1.setVisibility(View.GONE);
+
+            }else {
+                llM3.setVisibility(View.GONE);
+                llM4.setVisibility(View.VISIBLE);
+                tvState1.setVisibility(View.VISIBLE);
+
+            }
+            long times = hour * 3600 * 1000 + minter * 60 * 1000;
+            if (countDownTimer2 != null) {
+                countDownTimer2.cancel();
+            }
+            countDownTimer2 = new CountDownTimer(times, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    BaseApplication.time2 = millisUntilFinished;
+                    String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                    String[] times = timeStr.split(",");
+
+                    if (tvHour1 != null && times != null) {
+                        tvHour1.setText(times[1]);
+                        tvMinter1.setText(times[2]);
+                    }
+                }
+
+                @Override
+                public void onFinish() {
+                    if (tvHour1 != null) {
+                        tvHour1.setText("00");
+                        tvMinter1.setText("00");
+                    }
+
+
+                }
+            }.start();
+            tvHour1.setText(split[0]);
+            tvMinter1.setText(split[1]);
+            tvState1.setText(entitys.isCompleted ? "已完成" : "未完成");
+        } else if (type == 3) {
+            if (entitys.numberOfUnreadMessages == 0) {
+                tvCount.setVisibility(View.GONE);
+            } else {
+                tvCount.setVisibility(View.VISIBLE);
+                tvCount.setText("" + entitys.numberOfUnreadMessages);
+            }
+        } else {
+            tvHour1.setText(split[0]);
+            tvMinter1.setText(split[1]);
+        }
 
 
     }
@@ -328,7 +390,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     public void showTomast(String msg) {
-
+        showToast(msg);
+        dimessProgress();
     }
 
     @Override

@@ -167,7 +167,7 @@ public class RemindSecondDetailActivity extends BaseActivity implements BaseCont
     public <T> void toEntity(T entity, int type) {
         Box box = (Box) entity;
         data = box.cups;
-        tvTime.setText(TimeUtil.formatTims(box.planCreatedDateTime));
+//        tvTime.setText(TimeUtil.formatTims(box.planCreatedDateTime));
         int poistion = 0;
         for (int i = 0; i < data.size(); i++) {
             if (data.get(i).status == 1) {

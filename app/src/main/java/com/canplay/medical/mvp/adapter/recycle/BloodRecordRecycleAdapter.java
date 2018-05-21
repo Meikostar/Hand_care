@@ -49,10 +49,10 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
         final Record data= (Record) datas.get(position);
         Record customerinfo = mGson.fromJson(data.value, Record.class);
          if(type==0){
-           String datas=("收缩压："+( data.high==null?"":data.high))+("舒张压："+(data.low==null?"":data.low))+("心率："+(data.pulse==null?"":data.pulse));
+           String datas=("收缩压:"+( data.high==null?"":data.high))+("mmHg\t\t舒张压:"+(data.low==null?"":data.low))+("mmHg\t\t心率:"+(data.pulse==null?"":data.pulse)+"次/分钟");
              holders.tvData.setText(datas);
          }else {
-             holders.tvData.setText("血糖:"+data.bgl);
+             holders.tvData.setText("血糖:"+data.bgl+"mmol/L");
          }
 
 

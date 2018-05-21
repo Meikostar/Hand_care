@@ -35,6 +35,8 @@ public class AddBloodDataActivity_ViewBinding implements Unbinder {
     target.etTwo = Utils.findRequiredViewAsType(source, R.id.et_two, "field 'etTwo'", EditText.class);
     target.etThree = Utils.findRequiredViewAsType(source, R.id.et_three, "field 'etThree'", EditText.class);
     target.llType = Utils.findRequiredViewAsType(source, R.id.ll_type, "field 'llType'", LinearLayout.class);
+    target.tvType1 = Utils.findRequiredViewAsType(source, R.id.tv_type1, "field 'tvType1'", TextView.class);
+    target.tvType3 = Utils.findRequiredViewAsType(source, R.id.tv_type3, "field 'tvType3'", TextView.class);
   }
 
   @Override
@@ -53,5 +55,7 @@ public class AddBloodDataActivity_ViewBinding implements Unbinder {
     target.etTwo = null;
     target.etThree = null;
     target.llType = null;
+    target.tvType1 = null;
+    target.tvType3 = null;
   }
 }

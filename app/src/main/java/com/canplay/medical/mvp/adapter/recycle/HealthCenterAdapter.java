@@ -63,8 +63,18 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
 
             if(TextUtil.isNotEmpty(data.name)){
                 holders.name.setText(data.name);
-            }  if(TextUtil.isNotEmpty(data.familyAndFriendsUserName)){
-                holders.phone.setText(data.familyAndFriendsUserName);
+            }  if(TextUtil.isNotEmpty(data.phone)){
+                holders.phone.setText(data.phone);
+            }else {
+                if(TextUtil.isNotEmpty(data.mobile)){
+                    holders.phone.setText(data.mobile);
+                }
+            }
+            if(TextUtil.isNotEmpty(data.position)){
+                holders.tv_des.setText(data.position);
+            }
+            if(TextUtil.isNotEmpty(data.hospital)){
+                holders.tv_address.setText(data.hospital);
             }
             Glide.with(context).load(BaseApplication.avatar+data.avatar).asBitmap()
                     .placeholder(R.drawable.moren).transform(new CircleTransform(context)).into(holders.img);
@@ -93,17 +103,22 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
             });
         }else {
 
-            if(TextUtil.isNotEmpty(data.nickname)){
-                holders.name.setText(data.nickname);
-            } else{
-                if(TextUtil.isNotEmpty(data.name)){
-                    holders.name.setText(data.name);
+            if(TextUtil.isNotEmpty(data.displayName)){
+                holders.name.setText(data.displayName);
+            }else {
+                if(TextUtil.isNotEmpty(data.nickname)){
+                    holders.name.setText(data.nickname);
                 } else{
-                    if(TextUtil.isNotEmpty(data.userName)){
-                        holders.name.setText(data.userName);
+                    if(TextUtil.isNotEmpty(data.name)){
+                        holders.name.setText(data.name);
+                    } else{
+                        if(TextUtil.isNotEmpty(data.userName)){
+                            holders.name.setText(data.userName);
+                        }
                     }
                 }
-            } if(TextUtil.isNotEmpty(data.mobile)){
+            }
+            if(TextUtil.isNotEmpty(data.mobile)){
                 holders.phone.setText(data.mobile);
             }
             Glide.with(context).load(BaseApplication.avatar+data.avatar).asBitmap()

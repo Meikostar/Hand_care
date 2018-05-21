@@ -6,6 +6,7 @@ import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
@@ -24,6 +25,7 @@ public class HealthDataFragment_ViewBinding implements Unbinder {
     target.navigationBar = Utils.findRequiredViewAsType(source, R.id.navigationBar, "field 'navigationBar'", NavigationBar.class);
     target.rlList = Utils.findRequiredViewAsType(source, R.id.rl_list, "field 'rlList'", ListView.class);
     target.llbg = Utils.findRequiredViewAsType(source, R.id.ll_bg, "field 'llbg'", LinearLayout.class);
+    target.tvNone = Utils.findRequiredViewAsType(source, R.id.tv_none, "field 'tvNone'", TextView.class);
   }
 
   @Override
@@ -37,5 +39,6 @@ public class HealthDataFragment_ViewBinding implements Unbinder {
     target.navigationBar = null;
     target.rlList = null;
     target.llbg = null;
+    target.tvNone = null;
   }
 }

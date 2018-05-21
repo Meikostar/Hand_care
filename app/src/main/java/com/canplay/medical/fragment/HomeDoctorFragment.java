@@ -53,6 +53,8 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
     ImageView ivAdd;
     @BindView(R.id.navigationbar_title)
     TextView navigationbarTitle;
+    @BindView(R.id.tv_none)
+    TextView tvNone;
 
 
     //    private List<AD> list = new ArrayList<>();
@@ -151,7 +153,7 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(mSuperRecyclerView!=null){
+                        if (mSuperRecyclerView != null) {
                             mSuperRecyclerView.hideMoreProgress();
                         }
 
@@ -166,7 +168,7 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
             @Override
             public void clickListener(int poiston, Friend data) {
                 Intent intent = new Intent(getActivity(), DoctorDetailActivity.class);
-                intent.putExtra("data",data);
+                intent.putExtra("data", data);
                 startActivity(intent);
             }
         });
@@ -190,9 +192,15 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
     }
 
     private List<Friend> list;
+
     @Override
-    public <T> void toEntity(T entity,int type) {
-        list= (List<Friend>) entity;
+    public <T> void toEntity(T entity, int type) {
+        list = (List<Friend>) entity;
+        if(list!=null&&list.size()>0){
+            tvNone.setVisibility(View.GONE);
+        }else {
+            tvNone.setVisibility(View.VISIBLE);
+        }
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();
     }

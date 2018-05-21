@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
@@ -55,6 +54,8 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
     TextView tvTime;
     @BindView(R.id.scrollView)
     StickyScrollView scrollView;
+    @BindView(R.id.tv_state)
+    TextView tvState;
     private MesureAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -79,7 +80,8 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
         line.setFocusable(true);
         tvTime.setFocusable(true);
         tvTime.setFocusableInTouchMode(true);
-        tvTime.requestFocus(); scrollView.setFocusable(false);
+        tvTime.requestFocus();
+        scrollView.setFocusable(false);
         initPopView();
 
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
@@ -88,7 +90,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
-                }else if(SubscriptionBean.BLOODORSUGAR==bean.type){
+                } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
                     presenter.getDetails("Measurement");
                 }
 
@@ -167,6 +169,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
         medil = (Medil) entity;
         dimessProgress();
         if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
+            tvState.setText("下次测量时间");
             time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
             String date = TimeUtil.formatHour(System.currentTimeMillis());
             String[] split = date.split(":");
@@ -177,7 +180,6 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
             }
             minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
             if (minters < 0) {
-
                 minters = minters + 60;
             }
 
@@ -185,6 +187,9 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
             times = hours * 3600 * 1000 + minters * 60 * 1000;
             if (BaseApplication.time2 == 0) {
                 BaseApplication.time2 = times;
+            }
+            if(countDownTimer!=null){
+                countDownTimer.cancel();
             }
             countDownTimer = new CountDownTimer(BaseApplication.time2 == 0 ? times : BaseApplication.time2, 1000) {
                 @Override
@@ -212,17 +217,23 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
                 }
             }.start();
 
+        }else {
+            showToasts("暂无测量数据");
+
         }
         adapter.setData(medil.actions);
     }
+
     private Subscription mSubscription;
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(mSubscription!=null){
+        if (mSubscription != null) {
             mSubscription.unsubscribe();
         }
     }
+
     @Override
     public void toNextStep(int type) {
 
@@ -230,8 +241,10 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
 
     @Override
     public void showTomast(String msg) {
-
+        dimessProgress();
+          showToasts(msg);
     }
+
 
 
 }

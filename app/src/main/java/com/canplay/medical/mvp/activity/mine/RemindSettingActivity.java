@@ -264,7 +264,7 @@ public class RemindSettingActivity extends BaseActivity implements
         llAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupWindow.showAsDropDown(line);
+//                popupWindow.showAsDropDown(line);
             }
         });
         llRing.setOnClickListener(new View.OnClickListener() {

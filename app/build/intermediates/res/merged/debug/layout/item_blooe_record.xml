@@ -11,8 +11,8 @@
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/tv_time"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
             android:textSize="15.5sp"
             android:textColor="@color/blues"
@@ -76,7 +76,7 @@
             >
 
             <LinearLayout
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="5dp"
 
 
                 android:orientation="vertical"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/tv_times"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:gravity="center_vertical"
                     android:textColor="@color/color8"
                     android:text="15:30:26"
@@ -93,7 +93,7 @@
                 <TextView
                     android:layout_marginBottom="12dp"
                     android:id="@+id/tv_data"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:gravity="center_vertical"
                     android:layout_marginTop="14dp"
                     android:textColor="@color/slow_black"

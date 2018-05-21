@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/content_bg"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -60,9 +60,10 @@
                             android:layout_marginLeft="13dp"
                             />
                         <TextView
+                            android:id="@+id/tv_state"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="下次测量时间"
+                            android:text="暂无测量提醒"
                             android:textColor="@color/color6"
                             android:textSize="13.5sp" />
 
@@ -71,7 +72,7 @@
                             android:id="@id/tv_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="19:30"
+                            android:text=""
                             android:textColor="@color/red_pop"
                             android:textSize="14sp" />
                     </LinearLayout>

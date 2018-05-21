@@ -74,9 +74,9 @@
                 <TextView
                     android:id="@+id/tv_press"
                     android:text=""
-                    android:singleLine="true"
+                    android:gravity="center"
                     android:textColor="@color/slow_black"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -99,10 +99,9 @@
                 <TextView
                     android:id="@+id/tv_data"
                     android:text=""
-                    android:singleLine="true"
-
+                    android:gravity="center"
                     android:textColor="@color/slow_black"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -123,11 +122,11 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:singleLine="true"
+                    android:gravity="center"
                     android:id="@+id/tv_rate"
                     android:text=""
                     android:textColor="#FF5B74"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -304,7 +303,7 @@
                     android:layout_marginLeft="15dp"
                     android:gravity="center"
                     android:text=" — 舒张压"
-                    android:textColor="@color/color8"
+                    android:textColor="@color/two"
                     android:textSize="12sp" />
 
                 <TextView

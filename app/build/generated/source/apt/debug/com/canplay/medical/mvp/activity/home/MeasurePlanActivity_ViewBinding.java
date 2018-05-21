@@ -35,6 +35,7 @@ public class MeasurePlanActivity_ViewBinding implements Unbinder {
     target.rlMenu = Utils.findRequiredViewAsType(source, R.id.rl_menu, "field 'rlMenu'", ListView.class);
     target.tvTime = Utils.findRequiredViewAsType(source, R.id.tv_time, "field 'tvTime'", TextView.class);
     target.scrollView = Utils.findRequiredViewAsType(source, R.id.scrollView, "field 'scrollView'", StickyScrollView.class);
+    target.tvState = Utils.findRequiredViewAsType(source, R.id.tv_state, "field 'tvState'", TextView.class);
   }
 
   @Override
@@ -53,5 +54,6 @@ public class MeasurePlanActivity_ViewBinding implements Unbinder {
     target.rlMenu = null;
     target.tvTime = null;
     target.scrollView = null;
+    target.tvState = null;
   }
 }

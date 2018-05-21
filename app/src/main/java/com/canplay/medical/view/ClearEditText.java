@@ -194,7 +194,9 @@ public class ClearEditText extends EditText implements
     public void setdelteIconHilde(){
         isShow=true;
     }
-     
+     public void setHint(){
+         setHint();
+     }
     /** 
      * 设置晃动动画 
      */  

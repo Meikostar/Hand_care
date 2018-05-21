@@ -73,7 +73,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-public class MainActivity extends BaseAllActivity implements HomeFragment.ScanListener , HomeContract.View {
+public class
+MainActivity extends BaseAllActivity implements HomeFragment.ScanListener , HomeContract.View {
     @Inject
     HomePresenter presenter;
     NoScrollViewPager viewpagerMain;
@@ -255,7 +256,6 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
                 if(TextUtil.isNotEmpty(content)){
                     String[] split = content.split("###");
                     if(split!=null&&split.length==2){
-
                         Intent intent = new Intent(MainActivity.this, FriendDetailActivity.class);
                         intent.putExtra("id",split[1]);
                         intent.putExtra("status","add");

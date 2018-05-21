@@ -37,9 +37,10 @@ public class Box {
     public String batteryLevel;
     public String lastModified;
     public String lastSynced;
-    public long planCreatedDateTime;
-    public long dateTime;
+    public String owned;
+    public String device;
+    public double planCreatedDateTime;
+    public double dateTime;
     public int  status;
-
 
 }

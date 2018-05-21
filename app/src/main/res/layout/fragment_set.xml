@@ -52,7 +52,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:padding="8dp"
+                    android:padding="3dp"
                     android:id="@+id/iv_setting"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
@@ -189,11 +189,19 @@
             </RelativeLayout>
 
         </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/ll_set"
+        android:layout_below="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
         <LinearLayout
             android:id="@id/ll_bg"
             android:layout_marginTop="35dp"
             android:layout_marginBottom="15dp"
-            android:layout_below="@id/card"
+            android:layout_below="@id/ll_set"
             android:layout_marginLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

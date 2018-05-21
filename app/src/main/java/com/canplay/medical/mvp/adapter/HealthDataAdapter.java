@@ -34,7 +34,7 @@ public class HealthDataAdapter extends BaseAdapter {
     }
 
     public interface ItemCliks {
-        void getItem(Message menu, int type);//type 1表示点击事件2 表示长按事件
+        void getItem(Health menu, int type);//type 1表示点击事件2 表示长按事件
     }
 
     private ItemCliks listener;
@@ -80,8 +80,9 @@ public class HealthDataAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        Health health = list.get(position);
+     final    Health health = list.get(position);
         if(TextUtil.isNotEmpty(health.high)){
+
             holder.tvType.setText(" 血压测量记录");
             if (Double.valueOf(health.high) > 90 && Double.valueOf(health.high) < 139) {
                 holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.slow_black));
@@ -99,9 +100,16 @@ public class HealthDataAdapter extends BaseAdapter {
                 holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.red_b));
 
             }
-            holder.tvOne.setText(health.high);
-            holder.tvTwo.setText(health.low);
-            holder.tvThree.setText(health.pulse);
+
+            holder.tvOnes.setVisibility(View.VISIBLE);
+            holder.tvTwos.setVisibility(View.VISIBLE);
+            holder.tvContent.setVisibility(View.VISIBLE);
+            holder.tvOne.setText(health.high+"mmHg");
+            holder.tvOnes.setText("收缩压");
+            holder.tvTwo.setText(health.low+"mmHg");
+            holder.tvTwos.setText("舒张压");
+            holder.tvThree.setText(health.pulse+"次/分钟");
+            holder.tvContent.setText("心率");
             holder.llOne.setVisibility(View.VISIBLE);
             holder.llTwo.setVisibility(View.GONE);
         }else if(health.bloodGlucoseLevels!=null){
@@ -115,14 +123,14 @@ public class HealthDataAdapter extends BaseAdapter {
                 holder.tvThree.setVisibility(View.INVISIBLE);
                 holder.tvContent.setVisibility(View.INVISIBLE);
                 holder.tvTwos.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
-                holder.tvTwo.setText(health.bloodGlucoseLevels.get(0).bgl);
+                holder.tvTwo.setText(health.bloodGlucoseLevels.get(0).bgl+"mmol/L");
                 if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
 
                 }
-            }else   if(health.bloodGlucoseLevels.size()==1){
+            }else   if(health.bloodGlucoseLevels.size()==2){
                 holder.llTwo.setVisibility(View.GONE);
                 holder.tvOne.setVisibility(View.VISIBLE);
                 holder.tvOnes.setVisibility(View.VISIBLE);
@@ -130,8 +138,8 @@ public class HealthDataAdapter extends BaseAdapter {
                 holder.tvContent.setVisibility(View.INVISIBLE);
                 holder.tvTwos.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(1).timeStamp));
                 holder.tvOnes.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
-                holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl);
-                holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl);
+                holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl+"mmol/L");
+                holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl+"mmol/L");
                 if ( Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) < 8.1) {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
@@ -152,9 +160,9 @@ public class HealthDataAdapter extends BaseAdapter {
                 holder.tvTwos.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(1).timeStamp));
                 holder.tvOnes.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
                 holder.tvContent.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(2).timeStamp));
-                holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl);
-                holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl);
-                holder.tvThree.setText(health.bloodGlucoseLevels.get(2).bgl);
+                holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl+"mmol/L");
+                holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl+"mmol/L");
+                holder.tvThree.setText(health.bloodGlucoseLevels.get(2).bgl+"mmol/L");
                 if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
@@ -191,7 +199,7 @@ public class HealthDataAdapter extends BaseAdapter {
         holder.llbg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.getItem(new Message(),position);
+                listener.getItem(health,position);
             }
         });
         return view;

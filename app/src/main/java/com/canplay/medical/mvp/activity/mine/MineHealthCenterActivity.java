@@ -81,6 +81,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
         adapter.setStatus(1);
         mSuperRecyclerView.setAdapter(adapter);
         presenter.getFriendList();
+        showProgress("加载中...");
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
             @Override
             public void call(SubscriptionBean.RxBusSendBean bean) {
@@ -260,7 +261,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     private List<Friend> list ;
     @Override
     public <T> void toEntity(T entity,int type) {
-
+dimessProgress();
         list= (List<Friend>) entity;
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();
@@ -268,12 +269,14 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
 
     @Override
     public void toNextStep(int type) {
-        presenter.getFriendList();
 
+        presenter.getFriendList();
+        dimessProgress();
     }
 
     @Override
     public void showTomast(String msg) {
+        dimessProgress();
       presenter.getFriendList();
     }
 }

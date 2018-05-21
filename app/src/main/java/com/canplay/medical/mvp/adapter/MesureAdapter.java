@@ -96,9 +96,9 @@ public class MesureAdapter extends BaseAdapter {
 
         }
         if(medil.name.equals("血压")){
-            holder.tvData.setText("收缩压:"+(medil.high!=null?medil.high:"\t\t\t")+"\t\t舒张压:"+(medil.low!=null?medil.low:"\t\t\t")+"\t\t心率:"+(medil.pulse!=null?medil.pulse:"\t\t\t"));
+            holder.tvData.setText("收缩压:"+(medil.high!=null?medil.high+"mmHg":"\t\t\t")+"\t\t舒张压:"+(medil.low!=null?medil.low+"mmHg":"\t\t\t")+"\t\t心率:"+(medil.pulse!=null?medil.pulse+"次/分钟":"\t\t\t"));
         }else {
-            holder.tvData.setText("血糖："+medil.bloodGlucoseLevel);
+            holder.tvData.setText("血糖："+medil.bloodGlucoseLevel+"mmol/L");
         }
         holder.tvTime.setText(TimeUtil.formatHour((long) medil.timeStamp));
         if(TextUtil.isNotEmpty(medil.name)){

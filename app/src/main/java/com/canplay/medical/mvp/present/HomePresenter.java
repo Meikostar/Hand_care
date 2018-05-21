@@ -7,6 +7,7 @@ import com.canplay.medical.base.manager.ApiManager;
 import com.canplay.medical.bean.Add;
 import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.Bind;
+import com.canplay.medical.bean.Boxs;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.Health;
@@ -94,9 +95,9 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-                if(e.toString().contains("java.io.IOException:")){
-                    mView.showTomast("账号或密码错误");
-                }
+
+                    mView.showTomast(e.getMessage());
+
 
             }
 
@@ -300,7 +301,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-
+                mView.showTomast(e.getMessage());
 
             }
 
@@ -330,7 +331,25 @@ public class HomePresenter implements HomeContract.Presenter {
             }
         });
     }
+    @Override
+    public void myMedicineBox() {
+        String id=SpUtil.getInstance().getUserId();
+        subscription = ApiManager.setSubscribe(contactApi.myMedicineBox(id), new MySubscriber<Boxs>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
 
+
+            }
+
+            @Override
+            public void onNext(Boxs entity){
+
+                mView.toEntity(entity,9);
+            }
+        });
+
+    }
     @Override
     public void getSmartList() {
         String userId = SpUtil.getInstance().getUserId();
@@ -338,7 +357,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-
+              mView.showTomast(e.getMessage());
 
             }
 
@@ -444,7 +463,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-
+                mView.showTomast(e.getMessage());
 
             }
 
@@ -452,7 +471,7 @@ public class HomePresenter implements HomeContract.Presenter {
             public void onNext(Friend entity){
 
 
-                mView.toNextStep(1);
+                mView.toNextStep(7);
 
             }
         });
@@ -482,14 +501,14 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-
+              mView.showTomast(e.getMessage());
 
             }
 
             @Override
             public void onNext(Friend entity){
 
-                mView.toEntity(entity,0);
+                mView.toEntity(entity,6);
 
             }
         });
@@ -500,7 +519,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onError(Throwable e){
                 super.onError(e);
-
+                mView.showTomast(e.getMessage());
 
             }
 

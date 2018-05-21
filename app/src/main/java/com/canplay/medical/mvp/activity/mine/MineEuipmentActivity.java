@@ -68,6 +68,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         ButterKnife.bind(this);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
+        showProgress("加载中...");
         presenter.getSmartList();
         titles = getIntent().getStringExtra("name");
         if (TextUtil.isNotEmpty(titles)) {
@@ -79,6 +80,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         rlMenu.setAdapter(adapter);
         mWindowAddPhoto = new PhotoPopupWindow(this);
         mWindowAddPhoto.setCont("解除绑定", "取消");
+
         mWindowAddPhoto.setColor(R.color.red_pop, 0);
     }
 
@@ -110,6 +112,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
             public void getItem(Euipt menu, int type) {
                 euipt = menu;
                 if (type == 1) {//点击事件
+                    mWindowAddPhoto.showAsDropDown(line);
 //                    startActivity(new Intent(MineEuipmentActivity.this, SmartEquitActivity.class));
                 } else {//长按事件
 
@@ -215,13 +218,18 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
 
     @Override
     public <T> void toEntity(T entity,int type) {
+        dimessProgress();
         list = (List<Euipt>) entity;
+        if(list.size()==0){
+            showToasts("暂无设备");
 
+        }
         adapter.setData(list);
     }
 
     @Override
     public void toNextStep(int type) {
+            dimessProgress();
        if(type==1){
            showToasts("绑定成功");
            presenter.getSmartList();
@@ -233,7 +241,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
 
     @Override
     public void showTomast(String msg) {
-       showToasts(msg);
+        showToasts(msg);
         dimessProgress();
     }
 }

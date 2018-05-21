@@ -36,6 +36,7 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
 
 
     private MessageAdapter adapter;
+
     @Override
     public void initViews() {
         setContentView(R.layout.activity_message);
@@ -43,8 +44,9 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         presenter.getMessageList();
+        showProgress("加载中...");
         navigationBar.setNavigationBarListener(this);
-        adapter=new MessageAdapter(this);
+        adapter = new MessageAdapter(this);
         rlMenu.setAdapter(adapter);
 
     }
@@ -67,20 +69,23 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
 
     }
 
-   private List<Message> data;
+    private List<Message> data;
+
     @Override
-    public <T> void toEntity(T entity,int type) {
-        data= (List<Message>) entity;
+    public <T> void toEntity(T entity, int type) {
+        dimessProgress();
+        data = (List<Message>) entity;
         adapter.setData(data);
     }
 
     @Override
     public void toNextStep(int type) {
-
+        dimessProgress();
     }
 
     @Override
     public void showTomast(String msg) {
-
+        showToasts(msg);
+        dimessProgress();
     }
 }

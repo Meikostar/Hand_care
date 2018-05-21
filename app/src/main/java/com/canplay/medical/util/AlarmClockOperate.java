@@ -84,7 +84,13 @@ public class AlarmClockOperate {
             alarmClock.delete();
         }
     }
+   public void deleteAll(){
+       List<AlarmClock> alarmClocks = DataSupport.order("hour,minute asc").find(AlarmClock.class);
 
+       for(AlarmClock alarmClock:alarmClocks){
+           alarmClock.delete();
+       }
+   }
     /**
      * 设置列全部更新的ContentValues
      *

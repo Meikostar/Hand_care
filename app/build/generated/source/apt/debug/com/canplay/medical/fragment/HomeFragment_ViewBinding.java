@@ -39,6 +39,10 @@ public class HomeFragment_ViewBinding implements Unbinder {
     target.tvState1 = Utils.findRequiredViewAsType(source, R.id.tv_state1, "field 'tvState1'", TextView.class);
     target.llBg1 = Utils.findRequiredViewAsType(source, R.id.ll_bg1, "field 'llBg1'", LinearLayout.class);
     target.tvCount = Utils.findRequiredViewAsType(source, R.id.tv_count, "field 'tvCount'", TextView.class);
+    target.llM1 = Utils.findRequiredViewAsType(source, R.id.ll_m1, "field 'llM1'", LinearLayout.class);
+    target.llM2 = Utils.findRequiredViewAsType(source, R.id.ll_m2, "field 'llM2'", LinearLayout.class);
+    target.llM3 = Utils.findRequiredViewAsType(source, R.id.ll_m3, "field 'llM3'", LinearLayout.class);
+    target.llM4 = Utils.findRequiredViewAsType(source, R.id.ll_m4, "field 'llM4'", LinearLayout.class);
   }
 
   @Override
@@ -66,5 +70,9 @@ public class HomeFragment_ViewBinding implements Unbinder {
     target.tvState1 = null;
     target.llBg1 = null;
     target.tvCount = null;
+    target.llM1 = null;
+    target.llM2 = null;
+    target.llM3 = null;
+    target.llM4 = null;
   }
 }

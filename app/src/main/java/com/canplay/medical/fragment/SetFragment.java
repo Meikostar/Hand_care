@@ -18,6 +18,7 @@ import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.Boxs;
 import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
@@ -99,6 +100,7 @@ HomePresenter presenter;
         user_id= SpUtil.getInstance().getUserId();
         presenter.getFriendInfo(user_id);
         presenter.getSmartList();
+        presenter.myMedicineBox();
 
         adapter = new EuipmentAdapter(getActivity());
         rlMenu.setAdapter(adapter);
@@ -176,10 +178,10 @@ HomePresenter presenter;
         adapter.setClickListener(new EuipmentAdapter.ItemCliks() {
             @Override
             public void getItem(Euipt menu, int type) {
-                if(type==2){
+
                     patientDeviceId=menu.patientDeviceId;
                     mWindowAddPhoto.showAsDropDown(line);
-                }
+
 
             }
         });
@@ -246,12 +248,20 @@ HomePresenter presenter;
 
     private List<Euipt> list;
     private Friend friend;
+    private Boxs box;
     @Override
     public <T> void toEntity(T entity,int type) {
         if(type==0){
             list = (List<Euipt>) entity;
 
             adapter.setData(list);
+        }else if(type==9){
+            box= (Boxs) entity;
+            if(box.owned){
+                ivBox.setImageResource(R.drawable.cw0);
+            }else {
+                ivBox.setImageResource(R.drawable.cw1);
+            }
         }else {
             friend= (Friend) entity;
             setData();
@@ -291,6 +301,8 @@ HomePresenter presenter;
 
     @Override
     public void showTomast(String msg) {
+
+     showToast(msg);
 
     }
 }

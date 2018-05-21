@@ -6,6 +6,7 @@ import android.support.annotation.UiThread;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
@@ -39,6 +40,8 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.stubGird = Utils.findRequiredViewAsType(source, R.id.stub_gird, "field 'stubGird'", ViewStub.class);
     target.ivState = Utils.findRequiredViewAsType(source, R.id.iv_state, "field 'ivState'", ImageView.class);
     target.scrollView = Utils.findRequiredViewAsType(source, R.id.scrollView, "field 'scrollView'", StickyScrollView.class);
+    target.tvState = Utils.findRequiredViewAsType(source, R.id.tv_state, "field 'tvState'", TextView.class);
+    target.llBg = Utils.findRequiredViewAsType(source, R.id.ll_bg, "field 'llBg'", LinearLayout.class);
   }
 
   @Override
@@ -59,5 +62,7 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.stubGird = null;
     target.ivState = null;
     target.scrollView = null;
+    target.tvState = null;
+    target.llBg = null;
   }
 }

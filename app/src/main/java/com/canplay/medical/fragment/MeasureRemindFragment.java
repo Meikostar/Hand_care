@@ -71,18 +71,26 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
 
         presenter.attachView(this);
 
-        presenter.MeasureRemindList();
         unbinder = ButterKnife.bind(this, view);
         initView();
         return view;
     }
-
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+//            initData();
+            //相当于Fragment的onResume
+            showProgress("加载中...");
+            presenter.MeasureRemindList();
+        }
+    }
     @Override
     public void onResume() {
         super.onResume();
     }
 
     private Subscription mSubscription;
+    private int type;
     private void initView() {
         adapter = new RemindMeasureAdapter(getActivity(), null, rlMenu);
         rlMenu.setAdapter(adapter);
@@ -92,6 +100,7 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                 if (bean == null) return;
                 if(SubscriptionBean.MESURE==bean.type){
                   String cont= (String) bean.content;
+                    type=3;
                     if(TextUtil.isNotEmpty(cont)){
                         return;
                     }
@@ -111,18 +120,8 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
                 if(type==0){
-                    times.clear();
-                    times.add(medicine.when);
-                    time=medicine.when;
-                    name=medicine.name;
-                    mesure.when=times;
-                    mesure.name=medicine.items.get(0).name;
-                    String userId = SpUtil.getInstance().getUserId();
-                    mesure.userId=userId;
-                    mesure.type="time";
-                    mesure.remindingFor="Measurement";
 
-                    presenter.addMesure(mesure);
+                    presenter.removeRemind(medicine.reminderTimeId);
                 }else {
                     Intent intent = new Intent(getActivity(), MeasureActivity.class);
                     intent.putExtra("data",medicine);
@@ -178,12 +177,14 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
     private Map<String ,AlarmClock> map=new HashMap<>();
     private int i=0;
     @Override
-    public <T> void toEntity(T entity,int type) {
-        if(type==6){
+    public <T> void toEntity(T entity,int types) {
+        dimessProgress();
+        if(types==6){
             BASE base= (BASE) entity;
             if(base.isSucceeded){
                 data.remove(poition);
                 adapter.setData(data);
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
                 List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
                 for(AlarmClock alarmClock:alarmClocks){
                     if(TextUtil.isNotEmpty(time)){
@@ -207,24 +208,22 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                 }
 
             }else {
-                if(i!=0){
-                    return;
-                }
-                i++;
-                times.clear();
-                times.addAll(base.when);
-                mesure.name=name;
-                mesure.when=times;
-                String userId = SpUtil.getInstance().getUserId();
-                mesure.userId=userId;
-                mesure.type="time";
-                mesure.remindingFor="Measurement";
-                presenter.addMesure(mesure);
+
             }
         }else {
             data= (List<Medicine>) entity;
 
             adapter.setData(data);
+            if(type!=3){
+                if(data.size()==0){
+
+                    showToast("暂无测量数据");
+                    return;
+                }
+            }else {
+                type=0;
+            }
+
             List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
 
             map.clear();
@@ -264,7 +263,31 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
     private int poition;
     @Override
     public void toNextStep(int type) {
+        data.remove(poition);
+        adapter.setData(data);
+        dimessProgress();
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
+        List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+        for(AlarmClock alarmClock:alarmClocks){
+            if(TextUtil.isNotEmpty(time)){
+                String[] split = time.split(":");
+                if(alarmClock.getHour()==Integer.valueOf(split[0])&&alarmClock.getMinute()==Integer.valueOf(split[1])){
+                    AlarmClockOperate.getInstance().deleteAlarmClock(alarmClock);
 
+                    // 关闭闹钟
+                    MyUtil.cancelAlarmClock(getActivity(),
+                            alarmClock.getId());
+                    // 关闭小睡
+                    MyUtil.cancelAlarmClock(getActivity(),
+                            -alarmClock.getId());
+
+                    NotificationManager notificationManager = (NotificationManager) getActivity()
+                            .getSystemService(Activity.NOTIFICATION_SERVICE);
+                    // 取消下拉列表通知消息
+                    notificationManager.cancel(alarmClock.getId());
+                }
+            }
+        }
     }
 
 

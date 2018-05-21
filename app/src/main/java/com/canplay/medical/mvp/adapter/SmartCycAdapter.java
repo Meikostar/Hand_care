@@ -77,7 +77,7 @@ public class SmartCycAdapter extends BaseAdapter {
         }
         final Box box=list.get(position);
         if(box!=null&&box.dateTime!=0){
-            String time = TimeUtil.formatTimes(box.dateTime);
+            String time = TimeUtil.formatTimes((long) box.dateTime);
             String[] split = time.split("-");
             holder.tvTime.setText(split[0]);
             holder.tvTimes.setText(split[1]);

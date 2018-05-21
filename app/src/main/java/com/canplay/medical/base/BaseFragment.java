@@ -1,5 +1,6 @@
 package com.canplay.medical.base;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.Toast;
@@ -22,6 +23,25 @@ public abstract class BaseFragment extends Fragment{
     public void release(){
         if(fragment != null){
             fragment = null;
+        }
+    }
+    private ProgressDialog pd;
+    //进度条
+    public void showProgress(String msg) {
+        if (pd == null) {
+            pd = new ProgressDialog(getActivity(), ProgressDialog.THEME_HOLO_LIGHT);
+            pd.setCanceledOnTouchOutside(false);
+        }
+        if (msg == null) {
+            msg = "加载中...";
+        }
+        pd.setMessage(msg);
+        pd.show();
+    }
+
+    public void dimessProgress() {
+        if (pd != null) {
+            pd.dismiss();
         }
     }
 

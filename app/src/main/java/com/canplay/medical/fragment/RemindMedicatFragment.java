@@ -56,6 +56,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
     private RemindMedicatAdapter adapter;
     private Subscription mSubscription;
     private AlarmClock arm;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         presenter.MedicineRemindList();
-
+        showProgress("加载中...");
         mAlarmClockList = new ArrayList<>();
         initView();
 
@@ -76,10 +77,10 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
             @Override
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
-                if(SubscriptionBean.MEDICALREFASH==bean.type){
-                     alarm= (AlarmClock) bean.content;
-                     presenter.MedicineRemindList();
-                }else if(SubscriptionBean.ALARM==bean.type){
+                if (SubscriptionBean.MEDICALREFASH == bean.type) {
+                    alarm = (AlarmClock) bean.content;
+                    presenter.MedicineRemindList();
+                } else if (SubscriptionBean.ALARM == bean.type) {
 
                 }
 
@@ -108,13 +109,13 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
         adapter.setListener(new RemindMedicatAdapter.selectItemListener() {
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
-                if(type==1){
+                if (type == 1) {
                     Intent intent = new Intent(getActivity(), RemindSettingActivity.class);
-                    intent.putExtra("data",medicine);
+                    intent.putExtra("data", medicine);
                     startActivity(intent);
-                }else if(type==2){
-                   presenter.removeRemind(medicine.reminderTimeId);
-                    time=medicine.when;
+                } else if (type == 2) {
+                    presenter.removeRemind(medicine.reminderTimeId);
+                    time = medicine.when;
                 }
 
             }
@@ -132,15 +133,17 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(mSubscription!=null){
+        if (mSubscription != null) {
             mSubscription.unsubscribe();
         }
 
     }
+
     /**
      * 保存闹钟信息的list
      */
     private List<AlarmClock> mAlarmClockList;
+
     private void addList(AlarmClock ac) {
         MyUtil.startAlarmClock(getActivity(), ac);
 
@@ -194,38 +197,44 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
     private List<Medicine> dta;
     private AlarmClock alarm;
     private String time;
-    private Map<String ,AlarmClock> map=new HashMap<>();
+    private Map<String, AlarmClock> map = new HashMap<>();
+
     @Override
-    public <T> void toEntity(T entity,int type) {
+    public <T> void toEntity(T entity, int type) {
+        dimessProgress();
 
+        data = (List<Medicine>) entity;
 
-            data = (List<Medicine>) entity;
-            adapter.setData(data);
+        adapter.setData(data);
+        if(data.size()==0){
+            showToast("暂无用药提醒");
+        }
+
         List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
 
         map.clear();
-        for(AlarmClock alarmClock:alarmClocks){
-            map.put((alarmClock.getHour()+":"+alarmClock.getMinute()+"ma"),alarmClock);
+        for (AlarmClock alarmClock : alarmClocks) {
+            map.put((alarmClock.getHour() + ":" + alarmClock.getMinute() + "ma"), alarmClock);
         }
 
-        for(Medicine medicine:data){
-            if(TextUtil.isNotEmpty(medicine.when)){
-                if(map.size()==0){
+        for (Medicine medicine : data) {
+            if (TextUtil.isNotEmpty(medicine.when)) {
+                if (map.size() == 0) {
                     String[] split = medicine.when.split(":");
-                    arm=BaseApplication.getInstance().mAlarmClock;
+                    arm = BaseApplication.getInstance().mAlarmClock;
                     arm.setHour(Integer.valueOf(split[0]));
                     arm.setMinute(Integer.valueOf(split[1]));
 
-                    arm.setTag(2+":"+medicine.reminderTimeId);
+                    arm.setTag(2 + ":" + medicine.reminderTimeId);
                     AlarmClockOperate.getInstance().saveAlarmClock(arm);
                     addList(arm);
 
-                }else {
+                } else {
                     AlarmClock alarmClock = map.get(medicine.when);
-                    if(alarmClock==null){
+                    if (alarmClock == null) {
                         String[] split = medicine.when.split(":");
-                        arm=BaseApplication.getInstance().mAlarmClock;
-                        arm.setTag(2+":"+medicine.reminderTimeId);
+                        arm = BaseApplication.getInstance().mAlarmClock;
+                        arm.setTag(2 + ":" + medicine.reminderTimeId);
                         arm.setHour(Integer.valueOf(split[0]));
                         arm.setMinute(Integer.valueOf(split[1]));
                         AlarmClockOperate.getInstance().saveAlarmClock(arm);
@@ -242,13 +251,15 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
 
     @Override
     public void toNextStep(int type) {
+        dimessProgress();
 //        showToast("删除成功");
-     presenter.MedicineRemindList();
+        presenter.MedicineRemindList();
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
         List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
-        for(AlarmClock alarmClock:alarmClocks){
-            if(TextUtil.isNotEmpty(time)){
+        for (AlarmClock alarmClock : alarmClocks) {
+            if (TextUtil.isNotEmpty(time)) {
                 String[] split = time.split(":");
-                if(alarmClock.getHour()==Integer.valueOf(split[0])&&alarmClock.getMinute()==Integer.valueOf(split[1])){
+                if (alarmClock.getHour() == Integer.valueOf(split[0]) && alarmClock.getMinute() == Integer.valueOf(split[1])) {
                     AlarmClockOperate.getInstance().deleteAlarmClock(alarmClock);
 
                     // 关闭闹钟
@@ -269,6 +280,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
 
     @Override
     public void showTomast(String msg) {
-
+        showToast(msg);
+        dimessProgress();
     }
 }

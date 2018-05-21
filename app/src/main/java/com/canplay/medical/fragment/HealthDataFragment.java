@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
@@ -24,6 +25,7 @@ import com.canplay.medical.mvp.adapter.HealthDataAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.NavigationBar;
 
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ import rx.functions.Action1;
 /**
  * 健康数据
  */
-public class HealthDataFragment extends BaseFragment implements View.OnClickListener ,HomeContract.View {
+public class HealthDataFragment extends BaseFragment implements View.OnClickListener, HomeContract.View {
     @Inject
     HomePresenter presenter;
 
@@ -55,6 +57,8 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
     ListView rlList;
     @BindView(R.id.ll_bg)
     LinearLayout llbg;
+    @BindView(R.id.tv_none)
+    TextView tvNone;
     private HealthDataAdapter adapter;
 
     @Override
@@ -90,7 +94,7 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
-                }else if(SubscriptionBean.BLOODORSUGAR==bean.type){
+                } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
                     presenter.getHealthData();
                 }
 
@@ -105,7 +109,7 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
         llbg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 startActivity(new Intent(getActivity(),TimeXRecordActivity.class));
+                startActivity(new Intent(getActivity(), TimeXRecordActivity.class));
             }
         });
 
@@ -116,19 +120,25 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
         rlList.setAdapter(adapter);
         adapter.setClickListener(new HealthDataAdapter.ItemCliks() {
             @Override
-            public void getItem(Message menu, int type) {
-                if(type==0){
-                    startActivity(new Intent(getActivity(),BloodChartRecordActivity.class));
-                }else if(type==1){
-                    startActivity(new Intent(getActivity(),SugarChartRecordActivity.class));
-                }else if(type==2){
+            public void getItem(Health menu, int type) {
+                if (type == 0) {
+                    if(TextUtil.isNotEmpty(menu.high)){
+                        startActivity(new Intent(getActivity(), BloodChartRecordActivity.class));
+                    }else {
+                        startActivity(new Intent(getActivity(), SugarChartRecordActivity.class));
+                    }
 
-                    startActivity(new Intent(getActivity(),TakeMedicineActivity.class));
+                } else if (type == 1) {
+                    startActivity(new Intent(getActivity(), SugarChartRecordActivity.class));
+                } else if (type == 2) {
+
+                    startActivity(new Intent(getActivity(), TakeMedicineActivity.class));
                 }
 
 
             }
         });
+
 
     }
 
@@ -148,28 +158,38 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-   private Health health;
+    private Health health;
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         mSubscription.unsubscribe();
     }
-    private List<Health> list=new ArrayList<>();
-    private Health healths=new Health();
+
+    private List<Health> list = new ArrayList<>();
+    private Health healths = new Health();
+
     @Override
     public <T> void toEntity(T entity, int type) {
-        health= (Health) entity;
+        health = (Health) entity;
         list.clear();
-        if(health!=null){
-            if(health.bloodPressure!=null){
+        if (health != null) {
+            if (health.bloodPressure != null) {
                 list.add(health.bloodPressure);
-            } if(health.bloodGlucoseLevels!=null){
+            }
+            if (health.bloodGlucoseLevels != null) {
 
-                healths.bloodGlucoseLevels=health.bloodGlucoseLevels;
+                healths.bloodGlucoseLevels = health.bloodGlucoseLevels;
                 list.add(healths);
-            } if(health.medicineRecord!=null){
+            }
+            if (health.medicineRecord != null) {
                 list.add(health.medicineRecord);
             }
+        }
+        if(list.size()>0){
+            tvNone.setVisibility(View.GONE);
+        }else {
+            tvNone.setVisibility(View.VISIBLE);
         }
         adapter.setData(list);
     }

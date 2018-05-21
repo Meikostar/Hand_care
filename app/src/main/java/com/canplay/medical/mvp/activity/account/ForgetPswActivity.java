@@ -63,7 +63,7 @@ public class ForgetPswActivity extends BaseActivity implements LoginContract.Vie
         displayName = getIntent().getStringExtra("username");
         recoveryPsw=new RecoveryPsw();
         recoveryPsw.passwordResetToken=passwordResetToken;
-        recoveryPsw.displayName=displayName;
+        recoveryPsw.username=displayName;
 
     }
 

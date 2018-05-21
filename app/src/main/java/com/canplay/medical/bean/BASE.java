@@ -84,15 +84,14 @@ public class BASE {
     public int responseStatus;
     public int numberOfUnreadMessages;
 
-    public long createdDateTime;
-    public long lastModified;
+    public double createdDateTime;
+    public double lastModified;
     public String responseDateTime;
     public String nextTaskDueIn;
     public String jobId;
     public String status;
     public String userFullName;
+    public String userName;
 
-//    "reminderType": "Medicine",
-//            "responseStatus": "0",
-//            "responseDateTime": "1525574674368.11"
+
 }
