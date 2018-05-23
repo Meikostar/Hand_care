@@ -126,6 +126,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         getWindow().addFlags(
                 WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                         | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+                        | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
                         | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         if (mAlarmClock != null) {
@@ -251,7 +252,10 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
     @Override
     public void toNextStep(int type) {
         showTomast("用药已确认");
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
         startActivity(new Intent(this, LoginActivity.class));
+
         finish();
     }
 

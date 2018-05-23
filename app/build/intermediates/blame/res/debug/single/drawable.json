@@ -532,6 +532,10 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\shape_bg_lin_cancel.xml"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\dingdantouxiang.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\dingdantouxiang.png"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\adds.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\adds.png"
     },

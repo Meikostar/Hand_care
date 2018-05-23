@@ -142,6 +142,7 @@ public class HomeContract {
         void getHealthData();
 
         void myMedicineBox();
+        void getDetails(int type);
     }
 
 

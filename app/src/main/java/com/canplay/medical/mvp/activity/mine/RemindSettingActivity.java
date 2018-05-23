@@ -234,7 +234,12 @@ public class RemindSettingActivity extends BaseActivity implements
                 for(Medicines name:namess){
                     medical.name=name.name;
                     medical.when=times;
-                    medical.message=name.message;
+                    if(TextUtil.isNotEmpty(name.message)){
+                        medical.message=name.message;
+                    }else {
+                        medical.message="2颗";
+                    }
+
                     medical.userId= SpUtil.getInstance().getUserId();
                     medical.type="time";
                     medical.remindingFor="Medicine";
@@ -452,10 +457,10 @@ public class RemindSettingActivity extends BaseActivity implements
             mAlarmClock.setMinute(minter);
             mAlarmClock.setTag("2");
 //            AlarmClockOperate.getInstance().saveAlarmClock(mAlarmClock);
-            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
+//            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
             finish();
         }
-        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,"data"));
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURES,"data"));
         cout++;
     }
 

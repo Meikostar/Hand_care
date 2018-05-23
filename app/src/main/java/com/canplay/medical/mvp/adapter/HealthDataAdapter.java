@@ -173,7 +173,7 @@ public class HealthDataAdapter extends BaseAdapter {
                 }else {
                     holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.red_b));
 
-                }     if ( Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) < 8.1) {
+                }    if ( Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) < 8.1) {
                     holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.red_b));

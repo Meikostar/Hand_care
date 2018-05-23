@@ -103,6 +103,10 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
             @Override
             public void onClick(View v) {
                 List<Medicines> data = adapter.getData();
+                if(data==null){
+                    showToasts("你还未选择药物");
+                    return;
+                }
                 for(Medicines medicine:data){
                     if(medicine.isCheck){
 

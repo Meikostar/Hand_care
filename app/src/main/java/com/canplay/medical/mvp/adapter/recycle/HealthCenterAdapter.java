@@ -63,8 +63,8 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
 
             if(TextUtil.isNotEmpty(data.name)){
                 holders.name.setText(data.name);
-            }  if(TextUtil.isNotEmpty(data.phone)){
-                holders.phone.setText(data.phone);
+            }  if(TextUtil.isNotEmpty(data.familyAndFriendsUserName)){
+                holders.phone.setText(data.familyAndFriendsUserName);
             }else {
                 if(TextUtil.isNotEmpty(data.mobile)){
                     holders.phone.setText(data.mobile);
@@ -77,7 +77,7 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
                 holders.tv_address.setText(data.hospital);
             }
             Glide.with(context).load(BaseApplication.avatar+data.avatar).asBitmap()
-                    .placeholder(R.drawable.moren).transform(new CircleTransform(context)).into(holders.img);
+                    .placeholder(R.drawable.dingdantouxiang).transform(new CircleTransform(context)).into(holders.img);
             if(status==0){
                 holders.iv_arrow.setVisibility(View.VISIBLE);
                 holders.add.setVisibility(View.VISIBLE);
@@ -120,9 +120,11 @@ public class HealthCenterAdapter extends BaseRecycleViewAdapter {
             }
             if(TextUtil.isNotEmpty(data.mobile)){
                 holders.phone.setText(data.mobile);
+            }else  if(TextUtil.isNotEmpty(data.familyAndFriendsUserName)){
+                holders.phone.setText(data.familyAndFriendsUserName);
             }
             Glide.with(context).load(BaseApplication.avatar+data.avatar).asBitmap()
-                    .placeholder(R.drawable.moren).transform(new CircleTransform(context)).into(holders.img);
+                    .placeholder(R.drawable.dingdantouxiang).transform(new CircleTransform(context)).into(holders.img);
             if(status==0){
                 holders.iv_arrow.setVisibility(View.VISIBLE);
                 holders.add.setVisibility(View.GONE);

@@ -89,7 +89,7 @@ public class MedicaldTurnapter extends BaseAdapter {
         } else {
             holder = (MedicaldTurnapter.ViewHolder) view.getTag();
         }
-        list.get(position).message="2颗";
+
         holder.tv_count.setdelteIconHilde();
         holder.tv_count.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
             @Override
@@ -114,7 +114,7 @@ public class MedicaldTurnapter extends BaseAdapter {
                     holder.check.setChecked(true);
                     list.get(position).isCheck=true;
                 }
-                listener.clickListener(list.get(position),position);
+//                listener.clickListener(list.get(position),position);
             }
         });
         if(TextUtil.isNotEmpty(list.get(position).name)){

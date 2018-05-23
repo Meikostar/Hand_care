@@ -59,7 +59,7 @@ public class HomeDoctorRecycleAdapter extends BaseRecycleViewAdapter {
         }if(TextUtil.isNotEmpty(data.participant.position)){
             holders.tvPoistion.setText(data.participant.position+(data.participant.lineManager==null?"":"|"+data.participant.lineManager));
         }
-        Glide.with(context).load(BaseApplication.avatar+data.participant.user.avatar).asBitmap().placeholder(R.drawable.moren).into(holders.ivImg);
+        Glide.with(context).load(BaseApplication.avatar+data.participant.user.avatar).asBitmap().placeholder(R.drawable.dingdantouxiang).into(holders.ivImg);
 
     }
 

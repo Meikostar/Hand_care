@@ -166,7 +166,7 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     public <T> void toEntity(T entity,int type) {
      friend= (Friend) entity;
         if(friend!=null){
-            Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(this)).placeholder(R.drawable.moren).into(ivAvatar);
+            Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(this)).placeholder(R.drawable.dingdantouxiang).into(ivAvatar);
             if(TextUtil.isNotEmpty(friend.displayName)){
                 tvName.setText(friend.displayName);
             }else {

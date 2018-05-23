@@ -51,7 +51,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
 
                     android:layout_marginTop="27dp"
                     android:background="@color/white"
@@ -60,12 +60,12 @@
 
                     <ImageView
                         android:id="@+id/img"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/moren" />
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/cyc2" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/tv_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="34dp"
+                    android:layout_marginTop="28dp"
                     android:text="测量提醒"
                     android:textColor="@color/red_pop"
                     android:textSize="17sp" />

@@ -34,6 +34,7 @@ import com.canplay.medical.bean.Daemon;
 import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.MyUtil;
+import com.canplay.medical.util.SpUtil;
 import com.google.zxing.client.android.utils.LogUtil;
 
 import java.util.List;
@@ -69,7 +70,7 @@ public class DaemonService extends Service {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
+                List<AlarmClock> list = SpUtil.getInstance().getAllAlarm();
                 for (AlarmClock alarmClock : list) {
                     // 当闹钟为开时刷新开启闹钟
                     if (alarmClock.isOnOff()) {

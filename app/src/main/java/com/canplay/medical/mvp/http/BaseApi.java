@@ -410,7 +410,7 @@ public interface BaseApi {
      *药物列表
      */
 
-    @GET("Flow/v2/MedicineBox/Status/{userId}")
+    @GET("Flow/v2/Device/MedicineBox/{userId}")
     Observable<Boxs> myMedicineBox(@Path("userId") String userId);
 
 

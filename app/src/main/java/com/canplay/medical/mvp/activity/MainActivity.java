@@ -32,6 +32,8 @@ import com.canplay.medical.fragment.HomeDoctorFragment;
 import com.canplay.medical.fragment.HomeFragment;
 import com.canplay.medical.fragment.HealthDataFragment;
 import com.canplay.medical.fragment.SetFragment;
+import com.canplay.medical.mvp.activity.health.BloodChartRecordActivity;
+import com.canplay.medical.mvp.activity.health.SugarChartRecordActivity;
 import com.canplay.medical.mvp.activity.mine.AddFriendActivity;
 import com.canplay.medical.mvp.activity.mine.FriendDetailActivity;
 import com.canplay.medical.mvp.activity.mine.MineInfoActivity;
@@ -91,11 +93,13 @@ MainActivity extends BaseAllActivity implements HomeFragment.ScanListener , Home
     private SetFragment setFragment;
     private View line;
     private ChangeNoticeDialog dialog;
+    private int status;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_main);
         bnbHome = (BottonNevgBar) findViewById(R.id.bnb_home);
         line =  findViewById(R.id.line);
+        status=getIntent().getIntExtra("type",0);
         startService(new Intent(this, DaemonService.class));
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
@@ -103,6 +107,11 @@ MainActivity extends BaseAllActivity implements HomeFragment.ScanListener , Home
         viewpagerMain = (NoScrollViewPager) findViewById(R.id.viewpager_main);
         viewpagerMain.setScanScroll(false);
         dialog=new ChangeNoticeDialog(this,line);
+        if(status==1){
+            startActivity(new Intent(this, BloodChartRecordActivity.class));
+        }else if(status==2){
+            startActivity(new Intent(this, SugarChartRecordActivity.class));
+        }
 
     }
     private void alarm() {

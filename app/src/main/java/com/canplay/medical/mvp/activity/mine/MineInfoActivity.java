@@ -203,7 +203,7 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     private String names;
     @Override
     public void initData() {
-        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().placeholder(R.drawable.moren).transform(new CircleTransform(this)).into(ivPhone);
+        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().placeholder(R.drawable.dingdantouxiang).transform(new CircleTransform(this)).into(ivPhone);
         if(TextUtil.isNotEmpty(friend.displayName)){
             tvName.setText(friend.displayName);
             names=friend.displayName;

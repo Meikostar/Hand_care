@@ -27,6 +27,8 @@ import android.widget.TextView;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.WeacStatus;
@@ -38,9 +40,10 @@ import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.receiver.AlarmClockBroadcast;
-import com.canplay.medical.util.AlarmClockOperate;
+
 import com.canplay.medical.util.AudioPlayer;
 import com.canplay.medical.util.Parcelables;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.google.zxing.client.android.utils.LogUtil;
 
@@ -84,7 +87,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     /**
      * 闹钟实例
      */
-    private AlarmClock mAlarmClock;
+    private AlarmClock mAlarmClock=null;
 
     /**
      * 线程运行flag
@@ -142,6 +145,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
 
     private int hour;
     private int minture;
+    private int type;
     @Override
     public void initViews() {
         setContentView(R.layout.alarm_pop);
@@ -152,18 +156,17 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         WeacStatus.sActivityNumber++;
 
         // 画面出现在解锁屏幕上,显示,常亮
-     getWindow().addFlags(
+        getWindow().addFlags(
                 WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                         | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+                        | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
                         | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         bytes = getIntent()
                 .getByteArrayExtra(WeacConstants.ALARM_CLOCK);
 
-        if(bytes!=null){
-            mAlarmClock = Parcelables.toParcelable(bytes, AlarmClock.CREATOR);
-        }else {
-            List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+
+            List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
             String s = TimeUtil.formatHour(System.currentTimeMillis());
             String[] split = s.split(":");
             hour=Integer.valueOf(split[0]);
@@ -173,15 +176,24 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                     mAlarmClock=alarmClock;
                 }
             }
-        }
+
 
         if(mAlarmClock!=null){
             String tag = mAlarmClock.getTag();
-            String[] split = tag.split(":");
-            if(split!=null&&split.length==2){
-                if(Integer.valueOf(split[0])==1){
-                    tvContent.setText("快去测量您的"+split[2]);
-                }else  if(Integer.valueOf(split[0])==2){
+            String[] splits = tag.split(":");
+            if(splits!=null&&splits.length!=1){
+                if(Integer.valueOf(splits[0])==1){
+                    if(splits.length==3){
+                     if(splits[2].equals("血压")){
+                         img.setImageResource(R.drawable.cyc2);
+                         type=1;
+                     }  else {
+                         img.setImageResource(R.drawable.cyc3);
+                         type=2;
+                     }
+                    }
+                    tvContent.setText("快去测量您的"+splits[2]);
+                }else  {
                     Intent intent = new Intent(this, RemindFirstDetailActivity.class);
                     intent.putExtra("data",mAlarmClock);
                     startActivity(intent);
@@ -218,13 +230,27 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     }
     @Override
     public void bindEvents() {
-
+        ivClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
+                Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);
+                intent.putExtra("type",type);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
         tvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
+                Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);
+                intent.putExtra("type",type);
+                startActivity(intent);
+                finishAffinity();
 
-               startActivity(new Intent(AlarmActivity.this, LoginActivity.class));
-               finishAffinity();
             }
         });
     }

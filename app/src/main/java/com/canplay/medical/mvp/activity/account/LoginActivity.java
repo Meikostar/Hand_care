@@ -46,7 +46,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @BindView(R.id.tv_registered)
     TextView tvRegistered;
 
-
+   private int status;
     @Override
     public void initViews() {
         setContentView(R.layout.activity_login);
@@ -63,8 +63,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                 .request();
         String userId = SpUtil.getInstance().getUserId();
+        status=getIntent().getIntExtra("type",0);
         if (TextUtil.isNotEmpty(userId)) {
-            startActivity(new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("type",status);
+            startActivity(intent);
             finish();
         }
     }

@@ -17,6 +17,7 @@ public class SubscriptionBean {
 
     public static int MENU_SCAN=103;//扫一扫
     public static int MESURE=104;//测量
+    public static int MESURES=1011;//测量
     public static int FINISH=105;//
     public static int CHOOSMEDICAL=106;//选择药
     public static int MEDICALREFASH=107;//药物提醒列表刷新

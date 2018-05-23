@@ -252,15 +252,16 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             String[] split = date.split(":");
             String[] splits = time.split(":");
             hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
-            if (hours < 0) {
-                hours = hours + 24;
-            }
+
             minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
             if (minters < 0) {
 
                 minters = minters + 60;
+                hours=hours-1;
             }
-
+            if (hours < 0) {
+                hours = hours + 24;
+            }
             tvTime.setText(time);
             times = hours * 3600 * 1000 + minters * 60 * 1000;
             if (BaseApplication.time1 == 0) {

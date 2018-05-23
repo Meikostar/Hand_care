@@ -76,6 +76,7 @@ public class AlarmClockOperate {
     public List<AlarmClock> loadAlarmClocks() {
         List<AlarmClock> alarmClockList;
         alarmClockList = DataSupport.order("hour,minute asc").find(AlarmClock.class);
+
         return alarmClockList;
     }
 

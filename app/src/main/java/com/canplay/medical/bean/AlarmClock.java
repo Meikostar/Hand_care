@@ -32,7 +32,7 @@ public class AlarmClock extends DataSupport implements Parcelable {
     /**
      * 闹钟id
      */
-    private int id;
+    private int id=0;
 
     /**
      * 小时
@@ -132,11 +132,12 @@ public class AlarmClock extends DataSupport implements Parcelable {
      * @param weaPrompt      天气提示
      * @param onOff          开关
      */
-    public AlarmClock(int hour, int minute, String repeat,
+    public AlarmClock(int id,int hour, int minute, String repeat,
                       String weeks, String tag, String ringName, String ringUrl,
                       int ringPager, int volume, boolean vibrate, boolean nap,
                       int napInterval, int napTimes, boolean weaPrompt, boolean onOff) {
         super();
+        this.id = id;
         this.hour = hour;
         this.minute = minute;
         this.repeat = repeat;
@@ -153,7 +154,9 @@ public class AlarmClock extends DataSupport implements Parcelable {
         this.weaPrompt = weaPrompt;
         this.onOff = onOff;
     }
-
+   public void setId(int id){
+       this.id=id;
+   }
     @Override
     public void writeToParcel(Parcel out, int flags) {
         out.writeInt(id);

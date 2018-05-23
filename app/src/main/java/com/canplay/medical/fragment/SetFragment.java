@@ -136,7 +136,10 @@ HomePresenter presenter;
 
                     presenter.getFriendInfo(user_id);
 
+
+
                 }else if(bean.type==SubscriptionBean.EUIP_REFASH){
+                    presenter.myMedicineBox();
                     presenter.getSmartList();
                 }
 
@@ -258,7 +261,7 @@ HomePresenter presenter;
         }else if(type==9){
             box= (Boxs) entity;
             if(box.owned){
-                ivBox.setImageResource(R.drawable.cw0);
+                ivBox.setImageResource(R.drawable.cw);
             }else {
                 ivBox.setImageResource(R.drawable.cw1);
             }
@@ -269,7 +272,7 @@ HomePresenter presenter;
 
     }
     public void setData(){
-        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.moren).into(ivImg);
+        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.dingdantouxiang).into(ivImg);
         if(TextUtil.isNotEmpty(friend.avatar)){
             SpUtil.getInstance().putString("avator",friend.avatar);
         }

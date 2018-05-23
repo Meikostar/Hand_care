@@ -17,8 +17,10 @@ import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
+import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.mvp.activity.account.LoginActivity;
 import com.canplay.medical.util.AlarmClockOperate;
+import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.StringUtil;
 import com.canplay.medical.util.TextUtil;
@@ -30,6 +32,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -112,8 +115,15 @@ public class SettingActivity extends BaseActivity  {
         tvExit.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
+              List<AlarmClock> allAlarm = SpUtil.getInstance().getAllAlarm();
+              for(AlarmClock alarmClock:allAlarm){
+                  // 关闭闹钟
+                  MyUtil.cancelAlarmClock(SettingActivity.this,
+                          alarmClock.getId());
+              }
               SpUtil.getInstance().clearData();
-              AlarmClockOperate.getInstance().deleteAll();
+
+
               Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
               startActivity(intent);
               RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));

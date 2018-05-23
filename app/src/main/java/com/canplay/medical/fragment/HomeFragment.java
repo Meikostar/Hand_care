@@ -18,6 +18,7 @@ import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.BASE;
+import com.canplay.medical.bean.Medil;
 import com.canplay.medical.mvp.activity.LocationBdActivity;
 import com.canplay.medical.mvp.activity.home.MeasurePlanActivity;
 import com.canplay.medical.mvp.activity.home.MessageActivity;
@@ -159,8 +160,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
                 } else if (SubscriptionBean.MESURE == bean.type) {
-                    presenter.getUserData(1);
-                    presenter.getUserData(2);
+                    presenter.getDetails(1);
+                    presenter.getDetails(2);
                     presenter.getMessageCout();
                 }
 
@@ -240,8 +241,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     private void initView() {
         showProgress("加载中...");
-        presenter.getUserData(1);
-        presenter.getUserData(2);
+        presenter.getDetails(1);
+        presenter.getDetails(2);
+
         presenter.getMessageCout();
 
 
@@ -249,13 +251,22 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     private CountDownTimer countDownTimer1;
     private CountDownTimer countDownTimer2;
-
+    private String time;
+    private long times;
+    private int minters;
+    private int hours;
     @Override
     public <T> void toEntity(T entity, int type) {
         dimessProgress();
-        BASE entitys = (BASE) entity;
-        if(entitys==null|| TextUtil.isEmpty(entitys.nextTaskDueIn)){
-            if (type == 1) {
+
+
+
+
+
+        if (type == 1) {
+            Medil entitys = (Medil) entity;
+            if(entitys==null|| TextUtil.isEmpty(entitys.nextPlan.when)){
+                if (type == 1) {
 
                     llM1.setVisibility(View.VISIBLE);
                     llM2.setVisibility(View.GONE);
@@ -263,7 +274,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
 
 
-            } else if (type == 2) {
+                } else if (type == 2) {
 
                     llM3.setVisibility(View.VISIBLE);
                     llM4.setVisibility(View.GONE);
@@ -271,28 +282,36 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
 
 
+                }
+                return;
             }
-            return;
-        }
-        String time = entitys.nextTaskDueIn;
+            time = TimeUtil.formatHour(TimeUtil.getStringToDate(entitys.nextPlan.when));
+            String date = TimeUtil.formatHour(System.currentTimeMillis());
+            String[] split = date.split(":");
+            String[] splits = time.split(":");
+            hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
 
-        String[] split = time.split(":");
-
-        if (type == 1) {
-            int hour = Integer.valueOf(split[0]);
-            int minter = Integer.valueOf(split[1]);
-            if(hour==0&&minter==0){
-
-                llM1.setVisibility(View.VISIBLE);
-                llM2.setVisibility(View.GONE);
-                tvState.setVisibility(View.GONE);
+            minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
+            if (minters < 0) {
+                minters = minters + 60;
+                hours=hours-1;
+            }
+            if (hours < 0) {
+                hours = hours + 24;
+            }
+            if(hours==0&&minters==0){
+                llM1.setVisibility(View.GONE);
+                llM2.setVisibility(View.VISIBLE);
+                tvState.setVisibility(View.VISIBLE);
+                hours=24;
+                minters=0;
             }else {
                 llM1.setVisibility(View.GONE);
                 llM2.setVisibility(View.VISIBLE);
                 tvState.setVisibility(View.VISIBLE);
 
             }
-            long times = hour * 3600 * 1000 + minter * 60 * 1000;
+            long times = hours * 3600 * 1000 + minters * 60 * 1000;
             if (countDownTimer1 != null) {
                 countDownTimer1.cancel();
             }
@@ -304,7 +323,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     String[] times = timeStr.split(",");
                     if (tvHour != null && times != null) {
                         tvHour.setText(times[1]);
-                        tvMinter.setText(times[2]);
+                        tvMinter.setText(Integer.valueOf(times[2])==0?"01":times[2]);
                     }
 
 
@@ -322,15 +341,49 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             }.start();
             tvHour.setText(split[0]);
             tvMinter.setText(split[1]);
-            tvState.setText(entitys.isCompleted ? "已完成" : "未完成");
+            tvState.setText(entitys.nextPlan.status.equals("complete") ? "已完成" : "未完成");
         } else if (type == 2) {
-            int hour = Integer.valueOf(split[0]);
-            int minter = Integer.valueOf(split[1]);
-            if(hour==0&&minter==0){
+            Medil entitys = (Medil) entity;
+            if(entitys==null|| TextUtil.isEmpty(entitys.nextPlan.when)){
+                if (type == 1) {
 
-                llM3.setVisibility(View.VISIBLE);
-                llM4.setVisibility(View.GONE);
-                tvState1.setVisibility(View.GONE);
+                    llM1.setVisibility(View.VISIBLE);
+                    llM2.setVisibility(View.GONE);
+                    tvState.setVisibility(View.GONE);
+
+
+
+                } else if (type == 2) {
+
+                    llM3.setVisibility(View.VISIBLE);
+                    llM4.setVisibility(View.GONE);
+                    tvState1.setVisibility(View.GONE);
+
+
+
+                }
+                return;
+            }
+            time = TimeUtil.formatHour(TimeUtil.getStringToDate(entitys.nextPlan.when));
+            String date = TimeUtil.formatHour(System.currentTimeMillis());
+            String[] split = date.split(":");
+            String[] splits = time.split(":");
+            hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
+
+            minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
+            if (minters < 0) {
+                minters = minters + 60;
+                hours=hours-1;
+            }
+            if (hours < 0) {
+                hours = hours + 24;
+            }
+            if(hours==0&&minters==0){
+                 hours=24;
+                minters=0;
+                llM3.setVisibility(View.GONE);
+                llM4.setVisibility(View.VISIBLE);
+                tvState1.setVisibility(View.VISIBLE);
 
             }else {
                 llM3.setVisibility(View.GONE);
@@ -338,7 +391,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 tvState1.setVisibility(View.VISIBLE);
 
             }
-            long times = hour * 3600 * 1000 + minter * 60 * 1000;
+            long times = hours * 3600 * 1000 + minters * 60 * 1000;
             if (countDownTimer2 != null) {
                 countDownTimer2.cancel();
             }
@@ -351,7 +404,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
                     if (tvHour1 != null && times != null) {
                         tvHour1.setText(times[1]);
-                        tvMinter1.setText(times[2]);
+                        tvMinter.setText(Integer.valueOf(times[2])==0?"01":times[2]);
                     }
                 }
 
@@ -367,8 +420,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             }.start();
             tvHour1.setText(split[0]);
             tvMinter1.setText(split[1]);
-            tvState1.setText(entitys.isCompleted ? "已完成" : "未完成");
+            tvState1.setText(entitys.nextPlan.status.equals("complete") ? "已完成" : "未完成");
         } else if (type == 3) {
+            BASE entitys = (BASE) entity;
             if (entitys.numberOfUnreadMessages == 0) {
                 tvCount.setVisibility(View.GONE);
             } else {
@@ -376,8 +430,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 tvCount.setText("" + entitys.numberOfUnreadMessages);
             }
         } else {
-            tvHour1.setText(split[0]);
-            tvMinter1.setText(split[1]);
+//            tvHour1.setText(split[0]);
+//            tvMinter1.setText(split[1]);
         }
 
 

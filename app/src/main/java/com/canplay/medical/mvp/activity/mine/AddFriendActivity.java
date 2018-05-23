@@ -72,6 +72,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     private PhotoPopupWindow mWindowAddPhoto;
     private int type;//0是添加医生 1,qingyou
     private Subscription mSubscription;
+
     @Override
     public void initViews() {
         setContentView(R.layout.activity_add_friend);
@@ -103,13 +104,13 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
         });
         RxBus.getInstance().addSubscription(mSubscription);
 
-         if(type==1){
-             navigationBar.setNaviTitle("亲友添加");
-             adapter = new HealthCenterAdapter(this, 1);
-         }else {
-             etSearch.setHint("搜索医生手机号码");
-             adapter = new HealthCenterAdapter(this, 0);
-         }
+        if (type == 1) {
+            navigationBar.setNaviTitle("亲友添加");
+            adapter = new HealthCenterAdapter(this, 1);
+        } else {
+            etSearch.setHint("搜索医生手机号码");
+            adapter = new HealthCenterAdapter(this, 0);
+        }
         mSuperRecyclerView.setAdapter(adapter);
         adapter.setStatus(1);
         // mSuperRecyclerView.setRefreshing(false);
@@ -138,7 +139,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(mSubscription!=null){
+        if (mSubscription != null) {
             mSubscription.unsubscribe();
         }
     }
@@ -150,15 +151,15 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
         etSearch.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
             @Override
             public void afterTextChanged4ClearEdit(Editable s) {
-                if(TextUtil.isNotEmpty(s.toString())){
-                    if(type==0){
+                if (TextUtil.isNotEmpty(s.toString())) {
+                    if (type == 0) {
                         presenter.searchDoctor(s.toString());
-                    }else {
+                    } else {
                         presenter.SearFriend(s.toString());
                     }
 
-                }else {
-                    if(list!=null){
+                } else {
+                    if (list != null) {
                         list.clear();
                     }
                 }
@@ -173,19 +174,18 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
             @Override
             public void onClick(View v) {
 
-                    if (TextUtil.isNotEmpty(etSearch.getText().toString())){
-
-                        if(type==0){
-                            presenter.searchDoctor(etSearch.getText().toString());
-                        }else {
-                            presenter.SearFriend(etSearch.getText().toString());
-                        }
-                        showProgress("搜索中...");
-
-                    }else {
-                        showToasts("请输入搜索内容");
+                if (TextUtil.isNotEmpty(etSearch.getText().toString())) {
+                    state=1;
+                    if (type == 0) {
+                        presenter.searchDoctor(etSearch.getText().toString());
+                    } else {
+                        presenter.SearFriend(etSearch.getText().toString());
                     }
+                    showProgress("搜索中...");
 
+                } else {
+                    showToasts("请输入搜索内容");
+                }
 
 
             }
@@ -216,17 +216,17 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
             public void clickListener(int poiston, Friend data) {
 //                presenter.getDoctorInfo(id);
 
-                if(type==1&&poiston==1){
+                if (type == 1 && poiston == 1) {
                     Add add = new Add();
-                    add.familyAndFriendsUserId=data.userId;
-                    add.familyAndFriendsUserName=data.displayName;
-                    add.userId= SpUtil.getInstance().getUserId();
-                    add.name=SpUtil.getInstance().getUser();
+                    add.familyAndFriendsUserId = data.userId;
+                    add.familyAndFriendsUserName = data.displayName;
+                    add.userId = SpUtil.getInstance().getUserId();
+                    add.name = SpUtil.getInstance().getUser();
                     showProgress("添加中...");
                     presenter.addFriend(add);
-                }else {
+                } else {
                     showProgress("添加中...");
-                 presenter.AddDoctor(data.id);
+                    presenter.AddDoctor(data.id);
                 }
             }
         });
@@ -236,7 +236,8 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
 
     private int REQUEST_CODE_SCAN = 6;
-   private String id;
+    private String id;
+    private int state;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -247,23 +248,23 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
                 String content = data.getStringExtra("scan_result");
 
-
-                if(type==0){
-                    id=content;
+                state=1;
+                if (type == 0) {
+                    id = content;
                     showProgress("搜索中...");
                     presenter.getDoctorInfo(id);
 
-               }else {
+                } else {
                     String[] split = content.split("###");
-                    if(split==null||split.length!=2){
+                    if (split == null || split.length != 2) {
                         return;
                     }
                     showProgress("搜索中...");
                     presenter.getFriendInfo(split[1]);
-                    id=split[1];
+                    id = split[1];
 
 
-               }
+                }
 
 //                result.setText("扫描结果为：" + content);
             }
@@ -275,39 +276,53 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     public void initData() {
 
     }
-   private int sta;
-   private List<Friend> list;
-    @Override
-    public <T> void toEntity(T entity,int type) {
-        dimessProgress();
-        if(type==23){
 
-            Friend friend= (Friend) entity;
-            if(friend==null){
-                showToasts("没有找到相应医生");
+    private int sta;
+    private List<Friend> list;
+
+    @Override
+    public <T> void toEntity(T entity, int types) {
+        dimessProgress();
+        if (types == 23) {
+
+            Friend friend = (Friend) entity;
+            if (friend == null) {
+                if(state==1){
+                    state=0;
+                    showToasts("没有找到相应医生");
+                }
+
                 return;
             }
             Intent intent = new Intent(this, DoctorDetailActivity.class);
-            intent.putExtra("id",id);
+            intent.putExtra("id", id);
             startActivity(intent);
-        }else if(type==1){
-            Friend friend= (Friend) entity;
-            if(friend==null) {
-                showToasts("没有找到相应亲友");
+        } else if (types == 1) {
+            Friend friend = (Friend) entity;
+            if (friend == null) {
+                if(state==1){
+                    state=0;
+                    showToasts("没有找到相应用户");
+                }
+
                 return;
             }
-            }else {
-            list= (List<Friend>) entity;
+        } else {
+            list = (List<Friend>) entity;
 
 
-            list= (List<Friend>) entity;
+            list = (List<Friend>) entity;
             adapter.setDatas(list);
-            if(list.size()==0){
-                if(type==0){
-                    showToasts("没有找到相应医生");
-                }else {
-                    showToasts("没有找到相应亲友");
+            if (list.size() == 0) {
+                if(state==1){
+                    state=0;
+                    if (type == 0) {
+                        showToasts("没有找到相应医生");
+                    } else {
+                        showToasts("没有找到相应用户");
+                    }
                 }
+
             }
 
             adapter.notifyDataSetChanged();
@@ -319,19 +334,19 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     public void toNextStep(int type) {
         dimessProgress();
 
-        if(type==6){
+        if (type == 6) {
             dimessProgress();
             adapter.setStatus(2);
 //            adapter.notifyDataSetChanged();
-            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE,""));
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE, ""));
             showToasts("添加成功");
             finish();
-        }else if(type==7){
+        } else if (type == 7) {
             dimessProgress();
             showToasts("添加成功");
-            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.DOCTOR,""));
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.DOCTOR, ""));
             finish();
-        }else {
+        } else {
             dimessProgress();
             adapter.setStatus(2);
             adapter.notifyDataSetChanged();

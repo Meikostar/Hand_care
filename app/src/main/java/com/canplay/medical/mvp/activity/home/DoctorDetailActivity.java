@@ -18,6 +18,7 @@ import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.view.CircleTransform;
 
 import javax.inject.Inject;
 
@@ -133,7 +134,7 @@ public class DoctorDetailActivity extends BaseAllActivity implements HomeContrac
                     tvSex.setText(data.participant.user.gender);
                 }
             }
-            Glide.with(this).load(BaseApplication.avatar + data.participant.user.avatar).asBitmap().placeholder(R.drawable.moren).into(ivImg);
+            Glide.with(this).load(BaseApplication.avatar + data.participant.user.avatar).asBitmap().transform(new CircleTransform(this)).placeholder(R.drawable.dingdantouxiang).into(ivImg);
 
         }
     }
@@ -168,7 +169,7 @@ public class DoctorDetailActivity extends BaseAllActivity implements HomeContrac
                 tvSex.setText(data.participant.user.gender);
             }
         }
-        Glide.with(this).load(BaseApplication.avatar + data.participant.user.avatar).asBitmap().placeholder(R.drawable.moren).into(ivImg);
+        Glide.with(this).load(BaseApplication.avatar + data.participant.user.avatar).asBitmap().placeholder(R.drawable.dingdantouxiang).into(ivImg);
 
     }
 

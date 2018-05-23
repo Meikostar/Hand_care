@@ -85,6 +85,7 @@ public class MyUtil {
         SharedPreferences.Editor edit = share.edit();
         switch (saveType) {
             case WeacConstants.WALLPAPER_NAME:
+
                 edit.putString(WeacConstants.WALLPAPER_PATH, null);
                 break;
             case WeacConstants.WALLPAPER_PATH:

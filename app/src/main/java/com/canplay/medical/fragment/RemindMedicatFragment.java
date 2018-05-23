@@ -25,9 +25,11 @@ import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.MyUtil;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.RegularListView;
+import com.google.gson.Gson;
 import com.google.zxing.client.android.utils.OttoAppConfig;
 
 import java.util.ArrayList;
@@ -80,8 +82,8 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
                 if (SubscriptionBean.MEDICALREFASH == bean.type) {
                     alarm = (AlarmClock) bean.content;
                     presenter.MedicineRemindList();
-                } else if (SubscriptionBean.ALARM == bean.type) {
-
+                } else if (SubscriptionBean.MESURES == bean.type) {
+                    presenter.MedicineRemindList();
                 }
 
 
@@ -152,7 +154,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
     private void deleteList(int position) {
         mAlarmClockList.clear();
 
-        List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
+        List<AlarmClock> list = SpUtil.getInstance().getAllAlarm();
         for (AlarmClock alarmClock : list) {
             mAlarmClockList.add(alarmClock);
         }
@@ -165,7 +167,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
     private void updateList() {
         mAlarmClockList.clear();
 
-        List<AlarmClock> list = AlarmClockOperate.getInstance().loadAlarmClocks();
+        List<AlarmClock> list = SpUtil.getInstance().getAllAlarm();
         for (AlarmClock alarmClock : list) {
             mAlarmClockList.add(alarmClock);
 
@@ -210,11 +212,11 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
             showToast("暂无用药提醒");
         }
 
-        List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+        List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
 
         map.clear();
         for (AlarmClock alarmClock : alarmClocks) {
-            map.put((alarmClock.getHour() + ":" + alarmClock.getMinute() + "ma"), alarmClock);
+            map.put(( (alarmClock.getHour()<10?"0"+alarmClock.getHour():alarmClock.getHour()) + ":" + (alarmClock.getMinute()<10?"0"+alarmClock.getMinute():alarmClock.getMinute()) + "ma"), alarmClock);
         }
 
         for (Medicine medicine : data) {
@@ -225,19 +227,41 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
                     arm.setHour(Integer.valueOf(split[0]));
                     arm.setMinute(Integer.valueOf(split[1]));
 
-                    arm.setTag(2 + ":" + medicine.reminderTimeId);
-                    AlarmClockOperate.getInstance().saveAlarmClock(arm);
+                    arm.setTag("2" + ":" +( medicine.reminderTimeId==null?"##":medicine.reminderTimeId));
+                    int id = arm.getId();
+                    arm.setId(id+1);
+                    Gson gson = new Gson();
+                    String jsonStr=gson.toJson(arm); //将对象转换成Json
+                    SpUtil.getInstance().putString(medicine.when+"ma",jsonStr);
+                    String time = SpUtil.getInstance().getString("time");
+                    if(TextUtil.isNotEmpty(time)){
+                        SpUtil.getInstance().putString("time",time+","+medicine.when+"ma");
+                    }else {
+                        SpUtil.getInstance().putString("time",medicine.when+"ma");
+                    }
+
+                    map.put(medicine.when+"ma",arm);
                     addList(arm);
 
                 } else {
-                    AlarmClock alarmClock = map.get(medicine.when);
+                    AlarmClock alarmClock = map.get(medicine.when+ "ma");
                     if (alarmClock == null) {
                         String[] split = medicine.when.split(":");
                         arm = BaseApplication.getInstance().mAlarmClock;
-                        arm.setTag(2 + ":" + medicine.reminderTimeId);
+                        arm.setTag("2" + ":" +( medicine.reminderTimeId==null?"##":medicine.reminderTimeId));
                         arm.setHour(Integer.valueOf(split[0]));
                         arm.setMinute(Integer.valueOf(split[1]));
-                        AlarmClockOperate.getInstance().saveAlarmClock(arm);
+                        int id = arm.getId();
+                        arm.setId(id+1);
+                        Gson gson = new Gson();
+                        String jsonStr=gson.toJson(arm); //将对象转换成Json
+                        SpUtil.getInstance().putString(medicine.when+"ma",jsonStr);
+                        String time = SpUtil.getInstance().getString("time");
+                        if(TextUtil.isNotEmpty(time)){
+                            SpUtil.getInstance().putString("time",time+","+medicine.when+"ma");
+                        }else {
+                            SpUtil.getInstance().putString("time",medicine.when+"ma");
+                        }
                         addList(arm);
 
                     }
@@ -255,12 +279,27 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
 //        showToast("删除成功");
         presenter.MedicineRemindList();
         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
-        List<AlarmClock> alarmClocks = AlarmClockOperate.getInstance().loadAlarmClocks();
+        List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
         for (AlarmClock alarmClock : alarmClocks) {
             if (TextUtil.isNotEmpty(time)) {
                 String[] split = time.split(":");
                 if (alarmClock.getHour() == Integer.valueOf(split[0]) && alarmClock.getMinute() == Integer.valueOf(split[1])) {
-                    AlarmClockOperate.getInstance().deleteAlarmClock(alarmClock);
+                    String times = SpUtil.getInstance().getString("time");
+                    String data="";
+                    if(TextUtil.isNotEmpty(times)){
+                        String[] split1 = times.split(",");
+                        for(int i=0;i<split1.length;i++){
+                            if(!(time+"ma").equals(split1[i])){
+                                if(TextUtil.isNotEmpty(data)){
+                                    data=data+","+split1[i];
+                                }else {
+                                    data=split1[i];
+                                }
+                            }
+                        }
+                        SpUtil.getInstance().putString("time",data);
+                    }
+                    SpUtil.getInstance().putString(time+"ma","");
 
                     // 关闭闹钟
                     MyUtil.cancelAlarmClock(getActivity(),

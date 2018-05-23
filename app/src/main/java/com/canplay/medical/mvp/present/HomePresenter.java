@@ -14,6 +14,7 @@ import com.canplay.medical.bean.Health;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
+import com.canplay.medical.bean.Medil;
 import com.canplay.medical.bean.Message;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.USER;
@@ -44,6 +45,31 @@ public class HomePresenter implements HomeContract.Presenter {
     HomePresenter(ApiManager apiManager){
         contactApi = apiManager.createApi(BaseApi.class);
     }
+
+    @Override
+    public void getDetails(final int type) {
+        String content;
+        if(type==1){
+            content="Medicine";
+        }else {
+            content="Measurement";
+        }
+        subscription = ApiManager.setSubscribe(contactApi.getDetails(content), new MySubscriber<Medil>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(Medil entity){
+
+                mView.toEntity(entity.object,type);
+            }
+        });
+    }
+
     @Override
     public void getUserData(final int type) {//1 用药提醒2 代表测量提醒
         String content;

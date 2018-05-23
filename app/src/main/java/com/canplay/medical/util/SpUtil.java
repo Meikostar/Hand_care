@@ -5,7 +5,12 @@ import android.content.SharedPreferences;
 
 import com.baidu.location.BDLocation;
 import com.canplay.medical.base.ApplicationConfig;
+import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.USER;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SpUtil{
     public static String PREFERENCE_NAME = "repast_app_sp";
@@ -62,11 +67,13 @@ public class SpUtil{
      *
      * @return SpUtil
      */
+    private static List<AlarmClock> list;
     public static SpUtil getInstance() {
         if (instance == null) {
             synchronized (SpUtil.class) {
                 if (instance == null) {
                     instance = new SpUtil();
+                     list =new ArrayList<>();
                 }
             }
         }
@@ -76,6 +83,23 @@ public class SpUtil{
         SharedPreferences.Editor editor = settings.edit();
         editor.clear();
         return editor.commit();
+    }
+
+    public List<AlarmClock> getAllAlarm(){
+        list.clear();
+        String time = settings.getString("time", "");
+        if(TextUtil.isNotEmpty(time)){
+            String[] split = time.split(",");
+            for(int i=0;i<split.length;i++){
+                String data = settings.getString(split[i], "");
+                if(TextUtil.isNotEmpty(data)){
+                    Gson gson = new Gson();
+                    AlarmClock alarmClock = gson.fromJson(data, AlarmClock.class); //将json字符串转换成 AlarmClock对象
+                    list.add(alarmClock);
+                }
+            }
+        }
+        return list;
     }
     public String getUserId(){
         return settings.getString(USERID, "");
