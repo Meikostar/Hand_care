@@ -1,9 +1,7 @@
 package com.canplay.medical.mvp.activity.mine;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -13,14 +11,11 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseDailogManager;
-import com.canplay.medical.bean.AlarmClock;
+import com.canplay.medical.base.RxBus;
+import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Bind;
-import com.canplay.medical.bean.Euip;
 import com.canplay.medical.bean.Euipt;
-import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.unBind;
-import com.canplay.medical.mvp.activity.account.LoginActivity;
-import com.canplay.medical.mvp.activity.home.SmartEquitActivity;
 import com.canplay.medical.mvp.adapter.EuipmentAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
@@ -28,15 +23,14 @@ import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.permission.PermissionConst;
 import com.canplay.medical.permission.PermissionGen;
 import com.canplay.medical.permission.PermissionSuccess;
-import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.MarkaBaseDialog;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PhotoPopupWindow;
 import com.canplay.medical.view.RegularListView;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.google.zxing.client.android.activity.CaptureActivity;
-
 
 import java.util.List;
 
@@ -44,7 +38,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * 我的设备
@@ -58,6 +51,8 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
     NavigationBar navigationBar;
     @BindView(R.id.rl_menu)
     RegularListView rlMenu;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
     private EuipmentAdapter adapter;
     private PhotoPopupWindow mWindowAddPhoto;
     private String titles;
@@ -155,11 +150,13 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
             }
         }
     }
-    private View views=null;
+
+    private View views = null;
     private TextView sure = null;
     private TextView cancel = null;
     private TextView title = null;
     private EditText reson = null;
+
     public void showPopwindow(final String content) {
 
         views = View.inflate(this, R.layout.add_euip, null);
@@ -167,7 +164,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         cancel = (TextView) views.findViewById(R.id.txt_cancel);
         title = (TextView) views.findViewById(R.id.tv_title);
         reson = (EditText) views.findViewById(R.id.edit_reson);
-        title.setText("设备号："+content+"添加到到设备吗?");
+        title.setText("设备号：" + content + "添加到到设备吗?");
         final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(this).setMessageView(views).create();
         dialog.show();
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -190,6 +187,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
 
 
     }
+
     @Override
     public void initData() {
 
@@ -217,31 +215,42 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
     private List<Euipt> list;
 
     @Override
-    public <T> void toEntity(T entity,int type) {
+    public <T> void toEntity(T entity, int type) {
         dimessProgress();
         list = (List<Euipt>) entity;
-        if(list.size()==0){
-            showToasts("暂无设备");
+        if (list.size() == 0) {
 
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+            loadingView.setContent("暂无设备");
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setData(list);
     }
 
     @Override
     public void toNextStep(int type) {
-            dimessProgress();
-       if(type==1){
-           showToasts("绑定成功");
-           presenter.getSmartList();
-       }else  if(type==2){
-           showToasts("移除成功");
-           presenter.getSmartList();
-       }
+        dimessProgress();
+        if (type == 1) {
+            showToasts("绑定成功");
+            presenter.getSmartList();
+        } else if (type == 2) {
+            showToasts("移除成功");
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EUIP_REFASH, ""));
+            presenter.getSmartList();
+        }
     }
 
     @Override
     public void showTomast(String msg) {
         showToasts(msg);
         dimessProgress();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

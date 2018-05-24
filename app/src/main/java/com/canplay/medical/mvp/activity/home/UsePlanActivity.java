@@ -30,6 +30,8 @@ import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
 import com.canplay.medical.view.RegularListView;
+import com.canplay.medical.view.loadingView.BaseLoadingPager;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.canplay.medical.view.scrollView.StickyScrollView;
 
 import java.util.ArrayList;
@@ -74,6 +76,8 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     TextView tvState;
     @BindView(R.id.ll_bg)
     LinearLayout llBg;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
     private UsesPlanAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -93,7 +97,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         rlMenu.setAdapter(adapter);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-        showProgress("加载中...");
+        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
         presenter.getDetails("Medicine");
         time = getIntent().getStringExtra("time");
         tvTime.setFocusable(true);
@@ -107,6 +111,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
                 } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
+                    loadingView.showPager(BaseLoadingPager.STATE_LOADING);
                     presenter.getDetails("Medicine");
                 }
 
@@ -257,7 +262,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             if (minters < 0) {
 
                 minters = minters + 60;
-                hours=hours-1;
+                hours = hours - 1;
             }
             if (hours < 0) {
                 hours = hours + 24;
@@ -267,7 +272,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             if (BaseApplication.time1 == 0) {
                 BaseApplication.time1 = times;
             }
-            if(countDownTimer!=null){
+            if (countDownTimer != null) {
                 countDownTimer.cancel();
             }
             countDownTimer = new CountDownTimer(BaseApplication.time1 == 0 ? times : BaseApplication.time1, 1000) {
@@ -303,6 +308,13 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                 if (medils.status.equals("completed")) {
                     datas.add(medils);
                 }
+            }
+            if (datas.size() == 0) {
+
+                loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+            } else {
+                loadingView.showPager(LoadingPager.STATE_SUCCEED);
             }
             adapter.setData(datas);
             scrollView.fullScroll(ScrollView.FOCUS_UP);

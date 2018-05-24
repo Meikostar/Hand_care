@@ -31,9 +31,10 @@ import com.canplay.medical.view.ClearEditText;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PhotoPopupWindow;
+import com.canplay.medical.view.loadingView.BaseLoadingPager;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.google.zxing.client.android.activity.CaptureActivity;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
-
 
 import java.util.List;
 
@@ -41,7 +42,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.valuesfeng.picker.universalimageloader.utils.L;
 import rx.Subscription;
 import rx.functions.Action1;
 
@@ -63,6 +63,8 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     TextView search;
     @BindView(R.id.et_search)
     ClearEditText etSearch;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
     private SwipeRefreshLayout.OnRefreshListener refreshListener;
     private HealthCenterAdapter adapter;
     private LinearLayoutManager mLinearLayoutManager;
@@ -175,13 +177,13 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
             public void onClick(View v) {
 
                 if (TextUtil.isNotEmpty(etSearch.getText().toString())) {
-                    state=1;
+                    state = 1;
                     if (type == 0) {
                         presenter.searchDoctor(etSearch.getText().toString());
                     } else {
                         presenter.SearFriend(etSearch.getText().toString());
                     }
-                    showProgress("搜索中...");
+                    loadingView.showPager(BaseLoadingPager.STATE_LOADING);
 
                 } else {
                     showToasts("请输入搜索内容");
@@ -238,6 +240,8 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
     private int REQUEST_CODE_SCAN = 6;
     private String id;
     private int state;
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -248,7 +252,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
                 String content = data.getStringExtra("scan_result");
 
-                state=1;
+                state = 1;
                 if (type == 0) {
                     id = content;
                     showProgress("搜索中...");
@@ -287,9 +291,11 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
             Friend friend = (Friend) entity;
             if (friend == null) {
-                if(state==1){
-                    state=0;
-                    showToasts("没有找到相应医生");
+                if (state == 1) {
+                    state = 0;
+
+                    loadingView.showPager(LoadingPager.STATE_EMPTY);
+                    loadingView.setContent("没有找到相应用户");
                 }
 
                 return;
@@ -300,9 +306,12 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
         } else if (types == 1) {
             Friend friend = (Friend) entity;
             if (friend == null) {
-                if(state==1){
-                    state=0;
-                    showToasts("没有找到相应用户");
+                if (state == 1) {
+                    state = 0;
+
+                    loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+                    loadingView.setContent("没有找到相应医生");
                 }
 
                 return;
@@ -314,13 +323,23 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
             list = (List<Friend>) entity;
             adapter.setDatas(list);
             if (list.size() == 0) {
-                if(state==1){
-                    state=0;
-                    if (type == 0) {
-                        showToasts("没有找到相应医生");
+                if (state == 1) {
+                    state = 0;
+                    if (list.size() == 0) {
+
+                        loadingView.showPager(LoadingPager.STATE_EMPTY);
+                        if (type == 0) {
+                            loadingView.setContent("没有找到相应医生");
+
+                        } else {
+                            loadingView.setContent("没有找到相应用户");
+
+                        }
+
                     } else {
-                        showToasts("没有找到相应用户");
+                        loadingView.showPager(LoadingPager.STATE_SUCCEED);
                     }
+
                 }
 
             }
@@ -361,6 +380,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
         dimessProgress();
     }
+
 
 
 }

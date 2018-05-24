@@ -212,17 +212,22 @@
              android:layout_height="0.5dp"
              android:background="@color/linecolor"/>
 
-         <com.canplay.medical.view.RegularListView
-             android:layout_marginTop="3dp"
-             android:divider="#00000000"
-             android:dividerHeight="0dip"
-             android:listSelector="@android:color/transparent"
-             android:id="@+id/rl_menu"
-             android:background="@color/white"
+         <com.canplay.medical.view.loadingView.LoadingPager
+             android:id="@+id/loadingView"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:visibility="visible"
-             style="@style/lv_content"/>
+             android:layout_height="match_parent">
+             <com.canplay.medical.view.RegularListView
+                 android:layout_marginTop="3dp"
+                 android:divider="#00000000"
+                 android:dividerHeight="0dip"
+                 android:listSelector="@android:color/transparent"
+                 android:id="@+id/rl_menu"
+                 android:background="@color/white"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:visibility="visible"
+                 style="@style/lv_content"/>
+         </com.canplay.medical.view.loadingView.LoadingPager>
      </LinearLayout>
  </com.canplay.medical.view.scrollView.StickyScrollView>
 

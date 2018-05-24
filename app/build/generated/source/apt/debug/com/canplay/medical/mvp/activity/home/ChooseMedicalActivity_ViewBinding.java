@@ -12,8 +12,7 @@ import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
 import com.canplay.medical.view.ClearEditText;
-import com.canplay.medical.view.SideLetterBars;
-import com.malinskiy.superrecyclerview.SuperRecyclerView;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -34,12 +33,10 @@ public class ChooseMedicalActivity_ViewBinding implements Unbinder {
     target.topviewLeftLayout = Utils.findRequiredViewAsType(source, R.id.topview_left_layout, "field 'topviewLeftLayout'", LinearLayout.class);
     target.tvScan = Utils.findRequiredViewAsType(source, R.id.tv_scan, "field 'tvScan'", ImageView.class);
     target.tvSure = Utils.findRequiredViewAsType(source, R.id.tv_sure, "field 'tvSure'", TextView.class);
-    target.superRecycleView = Utils.findRequiredViewAsType(source, R.id.super_recycle_view, "field 'superRecycleView'", SuperRecyclerView.class);
-    target.listview = Utils.findRequiredViewAsType(source, R.id.listview_all_city, "field 'listview'", ListView.class);
-    target.mLetterBar = Utils.findRequiredViewAsType(source, R.id.side_letter_bars, "field 'mLetterBar'", SideLetterBars.class);
-    target.overlay = Utils.findRequiredViewAsType(source, R.id.tv_letter_overlay, "field 'overlay'", TextView.class);
     target.etSearch = Utils.findRequiredViewAsType(source, R.id.et_search, "field 'etSearch'", ClearEditText.class);
     target.tvSearch = Utils.findRequiredViewAsType(source, R.id.tv_search, "field 'tvSearch'", TextView.class);
+    target.listview = Utils.findRequiredViewAsType(source, R.id.listview_all_city, "field 'listview'", ListView.class);
+    target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
   }
 
   @Override
@@ -54,11 +51,9 @@ public class ChooseMedicalActivity_ViewBinding implements Unbinder {
     target.topviewLeftLayout = null;
     target.tvScan = null;
     target.tvSure = null;
-    target.superRecycleView = null;
-    target.listview = null;
-    target.mLetterBar = null;
-    target.overlay = null;
     target.etSearch = null;
     target.tvSearch = null;
+    target.listview = null;
+    target.loadingView = null;
   }
 }

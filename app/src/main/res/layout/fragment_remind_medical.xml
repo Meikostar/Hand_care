@@ -4,13 +4,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <ListView
-        android:layout_marginTop="3dp"
-        android:id="@+id/rl_menu"
-        android:background="@color/content_bg"
+    <com.canplay.medical.view.loadingView.LoadingPager
+        android:id="@+id/loadingView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        style="@style/lv_content"/>
+        android:layout_height="match_parent">
+        <ListView
+            android:layout_marginTop="3dp"
+            android:id="@+id/rl_menu"
+            android:background="@color/content_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            style="@style/lv_content"/>
+    </com.canplay.medical.view.loadingView.LoadingPager>
+
+
 </LinearLayout>

@@ -299,6 +299,10 @@ HomePresenter presenter;
     }
     @Override
     public void toNextStep(int type) {
+
+        showToast("移除成功");
+        dimessProgress();
+        presenter.myMedicineBox();
         presenter.getSmartList();
     }
 

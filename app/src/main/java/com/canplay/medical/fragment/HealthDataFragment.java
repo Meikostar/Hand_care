@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
@@ -16,7 +15,6 @@ import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Health;
-import com.canplay.medical.bean.Message;
 import com.canplay.medical.mvp.activity.health.BloodChartRecordActivity;
 import com.canplay.medical.mvp.activity.health.SugarChartRecordActivity;
 import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
@@ -27,6 +25,8 @@ import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.loadingView.BaseLoadingPager;
+import com.canplay.medical.view.loadingView.LoadingPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +57,9 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
     ListView rlList;
     @BindView(R.id.ll_bg)
     LinearLayout llbg;
-    @BindView(R.id.tv_none)
-    TextView tvNone;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
+
     private HealthDataAdapter adapter;
 
     @Override
@@ -72,6 +73,7 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
         unbinder = ButterKnife.bind(this, view);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
+        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
         presenter.getHealthData();
         initView();
         initListener();
@@ -95,6 +97,7 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
                 } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
+                    loadingView.showPager(BaseLoadingPager.STATE_LOADING);
                     presenter.getHealthData();
                 }
 
@@ -122,9 +125,9 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
             @Override
             public void getItem(Health menu, int type) {
                 if (type == 0) {
-                    if(TextUtil.isNotEmpty(menu.high)){
+                    if (TextUtil.isNotEmpty(menu.high)) {
                         startActivity(new Intent(getActivity(), BloodChartRecordActivity.class));
-                    }else {
+                    } else {
                         startActivity(new Intent(getActivity(), SugarChartRecordActivity.class));
                     }
 
@@ -186,10 +189,12 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
                 list.add(health.medicineRecord);
             }
         }
-        if(list.size()>0){
-            tvNone.setVisibility(View.GONE);
-        }else {
-            tvNone.setVisibility(View.VISIBLE);
+        if (list.size() == 0) {
+
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setData(list);
     }

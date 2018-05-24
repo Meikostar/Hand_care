@@ -1,6 +1,7 @@
 package com.canplay.medical.mvp.activity.mine;
 
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,11 +9,11 @@ import android.view.ViewGroup;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
-import com.canplay.medical.mvp.adapter.recycle.PressRecordReCycleAdapter;
 import com.canplay.medical.mvp.adapter.recycle.UseRecordRecycleAdapter;
 import com.canplay.medical.util.LogUtils;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
 import butterknife.BindView;
@@ -28,6 +29,8 @@ public class UseMedicalRecordActivity extends BaseActivity {
     NavigationBar navigationBar;
     @BindView(R.id.super_recycle_view)
     SuperRecyclerView mSuperRecyclerView;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
 
     private UseRecordRecycleAdapter adapter;
     private LinearLayoutManager mLinearLayoutManager;
@@ -36,7 +39,7 @@ public class UseMedicalRecordActivity extends BaseActivity {
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
     private int id;
-    private int currpage=1;
+    private int currpage = 1;
 
 
     @Override
@@ -51,7 +54,7 @@ public class UseMedicalRecordActivity extends BaseActivity {
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
         mSuperRecyclerView.getMoreProgressView().getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
-        adapter=new UseRecordRecycleAdapter(this);
+        adapter = new UseRecordRecycleAdapter(this);
         mSuperRecyclerView.setAdapter(adapter);
 
 
@@ -126,5 +129,6 @@ public class UseMedicalRecordActivity extends BaseActivity {
     public void initData() {
 
     }
+
 
 }

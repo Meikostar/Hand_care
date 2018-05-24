@@ -8,6 +8,7 @@ import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -27,6 +28,7 @@ public class TakeMedicineActivity_ViewBinding implements Unbinder {
     target.line = Utils.findRequiredView(source, R.id.line, "field 'line'");
     target.navigationBar = Utils.findRequiredViewAsType(source, R.id.navigationBar, "field 'navigationBar'", NavigationBar.class);
     target.mSuperRecyclerView = Utils.findRequiredViewAsType(source, R.id.super_recycle_view, "field 'mSuperRecyclerView'", SuperRecyclerView.class);
+    target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
   }
 
   @Override
@@ -39,5 +41,6 @@ public class TakeMedicineActivity_ViewBinding implements Unbinder {
     target.line = null;
     target.navigationBar = null;
     target.mSuperRecyclerView = null;
+    target.loadingView = null;
   }
 }

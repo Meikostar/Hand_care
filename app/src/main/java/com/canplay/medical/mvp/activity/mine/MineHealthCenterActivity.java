@@ -1,9 +1,7 @@
 package com.canplay.medical.mvp.activity.mine;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -14,26 +12,18 @@ import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
-import com.canplay.medical.bean.Add;
-import com.canplay.medical.bean.Euip;
 import com.canplay.medical.bean.Friend;
-import com.canplay.medical.mvp.adapter.EuipmentAdapter;
 import com.canplay.medical.mvp.adapter.recycle.HealthCenterAdapter;
-import com.canplay.medical.mvp.adapter.recycle.HomeDoctorRecycleAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
-import com.canplay.medical.permission.PermissionConst;
-import com.canplay.medical.permission.PermissionGen;
-import com.canplay.medical.permission.PermissionSuccess;
-import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PhotoPopupWindow;
-import com.malinskiy.superrecyclerview.OnMoreListener;
+import com.canplay.medical.view.loadingView.BaseLoadingPager;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
-
 
 import java.util.List;
 
@@ -56,6 +46,8 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     NavigationBar navigationBar;
     @BindView(R.id.super_recycle_view)
     SuperRecyclerView mSuperRecyclerView;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
     private SwipeRefreshLayout.OnRefreshListener refreshListener;
     private HealthCenterAdapter adapter;
     private LinearLayoutManager mLinearLayoutManager;
@@ -64,6 +56,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     private final int TYPE_REMOVE = 3;
     private PhotoPopupWindow mWindowAddPhoto;
     private Subscription mSubscription;
+
     @Override
     public void initViews() {
         setContentView(R.layout.activity_mine_healt_center);
@@ -81,13 +74,14 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
         adapter.setStatus(1);
         mSuperRecyclerView.setAdapter(adapter);
         presenter.getFriendList();
-        showProgress("加载中...");
+        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
             @Override
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
 
                 if (bean.type == SubscriptionBean.CLOSE) {
+
                     presenter.getFriendList();
                 }
 
@@ -101,7 +95,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
         RxBus.getInstance().addSubscription(mSubscription);
 //        reflash();
 
-       //         mSuperRecyclerView.setRefreshing(false);
+        //         mSuperRecyclerView.setRefreshing(false);
 
 //        refreshListener = new SwipeRefreshLayout.OnRefreshListener() {
 //
@@ -134,37 +128,37 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
             @Override
             public void navigationRight() {
                 Intent intent = new Intent(MineHealthCenterActivity.this, AddFriendActivity.class);
-                intent.putExtra("type",1);
+                intent.putExtra("type", 1);
                 startActivity(intent);
             }
 
             @Override
             public void navigationimg() {
                 Intent intent = new Intent(MineHealthCenterActivity.this, AddFriendActivity.class);
-                intent.putExtra("type",1);
+                intent.putExtra("type", 1);
                 startActivity(intent);
             }
         });
         adapter.setClickListener(new HealthCenterAdapter.OnItemClickListener() {
             @Override
             public void clickListener(int type, Friend friend) {
-                if(type==0){
-                    if(friend.status.equals("Active")){
+                if (type == 0) {
+                    if (friend.status.equals("Active")) {
                         Intent intent = new Intent(MineHealthCenterActivity.this, FriendDetailActivity.class);
-                        intent.putExtra("type",1);
-                        intent.putExtra("id",friend.familyAndFriendsUserId);
-                        intent.putExtra("familyAndFriendsId",friend.familyAndFriendsId);
-                        intent.putExtra("status",friend.status);
+                        intent.putExtra("type", 1);
+                        intent.putExtra("id", friend.familyAndFriendsUserId);
+                        intent.putExtra("familyAndFriendsId", friend.familyAndFriendsId);
+                        intent.putExtra("status", friend.status);
                         startActivity(intent);
                     }
 
-                }else {
-                    if(TextUtil.isNotEmpty(friend.status)){
-                        if(friend.status.equals("Waiting")){
-                           presenter.agree(friend.familyAndFriendsId);
-                        }else if(friend.status.equals("Pending")) {
+                } else {
+                    if (TextUtil.isNotEmpty(friend.status)) {
+                        if (friend.status.equals("Waiting")) {
+                            presenter.agree(friend.familyAndFriendsId);
+                        } else if (friend.status.equals("Pending")) {
 
-                        }else if(friend.status.equals("Active")) {
+                        } else if (friend.status.equals("Active")) {
 
                         }
                     }
@@ -205,7 +199,7 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(mSubscription!=null){
+        if (mSubscription != null) {
             mSubscription.unsubscribe();
         }
     }
@@ -214,7 +208,8 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     public void initData() {
 
     }
-//    public void onDataLoaded(int loadtype,final boolean haveNext, List<Friend> datas) {
+
+    //    public void onDataLoaded(int loadtype,final boolean haveNext, List<Friend> datas) {
 //
 //        if (loadtype == TYPE_PULL_REFRESH) {
 //            currpage=1;
@@ -258,11 +253,19 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
 //
 //        }
 //    }
-    private List<Friend> list ;
+    private List<Friend> list;
+
     @Override
-    public <T> void toEntity(T entity,int type) {
-dimessProgress();
-        list= (List<Friend>) entity;
+    public <T> void toEntity(T entity, int type) {
+        dimessProgress();
+
+        if (list.size() == 0) {
+
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
+        }
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();
     }
@@ -277,6 +280,13 @@ dimessProgress();
     @Override
     public void showTomast(String msg) {
         dimessProgress();
-      presenter.getFriendList();
+        presenter.getFriendList();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

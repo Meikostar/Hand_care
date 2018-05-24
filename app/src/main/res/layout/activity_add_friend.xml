@@ -75,17 +75,22 @@
             android:textSize="17sp" />
     </LinearLayout>
 
-
-    <com.malinskiy.superrecyclerview.SuperRecyclerView
-        android:id="@+id/super_recycle_view"
+    <com.canplay.medical.view.loadingView.LoadingPager
+        android:id="@+id/loadingView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_moreProgress="@layout/view_more_progress"
-        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
-        app:recyclerClipToPadding="true"
-        app:scrollbarStyle="outsideOverlay" />
+        android:layout_height="match_parent">
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
+            android:id="@+id/super_recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_moreProgress="@layout/view_more_progress"
+            app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+            app:recyclerClipToPadding="true"
+            app:scrollbarStyle="outsideOverlay" />
+    </com.canplay.medical.view.loadingView.LoadingPager>
+
 
 </LinearLayout>

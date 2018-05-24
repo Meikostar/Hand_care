@@ -9,6 +9,7 @@ import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -27,6 +28,7 @@ public class MessageActivity_ViewBinding implements Unbinder {
     target.line = Utils.findRequiredView(source, R.id.line, "field 'line'");
     target.navigationBar = Utils.findRequiredViewAsType(source, R.id.navigationBar, "field 'navigationBar'", NavigationBar.class);
     target.rlMenu = Utils.findRequiredViewAsType(source, R.id.rl_menu, "field 'rlMenu'", ListView.class);
+    target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
   }
 
   @Override
@@ -39,5 +41,6 @@ public class MessageActivity_ViewBinding implements Unbinder {
     target.line = null;
     target.navigationBar = null;
     target.rlMenu = null;
+    target.loadingView = null;
   }
 }

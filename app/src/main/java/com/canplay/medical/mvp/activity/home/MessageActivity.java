@@ -1,5 +1,6 @@
 package com.canplay.medical.mvp.activity.home;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
@@ -8,11 +9,12 @@ import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.Message;
 import com.canplay.medical.mvp.adapter.MessageAdapter;
-import com.canplay.medical.mvp.adapter.RemindMedicatAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.loadingView.BaseLoadingPager;
+import com.canplay.medical.view.loadingView.LoadingPager;
 
 import java.util.List;
 
@@ -33,6 +35,8 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
     NavigationBar navigationBar;
     @BindView(R.id.rl_menu)
     ListView rlMenu;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
 
 
     private MessageAdapter adapter;
@@ -44,7 +48,7 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         presenter.getMessageList();
-        showProgress("加载中...");
+        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
         navigationBar.setNavigationBarListener(this);
         adapter = new MessageAdapter(this);
         rlMenu.setAdapter(adapter);
@@ -75,6 +79,13 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
     public <T> void toEntity(T entity, int type) {
         dimessProgress();
         data = (List<Message>) entity;
+        if (data.size() == 0) {
+
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+            loadingView.setContent("暂无消息");
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
+        }
         adapter.setData(data);
     }
 
@@ -88,4 +99,6 @@ public class MessageActivity extends BaseActivity implements HomeContract.View {
         showToasts(msg);
         dimessProgress();
     }
+
+
 }

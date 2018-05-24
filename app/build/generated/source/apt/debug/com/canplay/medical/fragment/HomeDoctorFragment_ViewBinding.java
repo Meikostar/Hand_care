@@ -9,6 +9,7 @@ import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -24,7 +25,7 @@ public class HomeDoctorFragment_ViewBinding implements Unbinder {
     target.line = Utils.findRequiredView(source, R.id.line, "field 'line'");
     target.ivAdd = Utils.findRequiredViewAsType(source, R.id.iv_add, "field 'ivAdd'", ImageView.class);
     target.navigationbarTitle = Utils.findRequiredViewAsType(source, R.id.navigationbar_title, "field 'navigationbarTitle'", TextView.class);
-    target.tvNone = Utils.findRequiredViewAsType(source, R.id.tv_none, "field 'tvNone'", TextView.class);
+    target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
   }
 
   @Override
@@ -38,6 +39,6 @@ public class HomeDoctorFragment_ViewBinding implements Unbinder {
     target.line = null;
     target.ivAdd = null;
     target.navigationbarTitle = null;
-    target.tvNone = null;
+    target.loadingView = null;
   }
 }

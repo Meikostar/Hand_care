@@ -404,7 +404,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
                     if (tvHour1 != null && times != null) {
                         tvHour1.setText(times[1]);
-                        tvMinter.setText(Integer.valueOf(times[2])==0?"01":times[2]);
+                        tvMinter1.setText(Integer.valueOf(times[2])==0?"01":times[2]);
                     }
                 }
 

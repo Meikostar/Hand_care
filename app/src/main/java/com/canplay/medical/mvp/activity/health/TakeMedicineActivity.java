@@ -11,15 +11,13 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.Record;
-
 import com.canplay.medical.mvp.adapter.recycle.UsePlanRecycleAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
-import com.canplay.medical.util.SpUtil;
-import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.OnMoreListener;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
@@ -45,15 +43,17 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
     NavigationBar navigationBar;
     @BindView(R.id.super_recycle_view)
     SuperRecyclerView mSuperRecyclerView;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
     private SwipeRefreshLayout.OnRefreshListener refreshListener;
     private LinearLayoutManager mLinearLayoutManager;
     private final int TYPE_PULL_REFRESH = 1;
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
-    public int currpage=0;
-    private int cout=12;
-    private int total=0;
-    private String category="Medicine";
+    public int currpage = 0;
+    private int cout = 12;
+    private int total = 0;
+    private String category = "Medicine";
     private UsePlanRecycleAdapter adapter;
 
     @Override
@@ -63,7 +63,7 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
 
-        mLinearLayoutManager=new LinearLayoutManager(this);
+        mLinearLayoutManager = new LinearLayoutManager(this);
         navigationBar.setNavigationBarListener(this);
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
@@ -80,12 +80,12 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
             @Override
             public void onRefresh() {
                 // mSuperRecyclerView.showMoreProgress();
-                    presenter.getMeasureRecord(TYPE_PULL_REFRESH,category,total+"",cout+"");
+                presenter.getMeasureRecord(TYPE_PULL_REFRESH, category, total + "", cout + "");
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(mSuperRecyclerView!=null){
+                        if (mSuperRecyclerView != null) {
                             mSuperRecyclerView.hideMoreProgress();
                         }
 
@@ -97,11 +97,12 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
 
     }
 
-    public List<Record> list=new ArrayList<>();
-    public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
+    public List<Record> list = new ArrayList<>();
+
+    public void onDataLoaded(int loadtype, final boolean haveNext, List<Record> datas) {
 
         if (loadtype == TYPE_PULL_REFRESH) {
-            currpage=0;
+            currpage = 0;
             list.clear();
             for (Record info : datas) {
                 list.add(info);
@@ -110,6 +111,13 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
             for (Record info : datas) {
                 list.add(info);
             }
+        }
+        if (list.size() == 0) {
+
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();
@@ -130,8 +138,7 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
                         public void run() {
                             if (haveNext)
                                 mSuperRecyclerView.hideMoreProgress();
-                                presenter.getMeasureRecord(TYPE_PULL_MORE,category,cout*currpage+"",cout+"");
-
+                            presenter.getMeasureRecord(TYPE_PULL_MORE, category, cout * currpage + "", cout + "");
 
 
                         }
@@ -144,11 +151,13 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
 
         }
     }
+
     @Override
     public void bindEvents() {
 
 
     }
+
     private void reflash() {
         if (mSuperRecyclerView != null) {
             //实现自动下拉刷新功能
@@ -168,10 +177,11 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
 
     }
 
-    public List<Record> data=new ArrayList<>();
+    public List<Record> data = new ArrayList<>();
+
     @Override
     public <T> void toEntity(T entity, int type) {
-        List<Record>     lists= (List<Record>) entity;
+        List<Record> lists = (List<Record>) entity;
         data.clear();
 //        for(Record record:lists){
 //            for(Record record1:record.items){
@@ -179,10 +189,10 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
 //                data.add(record1);
 //            }
 //        }
-        if(data.size()==0){
+        if (data.size() == 0) {
             showToasts("暂无记录");
         }
-        onDataLoaded(type,lists.size()==cout,lists);
+        onDataLoaded(type, lists.size() == cout, lists);
     }
 
     @Override
@@ -196,4 +206,10 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
     }
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

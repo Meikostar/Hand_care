@@ -7,6 +7,7 @@ import android.view.View;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -19,6 +20,7 @@ public class BloodRecordFragment_ViewBinding implements Unbinder {
     this.target = target;
 
     target.mSuperRecyclerView = Utils.findRequiredViewAsType(source, R.id.super_recycle_view, "field 'mSuperRecyclerView'", SuperRecyclerView.class);
+    target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
   }
 
   @Override
@@ -29,5 +31,6 @@ public class BloodRecordFragment_ViewBinding implements Unbinder {
     this.target = null;
 
     target.mSuperRecyclerView = null;
+    target.loadingView = null;
   }
 }

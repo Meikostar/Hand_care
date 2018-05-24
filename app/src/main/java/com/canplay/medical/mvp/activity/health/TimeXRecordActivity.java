@@ -19,6 +19,7 @@ import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_TimeRecord;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.OnMoreListener;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
@@ -42,6 +43,8 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
     NavigationBar navigationBar;
     @BindView(R.id.super_recycle_view)
     SuperRecyclerView mSuperRecyclerView;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
 
     private UserTimeAdapter adapter;
     private PopView_TimeRecord popView_timeRecord;
@@ -52,9 +55,10 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
     private final int TYPE_PULL_REFRESH = 1;
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
-    public int currpage=0;
-    private int cout=10;
-    private int total=0;
+    public int currpage = 0;
+    private int cout = 10;
+    private int total = 0;
+
     @Override
     public void initViews() {
         setContentView(R.layout.activity_timex);
@@ -82,16 +86,16 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
             @Override
             public void onRefresh() {
                 // mSuperRecyclerView.showMoreProgress();
-                if(TextUtil.isEmpty(category)){
-                    presenter.getTimeRecord(TYPE_PULL_REFRESH,total+"",cout+"");
-                }else {
-                    presenter.getMeasureRecord(TYPE_PULL_REFRESH,category,total+"",cout+"");
+                if (TextUtil.isEmpty(category)) {
+                    presenter.getTimeRecord(TYPE_PULL_REFRESH, total + "", cout + "");
+                } else {
+                    presenter.getMeasureRecord(TYPE_PULL_REFRESH, category, total + "", cout + "");
                 }
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(mSuperRecyclerView!=null){
+                        if (mSuperRecyclerView != null) {
                             mSuperRecyclerView.hideMoreProgress();
                         }
 
@@ -110,19 +114,19 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
             public void clickListener(int poition) {
                 switch (poition) {
                     case 0://全部
-                        category="";
+                        category = "";
                         reflash();
                         break;
                     case 1://血压
-                        category="Measurement";
+                        category = "Measurement";
                         reflash();
                         break;
                     case 2://服药
-                        category="Medicine";
+                        category = "Medicine";
                         reflash();
                         break;
                     case 3://血糖
-                        category="Measurement";
+                        category = "Measurement";
                         reflash();
                         break;
 
@@ -132,6 +136,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
 
         });
     }
+
     private void reflash() {
         if (mSuperRecyclerView != null) {
             //实现自动下拉刷新功能
@@ -145,13 +150,14 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
         }
     }
 
-    public List<Record> list=new ArrayList<>();
-    public List<Record> data=new ArrayList<>();
-    public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
+    public List<Record> list = new ArrayList<>();
+    public List<Record> data = new ArrayList<>();
+
+    public void onDataLoaded(int loadtype, final boolean haveNext, List<Record> datas) {
 
 
         if (loadtype == TYPE_PULL_REFRESH) {
-            currpage=0;
+            currpage = 0;
             list.clear();
             for (Record info : datas) {
                 list.add(info);
@@ -160,6 +166,13 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
             for (Record info : datas) {
                 list.add(info);
             }
+        }
+        if (list.size() == 0) {
+
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();
@@ -180,10 +193,10 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
                         public void run() {
                             if (haveNext)
                                 mSuperRecyclerView.hideMoreProgress();
-                            if(TextUtil.isEmpty(category)){
-                                presenter.getTimeRecord(TYPE_PULL_MORE,cout*currpage+"",cout+"");
-                            }else {
-                                presenter.getMeasureRecord(TYPE_PULL_MORE,category,cout*currpage+"",cout+"");
+                            if (TextUtil.isEmpty(category)) {
+                                presenter.getTimeRecord(TYPE_PULL_MORE, cout * currpage + "", cout + "");
+                            } else {
+                                presenter.getMeasureRecord(TYPE_PULL_MORE, category, cout * currpage + "", cout + "");
                             }
 
 
@@ -197,6 +210,7 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
 
         }
     }
+
     @Override
     public void bindEvents() {
         navigationBar.setNavigationBarListener(new NavigationBar.NavigationBarListener() {
@@ -227,14 +241,14 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
 
     @Override
     public <T> void toEntity(T entity, int type) {
-        List<Record>    lists= (List<Record>) entity;
+        List<Record> lists = (List<Record>) entity;
         data.clear();
-         for(Record record:lists){
-             for(Record record1:record.items){
-                 data.add(record1);
-             }
-         }
-        onDataLoaded(type,data.size()==cout,data);
+        for (Record record : lists) {
+            for (Record record1 : record.items) {
+                data.add(record1);
+            }
+        }
+        onDataLoaded(type, data.size() == cout, data);
     }
 
     @Override
@@ -248,4 +262,10 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
     }
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

@@ -133,19 +133,10 @@
                 android:textColor="@color/blue"
                 android:textSize="15sp" />
         </LinearLayout>
-        <RelativeLayout
+        <com.canplay.medical.view.loadingView.LoadingPager
+            android:id="@+id/loadingView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/content_bg">
-            <com.malinskiy.superrecyclerview.SuperRecyclerView
-                android:visibility="gone"
-                android:id="@+id/super_recycle_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
-                app:layout_moreProgress="@layout/view_more_progress"
-                app:recyclerClipToPadding="true"
-                app:scrollbarStyle="outsideOverlay" />
+            android:layout_height="match_parent">
             <ListView
                 android:layout_marginTop="5dp"
                 android:id="@+id/listview_all_city"
@@ -153,32 +144,7 @@
                 android:layout_height="match_parent"
                 style="@style/lv_content"
                 />
-
-            <TextView
-                android:id="@+id/tv_letter_overlay"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:background="@drawable/overlay_bg"
-                android:textSize="48sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:visibility="gone"/>
-
-            <com.canplay.medical.view.SideLetterBars
-                android:visibility="gone"
-                android:layout_marginBottom="80dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/side_letter_bars"
-                android:layout_width="@dimen/side_letter_bar_width"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                tools:ignore="RtlHardcoded" />
-
-
-
-        </RelativeLayout>
+        </com.canplay.medical.view.loadingView.LoadingPager>
     </LinearLayout>
 
 

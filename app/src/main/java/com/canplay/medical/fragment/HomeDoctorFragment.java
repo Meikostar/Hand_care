@@ -25,6 +25,8 @@ import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.view.DivItemDecoration;
+import com.canplay.medical.view.loadingView.BaseLoadingPager;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
 import java.util.List;
@@ -53,8 +55,8 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
     ImageView ivAdd;
     @BindView(R.id.navigationbar_title)
     TextView navigationbarTitle;
-    @BindView(R.id.tv_none)
-    TextView tvNone;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
 
 
     //    private List<AD> list = new ArrayList<>();
@@ -75,6 +77,7 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
         unbinder = ButterKnife.bind(this, view);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
+//        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
         presenter.getDoctorList();
         initView();
         initListener();
@@ -196,10 +199,12 @@ public class HomeDoctorFragment extends BaseFragment implements View.OnClickList
     @Override
     public <T> void toEntity(T entity, int type) {
         list = (List<Friend>) entity;
-        if(list!=null&&list.size()>0){
-            tvNone.setVisibility(View.GONE);
-        }else {
-            tvNone.setVisibility(View.VISIBLE);
+        if (list!=null&&list.size() == 0) {
+            loadingView.setContent("你还没有设置家庭医生，点击上方+号键签约家庭医生服务");
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();

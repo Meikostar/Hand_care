@@ -49,31 +49,23 @@
             android:visibility="visible" />
 
     </RelativeLayout>
-    <RelativeLayout
+    <com.canplay.medical.view.loadingView.LoadingPager
+        android:id="@+id/loadingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.malinskiy.superrecyclerview.SuperRecyclerView
             android:id="@+id/super_recycle_view"
             android:overScrollMode="never"
             android:scrollbars="none"
+            android:background="@color/content_bg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
             app:layout_moreProgress="@layout/view_more_progress"
             app:recyclerClipToPadding="true"
             app:scrollbarStyle="outsideOverlay" />
-        <TextView
-            android:id="@+id/tv_none"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
-            android:gravity="center"
-            android:layout_centerInParent="true"
-            android:text="你还没有设置家庭医生，点击上方+号键签约家庭医生服务"
-            android:textSize="19sp"
-            android:textColor="@color/color6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
+    </com.canplay.medical.view.loadingView.LoadingPager>
+
 
 
 </LinearLayout>

@@ -8,6 +8,10 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\network_error.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\network_error.png"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\header_arrow_white_icon.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\header_arrow_white_icon.png"
     },
@@ -18,5 +22,9 @@
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\arrow_left.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\arrow_left.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\op_img_none_good.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\mipmap-xxhdpi\\op_img_none_good.png"
     }
 ]

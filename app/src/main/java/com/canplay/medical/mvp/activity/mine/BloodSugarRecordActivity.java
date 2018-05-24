@@ -1,6 +1,7 @@
 package com.canplay.medical.mvp.activity.mine;
 
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,11 +15,11 @@ import com.canplay.medical.mvp.adapter.recycle.PressRecordReCycleAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
-import com.canplay.medical.util.LogUtils;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.DivItemDecoration;
 import com.canplay.medical.view.NavigationBar;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.malinskiy.superrecyclerview.OnMoreListener;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
@@ -33,7 +34,7 @@ import butterknife.ButterKnife;
 /**
  * x血糖测量记录
  */
-public class BloodSugarRecordActivity extends BaseActivity implements  BaseContract.View {
+public class BloodSugarRecordActivity extends BaseActivity implements BaseContract.View {
     @Inject
     BasesPresenter presenter;
 
@@ -41,6 +42,8 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
     NavigationBar navigationBar;
     @BindView(R.id.super_recycle_view)
     SuperRecyclerView mSuperRecyclerView;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
 
     private PressRecordReCycleAdapter adapter;
     private LinearLayoutManager mLinearLayoutManager;
@@ -49,7 +52,7 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
     private final int TYPE_PULL_MORE = 2;
     private final int TYPE_REMOVE = 3;
     private int id;
-    private int currpage=0;
+    private int currpage = 0;
     private String userId;
 
     @Override
@@ -65,13 +68,13 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
         mSuperRecyclerView.getMoreProgressView().getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
-        adapter=new PressRecordReCycleAdapter(this,1);
+        adapter = new PressRecordReCycleAdapter(this, 1);
 
         mSuperRecyclerView.setAdapter(adapter);
         String id = getIntent().getStringExtra("id");
-        if(TextUtil.isNotEmpty(id)){
-            userId=id;
-        }else {
+        if (TextUtil.isNotEmpty(id)) {
+            userId = id;
+        } else {
             userId = SpUtil.getInstance().getUserId();
         }
         reflash();
@@ -89,8 +92,10 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
             });
         }
     }
-    private int cout=10;
-    private int total=0;
+
+    private int cout = 10;
+    private int total = 0;
+
     @Override
     public void bindEvents() {
         refreshListener = new SwipeRefreshLayout.OnRefreshListener() {
@@ -99,13 +104,13 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
             public void onRefresh() {
                 // mSuperRecyclerView.showMoreProgress();
 
-                    presenter.getBloodList(TYPE_PULL_REFRESH,total+"",cout+"",userId);
+                presenter.getBloodList(TYPE_PULL_REFRESH, total + "", cout + "", userId);
 
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(mSuperRecyclerView!=null){
+                        if (mSuperRecyclerView != null) {
                             mSuperRecyclerView.hideMoreProgress();
                         }
 
@@ -116,12 +121,14 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
         mSuperRecyclerView.setRefreshListener(refreshListener);
 
     }
-    public List<Record> list=new ArrayList<>();
-    public List<Record> data=new ArrayList<>();
-    public void onDataLoaded(int loadtype,final boolean haveNext, List<Record> datas) {
+
+    public List<Record> list = new ArrayList<>();
+    public List<Record> data = new ArrayList<>();
+
+    public void onDataLoaded(int loadtype, final boolean haveNext, List<Record> datas) {
 
         if (loadtype == TYPE_PULL_REFRESH) {
-            currpage=0;
+            currpage = 0;
             list.clear();
             for (Record info : datas) {
                 list.add(info);
@@ -151,11 +158,11 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
                             if (haveNext)
                                 mSuperRecyclerView.hideMoreProgress();
 
-                            if(type==0){
-                                presenter.getBloodPressList(TYPE_PULL_MORE,cout*currpage+"",cout+"",userId);
+                            if (type == 0) {
+                                presenter.getBloodPressList(TYPE_PULL_MORE, cout * currpage + "", cout + "", userId);
 
-                            }else {
-                                presenter.getBloodList(TYPE_PULL_MORE,cout*currpage+"",cout+"",userId);
+                            } else {
+                                presenter.getBloodList(TYPE_PULL_MORE, cout * currpage + "", cout + "", userId);
 
                             }
 
@@ -178,9 +185,15 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
 
     @Override
     public <T> void toEntity(T entity, int type) {
-        List<Record>     lists= (List<Record>) entity;
+        List<Record> lists = (List<Record>) entity;
+        if (lists.size() == 0) {
 
-        onDataLoaded(type,data.size()==cout,lists);
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
+        }
+        onDataLoaded(type, data.size() == cout, lists);
     }
 
     @Override
@@ -192,4 +205,6 @@ public class BloodSugarRecordActivity extends BaseActivity implements  BaseContr
     public void showTomast(String msg) {
 
     }
+
+
 }

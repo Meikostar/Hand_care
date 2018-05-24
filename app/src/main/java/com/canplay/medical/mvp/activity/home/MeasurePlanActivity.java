@@ -21,6 +21,8 @@ import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
+import com.canplay.medical.view.loadingView.BaseLoadingPager;
+import com.canplay.medical.view.loadingView.LoadingPager;
 import com.canplay.medical.view.scrollView.StickyScrollView;
 
 import javax.inject.Inject;
@@ -56,6 +58,8 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
     StickyScrollView scrollView;
     @BindView(R.id.tv_state)
     TextView tvState;
+    @BindView(R.id.loadingView)
+    LoadingPager loadingView;
     private MesureAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -72,7 +76,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         navigationBar.setNavigationBarListener(this);
-        showProgress("加载中...");
+        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
         presenter.getDetails("Measurement");
         adapter = new MesureAdapter(this);
         rlMenu.setAdapter(adapter);
@@ -91,7 +95,9 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
                 } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
+                    loadingView.showPager(BaseLoadingPager.STATE_LOADING);
                     presenter.getDetails("Measurement");
+
                 }
 
             }
@@ -179,7 +185,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
             minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
             if (minters < 0) {
                 minters = minters + 60;
-                hours=hours-1;
+                hours = hours - 1;
             }
             if (hours < 0) {
                 hours = hours + 24;
@@ -189,7 +195,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
             if (BaseApplication.time2 == 0) {
                 BaseApplication.time2 = times;
             }
-            if(countDownTimer!=null){
+            if (countDownTimer != null) {
                 countDownTimer.cancel();
             }
             countDownTimer = new CountDownTimer(BaseApplication.time2 == 0 ? times : BaseApplication.time2, 1000) {
@@ -218,9 +224,16 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
                 }
             }.start();
 
-        }else {
+        } else {
             showToasts("暂无测量数据");
 
+        }
+        if (medil.actions.size() == 0) {
+
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setData(medil.actions);
     }
@@ -243,9 +256,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
     @Override
     public void showTomast(String msg) {
         dimessProgress();
-          showToasts(msg);
+        showToasts(msg);
     }
-
-
 
 }
