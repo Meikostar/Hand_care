@@ -290,11 +290,13 @@ public interface BaseApi {
     /**
      * 添加用药提醒
      */
-
+//
+//    @Headers({"Content-Type: application/json","Accept: application/json"})
+//    @POST("Flow/v2/Reminder")
+//    Observable<BaseData> addMedical(@Body AddMedical body);
     @Headers({"Content-Type: application/json","Accept: application/json"})
-    @POST("Flow/v2/Reminder")
+    @POST("flow/v3/reminder/medication")
     Observable<BaseData> addMedical(@Body AddMedical body);
-
 
     /**
      * 更换手机号

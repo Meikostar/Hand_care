@@ -225,7 +225,7 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
         } else {
             data = (List<Medicine>) entity;
             if (data.size() == 0) {
-
+                 loadingView.setContent("暂无测量提醒");
                 loadingView.showPager(LoadingPager.STATE_EMPTY);
 
             }else {

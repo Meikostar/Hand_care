@@ -24,7 +24,7 @@
             android:layout_marginRight="70dp"
             android:gravity="center"
             android:text="暂无数据"
-            android:textColor="@color/gray"
+            android:textColor="@color/color6"
             android:textSize="14sp" />
 
         <Button

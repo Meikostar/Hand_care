@@ -7,13 +7,13 @@ import android.view.View;
 import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.RegularListView;
-import com.canplay.medical.view.loadingView.LoadingPager;
 import com.canplay.medical.view.scrollView.StickyScrollView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -43,7 +43,9 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.scrollView = Utils.findRequiredViewAsType(source, R.id.scrollView, "field 'scrollView'", StickyScrollView.class);
     target.tvState = Utils.findRequiredViewAsType(source, R.id.tv_state, "field 'tvState'", TextView.class);
     target.llBg = Utils.findRequiredViewAsType(source, R.id.ll_bg, "field 'llBg'", LinearLayout.class);
-    target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
+    target.imgEmpty = Utils.findRequiredViewAsType(source, R.id.img_empty, "field 'imgEmpty'", ImageView.class);
+    target.txtDesc = Utils.findRequiredViewAsType(source, R.id.txt_desc, "field 'txtDesc'", TextView.class);
+    target.rlBg = Utils.findRequiredViewAsType(source, R.id.rl_bg, "field 'rlBg'", RelativeLayout.class);
   }
 
   @Override
@@ -66,6 +68,8 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.scrollView = null;
     target.tvState = null;
     target.llBg = null;
-    target.loadingView = null;
+    target.imgEmpty = null;
+    target.txtDesc = null;
+    target.rlBg = null;
   }
 }

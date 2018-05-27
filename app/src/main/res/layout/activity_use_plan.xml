@@ -212,10 +212,7 @@
              android:layout_height="0.5dp"
              android:background="@color/linecolor"/>
 
-         <com.canplay.medical.view.loadingView.LoadingPager
-             android:id="@+id/loadingView"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+
              <com.canplay.medical.view.RegularListView
                  android:layout_marginTop="3dp"
                  android:divider="#00000000"
@@ -227,7 +224,36 @@
                  android:layout_height="match_parent"
                  android:visibility="visible"
                  style="@style/lv_content"/>
-         </com.canplay.medical.view.loadingView.LoadingPager>
+         <RelativeLayout
+             android:visibility="gone"
+             android:id="@+id/rl_bg"
+             android:layout_width="match_parent"
+             android:layout_height="300dp">
+
+             <ImageView
+                 android:layout_marginTop="80dp"
+                 android:id="@+id/img_empty"
+                 android:layout_width="100dp"
+                 android:layout_height="100dp"
+                 android:layout_centerHorizontal="true"
+                 android:src="@mipmap/op_img_none_good" />
+
+             <TextView
+                 android:id="@+id/txt_desc"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/img_empty"
+                 android:layout_centerInParent="true"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="70dp"
+                 android:layout_marginRight="70dp"
+                 android:gravity="center"
+                 android:text="暂无数据"
+                 android:textColor="@color/color6"
+                 android:textSize="14sp" />
+
+         </RelativeLayout>
+
      </LinearLayout>
  </com.canplay.medical.view.scrollView.StickyScrollView>
 

@@ -258,11 +258,12 @@ public class MineHealthCenterActivity extends BaseActivity implements HomeContra
     @Override
     public <T> void toEntity(T entity, int type) {
         dimessProgress();
+        list= (List<Friend>) entity;
 
         if (list.size() == 0) {
 
             loadingView.showPager(LoadingPager.STATE_EMPTY);
-
+            loadingView.setContent("你还没有亲友哦");
         } else {
             loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }

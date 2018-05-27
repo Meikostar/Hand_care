@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
@@ -21,7 +23,6 @@ import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
-import com.canplay.medical.view.loadingView.BaseLoadingPager;
 import com.canplay.medical.view.loadingView.LoadingPager;
 import com.canplay.medical.view.scrollView.StickyScrollView;
 
@@ -58,8 +59,13 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
     StickyScrollView scrollView;
     @BindView(R.id.tv_state)
     TextView tvState;
-    @BindView(R.id.loadingView)
-    LoadingPager loadingView;
+    @BindView(R.id.img_empty)
+    ImageView imgEmpty;
+    @BindView(R.id.txt_desc)
+    TextView txtDesc;
+    @BindView(R.id.rl_bg)
+    RelativeLayout rlBg;
+
     private MesureAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -76,8 +82,9 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         navigationBar.setNavigationBarListener(this);
-        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
+
         presenter.getDetails("Measurement");
+        showProgress("加载中...");
         adapter = new MesureAdapter(this);
         rlMenu.setAdapter(adapter);
         time = getIntent().getStringExtra("time");
@@ -95,7 +102,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
                 } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
-                    loadingView.showPager(BaseLoadingPager.STATE_LOADING);
+
                     presenter.getDetails("Measurement");
 
                 }
@@ -174,66 +181,71 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
     public <T> void toEntity(T entity, int type) {
         medil = (Medil) entity;
         dimessProgress();
-        if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
-            tvState.setText("下次测量时间");
-            time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
-            String date = TimeUtil.formatHour(System.currentTimeMillis());
-            String[] split = date.split(":");
-            String[] splits = time.split(":");
-            hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
+        if(medil!=null){
+            if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
+                tvState.setText("下次测量时间");
+                time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
+                String date = TimeUtil.formatHour(System.currentTimeMillis());
+                String[] split = date.split(":");
+                String[] splits = time.split(":");
+                hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
 
-            minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
-            if (minters < 0) {
-                minters = minters + 60;
-                hours = hours - 1;
-            }
-            if (hours < 0) {
-                hours = hours + 24;
-            }
-            tvTime.setText(time);
-            times = hours * 3600 * 1000 + minters * 60 * 1000;
-            if (BaseApplication.time2 == 0) {
-                BaseApplication.time2 = times;
-            }
-            if (countDownTimer != null) {
-                countDownTimer.cancel();
-            }
-            countDownTimer = new CountDownTimer(BaseApplication.time2 == 0 ? times : BaseApplication.time2, 1000) {
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
-                    String[] times = timeStr.split(",");
-                    if (tvHour != null) {
-                        tvHour.setText(times[1]);
-                        tvMinter.setText(times[2]);
-                        tvSecond.setText(times[3]);
+                minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
+                if (minters < 0) {
+                    minters = minters + 60;
+                    hours = hours - 1;
+                }
+                if (hours < 0) {
+                    hours = hours + 24;
+                }
+                tvTime.setText(time);
+                times = hours * 3600 * 1000 + minters * 60 * 1000;
+                if (BaseApplication.time2 == 0) {
+                    BaseApplication.time2 = times;
+                }
+                if (countDownTimer != null) {
+                    countDownTimer.cancel();
+                }
+                countDownTimer = new CountDownTimer(BaseApplication.time2 == 0 ? times : BaseApplication.time2, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                        String[] times = timeStr.split(",");
+                        if (tvHour != null) {
+                            tvHour.setText(times[1]);
+                            tvMinter.setText(times[2]);
+                            tvSecond.setText(times[3]);
+                        }
+
+
                     }
 
+                    @Override
+                    public void onFinish() {
+                        if (tvHour != null) {
+                            tvHour.setText("00");
+                            tvMinter.setText("00");
+                            tvSecond.setText("00");
+                        }
 
-                }
 
-                @Override
-                public void onFinish() {
-                    if (tvHour != null) {
-                        tvHour.setText("00");
-                        tvMinter.setText("00");
-                        tvSecond.setText("00");
                     }
+                }.start();
+                rlBg.setVisibility(View.GONE);
+            } else {
+                rlBg.setVisibility(View.VISIBLE);
+                txtDesc.setText("暂无测量记录");
+            }
+            if (medil.actions.size() == 0) {
 
-
-                }
-            }.start();
-
+                rlBg.setVisibility(View.VISIBLE);
+                txtDesc.setText("暂无测量记录");
+            } else {
+                rlBg.setVisibility(View.GONE);
+            }
         } else {
-            showToasts("暂无测量数据");
-
-        }
-        if (medil.actions.size() == 0) {
-
-            loadingView.showPager(LoadingPager.STATE_EMPTY);
-
-        } else {
-            loadingView.showPager(LoadingPager.STATE_SUCCEED);
+            rlBg.setVisibility(View.VISIBLE);
+            txtDesc.setText("暂无测量记录");
         }
         adapter.setData(medil.actions);
     }
@@ -259,4 +271,10 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
         showToasts(msg);
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

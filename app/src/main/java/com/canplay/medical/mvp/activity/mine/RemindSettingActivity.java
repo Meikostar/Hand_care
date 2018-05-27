@@ -29,14 +29,13 @@ import com.canplay.medical.bean.Item;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.RingSelectItem;
+import com.canplay.medical.bean.Decs;
 import com.canplay.medical.mvp.activity.home.*;
 import com.canplay.medical.mvp.adapter.MedicaldTurnapter;
 import com.canplay.medical.mvp.adapter.RingSelectAdapter;
-import com.canplay.medical.mvp.adapter.TimeAddAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
-import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.HourSelector;
@@ -44,11 +43,10 @@ import com.canplay.medical.view.ListPopupWindow;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.RegularListView;
 import com.canplay.medical.view.RingPopupWindow;
+import com.google.gson.Gson;
 import com.google.zxing.client.android.decode.WeacConstants;
 import com.google.zxing.client.android.utils.AudioPlayer;
 import com.google.zxing.client.android.utils.MyUtil;
-
-import android.support.v4.app.LoaderManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -104,7 +102,6 @@ public class RemindSettingActivity extends BaseActivity implements
      */
     private static final int LOADER_ID = 1;
     private Subscription mSubscription;
-    private List<String> datas=new ArrayList<>();
     private List<Medicines> dat=new ArrayList<>();
     private AddMedical medical=new AddMedical();
     @Override
@@ -200,6 +197,8 @@ public class RemindSettingActivity extends BaseActivity implements
         }
     }
    private List<String> times=new ArrayList<>();
+   private List<Decs> datas=new ArrayList<>();
+
     private int hour;
     private int minter;
     @Override
@@ -224,27 +223,46 @@ public class RemindSettingActivity extends BaseActivity implements
                 namess = adapter.getData();
                 hour=Integer.valueOf(selector.getHour());
                 minter=Integer.valueOf(selector.getMinute());
-                times.add(selector.getSelector());
+                medical.when=selector.getSelector();
+                medical.repetition="1";
+                medical.ringTone="";
+                medical.when=selector.getSelector();
                 cout=0;
                 if(namess==null||namess.size()==0){
                     showToasts("请选择药物");
                     return;
                 }
                 showProgress("添加中...");
+                datas.clear();
                 for(Medicines name:namess){
-                    medical.name=name.name;
-                    medical.when=times;
+                    Decs dec=new Decs();
                     if(TextUtil.isNotEmpty(name.message)){
-                        medical.message=name.message;
+                        dec.dosage=name.message;
                     }else {
-                        medical.message="2颗";
+                        dec.dosage="1颗";
+                    }
+                    if(TextUtil.isNotEmpty(name.name)){
+                        dec.name=name.name;
+                    }else {
+                        dec.name="";
+                    }
+                    if(TextUtil.isNotEmpty(name.specs)){
+                        dec.specs=name.specs;
+                    }else {
+                        dec.specs="";
                     }
 
-                    medical.userId= SpUtil.getInstance().getUserId();
                     medical.type="time";
-                    medical.remindingFor="Medicine";
-                    presenter.addMediacl(medical);
-                }        mAlarmClock.setTag("2");
+                    medical.repetition	="1";
+                    medical.ringTone="";
+                 datas.add(dec);
+
+                }
+                String medies = gson.toJson(datas);
+                medical.medicines=medies;
+                medical.userId = SpUtil.getInstance().getUserId();
+                presenter.addMediacl(medical);
+
 
             }
 
@@ -283,6 +301,7 @@ public class RemindSettingActivity extends BaseActivity implements
         });
     }
   private int cout;
+    private Gson gson=new Gson();
   private List<DATA> data=new ArrayList<>();
     @Override
     public void initData() {
@@ -447,7 +466,7 @@ public class RemindSettingActivity extends BaseActivity implements
     @Override
     public <T> void toEntity(T entity, int type) {
 
-        if(cout==namess.size()-1){
+
             showToasts("用药提醒添加成功");
             dimessProgress();
 
@@ -459,7 +478,7 @@ public class RemindSettingActivity extends BaseActivity implements
 //            AlarmClockOperate.getInstance().saveAlarmClock(mAlarmClock);
 //            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MEDICALREFASH,mAlarmClock));
             finish();
-        }
+
         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURES,"data"));
         cout++;
     }

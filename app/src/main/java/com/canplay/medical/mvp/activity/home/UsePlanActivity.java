@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -76,8 +77,13 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     TextView tvState;
     @BindView(R.id.ll_bg)
     LinearLayout llBg;
-    @BindView(R.id.loadingView)
-    LoadingPager loadingView;
+
+    @BindView(R.id.img_empty)
+    ImageView imgEmpty;
+    @BindView(R.id.txt_desc)
+    TextView txtDesc;
+    @BindView(R.id.rl_bg)
+    RelativeLayout rlBg;
     private UsesPlanAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -97,7 +103,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         rlMenu.setAdapter(adapter);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
+        showProgress("加载中...");
         presenter.getDetails("Medicine");
         time = getIntent().getStringExtra("time");
         tvTime.setFocusable(true);
@@ -111,7 +117,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
 
                 if (bean.type == SubscriptionBean.MENU_REFASHS) {
                 } else if (SubscriptionBean.BLOODORSUGAR == bean.type) {
-                    loadingView.showPager(BaseLoadingPager.STATE_LOADING);
+
                     presenter.getDetails("Medicine");
                 }
 
@@ -239,6 +245,11 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             showGirdView(null);
             llBg.setVisibility(View.VISIBLE);
             tvState.setText("下次服药时间");
+        } else {
+
+            rlBg.setVisibility(View.VISIBLE);
+            txtDesc.setText("暂无服药记录");
+
         }
         if (TextUtil.isNotEmpty(medil.nextPlan.code)) {
             if (medil.nextPlan.code.equals("早")) {
@@ -249,6 +260,9 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                 ivState.setImageResource(R.drawable.w);
             }
             tvName.setText(medil.nextPlan.code);
+        } else {
+            rlBg.setVisibility(View.VISIBLE);
+            txtDesc.setText("暂无服药记录");
         }
         iniGridView(medil.nextPlan.items);
         if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
@@ -311,14 +325,17 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             }
             if (datas.size() == 0) {
 
-                loadingView.showPager(LoadingPager.STATE_EMPTY);
-
+                rlBg.setVisibility(View.VISIBLE);
+                txtDesc.setText("暂无服药记录");
             } else {
-                loadingView.showPager(LoadingPager.STATE_SUCCEED);
+                rlBg.setVisibility(View.GONE);
             }
             adapter.setData(datas);
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
+        } else {
+            rlBg.setVisibility(View.VISIBLE);
+            txtDesc.setText("暂无服药记录");
         }
 
 
@@ -337,10 +354,5 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }

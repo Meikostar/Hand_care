@@ -586,14 +586,14 @@ public final class R {
         public static final int always = 0x7f0f0051;
         public static final int beginning = 0x7f0f004f;
         public static final int bottom = 0x7f0f0032;
-        public static final int btn_back = 0x7f0f0177;
+        public static final int btn_back = 0x7f0f0178;
         public static final int buttonPanel = 0x7f0f006c;
         public static final int cancel_action = 0x7f0f01a3;
         public static final int check = 0x7f0f01c2;
         public static final int checkbox = 0x7f0f007c;
         public static final int chronometer = 0x7f0f01ab;
         public static final int collapseActionView = 0x7f0f0052;
-        public static final int commit = 0x7f0f017b;
+        public static final int commit = 0x7f0f017c;
         public static final int contentPanel = 0x7f0f006f;
         public static final int custom = 0x7f0f0076;
         public static final int customPanel = 0x7f0f0075;
@@ -605,8 +605,8 @@ public final class R {
         public static final int end_padder = 0x7f0f01b4;
         public static final int expand_activities_button = 0x7f0f0066;
         public static final int expanded_menu = 0x7f0f007b;
-        public static final int foldName = 0x7f0f0179;
-        public static final int gallery_tip = 0x7f0f017a;
+        public static final int foldName = 0x7f0f017a;
+        public static final int gallery_tip = 0x7f0f017b;
         public static final int gridView = 0x7f0f00e3;
         public static final int home = 0x7f0f0007;
         public static final int homeAsUp = 0x7f0f001f;
@@ -615,7 +615,7 @@ public final class R {
         public static final int ifRoom = 0x7f0f0053;
         public static final int image = 0x7f0f0067;
         public static final int info = 0x7f0f01ac;
-        public static final int line1 = 0x7f0f017e;
+        public static final int line1 = 0x7f0f017f;
         public static final int line3 = 0x7f0f01b2;
         public static final int listMode = 0x7f0f001b;
         public static final int listView = 0x7f0f00e5;
@@ -638,7 +638,7 @@ public final class R {
         public static final int right_icon = 0x7f0f01ae;
         public static final int right_side = 0x7f0f01a9;
         public static final int rl = 0x7f0f01c0;
-        public static final int rl_top = 0x7f0f0176;
+        public static final int rl_top = 0x7f0f0177;
         public static final int screen = 0x7f0f002b;
         public static final int scrollIndicatorDown = 0x7f0f0074;
         public static final int scrollIndicatorUp = 0x7f0f0070;
@@ -653,7 +653,7 @@ public final class R {
         public static final int search_plate = 0x7f0f008d;
         public static final int search_src_text = 0x7f0f008e;
         public static final int search_voice_btn = 0x7f0f0092;
-        public static final int selectFold = 0x7f0f0178;
+        public static final int selectFold = 0x7f0f0179;
         public static final int select_dialog_listview = 0x7f0f0093;
         public static final int shortcut = 0x7f0f007d;
         public static final int showCustom = 0x7f0f0020;

@@ -112,13 +112,7 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
                 list.add(info);
             }
         }
-        if (list.size() == 0) {
 
-            loadingView.showPager(LoadingPager.STATE_EMPTY);
-
-        } else {
-            loadingView.showPager(LoadingPager.STATE_SUCCEED);
-        }
         adapter.setDatas(list);
         adapter.notifyDataSetChanged();
 //        mSuperRecyclerView.setLoadingMore(false);
@@ -190,7 +184,12 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
 //            }
 //        }
         if (data.size() == 0) {
-            showToasts("暂无记录");
+            loadingView.setContent("暂无服药记录");
+
+            loadingView.showPager(LoadingPager.STATE_EMPTY);
+
+        } else {
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         onDataLoaded(type, lists.size() == cout, lists);
     }
@@ -206,10 +205,4 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }

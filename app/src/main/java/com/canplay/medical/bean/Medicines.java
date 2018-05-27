@@ -34,6 +34,7 @@ public class Medicines extends BaseData implements Serializable{
     public Com command;
     public String certifiedMedicineId;
     public String instruction;
+    public String specs;
     public String forPregnentOrBreastFeeding;
     public String trademark;
     public String forChildren;

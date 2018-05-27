@@ -84,6 +84,7 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
         presenter.attachView(this);
         type = getIntent().getIntExtra("type", 0);
         mLinearLayoutManager = new LinearLayoutManager(this);
+        loadingView.showPager(8);
         mSuperRecyclerView.setLayoutManager(mLinearLayoutManager);
         mSuperRecyclerView.addItemDecoration(new DivItemDecoration(2, true));
         mSuperRecyclerView.getMoreProgressView().getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;

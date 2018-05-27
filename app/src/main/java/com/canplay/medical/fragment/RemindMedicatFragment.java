@@ -208,14 +208,13 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
         if (data.size() == 0) {
 
             loadingView.showPager(LoadingPager.STATE_EMPTY);
+            loadingView.setContent("暂无服药提醒");
 
         }else {
             loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setData(data);
-        if (data.size() == 0) {
-            showToast("暂无用药提醒");
-        }
+
 
         List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
 

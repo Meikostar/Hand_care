@@ -588,7 +588,7 @@ public final class R {
         public static final int ifRoom = 0x7f0f0053;
         public static final int image = 0x7f0f0067;
         public static final int info = 0x7f0f01ac;
-        public static final int line1 = 0x7f0f017e;
+        public static final int line1 = 0x7f0f017f;
         public static final int line3 = 0x7f0f01b2;
         public static final int listMode = 0x7f0f001b;
         public static final int list_item = 0x7f0f0069;

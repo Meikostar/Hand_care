@@ -187,17 +187,21 @@ public class BloodPressRecordActivity extends BaseActivity implements BaseContra
     }
 
     @Override
-    public <T> void toEntity(T entity, int type) {
+    public <T> void toEntity(T entity, int types) {
         List<Record> lists = (List<Record>) entity;
         if (lists.size() == 0) {
-
+            if (type == 0) {
+                loadingView.setContent("暂无血压测量记录");
+            } else {
+                loadingView.setContent("暂无血糖测量记录");
+            }
             loadingView.showPager(LoadingPager.STATE_EMPTY);
 
 
         } else {
             loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
-        onDataLoaded(type, data.size() == cout, lists);
+        onDataLoaded(types, data.size() == cout, lists);
     }
 
     @Override

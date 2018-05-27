@@ -74,6 +74,7 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
         presenter.attachView(this);
         adapter = new SearchMedicalAdapter(this);
         listview.setAdapter(adapter);
+        loadingView.showPager(8);
 //        presenter.getMedicineList();
 
 
@@ -222,6 +223,7 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
 
         if (data.size() > 0) {
             tvSearch.setText("取消");
+            loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
         adapter.setData(data, 0);
 

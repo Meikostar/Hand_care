@@ -30,6 +30,7 @@ public class BaseData implements Serializable {
     public int latestVersion;
     public int version;
     public String  userFullName;
+    public boolean  isSucceeded;
     public String  reminderId;
     public String  name;
     public String  message;

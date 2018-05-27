@@ -239,7 +239,12 @@ public class BloodRecordFragment extends BaseFragment implements BaseContract.Vi
     public <T> void toEntity(T entity, int type) {
         List<Record> lists = (List<Record>) entity;
         if (lists.size() == 0) {
+            if (type == 0) {
+                loadingView.setContent("暂无血压测量记录");
+            } else {
+                loadingView.setContent("暂无血糖测量记录");
 
+            }
             loadingView.showPager(LoadingPager.STATE_EMPTY);
 
         }else {

@@ -4,13 +4,14 @@ package com.canplay.medical.mvp.activity.home;
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
 import com.canplay.medical.view.NavigationBar;
-import com.canplay.medical.view.loadingView.LoadingPager;
 import com.canplay.medical.view.scrollView.StickyScrollView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -37,7 +38,9 @@ public class MeasurePlanActivity_ViewBinding implements Unbinder {
     target.tvTime = Utils.findRequiredViewAsType(source, R.id.tv_time, "field 'tvTime'", TextView.class);
     target.scrollView = Utils.findRequiredViewAsType(source, R.id.scrollView, "field 'scrollView'", StickyScrollView.class);
     target.tvState = Utils.findRequiredViewAsType(source, R.id.tv_state, "field 'tvState'", TextView.class);
-    target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
+    target.imgEmpty = Utils.findRequiredViewAsType(source, R.id.img_empty, "field 'imgEmpty'", ImageView.class);
+    target.txtDesc = Utils.findRequiredViewAsType(source, R.id.txt_desc, "field 'txtDesc'", TextView.class);
+    target.rlBg = Utils.findRequiredViewAsType(source, R.id.rl_bg, "field 'rlBg'", RelativeLayout.class);
   }
 
   @Override
@@ -57,6 +60,8 @@ public class MeasurePlanActivity_ViewBinding implements Unbinder {
     target.tvTime = null;
     target.scrollView = null;
     target.tvState = null;
-    target.loadingView = null;
+    target.imgEmpty = null;
+    target.txtDesc = null;
+    target.rlBg = null;
   }
 }
