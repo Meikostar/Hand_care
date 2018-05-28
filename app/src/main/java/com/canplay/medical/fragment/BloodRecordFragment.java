@@ -236,7 +236,7 @@ public class BloodRecordFragment extends BaseFragment implements BaseContract.Vi
     }
 
     @Override
-    public <T> void toEntity(T entity, int type) {
+    public <T> void toEntity(T entity, int types) {
         List<Record> lists = (List<Record>) entity;
         if (lists.size() == 0) {
             if (type == 0) {
@@ -250,7 +250,7 @@ public class BloodRecordFragment extends BaseFragment implements BaseContract.Vi
         }else {
             loadingView.showPager(LoadingPager.STATE_SUCCEED);
         }
-        onDataLoaded(type, lists.size() == cout, lists);
+        onDataLoaded(types, lists.size() == cout, lists);
     }
 
     @Override

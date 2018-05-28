@@ -140,7 +140,7 @@ public class HomeContract {
 
 
         void getHealthData();
-
+        void confirmEat(String reminderTimeId);
         void myMedicineBox();
         void getDetails(int type);
     }

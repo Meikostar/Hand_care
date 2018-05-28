@@ -134,7 +134,24 @@ public class HomePresenter implements HomeContract.Presenter {
             }
         });
     }
+    @Override
+    public void confirmEat(String reminderTimeId) {
 
+        subscription = ApiManager.setSubscribe(contactApi.confirmEat(reminderTimeId), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
+
+                mView.toNextStep(2);
+            }
+        });
+    }
     @Override
     public void removeRemind(String base) {
 
@@ -217,7 +234,14 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(Medicine entity){
-                mView.toEntity(entity.schedule,0);
+                if(entity!=null){
+                    mView.toEntity(entity.schedule,0);
+
+                }else {
+                    List<Medicine> list=new ArrayList<Medicine>();
+                    mView.toEntity(list,0);
+
+                }
 
             }
         });
@@ -237,7 +261,15 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(Medicine entity){
-                mView.toEntity(entity.schedule,66);
+                if(entity!=null){
+                    mView.toEntity(entity.schedule,66);
+
+                }else {
+                    List<Medicine> list=new ArrayList<Medicine>();
+                    mView.toEntity(list,66);
+
+                }
+//                mView.toEntity(entity.schedule,66);
 
             }
         });
@@ -257,7 +289,15 @@ public class HomePresenter implements HomeContract.Presenter {
 
             @Override
             public void onNext(List<Medicine> entity){
-                mView.toEntity(entity.get(0).schedule,0);
+                if(entity!=null){
+                    mView.toEntity(entity.get(0).schedule,0);
+
+                }else {
+                    List<Medicine> list=new ArrayList<Medicine>();
+                    mView.toEntity(list,0);
+
+                }
+//                mView.toEntity(entity.get(0).schedule,0);
 
             }
         });

@@ -115,8 +115,13 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
                     intent.putExtra("data", medicine);
                     startActivity(intent);
                 } else if (type == 2) {
+                    showProgress("删除中...");
                     presenter.removeRemind(medicine.reminderTimeId);
                     time = medicine.when;
+                } else if (type == 3) {
+                    showProgress("确认中...");
+                    presenter.confirmEat(medicine.reminderTimeId);
+
                 }
 
             }
@@ -279,46 +284,53 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
 
     @Override
     public void toNextStep(int type) {
-        dimessProgress();
+        if(type==1){
+            dimessProgress();
 //        showToast("删除成功");
-        presenter.MedicineRemindList();
-        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
-        List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
-        for (AlarmClock alarmClock : alarmClocks) {
-            if (TextUtil.isNotEmpty(time)) {
-                String[] split = time.split(":");
-                if (alarmClock.getHour() == Integer.valueOf(split[0]) && alarmClock.getMinute() == Integer.valueOf(split[1])) {
-                    String times = SpUtil.getInstance().getString("time");
-                    String data = "";
-                    if (TextUtil.isNotEmpty(times)) {
-                        String[] split1 = times.split(",");
-                        for (int i = 0; i < split1.length; i++) {
-                            if (!(time + "ma").equals(split1[i])) {
-                                if (TextUtil.isNotEmpty(data)) {
-                                    data = data + "," + split1[i];
-                                } else {
-                                    data = split1[i];
+            presenter.MedicineRemindList();
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
+            List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
+            for (AlarmClock alarmClock : alarmClocks) {
+                if (TextUtil.isNotEmpty(time)) {
+                    String[] split = time.split(":");
+                    if (alarmClock.getHour() == Integer.valueOf(split[0]) && alarmClock.getMinute() == Integer.valueOf(split[1])) {
+                        String times = SpUtil.getInstance().getString("time");
+                        String data = "";
+                        if (TextUtil.isNotEmpty(times)) {
+                            String[] split1 = times.split(",");
+                            for (int i = 0; i < split1.length; i++) {
+                                if (!(time + "ma").equals(split1[i])) {
+                                    if (TextUtil.isNotEmpty(data)) {
+                                        data = data + "," + split1[i];
+                                    } else {
+                                        data = split1[i];
+                                    }
                                 }
                             }
+                            SpUtil.getInstance().putString("time", data);
                         }
-                        SpUtil.getInstance().putString("time", data);
+                        SpUtil.getInstance().putString(time + "ma", "");
+
+                        // 关闭闹钟
+                        MyUtil.cancelAlarmClock(getActivity(),
+                                alarmClock.getId());
+                        // 关闭小睡
+                        MyUtil.cancelAlarmClock(getActivity(),
+                                -alarmClock.getId());
+
+                        NotificationManager notificationManager = (NotificationManager) getActivity()
+                                .getSystemService(Activity.NOTIFICATION_SERVICE);
+                        // 取消下拉列表通知消息
+                        notificationManager.cancel(alarmClock.getId());
                     }
-                    SpUtil.getInstance().putString(time + "ma", "");
-
-                    // 关闭闹钟
-                    MyUtil.cancelAlarmClock(getActivity(),
-                            alarmClock.getId());
-                    // 关闭小睡
-                    MyUtil.cancelAlarmClock(getActivity(),
-                            -alarmClock.getId());
-
-                    NotificationManager notificationManager = (NotificationManager) getActivity()
-                            .getSystemService(Activity.NOTIFICATION_SERVICE);
-                    // 取消下拉列表通知消息
-                    notificationManager.cancel(alarmClock.getId());
-                }
-            }
+                }}
+        }else {
+            dimessProgress();
+            presenter.MedicineRemindList();
+            showToast("用药提醒已确认");
         }
+
+
     }
 
     @Override

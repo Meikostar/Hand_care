@@ -22,12 +22,12 @@ public class AddMedical {
 //    when	提醒时间，为24小时时间格式,比如'19:40'
 //    type	只支持'time'
 //    ringTone	铃声。目前版本平台不保存铃声
-    public String medicines;
+    public List<Decs> medicines;
     public String repetition;
-    public String message;
+
     public String type;
     public String ringTone;
     public String when;
-    public String userId;
+
 
 }

@@ -84,6 +84,17 @@ public class UserTimeAdapter extends BaseRecycleViewAdapter {
                 holder.ivCyc.setImageResource(R.drawable.cyc1);
             }else if(record.category.equals("Measurement")){
                 holder.ivCyc.setImageResource(R.drawable.cyc2);
+
+            }
+        }
+        if(TextUtil.isNotEmpty(record.content)){
+
+            if(record.content.contains("收缩压")){
+                holder.ivCyc.setImageResource(R.drawable.cyc2);
+            }else if(record.content.contains("血糖读")){
+                holder.ivCyc.setImageResource(R.drawable.cyc3);
+            }else {
+                holder.ivCyc.setImageResource(R.drawable.cyc1);
             }
         }
 

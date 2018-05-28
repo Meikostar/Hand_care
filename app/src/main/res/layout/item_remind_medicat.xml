@@ -43,11 +43,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
+                android:padding="6dp"
+                android:background="@drawable/shape_bg_lin_cancel"
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="8dp"
                 android:id="@+id/tv_content"
-                android:text="09,每天"
-                android:textColor="@color/slow_black"
+                android:text="确认服药"
+                android:textColor="@color/white"
                 android:textSize="13.5sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

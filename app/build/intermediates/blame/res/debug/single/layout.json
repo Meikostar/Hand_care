@@ -1,782 +1,782 @@
 [
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_measure_remind.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_measure_remind.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_action.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\base_dailog_view.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\base_dailog_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\press_record_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\press_record_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_remind_setting.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_remind_setting.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_more_progress.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_more_progress.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choose_medical.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_choose_medical.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_remind_health.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_remind_health.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\hour_selector.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\hour_selector.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\grid_imge_view.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\grid_imge_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_blooe_measure.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_blooe_measure.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\banner_view.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\banner_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_blood_chart.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_blood_chart.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\press_record_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\press_record_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_recyclerview_verticalscroll.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d0279ca0d103ef1be4c739c0b501070c956be491\\output\\res\\layout\\layout_recyclerview_verticalscroll.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\time_select.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\time_select.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_screen_simple.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart_blood_press.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart_blood_press.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_smart_kit.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_smart_kit.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\banner_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\banner_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_health_data.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_health_data.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_remind_medical.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_remind_medical.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_editor_psw.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_editor_psw.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_registered2.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_registered2.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\hour_selector.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\hour_selector.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_location_mediacl.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_location_mediacl.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_doctor_detail.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_doctor_detail.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_menu_item_action_area.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_editor_psw.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_editor_psw.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\goods_emtyview.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\goods_emtyview.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_setting.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_medical_detial.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_medical_detial.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_baseloader.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_baseloader.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_progress_recyclerview.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d0279ca0d103ef1be4c739c0b501070c956be491\\output\\res\\layout\\layout_progress_recyclerview.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_remind_health.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_remind_health.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_baseloader.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_baseloader.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_action.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mesure_plan.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_mesure_plan.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_doctor_detail.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_doctor_detail.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_more_progress.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d0279ca0d103ef1be4c739c0b501070c956be491\\output\\res\\layout\\layout_more_progress.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\order_detail_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\order_detail_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_remind.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_remind.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_template_media.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\exit_popwindow.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\exit_popwindow.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_timex.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_timex.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_home.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_home.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\medical_turn_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\medical_turn_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_no_more.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_no_more.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\exit_popwindow.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\exit_popwindow.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_second_remind.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_second_remind.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_use_pan_record.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_use_pan_record.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\order_detail_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\order_detail_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast_view.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\toast_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_use_pan_record.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_use_pan_record.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sugar_chart.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_sugar_chart.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_template_lines_media.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_location_list.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_location_list.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_doctor.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_doctor.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_progress.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\55925685d9f809c80be6919dc8e8d92137c54c1b\\output\\res\\layout\\layout_progress.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_navigation_item_subheader.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\choose_black_items.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\choose_black_items.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart_sugar.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart_sugar.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_friend.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_add_friend.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkout_layout.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\checkout_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\activity_capture.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choose_project.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_choose_project.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_friend.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_add_friend.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_message.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_message.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_remind_mesure.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_remind_mesure.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popview_navigationbar_menu.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\popview_navigationbar_menu.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_select_image_top.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\include_select_image_top.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_friend_detail.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_friend_detail.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_cyc.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_cyc.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popview_navigationbars.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\popview_navigationbars.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\activity_capture.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\web_tools.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\web_tools.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\lv_ring_select.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\lv_ring_select.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_use_record.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_use_record.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_layout_tab_text.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\location_mark.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\location_mark.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_home.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_home.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_timex.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_timex.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_image_dialog.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\select_image_dialog.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\add_euip.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\add_euip.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_medical_detail.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_medical_detail.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\grid_imge_view.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\grid_imge_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_setting.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast_view.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\toast_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_use_record.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_use_record.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\goods_emtyview.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\goods_emtyview.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tea_dailog_view.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\tea_dailog_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\medical_turn_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\medical_turn_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_action_bar_title_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_smart_equit.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_smart_equit.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart_line.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart_line.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_nevg_bar.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_nevg_bar.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_baseerror.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_baseerror.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_health.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_health.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_alert_dialog_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\location_mark.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\location_mark.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_remind_medicat.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_remind_medicat.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_baseerror.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_baseerror.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_layout_snackbar_include.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_banner.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_banner.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_healt_center.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_healt_center.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nevagbar_two.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\nevagbar_two.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_set.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_set.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_equip_detail.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_equip_detail.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_timex.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_timex.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkout_layout.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\checkout_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\friend_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\friend_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_dialog_time_selector.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_dialog_time_selector.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_screen_content_include.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\navigationbar.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\navigationbar.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_health_data.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_health_data.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_registered.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_registered.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_image_select.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\activity_image_select.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_medical_detail.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_medical_detail.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nevagbar_two.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\nevagbar_two.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\web_tools.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\web_tools.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\banner_view.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\banner_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_take_medicine.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_take_medicine.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_progress_recyclerview.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\55925685d9f809c80be6919dc8e8d92137c54c1b\\output\\res\\layout\\layout_progress_recyclerview.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bind_phone.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_bind_phone.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_use_plan.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_use_plan.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_image_select.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\activity_image_select.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forget_first.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_forget_first.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\friend_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\friend_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_smart_equit.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_smart_equit.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\search_medcial_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\search_medcial_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_info.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_info.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_cyc.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_cyc.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search_medical.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_search_medical.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_timer_on_time.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_timer_on_time.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_equip_detail.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_equip_detail.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_doctor.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_doctor.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\choose_black_items.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\choose_black_items.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_template_media_custom.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\webview.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\webview.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_code.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_code.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_message.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_message.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_banner.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_banner.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_search.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_search.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_layout_tab_icon.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forget_first.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_forget_first.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_adapter.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_adapter.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\photopick_gridlist_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\photopick_gridlist_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_medical_detail.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_medical_detail.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_use_plan.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_use_plan.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_more_progress.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\55925685d9f809c80be6919dc8e8d92137c54c1b\\output\\res\\layout\\layout_more_progress.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_registered2.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_registered2.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search_medical.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_search_medical.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_navigation_item_header.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_blood_mesure.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_blood_mesure.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\navigationbar.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\navigationbar.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_location_mediacl.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_location_mediacl.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_second_remind.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_second_remind.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_popwindow.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\list_popwindow.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_cyclewheel.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_cyclewheel.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_blood_press_record.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_blood_press_record.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_dialog_time_selector.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\view_dialog_time_selector.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_remind_mesure.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_remind_mesure.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forget_psw.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_forget_psw.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\photopick_list_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\photopick_list_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_blooe_record.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_blooe_record.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_smart_kit.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_smart_kit.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_search_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\toast.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\photopick_list_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\photopick_list_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_remind_setting.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_remind_setting.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popview_navigationbar_menu.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\popview_navigationbar_menu.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_menu.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_menu.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alarm_pop.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\alarm_pop.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_signout.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\pop_signout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_template_part_time.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_set.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_set.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\lv_ring_select.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\lv_ring_select.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forget_psw.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_forget_psw.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_progress.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d0279ca0d103ef1be4c739c0b501070c956be491\\output\\res\\layout\\layout_progress.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_equipment.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_equipment.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\photopick_gridlist_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\photopick_gridlist_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\unbonddevice_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\unbonddevice_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_code.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_code.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_medical_detial.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_medical_detial.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_blood_mesure.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_blood_mesure.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tea_dailog_view.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\tea_dailog_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_collection.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_collection.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\home_doctor_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\home_doctor_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_data.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_add_data.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_blooe_measure.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_blooe_measure.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choose_medical.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_choose_medical.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_list_pop.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_list_pop.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_remind_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_remind_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_location_list.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_location_list.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_recyclerview_verticalscroll.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\55925685d9f809c80be6919dc8e8d92137c54c1b\\output\\res\\layout\\layout_recyclerview_verticalscroll.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_search.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\view_search.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bind_phone.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_bind_phone.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_layout_snackbar.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_collection.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_collection.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_collection.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_collection.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\remind_first_activity.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\remind_first_activity.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_data.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_add_data.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_measure_remind.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_measure_remind.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\unbonddevice_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\unbonddevice_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_base_two_button.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\dialog_base_two_button.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_health.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_health.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_take_medicine.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_take_medicine.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_message.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_message.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_navigation_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\equip_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\equip_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_navigation_item_separator.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_base_two_button.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\dialog_base_two_button.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_action_tombstone.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_timer_on_time.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_timer_on_time.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alarm_pop.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\alarm_pop.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\select_dialog_item_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\banner_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\banner_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_nevg_bar.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\view_nevg_bar.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_healt_center.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_healt_center.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_time.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_time.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choose_project.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_choose_project.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\stub_gird_view.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\stub_gird_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_blooe_record.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_blooe_record.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_info.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_info.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_cyclewheels.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_cyclewheels.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_template_icon_group.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_blood_chart.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_blood_chart.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\change_notic_dialog.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\change_notic_dialog.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\change_notic_dialog.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\change_notic_dialog.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_navigation_menu_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_cyclewheels.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_cyclewheels.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_no_more.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_no_more.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_time_add.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_time_add.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\equip_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\equip_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\stub_gird_view.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\stub_gird_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mesure_plan.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_mesure_plan.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_select_image_top.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\gallery\\build\\intermediates\\bundles\\default\\res\\layout\\include_select_image_top.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_datas.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_add_datas.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_action_tombstone.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_more_progress.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\view_more_progress.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_use_record.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_use_record.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_menu.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_menu.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_recyclerview_horizontalscroll.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d0279ca0d103ef1be4c739c0b501070c956be491\\output\\res\\layout\\layout_recyclerview_horizontalscroll.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_datas.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_add_datas.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_image_dialog.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\select_image_dialog.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_collection.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_collection.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\add_euip.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\add_euip.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menucout_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\menucout_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_taste_selector.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\dialog_taste_selector.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_navigation_menu.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_template_media_custom.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart_line.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart_line.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_blood_record.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_blood_record.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_address_new_store_dialog.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_address_new_store_dialog.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart_blood_press.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart_blood_press.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_emtyview.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_emtyview.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dishes_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\dishes_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_medical_detail.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_medical_detail.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_layout_tab_text.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_change_phone.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_change_phone.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menucout_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\menucout_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_account.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\pop_account.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\toast.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\notification_template_lines_media.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_change_phone.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_change_phone.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_cyclewheel.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_cyclewheel.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\065ed127cad19bfa7f5a3a2d2ca23a5f0c4d3b67\\output\\res\\layout\\design_navigation_menu.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_taste_selector.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\dialog_taste_selector.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_address_new_store_dialog.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\view_address_new_store_dialog.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_blood_press_record.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_blood_press_record.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_remind_medicat.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_remind_medicat.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sugar_chart.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_sugar_chart.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\home_doctor_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\home_doctor_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_time.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_time.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\base_dailog_view.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\base_dailog_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_popwindow.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\list_popwindow.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_time_add.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_time_add.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_remind_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\item_remind_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_remind.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_remind.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_progress.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\dialog_progress.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dishes_item.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\dishes_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\del_friend_dailog.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\del_friend_dailog.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_searchs.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\view_searchs.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_account.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\pop_account.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_signout.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\pop_signout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mine_equipment.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_mine_equipment.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chart_sugar.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_chart_sugar.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_blood_record.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_blood_record.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_registered.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_registered.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\97abfc55d1e504c2314e10ab5909fa0eb140d1bc\\output\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_select_dialog_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\remind_first_activity.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\remind_first_activity.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_timex.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_timex.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_use_plan.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_use_plan.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_progress.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\dialog_progress.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_template_icon_group.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\time_select.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\time_select.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_searchs.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\view_searchs.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\del_friend_dailog.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\del_friend_dailog.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\search_medcial_item.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\search_medcial_item.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\webview.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\webview.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_adapter.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_adapter.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_emtyview.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\fragment_emtyview.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_use_record.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_use_record.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_friend_detail.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_friend_detail.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_recyclerview_horizontalscroll.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\55925685d9f809c80be6919dc8e8d92137c54c1b\\output\\res\\layout\\layout_recyclerview_horizontalscroll.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popview_navigationbars.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\popview_navigationbars.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_action_bar_up_container.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_list_pop.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\item_list_pop.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_use_plan.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\activity_use_plan.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_message.xml",
-        "source": "F:\\GitWorkSapce\\Hand_care\\app\\src\\main\\res\\layout\\activity_message.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "F:\\GitWorkSapce\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6192085179e6056d54168618ede1f6f8f2213103\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_remind_medical.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\layout\\fragment_remind_medical.xml"
     }
 ]

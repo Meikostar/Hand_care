@@ -234,6 +234,7 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         if (type == 1) {
             showToasts("绑定成功");
             presenter.getSmartList();
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EUIP_REFASH, ""));
         } else if (type == 2) {
             showToasts("移除成功");
             RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.EUIP_REFASH, ""));

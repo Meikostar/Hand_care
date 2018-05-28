@@ -239,7 +239,12 @@ public class RemindSettingActivity extends BaseActivity implements
                     if(TextUtil.isNotEmpty(name.message)){
                         dec.dosage=name.message;
                     }else {
-                        dec.dosage="1颗";
+                        dec.dosage="2颗";
+                    }
+                    if(TextUtil.isNotEmpty(name.image)){
+                        dec.image=name.image;
+                    }else {
+                        dec.image="";
                     }
                     if(TextUtil.isNotEmpty(name.name)){
                         dec.name=name.name;
@@ -258,9 +263,9 @@ public class RemindSettingActivity extends BaseActivity implements
                  datas.add(dec);
 
                 }
-                String medies = gson.toJson(datas);
-                medical.medicines=medies;
-                medical.userId = SpUtil.getInstance().getUserId();
+
+                medical.medicines=datas;
+
                 presenter.addMediacl(medical);
 
 
@@ -480,6 +485,7 @@ public class RemindSettingActivity extends BaseActivity implements
             finish();
 
         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURES,"data"));
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,"data"));
         cout++;
     }
 

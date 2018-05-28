@@ -311,7 +311,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 tvState.setVisibility(View.VISIBLE);
 
             }
-            long times = hours * 3600 * 1000 + minters * 60 * 1000;
+            long times = TimeUtil.getStringToDate(entitys.nextPlan.when)-System.currentTimeMillis();
             if (countDownTimer1 != null) {
                 countDownTimer1.cancel();
             }
@@ -391,7 +391,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 tvState1.setVisibility(View.VISIBLE);
 
             }
-            long times = hours * 3600 * 1000 + minters * 60 * 1000;
+            long times = TimeUtil.getStringToDate(entitys.nextPlan.when)-System.currentTimeMillis();
             if (countDownTimer2 != null) {
                 countDownTimer2.cancel();
             }

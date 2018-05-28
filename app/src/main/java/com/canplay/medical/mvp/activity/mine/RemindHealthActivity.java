@@ -103,9 +103,9 @@ public class RemindHealthActivity extends BaseActivity {
                 if (type == 0) {
                     startActivity(new Intent(RemindHealthActivity.this, RemindSettingActivity.class));
                 } else {
-                    if(status==0){
+                    if (status == 0) {
                         startActivity(new Intent(RemindHealthActivity.this, TakeMedicineActivity.class));
-                    }else {
+                    } else {
                         startActivity(new Intent(RemindHealthActivity.this, BloodPressRecordActivity.class));
 
                     }
@@ -155,7 +155,6 @@ public class RemindHealthActivity extends BaseActivity {
         mFragments.add(measureRemindFragment);
 
     }
-
 
 
 }

@@ -16,6 +16,7 @@ import com.canplay.medical.R;
 import com.canplay.medical.bean.Collect;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.RegularListView;
 import com.canplay.medical.view.SwipeListLayout;
 
@@ -119,7 +120,7 @@ public class RemindMedicatAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         if(TextUtil.isNotEmpty(list.get(position).when)){
-            holder.tvTime.setText(list.get(position).when);
+//            holder.tvTime.setText(list.get(position).when);
         }
         String con="";
         if(position<10){
@@ -127,8 +128,31 @@ public class RemindMedicatAdapter extends BaseAdapter {
         }else {
             con=""+(position+1);
         }
-        if(TextUtil.isNotEmpty(list.get(position).type)){
-            holder.tvContent.setText(con+","+list.get(position).type);
+        if(!list.get(position).completedForToday){
+            String hou = TimeUtil.formatHour(System.currentTimeMillis());
+            String when = list.get(position).when;
+            String[] split = hou.split(":");
+            String[] splits = when.split(":");
+            if(splits!=null&&splits.length==2){
+                int hours = Integer.valueOf(split[0]) - Integer.valueOf(splits[0]);
+                int hour = Integer.valueOf(split[1]) - Integer.valueOf(splits[1]);
+                if(hours>0){
+
+                    holder.tvContent.setVisibility(View.VISIBLE);
+                }else if(hours==0){
+                    if(hour>0){
+                        holder.tvContent.setVisibility(View.VISIBLE);
+                    }else {
+                        holder.tvContent.setVisibility(View.INVISIBLE);
+                    }
+                }else {
+                    holder.tvContent.setVisibility(View.INVISIBLE);
+                }
+            }
+
+
+        }else {
+            holder.tvContent.setVisibility(View.INVISIBLE);
         }
         if(TextUtil.isNotEmpty(list.get(position).when)){
             holder.tvTime.setText(list.get(position).when);
@@ -154,7 +178,12 @@ public class RemindMedicatAdapter extends BaseAdapter {
 
                }
            });
-
+        holder.tvContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.delete(list.get(position),3,position);
+            }
+        });
           holder.rl_bg.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {

@@ -282,14 +282,12 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                 hours = hours + 24;
             }
             tvTime.setText(time);
-            times = hours * 3600 * 1000 + minters * 60 * 1000;
-            if (BaseApplication.time1 == 0) {
-                BaseApplication.time1 = times;
-            }
+           times = TimeUtil.getStringToDate(medil.nextPlan.when)-System.currentTimeMillis();
+
             if (countDownTimer != null) {
                 countDownTimer.cancel();
             }
-            countDownTimer = new CountDownTimer(BaseApplication.time1 == 0 ? times : BaseApplication.time1, 1000) {
+            countDownTimer = new CountDownTimer(times, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);

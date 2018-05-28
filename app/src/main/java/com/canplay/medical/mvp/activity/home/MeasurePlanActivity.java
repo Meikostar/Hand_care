@@ -199,14 +199,13 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
                     hours = hours + 24;
                 }
                 tvTime.setText(time);
-                times = hours * 3600 * 1000 + minters * 60 * 1000;
-                if (BaseApplication.time2 == 0) {
-                    BaseApplication.time2 = times;
-                }
+                 times = TimeUtil.getStringToDate(medil.nextPlan.when)-System.currentTimeMillis();
+
+
                 if (countDownTimer != null) {
                     countDownTimer.cancel();
                 }
-                countDownTimer = new CountDownTimer(BaseApplication.time2 == 0 ? times : BaseApplication.time2, 1000) {
+                countDownTimer = new CountDownTimer(times, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
@@ -271,10 +270,5 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
         showToasts(msg);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }
