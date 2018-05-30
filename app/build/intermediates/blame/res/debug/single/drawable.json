@@ -25,19 +25,19 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\dailog_bg.xml",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\dailog_bg.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_action_bar_button.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\bg_action_bar_button.xml"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\dailog_bg.xml",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\dailog_bg.xml"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\text_color_select.xml",
@@ -48,24 +48,24 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\mine2.png"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home7.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\home7.png"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\saixuan.png",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\saixuan.png"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_circle_btn_cancel_normal.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\shape_circle_btn_cancel_normal.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\saixuan.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\saixuan.png"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\blue_ring32.xml",
@@ -89,7 +89,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\store_line.xml",
@@ -105,11 +105,11 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\header_arrow_bg.xml",
@@ -164,20 +164,20 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\shape_loading_bg.xml"
     },
     {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home3.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\home3.png"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_text_cursor_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\home.png"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line_regle_blue.xml",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\line_regle_blue.xml"
-    },
-    {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home.png",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\home.png"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\choose_hui_rectangle.xml",
@@ -192,12 +192,12 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\notic_bg_top.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_normal.png",
-        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\light_normal.png"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_normal.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\light_normal.png"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\login_selector.xml",
@@ -209,7 +209,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notic_bg_bot.xml",
@@ -233,7 +233,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\notification_icon_background.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6730d542e7859c0f449be55e58770b58b2b0cfa8\\output\\res\\drawable\\notification_icon_background.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cw1.png",
@@ -249,7 +249,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_btn_check_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yd2.png",
@@ -288,12 +288,12 @@
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\char_blue_line.xml"
     },
     {
-        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home1.png",
-        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\home1.png"
-    },
-    {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_pressed.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\zxingLibrary\\build\\intermediates\\bundles\\default\\res\\drawable\\light_pressed.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home1.png",
+        "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\home1.png"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_btn_light.xml",
@@ -357,7 +357,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\notification_bg_low.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6730d542e7859c0f449be55e58770b58b2b0cfa8\\output\\res\\drawable\\notification_bg_low.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line_regle_white.xml",
@@ -369,7 +369,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_dialog_material_background.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yd1.png",
@@ -381,7 +381,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cyc3.png",
@@ -401,7 +401,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\uncheck.png",
@@ -409,7 +409,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mine7.png",
@@ -417,11 +417,11 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\notification_tile_bg.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6730d542e7859c0f449be55e58770b58b2b0cfa8\\output\\res\\drawable\\notification_tile_bg.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_common_tab_bg.xml",
@@ -429,11 +429,11 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ratingbar_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_btn_colored_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home6.png",
@@ -442,6 +442,14 @@
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mine3.png",
         "source": "F:\\GitWorkSpace\\Hand_care\\app\\src\\main\\res\\drawable\\mine3.png"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\tooltip_frame_light.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pin_red.png",
@@ -457,7 +465,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\arrow_left.png",
@@ -473,7 +481,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line_regle.xml",
@@ -481,7 +489,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\base3.png",
@@ -493,7 +501,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line_selector.xml",
@@ -517,7 +525,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_qr_code.png",
@@ -541,7 +549,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
@@ -581,7 +589,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\notification_bg.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6730d542e7859c0f449be55e58770b58b2b0cfa8\\output\\res\\drawable\\notification_bg.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\blackt_title_rectangle_light.xml",
@@ -593,7 +601,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_vector_test.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_vector_test.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\time.png",
@@ -621,7 +629,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ic_clear_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\check.png",
@@ -649,7 +657,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_textfield_search_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scan_line.png",
@@ -657,7 +665,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home2_selector.xml",
@@ -681,11 +689,11 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bases3.png",
@@ -709,11 +717,11 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_edit_text_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\saixuan_bg.9.png",
@@ -761,7 +769,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\zhong.png",
@@ -801,7 +809,7 @@
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d6684222313a7d4308cf7ad720520a08ce20f9f7\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\76040eb7c65026dd7b33b103fa8c5f1f965af952\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "F:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cycle_red6.xml",

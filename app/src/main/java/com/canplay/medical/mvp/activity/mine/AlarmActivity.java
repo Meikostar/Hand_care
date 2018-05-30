@@ -191,8 +191,9 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                          img.setImageResource(R.drawable.cyc3);
                          type=2;
                      }
+                        tvContent.setText("快去测量您的"+splits[2]);
                     }
-                    tvContent.setText("快去测量您的"+splits[2]);
+
                 }else  {
                     Intent intent = new Intent(this, RemindFirstDetailActivity.class);
                     intent.putExtra("data",mAlarmClock);

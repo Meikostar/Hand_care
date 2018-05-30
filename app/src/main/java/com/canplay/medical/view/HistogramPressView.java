@@ -113,21 +113,21 @@ public class HistogramPressView extends View {
         titlePaint.setColor(getResources().getColor(R.color.color9));
         //绘制的折线
         chartLinePaint1.setStyle(Paint.Style.FILL);
-        chartLinePaint1.setStrokeWidth(3);
+        chartLinePaint1.setStrokeWidth(5);
         chartLinePaint1.setColor(getResources().getColor(R.color.one));//(1)黄色
         chartLinePaint1.setAntiAlias(true);
         chartLinePaint1.setStyle(Paint.Style.FILL);
         pointLinePaint1.setStyle(Paint.Style.FILL);
-        pointLinePaint1.setStrokeWidth(6);
+        pointLinePaint1.setStrokeWidth(8);
         pointLinePaint1.setColor(getResources().getColor(R.color.one));//(1)黄色
         pointLinePaint1.setAntiAlias(true);
 
         chartLinePaint2.setStyle(Paint.Style.FILL);
-        chartLinePaint2.setStrokeWidth(3);
+        chartLinePaint2.setStrokeWidth(4);
         chartLinePaint2.setColor(getResources().getColor(R.color.two));//(1)黄色
         chartLinePaint2.setAntiAlias(true);
         pointLinePaint2.setStyle(Paint.Style.FILL);
-        pointLinePaint2.setStrokeWidth(6);
+        pointLinePaint2.setStrokeWidth(7);
         pointLinePaint2.setColor(getResources().getColor(R.color.two));//(1)黄色
         pointLinePaint2.setAntiAlias(true);
 

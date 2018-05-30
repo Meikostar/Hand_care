@@ -208,13 +208,15 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
             @Override
             public void onClick(View v) {
                 presenter.confirmEat(reminderTimeId);
-
-
+          if(cout==1){
+             cout=0;
+          }
+           ++cout;
             }
         });
 
     }
-
+    private int cout;
 
     @Override
     public void initData() {

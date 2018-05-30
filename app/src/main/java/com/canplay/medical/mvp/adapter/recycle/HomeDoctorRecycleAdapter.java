@@ -15,6 +15,7 @@ import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.view.CircleTransform;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,7 +60,7 @@ public class HomeDoctorRecycleAdapter extends BaseRecycleViewAdapter {
         }if(TextUtil.isNotEmpty(data.participant.position)){
             holders.tvPoistion.setText(data.participant.position+(data.participant.lineManager==null?"":"|"+data.participant.lineManager));
         }
-        Glide.with(context).load(BaseApplication.avatar+data.participant.user.avatar).asBitmap().placeholder(R.drawable.dingdantouxiang).into(holders.ivImg);
+        Glide.with(context).load(BaseApplication.avatar+data.participant.user.avatar).asBitmap().transform(new CircleTransform(context)).placeholder(R.drawable.dingdantouxiang).into(holders.ivImg);
 
     }
 
