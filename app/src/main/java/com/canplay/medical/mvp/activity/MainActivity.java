@@ -25,6 +25,7 @@ import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.Bind;
+import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.bean.Province;
 import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.unBind;
@@ -111,6 +112,9 @@ MainActivity extends BaseAllActivity implements HomeFragment.ScanListener , Home
             startActivity(new Intent(this, BloodChartRecordActivity.class));
         }else if(status==2){
             startActivity(new Intent(this, SugarChartRecordActivity.class));
+        }else if(status==66){
+            presenter.MedicineRemindList();
+            presenter.MeasureRemindList();
         }
 
     }
@@ -288,12 +292,67 @@ MainActivity extends BaseAllActivity implements HomeFragment.ScanListener , Home
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                 .request();
     }
-
-    @Override
-    public <T> void toEntity(T entity,int type) {
+    private void addList(AlarmClock ac) {
+        MyUtil.startAlarmClock(this, ac);
 
     }
+    private List<Medicine> data;
+    @Override
+    public <T> void toEntity(T entity,int type) {
+        data = (List<Medicine>) entity;
+         if(type==67){
 
+             for (Medicine medicine : data) {
+
+
+                         String[] split = medicine.when.split(":");
+                         arm = BaseApplication.getInstance().mAlarmClock;
+                         arm.setHour(Integer.valueOf(split[0]));
+                         arm.setMinute(Integer.valueOf(split[1]));
+
+                         arm.setTag("2" + ":" + (medicine.reminderTimeId == null ? "##" : medicine.reminderTimeId));
+                         int id = arm.getId();
+                         arm.setId(id + 1);
+                         Gson gson = new Gson();
+                         String jsonStr = gson.toJson(arm); //将对象转换成Json
+                         SpUtil.getInstance().putString(medicine.when + "ma", jsonStr);
+                         String time = SpUtil.getInstance().getString("time");
+                         if (TextUtil.isNotEmpty(time)) {
+                             SpUtil.getInstance().putString("time", time + "," + medicine.when + "ma");
+                         } else {
+                             SpUtil.getInstance().putString("time", medicine.when + "ma");
+                         }
+                         addList(arm);
+
+
+             }
+         }else {
+
+             for (Medicine medicine : data) {
+                         String[] split = medicine.when.split(":");
+                         arm = BaseApplication.getInstance().mAlarmClock;
+                         arm.setHour(Integer.valueOf(split[0]));
+                         arm.setMinute(Integer.valueOf(split[1]));
+
+                         arm.setTag(1 + ":" + (medicine.reminderTimeId != null ? medicine.reminderTimeId : "###") + ":" + (medicine.items.get(0).name != null ? (medicine.items.get(0).name.equals("血压") ? "血压" : "血糖") : "血压"));
+                         int id = arm.getId();
+                         arm.setId(id + 1);
+                         Gson gson = new Gson();
+                         String jsonStr = gson.toJson(arm); //将对象转换成Json
+                         SpUtil.getInstance().putString(medicine.when, jsonStr);
+                         String time = SpUtil.getInstance().getString("time");
+                         if (TextUtil.isNotEmpty(time)) {
+                             SpUtil.getInstance().putString("time", time + "," + medicine.when + "");
+                         } else {
+                             SpUtil.getInstance().putString("time", medicine.when + "");
+                         }
+                         addList(arm);
+
+
+             }
+         }
+    }
+    private AlarmClock arm;
     @Override
     public void toNextStep(int type) {
        showToasts("绑定成功");

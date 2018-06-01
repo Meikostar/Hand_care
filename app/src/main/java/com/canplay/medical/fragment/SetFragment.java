@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -19,7 +20,6 @@ import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Boxs;
-import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.unBind;
@@ -51,9 +51,9 @@ import rx.functions.Action1;
 /**
  * Created by mykar on 17/4/10.
  */
-public class SetFragment extends BaseFragment implements View.OnClickListener , HomeContract.View {
-@Inject
-HomePresenter presenter;
+public class SetFragment extends BaseFragment implements View.OnClickListener, HomeContract.View {
+    @Inject
+    HomePresenter presenter;
     Unbinder unbinder;
     @BindView(R.id.iv_box)
     ImageView ivBox;
@@ -79,6 +79,14 @@ HomePresenter presenter;
     ListView rlMenu;
     @BindView(R.id.line)
     View line;
+    @BindView(R.id.ll_set)
+    LinearLayout llSet;
+    @BindView(R.id.img_empty)
+    ImageView imgEmpty;
+    @BindView(R.id.txt_desc)
+    TextView txtDesc;
+    @BindView(R.id.rl_bg)
+    RelativeLayout rlBg;
 
 
     private EditorNameDialog dialog;
@@ -97,7 +105,7 @@ HomePresenter presenter;
         unbinder = ButterKnife.bind(this, view);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getActivity().getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-        user_id= SpUtil.getInstance().getUserId();
+        user_id = SpUtil.getInstance().getUserId();
         presenter.getFriendInfo(user_id);
         presenter.getSmartList();
         presenter.myMedicineBox();
@@ -122,7 +130,7 @@ HomePresenter presenter;
 
     private String patientDeviceId;
     private String user_id;
-    private unBind unbind=new unBind();
+    private unBind unbind = new unBind();
     private Subscription mSubscription;
 
     private void initListener() {
@@ -137,8 +145,7 @@ HomePresenter presenter;
                     presenter.getFriendInfo(user_id);
 
 
-
-                }else if(bean.type==SubscriptionBean.EUIP_REFASH){
+                } else if (bean.type == SubscriptionBean.EUIP_REFASH) {
                     presenter.myMedicineBox();
                     presenter.getSmartList();
                 }
@@ -154,11 +161,11 @@ HomePresenter presenter;
         ivImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(friend==null){
+                if (friend == null) {
                     return;
                 }
                 Intent intent = new Intent(getActivity(), MineInfoActivity.class);
-                intent.putExtra("friend",friend);
+                intent.putExtra("friend", friend);
                 startActivity(intent);
 
             }
@@ -166,11 +173,11 @@ HomePresenter presenter;
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(friend==null){
+                if (friend == null) {
                     return;
                 }
                 Intent intent = new Intent(getActivity(), MineInfoActivity.class);
-                intent.putExtra("friend",friend);
+                intent.putExtra("friend", friend);
                 startActivity(intent);
 
             }
@@ -182,24 +189,24 @@ HomePresenter presenter;
             @Override
             public void getItem(Euipt menu, int type) {
 
-                    patientDeviceId=menu.patientDeviceId;
-                    mWindowAddPhoto.showAsDropDown(line);
+                patientDeviceId = menu.patientDeviceId;
+                mWindowAddPhoto.showAsDropDown(line);
 
 
             }
         });
-       mWindowAddPhoto.setSureListener(new PhotoPopupWindow.ClickListener() {
-           @Override
-           public void clickListener(int type) {
-               if(type==0){
-                   unbind.patientDeviceId = patientDeviceId;
-                   unbind.userId = user_id;
-                   presenter.UnbindDevice(unbind);
-               }else {
+        mWindowAddPhoto.setSureListener(new PhotoPopupWindow.ClickListener() {
+            @Override
+            public void clickListener(int type) {
+                if (type == 0) {
+                    unbind.patientDeviceId = patientDeviceId;
+                    unbind.userId = user_id;
+                    presenter.UnbindDevice(unbind);
+                } else {
 
-               }
-           }
-       });
+                }
+            }
+        });
     }
 
     private void initView() {
@@ -210,7 +217,7 @@ HomePresenter presenter;
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
-        if(mSubscription!=null){
+        if (mSubscription != null) {
             mSubscription.unsubscribe();
         }
     }
@@ -252,51 +259,60 @@ HomePresenter presenter;
     private List<Euipt> list;
     private Friend friend;
     private Boxs box;
-    @Override
-    public <T> void toEntity(T entity,int type) {
-        if(type==0){
-            list = (List<Euipt>) entity;
 
+    @Override
+    public <T> void toEntity(T entity, int type) {
+        if (type == 0) {
+            list = (List<Euipt>) entity;
+             if(list!=null&&list.size()!=0){
+                 rlBg.setVisibility(View.GONE);
+             }else {
+                 rlBg.setVisibility(View.VISIBLE);
+             }
             adapter.setData(list);
-        }else if(type==9){
-            box= (Boxs) entity;
-            if(box.owned){
+        } else if (type == 9) {
+            box = (Boxs) entity;
+            if (box.owned) {
                 ivBox.setImageResource(R.drawable.cw);
-            }else {
+            } else {
                 ivBox.setImageResource(R.drawable.cw1);
             }
-        }else {
-            friend= (Friend) entity;
+        } else {
+            friend = (Friend) entity;
             setData();
         }
 
     }
-    public void setData(){
-        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.dingdantouxiang).into(ivImg);
-        if(TextUtil.isNotEmpty(friend.avatar)){
-            SpUtil.getInstance().putString("avator",friend.avatar);
+
+    public void setData() {
+        Glide.with(this).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.dingdantouxiang).into(ivImg);
+        if (TextUtil.isNotEmpty(friend.avatar)) {
+            SpUtil.getInstance().putString("avator", friend.avatar);
         }
 
-        if(TextUtil.isNotEmpty(friend.displayName)){
+        if (TextUtil.isNotEmpty(friend.displayName)) {
             tvName.setText(friend.displayName);
-        }   if(TextUtil.isNotEmpty(friend.mobile)){
+        }
+        if (TextUtil.isNotEmpty(friend.mobile)) {
             tvPhone.setText(friend.mobile);
-            BaseApplication.phone=friend.mobile;
-        }  if(TextUtil.isNotEmpty(friend.dob)){
+            BaseApplication.phone = friend.mobile;
+        }
+        if (TextUtil.isNotEmpty(friend.dob)) {
             String[] split = friend.dob.split("/");
-            String birth=split[0]+"."+split[1]+"."+split[2];
+            String birth = split[0] + "." + split[1] + "." + split[2];
             tvBirth.setText(birth);
         }
-        if(TextUtil.isNotEmpty(friend.address)){
+        if (TextUtil.isNotEmpty(friend.address)) {
             tvAddress.setText(friend.address);
         }
 
-        if(friend.gender.equals("male")){//男
+        if (friend.gender.equals("male")) {//男
             tvSex.setText("男");
-        }else {
+        } else {
             tvSex.setText("女");
         }
     }
+
     @Override
     public void toNextStep(int type) {
 
@@ -309,7 +325,7 @@ HomePresenter presenter;
     @Override
     public void showTomast(String msg) {
 
-     showToast(msg);
+        showToast(msg);
 
     }
 }

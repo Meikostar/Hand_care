@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
@@ -35,6 +36,10 @@ public class SetFragment_ViewBinding implements Unbinder {
     target.llBg = Utils.findRequiredViewAsType(source, R.id.ll_bg, "field 'llBg'", LinearLayout.class);
     target.rlMenu = Utils.findRequiredViewAsType(source, R.id.rl_menu, "field 'rlMenu'", ListView.class);
     target.line = Utils.findRequiredView(source, R.id.line, "field 'line'");
+    target.llSet = Utils.findRequiredViewAsType(source, R.id.ll_set, "field 'llSet'", LinearLayout.class);
+    target.imgEmpty = Utils.findRequiredViewAsType(source, R.id.img_empty, "field 'imgEmpty'", ImageView.class);
+    target.txtDesc = Utils.findRequiredViewAsType(source, R.id.txt_desc, "field 'txtDesc'", TextView.class);
+    target.rlBg = Utils.findRequiredViewAsType(source, R.id.rl_bg, "field 'rlBg'", RelativeLayout.class);
   }
 
   @Override
@@ -56,5 +61,9 @@ public class SetFragment_ViewBinding implements Unbinder {
     target.llBg = null;
     target.rlMenu = null;
     target.line = null;
+    target.llSet = null;
+    target.imgEmpty = null;
+    target.txtDesc = null;
+    target.rlBg = null;
   }
 }

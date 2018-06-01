@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content">
                     <ImageView
                         android:src="@drawable/cw2"
-                        android:padding="7dp"
+                        android:padding="4dp"
                         android:id="@+id/iv_setting"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -68,7 +68,7 @@
                         android:gravity="center_vertical"
                         android:text="设置"
                         android:textColor="@color/slow_black"
-                        android:textSize="11sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -272,8 +272,12 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/linecolor"/>
+    <RelativeLayout
+        android:layout_below="@id/ll_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <ListView
-            android:layout_below="@id/ll_bg"
+
             android:layout_marginTop="0.5dp"
             android:divider="#00000000"
             android:dividerHeight="0dip"
@@ -284,5 +288,37 @@
             android:layout_height="wrap_content"
             android:visibility="visible"
             style="@style/lv_content"/>
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_bg"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:layout_marginTop="80dp"
+                android:id="@+id/img_empty"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/op_img_none_good" />
+
+            <TextView
+                android:id="@+id/txt_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_empty"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:gravity="center"
+                android:text="暂无数据"
+                android:textColor="@color/color6"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
     </RelativeLayout>
 

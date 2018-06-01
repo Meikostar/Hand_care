@@ -60,6 +60,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                 .request();
         String userId = SpUtil.getInstance().getUserId();
@@ -129,7 +130,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public <T> void toEntity(T entity,int type) {
-        startActivity(new Intent(this, MainActivity.class));
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("type",88);
+        startActivity(intent);
         finish();
         dimessProgress();
     }

@@ -8,6 +8,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.os.Build;
@@ -41,6 +42,7 @@ import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.receiver.AlarmClockBroadcast;
 
+import com.canplay.medical.receiver.PhoneReceiver;
 import com.canplay.medical.util.AudioPlayer;
 import com.canplay.medical.util.Parcelables;
 import com.canplay.medical.util.SpUtil;
@@ -154,7 +156,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         presenter.attachView(this);
         // 启动的Activity个数加1
         WeacStatus.sActivityNumber++;
-
+        registerPhoneReceiver();
         // 画面出现在解锁屏幕上,显示,常亮
         getWindow().addFlags(
                 WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
@@ -222,6 +224,44 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         if (mAlarmClock != null) {
             // 取消下拉列表通知消息
             mNotificationManager.cancel(mAlarmClock.getId());
+        }
+
+    }
+
+
+    /**
+     * 注册电话监听
+     */
+    private void registerPhoneReceiver() {
+        if (phoneReceiver == null) {
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction("android.intent.action.PHONE_STATE");
+            intentFilter.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
+            phoneReceiver = new PhoneReceiver(new PhoneReceiver.OnPhoneListener() {
+                @Override
+                public void onPhoneResume() {
+                    //暂停音乐
+                    finish();
+                }
+
+                @Override
+                public void onPhoneIdle() {
+                    //开始播放音乐
+
+                }
+            });
+            registerReceiver(phoneReceiver, intentFilter);
+        }
+    }
+
+    private PhoneReceiver phoneReceiver;
+    /**
+     * 解注册电话监听
+     */
+    private void unRegisterPhoneReceiver() {
+
+        if (phoneReceiver != null) {
+            unregisterReceiver(phoneReceiver);
         }
 
     }
@@ -338,7 +378,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         super.onDestroy();
         // 停止运行更新时间的线程
         mIsRun = false;
-
+        unRegisterPhoneReceiver();
         // 当没有点击按钮，则当前响铃被新闹钟任务杀死，开启小睡
         if (!mIsOnclick) {
             // 小睡

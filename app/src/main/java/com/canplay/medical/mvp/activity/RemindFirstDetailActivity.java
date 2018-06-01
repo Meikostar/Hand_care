@@ -7,6 +7,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.os.Build;
@@ -45,6 +46,7 @@ import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.receiver.AlarmClockBroadcast;
+import com.canplay.medical.receiver.PhoneReceiver;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.AudioPlayer;
 import com.canplay.medical.util.Parcelables;
@@ -110,7 +112,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         ButterKnife.bind(this);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-
+        registerPhoneReceiver();
         navigationBar.setNavigationBarListener(this);
         alarmClock=getIntent().getParcelableExtra("data");
         String[] split = alarmClock.getTag().split(":");
@@ -152,6 +154,42 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
 
     }
 
+    /**
+     * 注册电话监听
+     */
+    private void registerPhoneReceiver() {
+        if (phoneReceiver == null) {
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction("android.intent.action.PHONE_STATE");
+            intentFilter.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
+            phoneReceiver = new PhoneReceiver(new PhoneReceiver.OnPhoneListener() {
+                @Override
+                public void onPhoneResume() {
+                    //暂停音乐
+                    finish();
+                }
+
+                @Override
+                public void onPhoneIdle() {
+                    //开始播放音乐
+
+                }
+            });
+            registerReceiver(phoneReceiver, intentFilter);
+        }
+    }
+
+    private PhoneReceiver phoneReceiver;
+    /**
+     * 解注册电话监听
+     */
+    private void unRegisterPhoneReceiver() {
+
+        if (phoneReceiver != null) {
+            unregisterReceiver(phoneReceiver);
+        }
+
+    }
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -321,7 +359,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         super.onDestroy();
         // 停止运行更新时间的线程
         mIsRun = false;
-
+        unRegisterPhoneReceiver();
         // 当没有点击按钮，则当前响铃被新闹钟任务杀死，开启小睡
         if (!mIsOnclick) {
             // 小睡

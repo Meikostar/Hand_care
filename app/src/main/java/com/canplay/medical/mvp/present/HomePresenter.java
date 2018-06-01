@@ -235,7 +235,7 @@ public class HomePresenter implements HomeContract.Presenter {
             @Override
             public void onNext(Medicine entity){
                 if(entity!=null){
-                    mView.toEntity(entity.schedule,0);
+                    mView.toEntity(entity.schedule,67);
 
                 }else {
                     List<Medicine> list=new ArrayList<Medicine>();
