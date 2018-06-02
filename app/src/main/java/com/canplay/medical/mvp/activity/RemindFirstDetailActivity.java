@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.NotificationManagerCompat;
@@ -150,10 +151,22 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
             // 取消下拉列表通知消息
             mNotificationManager.cancel(mAlarmClock.getId());
         }
+        countDownTimer = new CountDownTimer(1000*30, 30000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
 
+            }
+
+            @Override
+            public void onFinish() {
+               finish();
+
+
+            }
+        }.start();
 
     }
-
+   private CountDownTimer countDownTimer;
     /**
      * 注册电话监听
      */
@@ -359,6 +372,9 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         super.onDestroy();
         // 停止运行更新时间的线程
         mIsRun = false;
+        if(countDownTimer!=null){
+            countDownTimer.cancel();
+        }
         unRegisterPhoneReceiver();
         // 当没有点击按钮，则当前响铃被新闹钟任务杀死，开启小睡
         if (!mIsOnclick) {

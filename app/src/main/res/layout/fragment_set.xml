@@ -312,7 +312,7 @@
                 android:layout_marginLeft="70dp"
                 android:layout_marginRight="70dp"
                 android:gravity="center"
-                android:text="暂无数据"
+                android:text="暂无设备"
                 android:textColor="@color/color6"
                 android:textSize="14sp" />
 

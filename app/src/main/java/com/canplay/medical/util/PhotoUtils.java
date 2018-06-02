@@ -282,7 +282,7 @@ public class PhotoUtils {
         try {
             //质量压缩
             baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 90, baos);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
             byte[] byteArray = baos.toByteArray();
             fos = new FileOutputStream(imageFile);
             bos = new BufferedOutputStream(fos);

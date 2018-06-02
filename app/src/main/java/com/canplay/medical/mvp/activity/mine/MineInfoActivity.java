@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
@@ -31,6 +33,7 @@ import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.permission.PermissionConst;
 import com.canplay.medical.permission.PermissionGen;
 import com.canplay.medical.permission.PermissionSuccess;
+import com.canplay.medical.util.PhotoUtils;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.AddressSelectBindDialog;
@@ -40,6 +43,7 @@ import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PhotoPopupWindow;
 import com.canplay.medical.view.TimeSelectorDialog;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -203,7 +207,38 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
     private String names;
     @Override
     public void initData() {
-        Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().placeholder(R.drawable.dingdantouxiang).transform(new CircleTransform(this)).into(ivPhone);
+        String paths = SpUtil.getInstance().getString("paths");
+        if(TextUtil.isNotEmpty(paths)){
+            File file = new File(paths);
+            if(file.exists()){
+                Glide.with(this).load(paths).asBitmap().placeholder(R.drawable.dingdantouxiang).transform(new CircleTransform(this)).into(ivPhone);
+            }else {
+//                Glide.with(getActivity()).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.dingdantouxiang).into(ivImg);
+                Glide.with(this).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(this)).into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap bitmap, GlideAnimation glideAnimation) {
+
+                        //图片加载完成
+                        ivPhone.setImageBitmap(bitmap);
+                        String path = PhotoUtils.compressBitmap(bitmap);
+
+                        SpUtil.getInstance().putString("pahts",path);
+                    }
+                });
+            }
+        }else {
+            Glide.with(this).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(this)).into(new SimpleTarget<Bitmap>() {
+                @Override
+                public void onResourceReady(Bitmap bitmap, GlideAnimation glideAnimation) {
+
+                    //图片加载完成
+                    ivPhone.setImageBitmap(bitmap);
+                    String path = PhotoUtils.compressBitmap(bitmap);
+                    SpUtil.getInstance().putString("pahts",path);
+                }
+            });
+        }
+
         if(TextUtil.isNotEmpty(friend.displayName)){
             tvName.setText(friend.displayName);
             names=friend.displayName;
@@ -240,8 +275,10 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
                 case 4:
                     List<String> imgs = data.getStringArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION);
                     path = imgs.get(0);
+                    String commpressPath = PhotoUtils.commpressImg(path);
+                    SpUtil.getInstance().putString("paths",commpressPath);
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    Bitmap bitmap=BitmapFactory.decodeFile(path);
+                    Bitmap bitmap=BitmapFactory.decodeFile(commpressPath);
 
 
                     try {

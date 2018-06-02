@@ -135,7 +135,7 @@ public class SmartKitActivity extends BaseActivity implements BaseContract.View 
                         medicines.name=box.medicine;
                         list.add(medicines);
                     }
-                    RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CHOOSMEDICAL,list));
+                    RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CHOOSMEDICALSS,list));
                     finish();
                 }
 

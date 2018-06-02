@@ -81,11 +81,13 @@
            />
 
         <ImageView
-            android:src="@drawable/arrow_left"
+            android:padding="6dp"
+            android:id="@+id/iv_del"
+            android:src="@drawable/dels"
             android:layout_marginRight="15dp"
-            android:layout_width="13dp"
-            android:layout_height="16dp"
-            android:layout_marginLeft="18dp"/>
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="10dp"/>
     </LinearLayout>
 
     <View

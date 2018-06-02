@@ -46,6 +46,7 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.imgEmpty = Utils.findRequiredViewAsType(source, R.id.img_empty, "field 'imgEmpty'", ImageView.class);
     target.txtDesc = Utils.findRequiredViewAsType(source, R.id.txt_desc, "field 'txtDesc'", TextView.class);
     target.rlBg = Utils.findRequiredViewAsType(source, R.id.rl_bg, "field 'rlBg'", RelativeLayout.class);
+    target.tvContent = Utils.findRequiredViewAsType(source, R.id.tv_content, "field 'tvContent'", TextView.class);
   }
 
   @Override
@@ -71,5 +72,6 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.imgEmpty = null;
     target.txtDesc = null;
     target.rlBg = null;
+    target.tvContent = null;
   }
 }

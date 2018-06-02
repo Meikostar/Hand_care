@@ -130,9 +130,16 @@ public class RemindSettingActivity extends BaseActivity implements
             public void call(SubscriptionBean.RxBusSendBean bean) {
                 if (bean == null) return;
 
-                if(SubscriptionBean.CHOOSMEDICAL==bean.type){
+                if(SubscriptionBean.CHOOSMEDICALSS==bean.type){
                     dat= (List<Medicines>) bean.content;
-                     adapter.setData(dat,0);
+                    for(Medicines medicines:dat){
+                        Medicines medicine = map.get(medicines.name);
+                        if(medicine==null){
+                            datass.add(medicines);
+                            map.put(medicine.name,medicine);
+                        }
+                    }
+                     adapter.setData(datass,0);
                 }
 
 
@@ -198,7 +205,7 @@ public class RemindSettingActivity extends BaseActivity implements
     }
    private List<String> times=new ArrayList<>();
    private List<Decs> datas=new ArrayList<>();
-
+    List<Medicines> datass=new ArrayList<>();
     private int hour;
     private int minter;
     @Override
@@ -206,9 +213,13 @@ public class RemindSettingActivity extends BaseActivity implements
         adapter.setClickListener(new MedicaldTurnapter.ClickListener() {
             @Override
             public void clickListener(Medicines medicines, int poition) {
-                Intent intent = new Intent(RemindSettingActivity.this, MedicalDetailActivity.class);
-                intent.putExtra("name",medicines.name);
-                startActivity(intent);
+                datass.remove(poition);
+                 map.remove(medicines.name);
+                 adapter.setData(datass,0);
+
+//                Intent intent = new Intent(RemindSettingActivity.this, MedicalDetailActivity.class);
+//                intent.putExtra("name",medicines.name);
+//                startActivity(intent);
             }
         });
 
@@ -285,8 +296,8 @@ public class RemindSettingActivity extends BaseActivity implements
        tvAdd.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
-               startActivity(new Intent(RemindSettingActivity.this,ChooseMedicalActivity.class));
+               Intent intent = new Intent(RemindSettingActivity.this, ChooseMedicalActivity.class);
+               startActivityForResult(intent,77);
            }
        });
         llAgain.setOnClickListener(new View.OnClickListener() {
@@ -306,6 +317,7 @@ public class RemindSettingActivity extends BaseActivity implements
         });
     }
   private int cout;
+    private Map<String ,Medicines> map=new HashMap<>();
     private Gson gson=new Gson();
   private List<DATA> data=new ArrayList<>();
     @Override
@@ -332,6 +344,22 @@ public class RemindSettingActivity extends BaseActivity implements
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(RESULT_OK==resultCode){
+            Medicines med= (Medicines) data.getSerializableExtra("data");
+            dat=med.data;
+            for(Medicines medicines:dat){
+                Medicines medicine = map.get(medicines.name);
+                if(medicine==null){
+                    datass.add(medicines);
+                    map.put(medicines.name,medicines);
+                }
+            }
+            adapter.setData(datass,0);
+        }
+    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {

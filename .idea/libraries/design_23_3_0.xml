@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="design-23.3.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/97abfc55d1e504c2314e10ab5909fa0eb140d1bc/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/97abfc55d1e504c2314e10ab5909fa0eb140d1bc/output/res" />
+      <root url="file://$PROJECT_DIR$/zxingLibrary/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res" />
+      <root url="jar://$PROJECT_DIR$/zxingLibrary/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/design/23.3.0/design-23.3.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/design/23.3.0/design-23.3.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

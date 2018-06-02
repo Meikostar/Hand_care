@@ -30,7 +30,7 @@ public class OtherContract {
          * 验证药监码并返回药品信息
          */
         void getMedicalInfo(String verifyCode);
-
+        void confirmEat(String reminderTimeId);
 
         /**
          * 药品名称或取药品信息

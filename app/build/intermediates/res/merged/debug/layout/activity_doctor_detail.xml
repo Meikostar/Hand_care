@@ -249,7 +249,7 @@
                             android:layout_marginLeft="15dp"
                             android:layout_marginRight="15dp"
                             android:layout_marginTop="11dp"
-                            android:text="对方的身份的发生大幅度升高达高峰低谷的方法都放到沙发上的"
+                            android:text=""
                             android:textColor="@color/slow_black"
                             android:textSize="15sp" />
                     </LinearLayout>

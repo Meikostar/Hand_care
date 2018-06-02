@@ -12,6 +12,7 @@ import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.os.Build;
+import android.os.CountDownTimer;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.app.NotificationManagerCompat;
@@ -226,7 +227,22 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
             mNotificationManager.cancel(mAlarmClock.getId());
         }
 
+        countDownTimer = new CountDownTimer(1000*30, 30000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                finish();
+
+
+            }
+        }.start();
+
     }
+    private CountDownTimer countDownTimer;
 
 
     /**
@@ -378,6 +394,9 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         super.onDestroy();
         // 停止运行更新时间的线程
         mIsRun = false;
+        if(countDownTimer!=null){
+            countDownTimer.cancel();
+        }
         unRegisterPhoneReceiver();
         // 当没有点击按钮，则当前响铃被新闹钟任务杀死，开启小睡
         if (!mIsOnclick) {

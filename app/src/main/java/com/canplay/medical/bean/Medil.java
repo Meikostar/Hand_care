@@ -78,6 +78,7 @@ public class Medil {
     public String low;
     public String high;
     public String code;
+    public String reminderTimeId;
     public String type;
     public String reminderId;
     public List<Medil> plans;

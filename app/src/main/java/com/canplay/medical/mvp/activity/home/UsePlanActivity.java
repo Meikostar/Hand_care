@@ -24,6 +24,7 @@ import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
 import com.canplay.medical.mvp.adapter.OrderGridAdapter;
 import com.canplay.medical.mvp.adapter.UsesPlanAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
+import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.OtherContract;
 import com.canplay.medical.mvp.present.OtherPresenter;
 import com.canplay.medical.util.TextUtil;
@@ -31,8 +32,6 @@ import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
 import com.canplay.medical.view.RegularListView;
-import com.canplay.medical.view.loadingView.BaseLoadingPager;
-import com.canplay.medical.view.loadingView.LoadingPager;
 import com.canplay.medical.view.scrollView.StickyScrollView;
 
 import java.util.ArrayList;
@@ -84,6 +83,8 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     TextView txtDesc;
     @BindView(R.id.rl_bg)
     RelativeLayout rlBg;
+    @BindView(R.id.tv_content)
+    TextView tvContent;
     private UsesPlanAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -251,69 +252,83 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             txtDesc.setText("暂无服药记录");
 
         }
-        if (TextUtil.isNotEmpty(medil.nextPlan.code)) {
-            if (medil.nextPlan.code.equals("早")) {
-                ivState.setImageResource(R.drawable.z);
-            } else if (medil.nextPlan.code.equals("中")) {
-                ivState.setImageResource(R.drawable.zz);
-            } else if (medil.nextPlan.code.equals("晚")) {
-                ivState.setImageResource(R.drawable.w);
+        if(medil.nextPlan!=null){
+            if(medil.nextPlan.status.equals("incomplete")){
+                tvContent.setVisibility(View.VISIBLE);
+                tvContent.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                        presenter.confirmEat(medil.nextPlan.reminderTimeId);
+                    }
+                });
+            }else{
+                tvContent.setVisibility(View.GONE);
             }
-            tvName.setText(medil.nextPlan.code);
-        } else {
-            rlBg.setVisibility(View.VISIBLE);
-            txtDesc.setText("暂无服药记录");
-        }
-        iniGridView(medil.nextPlan.items);
-        if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
-            time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
-            String date = TimeUtil.formatHour(System.currentTimeMillis());
-            String[] split = date.split(":");
-            String[] splits = time.split(":");
-            hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
+            if (TextUtil.isNotEmpty(medil.nextPlan.code)) {
+                if (medil.nextPlan.code.equals("早")) {
+                    ivState.setImageResource(R.drawable.z);
+                } else if (medil.nextPlan.code.equals("中")) {
+                    ivState.setImageResource(R.drawable.zz);
+                } else if (medil.nextPlan.code.equals("晚")) {
+                    ivState.setImageResource(R.drawable.w);
+                }
+                tvName.setText(medil.nextPlan.code);
+            } else {
+                rlBg.setVisibility(View.VISIBLE);
+                txtDesc.setText("暂无服药记录");
+            }
+            iniGridView(medil.nextPlan.items);
+            if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
+                time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
+                String date = TimeUtil.formatHour(System.currentTimeMillis());
+                String[] split = date.split(":");
+                String[] splits = time.split(":");
+                hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
 
-            minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
-            if (minters < 0) {
+                minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
+                if (minters < 0) {
 
-                minters = minters + 60;
-                hours = hours - 1;
-            }
-            if (hours < 0) {
-                hours = hours + 24;
-            }
-            tvTime.setText(time);
-           times = TimeUtil.getStringToDate(medil.nextPlan.when)-System.currentTimeMillis();
+                    minters = minters + 60;
+                    hours = hours - 1;
+                }
+                if (hours < 0) {
+                    hours = hours + 24;
+                }
+                tvTime.setText(time);
+                times = TimeUtil.getStringToDate(medil.nextPlan.when) - System.currentTimeMillis();
 
-            if (countDownTimer != null) {
-                countDownTimer.cancel();
-            }
-            countDownTimer = new CountDownTimer(times, 1000) {
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
-                    String[] times = timeStr.split(",");
-                    if (tvHour != null) {
-                        tvHour.setText(times[1]);
-                        tvMinter.setText(times[2]);
-                        tvSecond.setText(times[3]);
+                if (countDownTimer != null) {
+                    countDownTimer.cancel();
+                }
+                countDownTimer = new CountDownTimer(times, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeStr = TimeUtil.getTimeFormat(millisUntilFinished / 1000);
+                        String[] times = timeStr.split(",");
+                        if (tvHour != null) {
+                            tvHour.setText(times[1]);
+                            tvMinter.setText(times[2]);
+                            tvSecond.setText(times[3]);
+                        }
+
+
                     }
 
+                    @Override
+                    public void onFinish() {
+                        if (tvHour != null) {
+                            tvHour.setText("00");
+                            tvMinter.setText("00");
+                            tvSecond.setText("00");
+                        }
 
-                }
 
-                @Override
-                public void onFinish() {
-                    if (tvHour != null) {
-                        tvHour.setText("00");
-                        tvMinter.setText("00");
-                        tvSecond.setText("00");
                     }
+                }.start();
 
-
-                }
-            }.start();
-
+            }
         }
+
         if (medil.plans != null) {
             datas.clear();
             for (Medil medils : medil.plans) {
@@ -352,5 +367,10 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     }
 
 
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

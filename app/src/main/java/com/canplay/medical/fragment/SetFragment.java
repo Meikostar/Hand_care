@@ -1,6 +1,7 @@
 package com.canplay.medical.fragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
@@ -14,6 +15,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.BaseFragment;
@@ -29,6 +32,7 @@ import com.canplay.medical.mvp.adapter.EuipmentAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.PhotoUtils;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.CircleImageView;
@@ -36,6 +40,7 @@ import com.canplay.medical.view.CircleTransform;
 import com.canplay.medical.view.EditorNameDialog;
 import com.canplay.medical.view.PhotoPopupWindow;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -144,7 +149,13 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, H
 
                     presenter.getFriendInfo(user_id);
 
-
+                    String paths = SpUtil.getInstance().getString("paths");
+                    if(TextUtil.isNotEmpty(paths)){
+                        File file = new File(paths);
+                        if(file.exists()){
+                            Glide.with(getActivity()).load(paths).asBitmap().placeholder(R.drawable.dingdantouxiang).into(ivImg);
+                        }
+                    }
                 } else if (bean.type == SubscriptionBean.EUIP_REFASH) {
                     presenter.myMedicineBox();
                     presenter.getSmartList();
@@ -285,7 +296,36 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, H
     }
 
     public void setData() {
-        Glide.with(this).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.dingdantouxiang).into(ivImg);
+        String paths = SpUtil.getInstance().getString("paths");
+        if(TextUtil.isNotEmpty(paths)){
+            File file = new File(paths);
+            if(file.exists()){
+                Glide.with(getActivity()).load(paths).asBitmap().placeholder(R.drawable.dingdantouxiang).transform(new CircleTransform(getActivity())).into(ivImg);
+            }else {
+//                Glide.with(getActivity()).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).placeholder(R.drawable.dingdantouxiang).into(ivImg);
+                Glide.with(getActivity()).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap bitmap, GlideAnimation glideAnimation) {
+
+                        //图片加载完成
+                        ivImg.setImageBitmap(bitmap);
+                        String path = PhotoUtils.compressBitmap(bitmap);
+                        SpUtil.getInstance().putString("pahts",path);
+                    }
+                });
+            }
+        }else {
+            Glide.with(getActivity()).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(getActivity())).into(new SimpleTarget<Bitmap>() {
+                @Override
+                public void onResourceReady(Bitmap bitmap, GlideAnimation glideAnimation) {
+
+                    //图片加载完成
+                    ivImg.setImageBitmap(bitmap);
+                    String path = PhotoUtils.compressBitmap(bitmap);
+                    SpUtil.getInstance().putString("pahts",path);
+                }
+            });
+        }
         if (TextUtil.isNotEmpty(friend.avatar)) {
             SpUtil.getInstance().putString("avator", friend.avatar);
         }

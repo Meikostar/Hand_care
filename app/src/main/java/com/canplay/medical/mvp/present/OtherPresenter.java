@@ -66,6 +66,24 @@ public class OtherPresenter implements OtherContract.Presenter {
         });
     }
     @Override
+    public void confirmEat(String reminderTimeId) {
+
+        subscription = ApiManager.setSubscribe(contactApi.confirmEat(reminderTimeId), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
+
+                mView.toNextStep(2);
+            }
+        });
+    }
+    @Override
     public void getDetails(String type) {
 
         subscription = ApiManager.setSubscribe(contactApi.getDetails(type), new MySubscriber<Medil>(){

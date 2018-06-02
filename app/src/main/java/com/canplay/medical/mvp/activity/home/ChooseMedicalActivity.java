@@ -112,7 +112,12 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
                     }
                 }
                 if (datas.size() > 0) {
-                    RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CHOOSMEDICAL, datas));
+                    Medicines medicines = new Medicines();
+                    medicines.data=datas;
+                    Intent intent = new Intent();
+                    intent.putExtra("data",medicines);
+                    setResult(RESULT_OK,intent);
+//                    RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CHOOSMEDICALSS, datas));
                     finish();
                 } else {
                     showToasts("你还未选择药物");
@@ -240,10 +245,5 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }

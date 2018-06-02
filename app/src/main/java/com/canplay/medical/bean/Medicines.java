@@ -25,7 +25,7 @@ public class Medicines extends BaseData implements Serializable{
 //
 //        },
 
-
+    public List<Medicines> data;
     public boolean isValid;
     public boolean isCheck;
     public Long createdDateTime;

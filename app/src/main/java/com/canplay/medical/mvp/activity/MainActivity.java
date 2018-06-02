@@ -112,7 +112,7 @@ MainActivity extends BaseAllActivity implements HomeFragment.ScanListener , Home
             startActivity(new Intent(this, BloodChartRecordActivity.class));
         }else if(status==2){
             startActivity(new Intent(this, SugarChartRecordActivity.class));
-        }else if(status==66){
+        }else if(status==88){
             presenter.MedicineRemindList();
             presenter.MeasureRemindList();
         }

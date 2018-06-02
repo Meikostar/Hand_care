@@ -84,12 +84,18 @@ public class MedicaldTurnapter extends BaseAdapter {
             holder.tv_count = (ClearEditText) view.findViewById(R.id.tv_count);
             holder.ll_bg = (LinearLayout) view.findViewById(R.id.ll_bg);
             holder.img = (ImageView) view.findViewById(R.id.iv_img);
+            holder.iv_del = (ImageView) view.findViewById(R.id.iv_del);
             holder.check = (MCheckBox) view.findViewById(R.id.iv_choose);
             view.setTag(holder);
         } else {
             holder = (MedicaldTurnapter.ViewHolder) view.getTag();
         }
-
+        holder.iv_del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.clickListener(list.get(position),position);
+            }
+        });
         holder.tv_count.setdelteIconHilde();
         holder.tv_count.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
             @Override
@@ -133,6 +139,7 @@ public class MedicaldTurnapter extends BaseAdapter {
         TextView number;
         ClearEditText tv_count;
         ImageView img;
+        ImageView iv_del;
 
         MCheckBox check;
         LinearLayout ll_bg;
