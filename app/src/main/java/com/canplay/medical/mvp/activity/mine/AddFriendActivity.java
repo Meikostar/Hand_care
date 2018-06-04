@@ -37,6 +37,7 @@ import com.google.zxing.client.android.activity.CaptureActivity;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javax.inject.Inject;
 
@@ -155,11 +156,22 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
             @Override
             public void afterTextChanged4ClearEdit(Editable s) {
                 if (TextUtil.isNotEmpty(s.toString())) {
-                    if (type == 0) {
-                        presenter.searchDoctor(s.toString());
-                    } else {
-                        presenter.SearFriend(s.toString());
+                    String content = s.toString();
+                    if(content.length()>=2){
+                        if(isInteger(content.substring(0,2))){
+                            if(content.length()>=3){
+                                search();
+                            }
+                        }else {
+                            search();
+                        }
+                    }else {
+                        if(!isInteger(content)){
+                            search();
+                        }
                     }
+
+
 
                 } else {
                     if (list != null) {
@@ -176,15 +188,27 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (TextUtil.isNotEmpty(etSearch.getText().toString())) {
+                String content = etSearch.getText().toString();
+                if (TextUtil.isNotEmpty(content)) {
                     state = 1;
-                    if (type == 0) {
-                        presenter.searchDoctor(etSearch.getText().toString());
-                    } else {
-                        presenter.SearFriend(etSearch.getText().toString());
+                    if(content.length()>=2){
+                        if(isInteger(content.substring(0,2))){
+                            if(content.length()>=3){
+                                search();
+                            }else {
+                                showToasts("搜索内容太少...");
+                            }
+                        }else {
+                            search();
+                        }
+                    }else {
+                        if(!isInteger(content)){
+                                search();
+                        }else {
+                            showToasts("搜索内容太少...");
+                        }
                     }
-                    loadingView.showPager(BaseLoadingPager.STATE_LOADING);
+
 
                 } else {
                     showToasts("请输入搜索内容");
@@ -237,7 +261,18 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
 
     }
 
-
+    public void search(){
+        if (type == 0) {
+            presenter.searchDoctor(etSearch.getText().toString());
+        } else {
+            presenter.SearFriend(etSearch.getText().toString());
+        }
+        loadingView.showPager(BaseLoadingPager.STATE_LOADING);
+    }
+    public static boolean isInteger(String str) {
+        Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
+        return pattern.matcher(str).matches();
+    }
     private int REQUEST_CODE_SCAN = 6;
     private String id;
     private int state;
@@ -318,11 +353,13 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
                 return;
             }
         } else {
-            list = (List<Friend>) entity;
+
 
 
             list = (List<Friend>) entity;
             adapter.setDatas(list);
+            adapter.notifyDataSetChanged();
+
             if (list.size() == 0) {
                 if (state == 1) {
                     state = 0;
@@ -341,11 +378,14 @@ public class AddFriendActivity extends BaseActivity implements HomeContract.View
                         loadingView.showPager(LoadingPager.STATE_SUCCEED);
                     }
 
+                }else {
+                    loadingView.showPager(LoadingPager.STATE_SUCCEED);
                 }
 
+            }else {
+                loadingView.showPager(LoadingPager.STATE_SUCCEED);
             }
 
-            adapter.notifyDataSetChanged();
         }
 
     }

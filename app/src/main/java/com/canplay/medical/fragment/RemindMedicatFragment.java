@@ -8,10 +8,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
@@ -25,6 +28,7 @@ import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.view.MarkaBaseDialog;
 import com.canplay.medical.view.loadingView.BaseLoadingPager;
 import com.canplay.medical.view.loadingView.LoadingPager;
 import com.google.gson.Gson;
@@ -122,12 +126,49 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
                     showProgress("确认中...");
                     presenter.confirmEat(medicine.reminderTimeId);
 
+                }else if (type == 4) {
+
+                    showPopwindow(medicine.reminderTimeId);
+
                 }
 
             }
         });
     }
 
+    private View views=null;
+    private TextView sure = null;
+    private TextView cancel = null;
+    private TextView title = null;
+    private EditText reson = null;
+    public void showPopwindow(final String id) {
+
+        views = View.inflate(getActivity(), R.layout.add_euip, null);
+        sure = (TextView) views.findViewById(R.id.txt_sure);
+        cancel = (TextView) views.findViewById(R.id.txt_cancel);
+        title = (TextView) views.findViewById(R.id.tv_title);
+        reson = (EditText) views.findViewById(R.id.edit_reson);
+        title.setText("你要删除此用药提醒?");
+        final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(getActivity()).setMessageView(views).create();
+        dialog.show();
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showProgress("删除中...");
+                presenter.removeRemind(id);
+                dialog.dismiss();
+            }
+        });
+
+
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

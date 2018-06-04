@@ -18,7 +18,7 @@ public final class R {
 		public static final int cpb_sweep_speed = 0x7f0100ff;
 	}
 	public static final class color {
-		public static final int cpb_default_color = 0x7f0d003c;
+		public static final int cpb_default_color = 0x7f0d003d;
 	}
 	public static final class dimen {
 		public static final int cpb_default_stroke_width = 0x7f09006e;

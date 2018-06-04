@@ -98,6 +98,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     LinearLayout llM3;
     @BindView(R.id.ll_m4)
     LinearLayout llM4;
+    @BindView(R.id.tv_min)
+    TextView tvMin;
+    @BindView(R.id.tv_min1)
+    TextView tvMin1;
 
 
     public interface ScanListener {
@@ -106,13 +110,16 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     public ScanListener listener;
     private HomeAdapter adapter;
-    private List<Integer> list=new ArrayList<>();
-    private int[] img={R.drawable.bg1,R.drawable.bg2};
+    private List<Integer> list = new ArrayList<>();
+    private int[] img = {R.drawable.bg1, R.drawable.bg2};
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-     private BannerAdapter adapters;
+
+    private BannerAdapter adapters;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, null);
@@ -121,7 +128,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         presenter.attachView(this);
         bannerView.requestFocus();
         bannerView.setFocusableInTouchMode(true);
-        adapters=new BannerAdapter(getActivity());
+        adapters = new BannerAdapter(getActivity());
         list.add(R.drawable.bg1);
         list.add(R.drawable.bg2);
         adapters.setData(list);
@@ -255,17 +262,15 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     private long times;
     private int minters;
     private int hours;
+
     @Override
     public <T> void toEntity(T entity, int type) {
         dimessProgress();
 
 
-
-
-
         if (type == 1) {
             Medil entitys = (Medil) entity;
-            if(entitys==null|| TextUtil.isEmpty(entitys.nextPlan.when)){
+            if (entitys == null || TextUtil.isEmpty(entitys.nextPlan.when)) {
                 if (type == 1) {
 
                     llM1.setVisibility(View.VISIBLE);
@@ -273,13 +278,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     tvState.setVisibility(View.GONE);
 
 
-
                 } else if (type == 2) {
 
                     llM3.setVisibility(View.VISIBLE);
                     llM4.setVisibility(View.GONE);
                     tvState1.setVisibility(View.GONE);
-
 
 
                 }
@@ -294,24 +297,24 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
             if (minters < 0) {
                 minters = minters + 60;
-                hours=hours-1;
+                hours = hours - 1;
             }
             if (hours < 0) {
                 hours = hours + 24;
             }
-            if(hours==0&&minters==0){
+            if (hours == 0 && minters == 0) {
                 llM1.setVisibility(View.GONE);
                 llM2.setVisibility(View.VISIBLE);
                 tvState.setVisibility(View.VISIBLE);
-                hours=24;
-                minters=0;
-            }else {
+                hours = 24;
+                minters = 0;
+            } else {
                 llM1.setVisibility(View.GONE);
                 llM2.setVisibility(View.VISIBLE);
                 tvState.setVisibility(View.VISIBLE);
 
             }
-            long times = TimeUtil.getStringToDate(entitys.nextPlan.when)-System.currentTimeMillis();
+            long times = TimeUtil.getStringToDate(entitys.nextPlan.when) - System.currentTimeMillis();
             if (countDownTimer1 != null) {
                 countDownTimer1.cancel();
             }
@@ -323,7 +326,16 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     String[] times = timeStr.split(",");
                     if (tvHour != null && times != null) {
                         tvHour.setText(times[1]);
-                        tvMinter.setText(Integer.valueOf(times[2])==0?"01":times[2]);
+                        tvMinter.setText(Integer.valueOf(times[2]) == 0 ? "01" : times[2]);
+                        if(Integer.valueOf(times[2])==0&&Integer.valueOf(times[3])!=0){
+                            tvMin.setText("小于");
+                            tvMin.setTextColor(getResources().getColor(R.color.color6));
+                            tvHour.setVisibility(View.INVISIBLE);
+                        }else {
+                            tvMin.setText("小时");
+                            tvMin.setTextColor(getResources().getColor(R.color.colorred));
+                            tvHour.setVisibility(View.VISIBLE);
+                        }
                     }
 
 
@@ -344,7 +356,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             tvState.setText(entitys.nextPlan.status.equals("complete") ? "已完成" : "未完成");
         } else if (type == 2) {
             Medil entitys = (Medil) entity;
-            if(entitys==null|| TextUtil.isEmpty(entitys.nextPlan.when)){
+            if (entitys == null || TextUtil.isEmpty(entitys.nextPlan.when)) {
                 if (type == 1) {
 
                     llM1.setVisibility(View.VISIBLE);
@@ -352,13 +364,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     tvState.setVisibility(View.GONE);
 
 
-
                 } else if (type == 2) {
 
                     llM3.setVisibility(View.VISIBLE);
                     llM4.setVisibility(View.GONE);
                     tvState1.setVisibility(View.GONE);
-
 
 
                 }
@@ -373,25 +383,25 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
             if (minters < 0) {
                 minters = minters + 60;
-                hours=hours-1;
+                hours = hours - 1;
             }
             if (hours < 0) {
                 hours = hours + 24;
             }
-            if(hours==0&&minters==0){
-                 hours=24;
-                minters=0;
+            if (hours == 0 && minters == 0) {
+                hours = 24;
+                minters = 0;
                 llM3.setVisibility(View.GONE);
                 llM4.setVisibility(View.VISIBLE);
                 tvState1.setVisibility(View.VISIBLE);
 
-            }else {
+            } else {
                 llM3.setVisibility(View.GONE);
                 llM4.setVisibility(View.VISIBLE);
                 tvState1.setVisibility(View.VISIBLE);
 
             }
-            long times = TimeUtil.getStringToDate(entitys.nextPlan.when)-System.currentTimeMillis();
+            long times = TimeUtil.getStringToDate(entitys.nextPlan.when) - System.currentTimeMillis();
             if (countDownTimer2 != null) {
                 countDownTimer2.cancel();
             }
@@ -404,7 +414,16 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
                     if (tvHour1 != null && times != null) {
                         tvHour1.setText(times[1]);
-                        tvMinter1.setText(Integer.valueOf(times[2])==0?"01":times[2]);
+                        tvMinter1.setText(Integer.valueOf(times[2]) == 0 ? "01" : times[2]);
+                        if(Integer.valueOf(times[2])==0&&Integer.valueOf(times[3])!=0){
+                            tvMin1.setText("小于");
+                            tvMin1.setTextColor(getResources().getColor(R.color.color6));
+                            tvHour1.setVisibility(View.INVISIBLE);
+                        }else {
+                            tvMin1.setText("小时");
+                            tvMin1.setTextColor(getResources().getColor(R.color.colorred));
+                            tvHour1.setVisibility(View.VISIBLE);
+                        }
                     }
                 }
 

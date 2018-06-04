@@ -8,10 +8,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.base.BaseFragment;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
@@ -28,6 +31,7 @@ import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.view.MarkaBaseDialog;
 import com.canplay.medical.view.loadingView.BaseLoadingPager;
 import com.canplay.medical.view.loadingView.LoadingPager;
 import com.google.gson.Gson;
@@ -126,12 +130,14 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
                 if (type == 0) {
-
+                    showProgress("删除中...");
                     presenter.removeRemind(medicine.reminderTimeId);
-                } else {
+                } else  if (type == 1){
                     Intent intent = new Intent(getActivity(), MeasureActivity.class);
                     intent.putExtra("data", medicine);
                     startActivity(intent);
+                } else  if (type == 2){
+                    showPopwindow(medicine.reminderTimeId);
                 }
 
             }
@@ -155,6 +161,41 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
 
     }
 
+
+    private View views=null;
+    private TextView sure = null;
+    private TextView cancel = null;
+    private TextView title = null;
+    private EditText reson = null;
+    public void showPopwindow(final String id) {
+
+        views = View.inflate(getActivity(), R.layout.add_euip, null);
+        sure = (TextView) views.findViewById(R.id.txt_sure);
+        cancel = (TextView) views.findViewById(R.id.txt_cancel);
+        title = (TextView) views.findViewById(R.id.tv_title);
+        reson = (EditText) views.findViewById(R.id.edit_reson);
+        title.setText("你要删除此测量提醒?");
+        final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(getActivity()).setMessageView(views).create();
+        dialog.show();
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                presenter.removeRemind(id);
+                showProgress("删除中...");
+                dialog.dismiss();
+            }
+        });
+
+
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -349,6 +390,7 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
 
     @Override
     public void showTomast(String msg) {
-
+        showToast(msg);
+        dimessProgress();
     }
 }

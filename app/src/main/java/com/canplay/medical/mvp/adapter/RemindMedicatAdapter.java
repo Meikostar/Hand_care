@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -138,10 +139,10 @@ public class RemindMedicatAdapter extends BaseAdapter {
                 int hour = Integer.valueOf(split[1]) - Integer.valueOf(splits[1]);
                 if(hours>0){
 
-                    holder.tvContent.setVisibility(View.VISIBLE);
+                    holder.tvContent.setVisibility(View.INVISIBLE);
                 }else if(hours==0){
                     if(hour>0){
-                        holder.tvContent.setVisibility(View.VISIBLE);
+                        holder.tvContent.setVisibility(View.INVISIBLE);
                     }else {
                         holder.tvContent.setVisibility(View.INVISIBLE);
                     }
@@ -175,7 +176,6 @@ public class RemindMedicatAdapter extends BaseAdapter {
                        listener.delete(list.get(position),2,position);
                    }
 
-
                }
            });
         holder.tvContent.setOnClickListener(new View.OnClickListener() {
@@ -190,7 +190,14 @@ public class RemindMedicatAdapter extends BaseAdapter {
                   listener.delete(list.get(position),1,position);
               }
           });
+         holder.rllist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+             @Override
+             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                 listener.delete(list.get(position),4,position);
 
+                 return true;
+             }
+         });
         return convertView;
     }
 

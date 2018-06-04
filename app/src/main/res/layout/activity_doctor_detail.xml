@@ -10,8 +10,7 @@
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
     <com.canplay.medical.view.scrollView.StickyScrollView
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout

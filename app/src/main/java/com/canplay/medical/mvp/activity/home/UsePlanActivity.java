@@ -107,10 +107,11 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         showProgress("加载中...");
         presenter.getDetails("Medicine");
         time = getIntent().getStringExtra("time");
+        line.setFocusable(true);
         tvTime.setFocusable(true);
         tvTime.setFocusableInTouchMode(true);
         tvTime.requestFocus();
-
+        scrollView.setFocusable(false);
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
             @Override
             public void call(SubscriptionBean.RxBusSendBean bean) {
@@ -242,6 +243,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     public <T> void toEntity(T entity, int type) {
         medil = (Medil) entity;
         dimessProgress();
+        tvTime.requestFocus();
         if (medil != null) {
             showGirdView(null);
             llBg.setVisibility(View.VISIBLE);
@@ -258,7 +260,8 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                 tvContent.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        presenter.confirmEat(medil.nextPlan.reminderTimeId);
+                        showProgress("确认中...");
+                        presenter.confirmEat(medil.nextPlan.reminderTimeId);
                     }
                 });
             }else{
@@ -350,7 +353,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             rlBg.setVisibility(View.VISIBLE);
             txtDesc.setText("暂无服药记录");
         }
-
+        tvTime.requestFocus();
 
     }
 
@@ -358,19 +361,13 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
 
     @Override
     public void toNextStep(int type) {
-
+        dimessProgress();
     }
 
     @Override
     public void showTomast(String msg) {
-
+        dimessProgress();
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }

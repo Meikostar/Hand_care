@@ -38,6 +38,7 @@
     <color name="text_default">@android:color/black</color>
     <color name="slow_black">#333333</color>
     <color name="color6">#666</color>
+    <color name="colorred">#ED455E</color>
     <color name="bottom">#949494</color>
     <color name="color9">#999999</color>
     <color name="color8">#888</color>

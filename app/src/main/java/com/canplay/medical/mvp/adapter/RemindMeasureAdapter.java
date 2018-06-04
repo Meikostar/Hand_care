@@ -36,21 +36,26 @@ public class RemindMeasureAdapter extends BaseAdapter {
     private ListView lv_content;
     private Set<SwipeListLayout> sets = new HashSet();
     private selectItemListener listener;
-    public interface selectItemListener{
+
+    public interface selectItemListener {
         void delete(Medicine medicine, int type, int poistion);
     }
-    public void setListener(selectItemListener listener){
-        this.listener=listener;
+
+    public void setListener(selectItemListener listener) {
+        this.listener = listener;
     }
-    public void setData( List<Medicine> list){
-        this.list=list;
+
+    public void setData(List<Medicine> list) {
+        this.list = list;
         notifyDataSetChanged();
     }
-    public List<Medicine> getDatas(){
+
+    public List<Medicine> getDatas() {
         return list;
     }
+
     public RemindMeasureAdapter(Context context, List<Medicine> list, ListView lv_content) {
-        this.lv_content=lv_content;
+        this.lv_content = lv_content;
         this.context = context;
         this.list = list;
         inflater = LayoutInflater.from(context);
@@ -87,7 +92,7 @@ public class RemindMeasureAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return list!=null?(list.size()==0?0:list.size()):0;
+        return list != null ? (list.size() == 0 ? 0 : list.size()) : 0;
     }
 
     @Override
@@ -119,37 +124,45 @@ public class RemindMeasureAdapter extends BaseAdapter {
         }
 
 
-           final   SwipeListLayout swipeListLayout = (SwipeListLayout) convertView;
+        final SwipeListLayout swipeListLayout = (SwipeListLayout) convertView;
 
-           swipeListLayout.setOnSwipeStatusListener(new MyOnSlipStatusListener(
-                   swipeListLayout));
+        swipeListLayout.setOnSwipeStatusListener(new MyOnSlipStatusListener(
+                swipeListLayout));
 
-           holder.tv_delete.setOnClickListener(new View.OnClickListener() {
+        holder.tv_delete.setOnClickListener(new View.OnClickListener() {
 
-               @Override
-               public void onClick(View view) {
-                   swipeListLayout.setStatus(SwipeListLayout.Status.Close, true);
-                   if(listener!=null){
-                       listener.delete(list.get(position),0,position);
-                   }
+            @Override
+            public void onClick(View view) {
+                swipeListLayout.setStatus(SwipeListLayout.Status.Close, true);
+                if (listener != null) {
+                    listener.delete(list.get(position), 0, position);
+                }
 
 
-               }
-           });
-          holder.llbg.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  listener.delete(list.get(position),1,position);
-              }
-          });
-          if(TextUtil.isNotEmpty(list.get(position).items.get(0).name)){
-              holder.tvContent.setText(list.get(position).items.get(0).name);
-          } if(TextUtil.isNotEmpty(list.get(position).when)){
+            }
+        });
+        holder.llbg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.delete(list.get(position), 1, position);
+            }
+        });
+        holder.llbg.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                listener.delete(list.get(position), 2, position);
+                return true;
+            }
+        });
+        if (TextUtil.isNotEmpty(list.get(position).items.get(0).name)) {
+            holder.tvContent.setText(list.get(position).items.get(0).name);
+        }
+        if (TextUtil.isNotEmpty(list.get(position).when)) {
             holder.tvTime.setText(list.get(position).when);
         }
-        if(list.get(position).completedForToday){
+        if (list.get(position).completedForToday) {
             holder.ivchoose.setChecked(true);
-        }else {
+        } else {
             holder.ivchoose.setChecked(false);
         }
 
@@ -166,6 +179,7 @@ public class RemindMeasureAdapter extends BaseAdapter {
 
         LinearLayout llbg;
     }
+
     class MyOnSlipStatusListener implements SwipeListLayout.OnSwipeStatusListener {
 
         private SwipeListLayout slipListLayout;

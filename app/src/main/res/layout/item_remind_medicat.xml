@@ -23,6 +23,7 @@
     <LinearLayout
         android:layout_marginTop="10dp"
         android:id="@+id/rl_bg"
+        android:focusable="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -43,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
+                android:visibility="gone"
                 android:padding="6dp"
                 android:background="@drawable/shape_bg_lin_cancel"
                 android:layout_marginRight="12dp"
@@ -68,6 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
+            android:focusable="false"
+
             style="@style/lv_content"/>
 
 
