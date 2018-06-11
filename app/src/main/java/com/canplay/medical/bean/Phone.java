@@ -11,9 +11,12 @@ public class Phone {
 //    name:"张俊",
 //    familyAndFriendsUserId:"5c920653-14ed-435a-a83a-54d9349f78f2",
 //    familyAndFriendsdisplayName:"严桂宁"
-
+//jobId	申请手机验证码是获去的工单号码
+//    verificationCode	手机验证码
+//    mobileNumber
     public String userId;
     public String mobile;
+
 
 
 }

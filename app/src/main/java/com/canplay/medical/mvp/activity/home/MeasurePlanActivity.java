@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,7 +24,6 @@ import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
-import com.canplay.medical.view.loadingView.LoadingPager;
 import com.canplay.medical.view.scrollView.StickyScrollView;
 
 import javax.inject.Inject;
@@ -65,6 +65,12 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
     TextView txtDesc;
     @BindView(R.id.rl_bg)
     RelativeLayout rlBg;
+    @BindView(R.id.ll_time)
+    LinearLayout llTime;
+    @BindView(R.id.tv_remind)
+    TextView tvRemind;
+    @BindView(R.id.ll_remind)
+    LinearLayout llRemind;
 
     private MesureAdapter adapter;
     private String time;
@@ -142,6 +148,13 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
 
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.getDetails("Measurement");
+    }
+
     private PopView_NavigationBar popView_navigationBar;
 
     private void initPopView() {
@@ -181,13 +194,13 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
     public <T> void toEntity(T entity, int type) {
         medil = (Medil) entity;
         dimessProgress();
-        if(medil!=null){
+        if (medil != null) {
             if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
                 tvState.setText("下次测量时间");
                 time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
                 String date = TimeUtil.formatHour(System.currentTimeMillis());
                 String[] split = date.split(":");
-                String[] splits = time.split(":");
+              final   String[] splits = time.split(":");
                 hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
 
                 minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
@@ -199,12 +212,14 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
                     hours = hours + 24;
                 }
                 tvTime.setText(time);
-                 times = TimeUtil.getStringToDate(medil.nextPlan.when)-System.currentTimeMillis();
+                times = TimeUtil.getStringToDate(medil.nextPlan.when) - System.currentTimeMillis();
 
 
                 if (countDownTimer != null) {
                     countDownTimer.cancel();
                 }
+                llTime.setVisibility(View.VISIBLE);
+                llRemind.setVisibility(View.GONE);
                 countDownTimer = new CountDownTimer(times, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
@@ -226,7 +241,11 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
                             tvMinter.setText("00");
                             tvSecond.setText("00");
                         }
-
+                        if (times <= 0) {
+                            llTime.setVisibility(View.GONE);
+                            llRemind.setVisibility(View.VISIBLE);
+                            tvRemind.setText(splits[0]+":"+splits[1]+"分测量时间已经到了快去测量吧。");
+                        }
 
                     }
                 }.start();
@@ -269,6 +288,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
         dimessProgress();
         showToasts(msg);
     }
+
 
 
 }

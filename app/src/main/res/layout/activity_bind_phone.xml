@@ -30,7 +30,7 @@
             android:id="@+id/tv_phone"
             android:layout_marginTop="55dp"
             android:layout_gravity="center_horizontal"
-            android:text="你的手机号：18166365879"
+            android:text="你的手机号："
             android:textColor="@color/black"
             android:layout_marginLeft="19dp"
             android:textSize="17sp"

@@ -5,6 +5,7 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -41,6 +42,9 @@ public class MeasurePlanActivity_ViewBinding implements Unbinder {
     target.imgEmpty = Utils.findRequiredViewAsType(source, R.id.img_empty, "field 'imgEmpty'", ImageView.class);
     target.txtDesc = Utils.findRequiredViewAsType(source, R.id.txt_desc, "field 'txtDesc'", TextView.class);
     target.rlBg = Utils.findRequiredViewAsType(source, R.id.rl_bg, "field 'rlBg'", RelativeLayout.class);
+    target.llTime = Utils.findRequiredViewAsType(source, R.id.ll_time, "field 'llTime'", LinearLayout.class);
+    target.tvRemind = Utils.findRequiredViewAsType(source, R.id.tv_remind, "field 'tvRemind'", TextView.class);
+    target.llRemind = Utils.findRequiredViewAsType(source, R.id.ll_remind, "field 'llRemind'", LinearLayout.class);
   }
 
   @Override
@@ -63,5 +67,8 @@ public class MeasurePlanActivity_ViewBinding implements Unbinder {
     target.imgEmpty = null;
     target.txtDesc = null;
     target.rlBg = null;
+    target.llTime = null;
+    target.tvRemind = null;
+    target.llRemind = null;
   }
 }

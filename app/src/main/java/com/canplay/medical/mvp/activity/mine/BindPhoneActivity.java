@@ -56,6 +56,7 @@ public class BindPhoneActivity extends BaseActivity implements OtherContract.Vie
             public void onClick(View v) {
                 phone.userId= SpUtil.getInstance().getUserId();
                 phone.mobile=BaseApplication.phone;
+                showProgress("加载中...");
                 presenter.editorPhone(phone);
 
             }
@@ -77,16 +78,18 @@ public class BindPhoneActivity extends BaseActivity implements OtherContract.Vie
 
     @Override
     public <T> void toEntity(T entity, int type) {
+        dimessProgress();
         startActivity(new Intent(BindPhoneActivity.this,ChangePhoneActivity.class));
+        finish();
     }
 
     @Override
     public void toNextStep(int type) {
-
+     dimessProgress();
     }
 
     @Override
     public void showTomast(String msg) {
-
+        dimessProgress();
     }
 }

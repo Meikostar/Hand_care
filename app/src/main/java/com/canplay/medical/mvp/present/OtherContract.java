@@ -8,6 +8,7 @@ import com.canplay.medical.bean.Editor;
 import com.canplay.medical.bean.Medic;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.Phone;
+import com.canplay.medical.bean.Phones;
 import com.canplay.medical.bean.Press;
 import com.canplay.medical.bean.Pws;
 import com.canplay.medical.bean.Sug;
@@ -55,5 +56,10 @@ public class OtherContract {
          *
          */
         void getDetails(String type);
+
+        /**
+         *修改手机号码
+         */
+        void changePhone(Phones name);
     }
 }

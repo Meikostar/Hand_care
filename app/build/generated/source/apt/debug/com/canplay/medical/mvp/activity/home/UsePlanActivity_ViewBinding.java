@@ -47,6 +47,9 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.txtDesc = Utils.findRequiredViewAsType(source, R.id.txt_desc, "field 'txtDesc'", TextView.class);
     target.rlBg = Utils.findRequiredViewAsType(source, R.id.rl_bg, "field 'rlBg'", RelativeLayout.class);
     target.tvContent = Utils.findRequiredViewAsType(source, R.id.tv_content, "field 'tvContent'", TextView.class);
+    target.tvRemind = Utils.findRequiredViewAsType(source, R.id.tv_remind, "field 'tvRemind'", TextView.class);
+    target.llRemind = Utils.findRequiredViewAsType(source, R.id.ll_remind, "field 'llRemind'", LinearLayout.class);
+    target.llTimes = Utils.findRequiredViewAsType(source, R.id.ll_times, "field 'llTimes'", LinearLayout.class);
   }
 
   @Override
@@ -73,5 +76,8 @@ public class UsePlanActivity_ViewBinding implements Unbinder {
     target.txtDesc = null;
     target.rlBg = null;
     target.tvContent = null;
+    target.tvRemind = null;
+    target.llRemind = null;
+    target.llTimes = null;
   }
 }

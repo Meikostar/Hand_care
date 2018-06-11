@@ -22,6 +22,7 @@ import com.canplay.medical.bean.Medil;
 import com.canplay.medical.bean.Message;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.Phone;
+import com.canplay.medical.bean.Phones;
 import com.canplay.medical.bean.Press;
 import com.canplay.medical.bean.Record;
 import com.canplay.medical.bean.Recovery;
@@ -306,6 +307,14 @@ public interface BaseApi {
     @Headers({"Content-Type: application/json","Accept: application/json"})
     @POST("flow/v2/user")
     Observable<BASE> editorPhone(@Body Phone body);
+    /**
+     * 更换手机号
+     * @param body
+     * @return
+     */
+    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @POST("flow/v2/user/mobile")
+    Observable<BASE> changePhone(@Body Phones body);
 
     /**
      * 更换密码

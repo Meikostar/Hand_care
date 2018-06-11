@@ -130,8 +130,9 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
                 if (type == 0) {
-                    showProgress("删除中...");
-                    presenter.removeRemind(medicine.reminderTimeId);
+//                    showProgress("删除中...");
+                    showPopwindow(medicine.reminderTimeId);
+//                    presenter.removeRemind(medicine.reminderTimeId);
                 } else  if (type == 1){
                     Intent intent = new Intent(getActivity(), MeasureActivity.class);
                     intent.putExtra("data", medicine);

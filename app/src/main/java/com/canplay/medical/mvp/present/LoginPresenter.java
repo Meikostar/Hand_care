@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import com.canplay.medical.base.manager.ApiManager;
 import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.BaseResult;
+import com.canplay.medical.bean.Phones;
 import com.canplay.medical.bean.Recovery;
 import com.canplay.medical.bean.RecoveryPsw;
 import com.canplay.medical.bean.Righter;
@@ -63,7 +64,24 @@ public class LoginPresenter implements LoginContract.Presenter {
     public void getToken() {
 
     }
+    public void changePhone(Phones name){
+        subscription = ApiManager.setSubscribe(contactApi.changePhone(name), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
 
+
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
+
+                mView.toEntity(entity,66);
+            }
+        });
+    }
     @Override
     public void getRecoveryCode(String phone) {
         subscription = ApiManager.setSubscribe(contactApi.getRecoveryCode(phone), new MySubscriber<BaseResult>(){

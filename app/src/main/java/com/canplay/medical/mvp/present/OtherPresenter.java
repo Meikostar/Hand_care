@@ -16,6 +16,7 @@ import com.canplay.medical.bean.Medicines;
 import com.canplay.medical.bean.Medil;
 import com.canplay.medical.bean.Mesure;
 import com.canplay.medical.bean.Phone;
+import com.canplay.medical.bean.Phones;
 import com.canplay.medical.bean.Press;
 import com.canplay.medical.bean.Pws;
 import com.canplay.medical.bean.Record;
@@ -107,6 +108,26 @@ public class OtherPresenter implements OtherContract.Presenter {
     @Override
     public void editorPhone(Phone name){
         subscription = ApiManager.setSubscribe(contactApi.editorPhone(name), new MySubscriber<BASE>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+
+
+            }
+
+            @Override
+            public void onNext(BASE entity){
+
+                mView.toEntity(entity,0);
+            }
+        });
+    }
+
+    @Override
+    public void changePhone(Phones name){
+        subscription = ApiManager.setSubscribe(contactApi.changePhone(name), new MySubscriber<BASE>(){
             @Override
             public void onError(Throwable e){
                 super.onError(e);

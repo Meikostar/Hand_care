@@ -31,6 +31,7 @@ public class ChangePhoneActivity_ViewBinding implements Unbinder {
     target.tvGetcode = Utils.findRequiredViewAsType(source, R.id.tv_getcode, "field 'tvGetcode'", TextView.class);
     target.etCode = Utils.findRequiredViewAsType(source, R.id.et_code, "field 'etCode'", ClearEditText.class);
     target.tvLogin = Utils.findRequiredViewAsType(source, R.id.tv_login, "field 'tvLogin'", TextView.class);
+    target.tvPhone = Utils.findRequiredViewAsType(source, R.id.tv_phone, "field 'tvPhone'", TextView.class);
   }
 
   @Override
@@ -46,5 +47,6 @@ public class ChangePhoneActivity_ViewBinding implements Unbinder {
     target.tvGetcode = null;
     target.etCode = null;
     target.tvLogin = null;
+    target.tvPhone = null;
   }
 }

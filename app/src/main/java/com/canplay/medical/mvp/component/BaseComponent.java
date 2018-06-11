@@ -16,6 +16,7 @@ import com.canplay.medical.fragment.SetFragment;
 import com.canplay.medical.mvp.ActivityScope;
 import com.canplay.medical.mvp.activity.RemindFirstDetailActivity;
 import com.canplay.medical.mvp.activity.RemindSecondDetailActivity;
+import com.canplay.medical.mvp.activity.account.ChangePhoneActivity;
 import com.canplay.medical.mvp.activity.account.ForgetFirstActivity;
 import com.canplay.medical.mvp.activity.account.ForgetPswActivity;
 import com.canplay.medical.mvp.activity.account.LoginActivity;
@@ -57,6 +58,7 @@ import dagger.Component;
 public interface BaseComponent{
 
     void inject(LoginActivity binderActivity);
+    void inject(ChangePhoneActivity binderActivity);
     void inject(UsePlanActivity binderActivity);
     void inject(MeasurePlanActivity binderActivity);
     void inject(AlarmActivity binderActivity);

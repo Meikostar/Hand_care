@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import com.canplay.medical.R;
 import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseApplication;
+import com.canplay.medical.base.BaseDailogManager;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Medil;
@@ -24,11 +26,11 @@ import com.canplay.medical.mvp.activity.health.TakeMedicineActivity;
 import com.canplay.medical.mvp.adapter.OrderGridAdapter;
 import com.canplay.medical.mvp.adapter.UsesPlanAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
-import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.OtherContract;
 import com.canplay.medical.mvp.present.OtherPresenter;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
+import com.canplay.medical.view.MarkaBaseDialog;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.PopView_NavigationBar;
 import com.canplay.medical.view.RegularListView;
@@ -85,6 +87,12 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
     RelativeLayout rlBg;
     @BindView(R.id.tv_content)
     TextView tvContent;
+    @BindView(R.id.tv_remind)
+    TextView tvRemind;
+    @BindView(R.id.ll_remind)
+    LinearLayout llRemind;
+    @BindView(R.id.ll_times)
+    LinearLayout llTimes;
     private UsesPlanAdapter adapter;
     private String time;
     private CountDownTimer countDownTimer;
@@ -254,17 +262,17 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             txtDesc.setText("暂无服药记录");
 
         }
-        if(medil.nextPlan!=null){
-            if(medil.nextPlan.status.equals("incomplete")){
+        if (medil.nextPlan != null) {
+            if (medil.nextPlan.status.equals("incomplete")) {
                 tvContent.setVisibility(View.VISIBLE);
                 tvContent.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        showProgress("确认中...");
-                        presenter.confirmEat(medil.nextPlan.reminderTimeId);
+                        showPopwindow(medil.nextPlan.reminderTimeId);
+
                     }
                 });
-            }else{
+            } else {
                 tvContent.setVisibility(View.GONE);
             }
             if (TextUtil.isNotEmpty(medil.nextPlan.code)) {
@@ -285,7 +293,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                 time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
                 String date = TimeUtil.formatHour(System.currentTimeMillis());
                 String[] split = date.split(":");
-                String[] splits = time.split(":");
+                final String[] splits = time.split(":");
                 hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
 
                 minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
@@ -299,7 +307,8 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                 }
                 tvTime.setText(time);
                 times = TimeUtil.getStringToDate(medil.nextPlan.when) - System.currentTimeMillis();
-
+                llTimes.setVisibility(View.VISIBLE);
+                llRemind.setVisibility(View.GONE);
                 if (countDownTimer != null) {
                     countDownTimer.cancel();
                 }
@@ -324,7 +333,11 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                             tvMinter.setText("00");
                             tvSecond.setText("00");
                         }
-
+                        if (times <= 0) {
+                            llTimes.setVisibility(View.GONE);
+                            llRemind.setVisibility(View.VISIBLE);
+                            tvRemind.setText("已经到了"+splits[0]+":"+splits[1]+"分服药时间，请按医嘱服用药物并确认服药。");
+                        }
 
                     }
                 }.start();
@@ -361,7 +374,10 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
 
     @Override
     public void toNextStep(int type) {
-        dimessProgress();
+        RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
+        showToasts("确认成功...");
+        finish();
+
     }
 
     @Override
@@ -369,5 +385,40 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         dimessProgress();
     }
 
+    private View views=null;
+    private TextView sure = null;
+    private TextView cancel = null;
+    private TextView title = null;
+    private EditText reson = null;
+    public void showPopwindow(final String id) {
+
+        views = View.inflate(this, R.layout.add_euip, null);
+        sure = (TextView) views.findViewById(R.id.txt_sure);
+        cancel = (TextView) views.findViewById(R.id.txt_cancel);
+        title = (TextView) views.findViewById(R.id.tv_title);
+        reson = (EditText) views.findViewById(R.id.edit_reson);
+        title.setText("确定服用"+time+"相关的药？");
+        final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(this).setMessageView(views).create();
+        dialog.show();
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showProgress("确认中...");
+                presenter.confirmEat(id);
+
+                dialog.dismiss();
+            }
+        });
+
+
+    }
 
 }

@@ -119,9 +119,10 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
                     intent.putExtra("data", medicine);
                     startActivity(intent);
                 } else if (type == 2) {
-                    showProgress("删除中...");
-                    presenter.removeRemind(medicine.reminderTimeId);
-                    time = medicine.when;
+//                    showProgress("删除中...");
+//                    presenter.removeRemind(medicine.reminderTimeId);
+//                    time = medicine.when;
+                    showPopwindow(medicine.reminderTimeId);
                 } else if (type == 3) {
                     showProgress("确认中...");
                     presenter.confirmEat(medicine.reminderTimeId);

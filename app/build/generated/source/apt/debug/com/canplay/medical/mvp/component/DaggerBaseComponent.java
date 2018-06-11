@@ -31,6 +31,8 @@ import com.canplay.medical.mvp.activity.RemindFirstDetailActivity;
 import com.canplay.medical.mvp.activity.RemindFirstDetailActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.RemindSecondDetailActivity;
 import com.canplay.medical.mvp.activity.RemindSecondDetailActivity_MembersInjector;
+import com.canplay.medical.mvp.activity.account.ChangePhoneActivity;
+import com.canplay.medical.mvp.activity.account.ChangePhoneActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.account.ForgetFirstActivity;
 import com.canplay.medical.mvp.activity.account.ForgetFirstActivity_MembersInjector;
 import com.canplay.medical.mvp.activity.account.ForgetPswActivity;
@@ -108,6 +110,8 @@ public final class DaggerBaseComponent implements BaseComponent {
   private Provider<LoginPresenter> loginPresenterProvider;
 
   private MembersInjector<LoginActivity> loginActivityMembersInjector;
+
+  private MembersInjector<ChangePhoneActivity> changePhoneActivityMembersInjector;
 
   private Provider<OtherPresenter> otherPresenterProvider;
 
@@ -227,6 +231,9 @@ public final class DaggerBaseComponent implements BaseComponent {
 
     this.loginActivityMembersInjector =
         LoginActivity_MembersInjector.create(loginPresenterProvider);
+
+    this.changePhoneActivityMembersInjector =
+        ChangePhoneActivity_MembersInjector.create(loginPresenterProvider);
 
     this.otherPresenterProvider = OtherPresenter_Factory.create(apiManagerProvider);
 
@@ -361,6 +368,11 @@ public final class DaggerBaseComponent implements BaseComponent {
   @Override
   public void inject(LoginActivity binderActivity) {
     loginActivityMembersInjector.injectMembers(binderActivity);
+  }
+
+  @Override
+  public void inject(ChangePhoneActivity binderActivity) {
+    changePhoneActivityMembersInjector.injectMembers(binderActivity);
   }
 
   @Override

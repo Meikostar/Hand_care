@@ -2,6 +2,7 @@ package com.canplay.medical.mvp.present;
 
 import com.canplay.medical.base.BasePresenter;
 import com.canplay.medical.base.BaseView;
+import com.canplay.medical.bean.Phones;
 import com.canplay.medical.bean.Recovery;
 import com.canplay.medical.bean.RecoveryPsw;
 
@@ -57,6 +58,7 @@ public class LoginContract {
          */
         void register(String a,String b,String c,String d,String e );
 
+        void changePhone(Phones name);
 
     }
 }

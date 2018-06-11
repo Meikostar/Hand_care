@@ -80,6 +80,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_times"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="25dp"
@@ -142,6 +143,29 @@
                             android:text="00"
                             android:textColor="@color/white"
                             android:textSize="19sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_remind"
+                        android:layout_width="match_parent"
+                        android:layout_height="77dp"
+                        android:layout_marginLeft="1dp"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginRight="28dp"
+                            android:id="@+id/tv_remind"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="已经到了06:06分服药时间，请按医嘱服用药物并确认服药"
+                            android:textColor="@color/colorred"
+                            android:textSize="21sp" />
+
+
                     </LinearLayout>
                 </LinearLayout>
 

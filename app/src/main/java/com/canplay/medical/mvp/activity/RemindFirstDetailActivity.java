@@ -124,7 +124,9 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         animationhide = AnimationUtils.loadAnimation(this, R.anim.list_hide);
         animationshow = AnimationUtils.loadAnimation(this, R.anim.list_show);
         WeacStatus.sActivityNumber++;
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
         // 画面出现在解锁屏幕上,显示,常亮
         getWindow().addFlags(
                 WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
@@ -282,6 +284,10 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
 
         data = (Detail) entity;
         if (data != null) {
+            if (TextUtil.isNotEmpty(data.code)) {
+
+
+            }
             if (TextUtil.isNotEmpty(data.time)) {
                 tvTimes.setText(data.time);
             }
@@ -290,7 +296,13 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
                     ivImg.setImageResource(R.drawable.yaohe);
                     tvState.setText("请服用智能药杯");
                 }else {
-                    ivImg.setImageResource(R.drawable.qianshou);
+                    if (data.code.equals("早")) {
+                        ivImg.setImageResource(R.drawable.zt);
+                    } else if (data.code.equals("中")) {
+                        ivImg.setImageResource(R.drawable.qianshou);
+                    } else if (data.code.equals("晚")) {
+                        ivImg.setImageResource(R.drawable.wt);
+                    }
                     tvState.setText("请服用"+data.code+"药盒");
                 }
             }

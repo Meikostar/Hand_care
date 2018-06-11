@@ -31,6 +31,7 @@ import com.canplay.medical.mvp.adapter.HomeAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.DensityUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.banner.BannerView;
@@ -102,6 +103,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     TextView tvMin;
     @BindView(R.id.tv_min1)
     TextView tvMin1;
+    @BindView(R.id.tv_remind)
+    TextView tvRemind;
+    @BindView(R.id.tv_remind2)
+    TextView tvRemind2;
 
 
     public interface ScanListener {
@@ -290,8 +295,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             }
             time = TimeUtil.formatHour(TimeUtil.getStringToDate(entitys.nextPlan.when));
             String date = TimeUtil.formatHour(System.currentTimeMillis());
-            String[] split = date.split(":");
-            String[] splits = time.split(":");
+            final String[] split = date.split(":");
+            final String[] splits = time.split(":");
             hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
 
             minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
@@ -314,7 +319,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 tvState.setVisibility(View.VISIBLE);
 
             }
-            long times = TimeUtil.getStringToDate(entitys.nextPlan.when) - System.currentTimeMillis();
+            tvRemind.setTextColor(getResources().getColor(R.color.color6));
+            tvRemind.setText("暂无测量提醒");
+
+            final long times = TimeUtil.getStringToDate(entitys.nextPlan.when) - System.currentTimeMillis();
             if (countDownTimer1 != null) {
                 countDownTimer1.cancel();
             }
@@ -327,11 +335,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     if (tvHour != null && times != null) {
                         tvHour.setText(times[1]);
                         tvMinter.setText(Integer.valueOf(times[2]) == 0 ? "01" : times[2]);
-                        if(Integer.valueOf(times[2])==0&&Integer.valueOf(times[3])!=0){
+                        if (Integer.valueOf(times[2]) == 0 && Integer.valueOf(times[3]) != 0) {
                             tvMin.setText("小于");
                             tvMin.setTextColor(getResources().getColor(R.color.color6));
                             tvHour.setVisibility(View.INVISIBLE);
-                        }else {
+                        } else {
                             tvMin.setText("小时");
                             tvMin.setTextColor(getResources().getColor(R.color.colorred));
                             tvHour.setVisibility(View.VISIBLE);
@@ -347,13 +355,20 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                         tvHour.setText("00");
                         tvMinter.setText("00");
                     }
+                    if (times <= 0) {
+                        llM1.setVisibility(View.VISIBLE);
+                        llM2.setVisibility(View.GONE);
+                        tvState.setVisibility(View.GONE);
 
+                        tvRemind.setTextColor(getResources().getColor(R.color.colorred));
+                        tvRemind.setText(splits[0] + ":" + splits[1] + "分服药时间已经到了请确认服药");
+                    }
 
                 }
             }.start();
-            tvHour.setText(split[0]);
-            tvMinter.setText(split[1]);
-            tvState.setText(entitys.nextPlan.status.equals("complete") ? "已完成" : "未完成");
+//            tvHour.setText(split[0]);
+//            tvMinter.setText(split[1]);
+            tvState.setText(entitys.status.equals("complete") ? "已完成" : "未完成");
         } else if (type == 2) {
             Medil entitys = (Medil) entity;
             if (entitys == null || TextUtil.isEmpty(entitys.nextPlan.when)) {
@@ -377,7 +392,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             time = TimeUtil.formatHour(TimeUtil.getStringToDate(entitys.nextPlan.when));
             String date = TimeUtil.formatHour(System.currentTimeMillis());
             String[] split = date.split(":");
-            String[] splits = time.split(":");
+          final   String[] splits = time.split(":");
             hours = (-Integer.valueOf(split[0]) + Integer.valueOf(splits[0]));
 
             minters = (-Integer.valueOf(split[1]) + Integer.valueOf(splits[1]));
@@ -401,7 +416,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 tvState1.setVisibility(View.VISIBLE);
 
             }
-            long times = TimeUtil.getStringToDate(entitys.nextPlan.when) - System.currentTimeMillis();
+            tvRemind2.setText("暂无测量提醒");
+            tvRemind2.setTextColor(getResources().getColor(R.color.color6));
+            final long times = TimeUtil.getStringToDate(entitys.nextPlan.when) - System.currentTimeMillis();
             if (countDownTimer2 != null) {
                 countDownTimer2.cancel();
             }
@@ -415,11 +432,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     if (tvHour1 != null && times != null) {
                         tvHour1.setText(times[1]);
                         tvMinter1.setText(Integer.valueOf(times[2]) == 0 ? "01" : times[2]);
-                        if(Integer.valueOf(times[2])==0&&Integer.valueOf(times[3])!=0){
+                        if (Integer.valueOf(times[2]) == 0 && Integer.valueOf(times[3]) != 0) {
                             tvMin1.setText("小于");
                             tvMin1.setTextColor(getResources().getColor(R.color.color6));
                             tvHour1.setVisibility(View.INVISIBLE);
-                        }else {
+                        } else {
                             tvMin1.setText("小时");
                             tvMin1.setTextColor(getResources().getColor(R.color.colorred));
                             tvHour1.setVisibility(View.VISIBLE);
@@ -434,12 +451,19 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                         tvMinter1.setText("00");
                     }
 
+                    if (times <= 0) {
+                        llM3.setVisibility(View.VISIBLE);
+                        llM4.setVisibility(View.GONE);
+                        tvState1.setVisibility(View.GONE);
+                        tvRemind2.setTextColor(getResources().getColor(R.color.colorred));
+                        tvRemind2.setText(splits[0] + ":" + splits[1] + "分测量时间已经到了快去测量吧");
+                    }
 
                 }
             }.start();
             tvHour1.setText(split[0]);
             tvMinter1.setText(split[1]);
-            tvState1.setText(entitys.nextPlan.status.equals("complete") ? "已完成" : "未完成");
+            tvState1.setText(entitys.status.equals("complete") ? "已完成" : "未完成");
         } else if (type == 3) {
             BASE entitys = (BASE) entity;
             if (entitys.numberOfUnreadMessages == 0) {

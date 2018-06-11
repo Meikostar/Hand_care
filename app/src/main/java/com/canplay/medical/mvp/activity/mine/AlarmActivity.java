@@ -158,6 +158,9 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         // 启动的Activity个数加1
         WeacStatus.sActivityNumber++;
         registerPhoneReceiver();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
         // 画面出现在解锁屏幕上,显示,常亮
         getWindow().addFlags(
                 WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
