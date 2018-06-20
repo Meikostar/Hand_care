@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.canplay.medical.R;
@@ -16,6 +17,7 @@ import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.unBind;
+import com.canplay.medical.mvp.activity.home.SmartKitActivity;
 import com.canplay.medical.mvp.adapter.EuipmentAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
@@ -53,6 +55,10 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
     RegularListView rlMenu;
     @BindView(R.id.loadingView)
     LoadingPager loadingView;
+    @BindView(R.id.tv_type)
+    TextView tvType;
+    @BindView(R.id.ll_bg)
+    LinearLayout llBg;
     private EuipmentAdapter adapter;
     private PhotoPopupWindow mWindowAddPhoto;
     private String titles;
@@ -69,6 +75,18 @@ public class MineEuipmentActivity extends BaseActivity implements HomeContract.V
         if (TextUtil.isNotEmpty(titles)) {
             navigationBar.setNaviTitle(titles);
         }
+        if(BaseApplication.isOwn){
+            llBg.setVisibility(View.VISIBLE);
+
+        }else {
+            llBg.setVisibility(View.GONE);
+        }
+        llBg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MineEuipmentActivity.this, SmartKitActivity.class));
+            }
+        });
         user_id = SpUtil.getInstance().getUserId();
         navigationBar.setNavigationBarListener(this);
         adapter = new EuipmentAdapter(this);

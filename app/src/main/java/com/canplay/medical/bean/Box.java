@@ -39,8 +39,8 @@ public class Box {
     public String lastSynced;
     public String owned;
     public String device;
-    public double planCreatedDateTime;
-    public double dateTime;
+    public long planCreatedDateTime;
+    public long dateTime;
     public int  status;
 
 }

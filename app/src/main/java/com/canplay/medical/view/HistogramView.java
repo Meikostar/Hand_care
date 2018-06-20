@@ -212,7 +212,7 @@ public class HistogramView extends View {
         canvas.drawText("时间", dp2px(35) + width, dp2px(10) + height, titlePaint);
         for(int i=1;i<data.size();i++){
 
-                canvas.drawCircle(dp2px(28) +(float) (data.get(i).xdata)*xsqr , height- (float) (data.get(i).ydata)*ysqr, 10, data.get(0).colorType==0?pointLinePaint1:pointLinePaint);
+                canvas.drawCircle(dp2px(28) +(float) (data.get(i).xdata)*xsqr , height- (float) (data.get(i).ydata)*ysqr, 10, data.get(i).colorType==0?pointLinePaint1:pointLinePaint);
 
             canvas.drawLine(dp2px(28) +(float) ((data.get(i-1).xdata)*xsqr),height- (float) (data.get(i-1).ydata)*ysqr,dp2px(28) + (float) (data.get(i).xdata)*xsqr, height- (float) (data.get(i).ydata)*ysqr, chartLinePaint);
         }

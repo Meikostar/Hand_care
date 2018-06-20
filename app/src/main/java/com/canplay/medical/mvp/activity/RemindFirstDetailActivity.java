@@ -161,6 +161,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
 
             @Override
             public void onFinish() {
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
                finish();
 
 
@@ -297,7 +298,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
                     tvState.setText("请服用智能药杯");
                 }else {
                     if (data.code.equals("早")) {
-                        ivImg.setImageResource(R.drawable.zt);
+                        ivImg.setImageResource(R.drawable.zs);
                     } else if (data.code.equals("中")) {
                         ivImg.setImageResource(R.drawable.qianshou);
                     } else if (data.code.equals("晚")) {

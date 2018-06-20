@@ -37,6 +37,10 @@ public class FriendDetailActivity_ViewBinding implements Unbinder {
     target.llBloodPress = Utils.findRequiredViewAsType(source, R.id.ll_blood_press, "field 'llBloodPress'", LinearLayout.class);
     target.llBloodSugar = Utils.findRequiredViewAsType(source, R.id.ll_blood_sugar, "field 'llBloodSugar'", LinearLayout.class);
     target.llMedicalPlan = Utils.findRequiredViewAsType(source, R.id.ll_Medical_plan, "field 'llMedicalPlan'", LinearLayout.class);
+    target.imageView = Utils.findRequiredViewAsType(source, R.id.imageView, "field 'imageView'", ImageView.class);
+    target.tvType = Utils.findRequiredViewAsType(source, R.id.tv_type, "field 'tvType'", TextView.class);
+    target.llBg = Utils.findRequiredViewAsType(source, R.id.ll_bg, "field 'llBg'", LinearLayout.class);
+    target.lines = Utils.findRequiredView(source, R.id.lines, "field 'lines'");
   }
 
   @Override
@@ -58,5 +62,9 @@ public class FriendDetailActivity_ViewBinding implements Unbinder {
     target.llBloodPress = null;
     target.llBloodSugar = null;
     target.llMedicalPlan = null;
+    target.imageView = null;
+    target.tvType = null;
+    target.llBg = null;
+    target.lines = null;
   }
 }

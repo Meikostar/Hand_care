@@ -134,7 +134,7 @@ public class LineCharSugarFragment extends BaseFragment implements BaseContract.
                 kpi.xdata = i;
                 kpi.ydata = Double.valueOf(record.bgl);
 
-                if (kpi.ydata < 3.9|| kpi.ydata >7.1) {
+                if (kpi.ydata < 3.9|| kpi.ydata >6.1) {
                     kpi.colorType = 1;
                 }
 

@@ -118,11 +118,12 @@ public class TimeXRecordActivity extends BaseActivity implements BaseContract.Vi
                         reflash();
                         break;
                     case 1://血压
-                        category = "Measurement";
+                        category = "Medicine";
                         reflash();
                         break;
                     case 2://服药
-                        category = "Medicine";
+                        category = "Measurement";
+
                         reflash();
                         break;
                     case 3://血糖

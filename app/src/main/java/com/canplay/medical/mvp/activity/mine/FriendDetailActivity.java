@@ -9,21 +9,19 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.canplay.medical.R;
-import com.canplay.medical.base.BaseActivity;
 import com.canplay.medical.base.BaseAllActivity;
 import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Add;
 import com.canplay.medical.bean.Friend;
+import com.canplay.medical.mvp.activity.home.SmartKitActivity;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.CircleTransform;
-import com.canplay.medical.view.EditorNameDialog;
-import com.canplay.medical.view.PhotoPopupWindow;
 
 import javax.inject.Inject;
 
@@ -60,36 +58,58 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     LinearLayout llBloodSugar;
     @BindView(R.id.ll_Medical_plan)
     LinearLayout llMedicalPlan;
+    @BindView(R.id.imageView)
+    ImageView imageView;
+    @BindView(R.id.tv_type)
+    TextView tvType;
+    @BindView(R.id.ll_bg)
+    LinearLayout llBg;
+    @BindView(R.id.lines)
+    View lines;
     private String userId;
     private String familyAndFriendsId;
     private String status;
     private int type;
+
     @Override
     public void initViews() {
         setContentView(R.layout.activity_friend_detail);
         ButterKnife.bind(this);
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-        userId=getIntent().getStringExtra("id");
-        familyAndFriendsId=getIntent().getStringExtra("familyAndFriendsId");
-        status=getIntent().getStringExtra("status");
-        if(TextUtil.isNotEmpty(status)){
-            if(status.equals("Waiting")){
+        userId = getIntent().getStringExtra("id");
+        familyAndFriendsId = getIntent().getStringExtra("familyAndFriendsId");
+        status = getIntent().getStringExtra("status");
+        if (TextUtil.isNotEmpty(status)) {
+            if (status.equals("Waiting")) {
                 tvBind.setText("同意");
-            }else if(status.equals("Pending")) {
+            } else if (status.equals("Pending")) {
                 tvBind.setVisibility(View.INVISIBLE);
-            }else if(status.equals("Active")) {
+            } else if (status.equals("Active")) {
                 tvBind.setText("解除绑定");
-            }else if(status.equals("add")){
+            } else if (status.equals("add")) {
                 tvBind.setText("绑定");
                 llBloodPress.setVisibility(View.GONE);
                 llBloodSugar.setVisibility(View.GONE);
                 llMedicalPlan.setVisibility(View.GONE);
             }
         }
+        if (BaseApplication.isOwn) {
+            llBg.setVisibility(View.VISIBLE);
+            lines.setVisibility(View.VISIBLE);
 
+        } else {
+            llBg.setVisibility(View.GONE);
+            lines.setVisibility(View.GONE);
+        }
+        llBg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FriendDetailActivity.this, SmartKitActivity.class));
+            }
+        });
         String ids = SpUtil.getInstance().getUserId();
-        type=getIntent().getIntExtra("type",0);
+        type = getIntent().getIntExtra("type", 0);
         presenter.getFriendInfo(userId);
     }
 
@@ -116,39 +136,40 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     }
 
     private boolean isFriend;
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ll_blood_press://血压记录
                 Intent intent = new Intent(FriendDetailActivity.this, BloodPressRecordActivity.class);
-                intent.putExtra("id",userId);
+                intent.putExtra("id", userId);
                 startActivity(intent);
                 break;
             case R.id.ll_blood_sugar://血糖记录
                 Intent intent1 = new Intent(FriendDetailActivity.this, BloodSugarRecordActivity.class);
-                intent1.putExtra("id",userId);
+                intent1.putExtra("id", userId);
                 startActivity(intent1);
                 break;
             case R.id.ll_Medical_plan://用药计划
-                startActivity(new Intent(FriendDetailActivity.this,UseMedicalRecordActivity.class));
+                startActivity(new Intent(FriendDetailActivity.this, UseMedicalRecordActivity.class));
                 break;
             case R.id.tv_bind://解除绑定
-                if(friend==null){
+                if (friend == null) {
                     return;
                 }
                 Add add = new Add();
-                add.familyAndFriendsUserId=friend.userId;
-                add.familyAndFriendsUserName=friend.displayName;
-                add.userId= SpUtil.getInstance().getUserId();
-                add.name=SpUtil.getInstance().getUser();
-                if(type==0){
+                add.familyAndFriendsUserId = friend.userId;
+                add.familyAndFriendsUserName = friend.displayName;
+                add.userId = SpUtil.getInstance().getUserId();
+                add.name = SpUtil.getInstance().getUser();
+                if (type == 0) {
                     presenter.addFriend(add);
-                }else {
+                } else {
 
-                    if(TextUtil.isNotEmpty(status)){
-                        if(status.equals("Waiting")){
+                    if (TextUtil.isNotEmpty(status)) {
+                        if (status.equals("Waiting")) {
                             presenter.agree(familyAndFriendsId);
-                        }else if(status.equals("Active")) {
+                        } else if (status.equals("Active")) {
                             presenter.disAgree(familyAndFriendsId);
                         }
                     }
@@ -162,30 +183,33 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
     }
 
     private Friend friend;
+
     @Override
-    public <T> void toEntity(T entity,int type) {
-     friend= (Friend) entity;
-        if(friend!=null){
-            Glide.with(this).load(BaseApplication.avatar+friend.avatar).asBitmap().transform(new CircleTransform(this)).placeholder(R.drawable.dingdantouxiang).into(ivAvatar);
-            if(TextUtil.isNotEmpty(friend.displayName)){
+    public <T> void toEntity(T entity, int type) {
+        friend = (Friend) entity;
+        if (friend != null) {
+            Glide.with(this).load(BaseApplication.avatar + friend.avatar).asBitmap().transform(new CircleTransform(this)).placeholder(R.drawable.dingdantouxiang).into(ivAvatar);
+            if (TextUtil.isNotEmpty(friend.displayName)) {
                 tvName.setText(friend.displayName);
-            }else {
-                if(TextUtil.isNotEmpty(friend.userName)){
+            } else {
+                if (TextUtil.isNotEmpty(friend.userName)) {
                     tvName.setText(friend.userName);
                 }
             }
-           if(TextUtil.isNotEmpty(friend.address)){
+            if (TextUtil.isNotEmpty(friend.address)) {
                 tvAddress.setText(friend.address);
-            }    if(TextUtil.isNotEmpty(friend.mobile)){
+            }
+            if (TextUtil.isNotEmpty(friend.mobile)) {
                 tvPhone.setText(friend.mobile);
-            }  if(TextUtil.isNotEmpty(friend.dob)){
+            }
+            if (TextUtil.isNotEmpty(friend.dob)) {
                 String[] split = friend.dob.split("/");
-                String birth=split[0]+"."+split[1]+"."+split[2];
+                String birth = split[0] + "." + split[1] + "." + split[2];
                 tvBirth.setText(birth);
             }
-            if(friend.gender.equals("male")){//男
+            if (friend.gender.equals("male")) {//男
 
-            }else {
+            } else {
 
             }
         }
@@ -194,23 +218,30 @@ public class FriendDetailActivity extends BaseAllActivity implements View.OnClic
 
     @Override
     public void toNextStep(int type) {
-       if(type==8){
-           finish();
-           showToasts("解除成功");
-           RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE,""));
-       }else if(type==6){
-           showToasts("已发送添加好友请求");
-           RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE,""));
-           finish();
-       }else if(type==4){
-           showToasts("已同意");
-           RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE,""));
-           finish();
-       }
+        if (type == 8) {
+            finish();
+            showToasts("解除成功");
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE, ""));
+        } else if (type == 6) {
+            showToasts("已发送添加好友请求");
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE, ""));
+            finish();
+        } else if (type == 4) {
+            showToasts("已同意");
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.CLOSE, ""));
+            finish();
+        }
     }
 
     @Override
     public void showTomast(String msg) {
-     showToasts(msg);
+        showToasts(msg);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

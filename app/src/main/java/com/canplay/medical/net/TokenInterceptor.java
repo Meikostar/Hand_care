@@ -18,7 +18,8 @@ import okhttp3.Response;
  * 版本:
  ***/
 public class TokenInterceptor implements Interceptor {
-    private static Handler handler = new Handler(){};
+    private static Handler handler = new Handler() {
+    };
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -27,7 +28,7 @@ public class TokenInterceptor implements Interceptor {
 
         Request request = chain.request().newBuilder()
                 .addHeader("Source", "android")
-                .addHeader("authorization",type+"  "+token)
+                .addHeader("authorization", type + "  " + token)
                 .build();
         return chain.proceed(request);
 

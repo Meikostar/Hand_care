@@ -124,7 +124,7 @@ public class HealthDataAdapter extends BaseAdapter {
                 holder.tvContent.setVisibility(View.INVISIBLE);
                 holder.tvTwos.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
                 holder.tvTwo.setText(health.bloodGlucoseLevels.get(0).bgl+"mmol/L");
-                if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
+                if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.9 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 6.1) {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
@@ -140,12 +140,12 @@ public class HealthDataAdapter extends BaseAdapter {
                 holder.tvOnes.setText(TimeUtil.formatToMD((long) health.bloodGlucoseLevels.get(0).timeStamp));
                 holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl+"mmol/L");
                 holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl+"mmol/L");
-                if ( Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) < 8.1) {
+                if ( Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) > 3.9 && Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) < 6.1) {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
 
-                } if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
+                } if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.9 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 6.1) {
                     holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.red_b));
@@ -163,17 +163,17 @@ public class HealthDataAdapter extends BaseAdapter {
                 holder.tvTwo.setText(health.bloodGlucoseLevels.get(1).bgl+"mmol/L");
                 holder.tvOne.setText(health.bloodGlucoseLevels.get(0).bgl+"mmol/L");
                 holder.tvThree.setText(health.bloodGlucoseLevels.get(2).bgl+"mmol/L");
-                if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 8.1) {
+                if ( Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) > 3.9 && Double.valueOf(health.bloodGlucoseLevels.get(0).bgl) < 6.1) {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvTwo.setTextColor(mContext.getResources().getColor(R.color.red_b));
 
-                }     if ( Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) < 8.1) {
+                }     if ( Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) > 3.9 && Double.valueOf(health.bloodGlucoseLevels.get(1).bgl) < 6.1) {
                     holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.red_b));
 
-                }    if ( Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) > 3.1 && Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) < 8.1) {
+                }    if ( Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) > 3.9 && Double.valueOf(health.bloodGlucoseLevels.get(2).bgl) < 6.1) {
                     holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.slow_black));
                 }else {
                     holder.tvThree.setTextColor(mContext.getResources().getColor(R.color.red_b));

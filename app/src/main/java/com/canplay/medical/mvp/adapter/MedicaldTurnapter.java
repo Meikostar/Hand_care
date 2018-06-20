@@ -101,7 +101,7 @@ public class MedicaldTurnapter extends BaseAdapter {
             @Override
             public void afterTextChanged4ClearEdit(Editable s) {
                 if(TextUtil.isNotEmpty(s.toString())){
-                    list.get(position).message=s.toString();
+                    list.get(position).message=s.toString()+"粒";
                 }
             }
 

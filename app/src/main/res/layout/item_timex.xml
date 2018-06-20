@@ -73,7 +73,7 @@
                 android:layout_marginRight="65dp"
                 android:text=""
                 android:textColor="@color/slow_black"
-                android:textSize="15sp" />
+                android:textSize="15.5sp" />
 
             <TextView
                 android:layout_gravity="center_vertical"
@@ -87,7 +87,7 @@
                 android:layout_marginTop="10dp"
                 android:text=""
                 android:textColor="#545454"
-                android:textSize="13sp" />
+                android:textSize="14.5sp" />
 
         </LinearLayout>
 

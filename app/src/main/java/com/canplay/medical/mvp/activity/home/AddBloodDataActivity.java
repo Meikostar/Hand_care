@@ -132,10 +132,12 @@ public class AddBloodDataActivity extends BaseActivity implements BaseContract.V
         if (type == 1) {//添加血糖记录成功
 
             RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.BLOODORSUGAR, ""));
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
             finish();
         } else if (type == 2) {//添加血压记录成功
 
             RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.BLOODORSUGAR, ""));
+            RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
             finish();
         }
     }

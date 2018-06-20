@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.util.LogUtils;
 
 public class PhoneReceiver extends BroadcastReceiver {
@@ -55,15 +56,20 @@ public class PhoneReceiver extends BroadcastReceiver {
             super.onCallStateChanged(state, incomingNumber);
             switch (state) {
                 case TelephonyManager.CALL_STATE_IDLE:
+                    BaseApplication.phoneState=0;
                     LogUtils.i("电话挂断了");
                     if (onPhoneListener != null)
                         onPhoneListener.onPhoneIdle();
                     break;
                 case TelephonyManager.CALL_STATE_OFFHOOK:
                     LogUtils.i("电话接听");
+                    BaseApplication.phoneState=1;
+                    if (onPhoneListener != null)
+                        onPhoneListener.onPhoneIdle();
                     break;
                 case TelephonyManager.CALL_STATE_RINGING:
                     //输出来电号码
+                    BaseApplication.phoneState=2;
                     LogUtils.i("电话响铃:来电号码" + incomingNumber);
                     if (onPhoneListener != null)
                         onPhoneListener.onPhoneResume();

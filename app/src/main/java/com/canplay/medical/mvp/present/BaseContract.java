@@ -25,7 +25,7 @@ public class BaseContract {
     }
 
     public  interface Presenter extends BasePresenter<View> {
-
+        void getBoxInfo();
         /**
          * 测量记录
          */

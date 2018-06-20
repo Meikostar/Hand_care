@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:text="130"
                         android:textColor="@color/slow_black"
-                        android:textSize="15.5sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -131,7 +131,7 @@
                         android:layout_height="wrap_content"
                         android:text="80"
                         android:textColor="@color/slow_black"
-                        android:textSize="15.5sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -160,7 +160,7 @@
                         android:layout_height="wrap_content"
                         android:text="90"
                         android:textColor="@color/slow_black"
-                        android:textSize="15.5sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
 

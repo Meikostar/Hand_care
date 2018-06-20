@@ -147,6 +147,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     @Override
     public void onResume() {
         super.onResume();
+        if(presenter!=null){
+            presenter.getDetails(1);
+            presenter.getDetails(2);
+            presenter.getMessageCout();
+        }
 
     }
 
@@ -253,26 +258,53 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     private void initView() {
         showProgress("加载中...");
-        presenter.getDetails(1);
-        presenter.getDetails(2);
 
-        presenter.getMessageCout();
 
 
     }
 
     private CountDownTimer countDownTimer1;
     private CountDownTimer countDownTimer2;
+    private CountDownTimer countDownTimer3;
     private String time;
     private long times;
     private int minters;
     private int hours;
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            //相当于Fragment的onResume
+            if(presenter!=null){
+                presenter.getDetails(1);
+                presenter.getDetails(2);
+                presenter.getMessageCout();
+            }
+
+        }
+    }
 
     @Override
     public <T> void toEntity(T entity, int type) {
         dimessProgress();
 
+        if (countDownTimer3 != null) {
+            countDownTimer3.cancel();
+        }
+        countDownTimer3 = new CountDownTimer(60*1000*30, 60*1000*30) {
+            @Override
+            public void onTick(long millisUntilFinished) {
 
+            }
+
+            @Override
+            public void onFinish() {
+                presenter.getDetails(1);
+                presenter.getDetails(2);
+                presenter.getMessageCout();
+
+            }
+        }.start();
         if (type == 1) {
             Medil entitys = (Medil) entity;
             if (entitys == null || TextUtil.isEmpty(entitys.nextPlan.when)) {

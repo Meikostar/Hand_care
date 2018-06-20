@@ -89,13 +89,13 @@ public class BloodRecordRecycleAdapter extends BaseRecycleViewAdapter {
             holders.line1.setVisibility(View.GONE);
 
         }
-        if (position % 2 == 0) {
-
-
-        } else {
-
-            holders.tvTime.setVisibility(View.INVISIBLE);
-        }
+//        if (position % 2 == 0) {
+//
+//
+//        } else {
+//
+//            holders.tvTime.setVisibility(View.INVISIBLE);
+//        }
     }
 
     @Override

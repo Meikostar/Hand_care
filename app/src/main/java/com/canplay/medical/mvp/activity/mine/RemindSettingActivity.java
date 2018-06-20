@@ -250,7 +250,7 @@ public class RemindSettingActivity extends BaseActivity implements
                     if(TextUtil.isNotEmpty(name.message)){
                         dec.dosage=name.message;
                     }else {
-                        dec.dosage="2颗";
+                        dec.dosage="1粒";
                     }
                     if(TextUtil.isNotEmpty(name.image)){
                         dec.image=name.image;

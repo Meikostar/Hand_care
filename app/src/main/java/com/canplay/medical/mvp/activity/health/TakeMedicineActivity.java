@@ -183,7 +183,7 @@ public class TakeMedicineActivity extends BaseActivity implements BaseContract.V
 //                data.add(record1);
 //            }
 //        }
-        if (data.size() == 0) {
+        if (lists.size() == 0) {
             loadingView.setContent("暂无服药记录");
 
             loadingView.showPager(LoadingPager.STATE_EMPTY);

@@ -4,6 +4,8 @@ package com.canplay.medical.mvp.activity.mine;
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.canplay.medical.R;
@@ -29,6 +31,8 @@ public class MineEuipmentActivity_ViewBinding implements Unbinder {
     target.navigationBar = Utils.findRequiredViewAsType(source, R.id.navigationBar, "field 'navigationBar'", NavigationBar.class);
     target.rlMenu = Utils.findRequiredViewAsType(source, R.id.rl_menu, "field 'rlMenu'", RegularListView.class);
     target.loadingView = Utils.findRequiredViewAsType(source, R.id.loadingView, "field 'loadingView'", LoadingPager.class);
+    target.tvType = Utils.findRequiredViewAsType(source, R.id.tv_type, "field 'tvType'", TextView.class);
+    target.llBg = Utils.findRequiredViewAsType(source, R.id.ll_bg, "field 'llBg'", LinearLayout.class);
   }
 
   @Override
@@ -42,5 +46,7 @@ public class MineEuipmentActivity_ViewBinding implements Unbinder {
     target.navigationBar = null;
     target.rlMenu = null;
     target.loadingView = null;
+    target.tvType = null;
+    target.llBg = null;
   }
 }

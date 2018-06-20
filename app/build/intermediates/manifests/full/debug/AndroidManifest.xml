@@ -541,14 +541,6 @@
             android:value="f0fc99fc25b22fc38fe3a5d1" />
 
         <activity android:name="io.valuesfeng.picker.ImageSelectActivity" />
-
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
-
         <activity
             android:name="com.antfortune.freeline.MiddlewareActivity"
             android:screenOrientation="portrait" />

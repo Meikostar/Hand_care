@@ -103,7 +103,7 @@
                     android:id="@+id/tv_data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1.5~5.5\n mmol/L"
+                    android:text="3.9~6.1\n mmol/L"
                     android:textColor="@color/slow_black"
                     android:textSize="22sp" />
 

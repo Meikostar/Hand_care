@@ -277,7 +277,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             }
             if (TextUtil.isNotEmpty(medil.nextPlan.code)) {
                 if (medil.nextPlan.code.equals("早")) {
-                    ivState.setImageResource(R.drawable.z);
+                    ivState.setImageResource(R.drawable.zs);
                 } else if (medil.nextPlan.code.equals("中")) {
                     ivState.setImageResource(R.drawable.zz);
                 } else if (medil.nextPlan.code.equals("晚")) {

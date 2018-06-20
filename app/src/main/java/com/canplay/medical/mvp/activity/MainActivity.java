@@ -7,6 +7,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -48,6 +49,7 @@ import com.canplay.medical.permission.PermissionGen;
 import com.canplay.medical.permission.PermissionSuccess;
 import com.canplay.medical.receiver.AlarmReceiver;
 import com.canplay.medical.receiver.DaemonService;
+import com.canplay.medical.receiver.PhoneReceiver;
 import com.canplay.medical.receiver.Service1;
 import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.SpUtil;
@@ -97,6 +99,7 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
     @Override
     public void initViews() {
         setContentView(R.layout.activity_main);
+        registerPhoneReceiver();
         bnbHome = (BottonNevgBar) findViewById(R.id.bnb_home);
         line =  findViewById(R.id.line);
         status=getIntent().getIntExtra("type",0);
@@ -154,6 +157,41 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
                 dialog.dismiss();
             }
         });
+    }
+    /**
+     * 注册电话监听
+     */
+    private void registerPhoneReceiver() {
+        if (phoneReceiver == null) {
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction("android.intent.action.PHONE_STATE");
+            intentFilter.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
+            phoneReceiver = new PhoneReceiver(new PhoneReceiver.OnPhoneListener() {
+                @Override
+                public void onPhoneResume() {
+
+                }
+
+                @Override
+                public void onPhoneIdle() {
+                    //开始播放音乐
+
+                }
+            });
+            registerReceiver(phoneReceiver, intentFilter);
+        }
+    }
+
+    private PhoneReceiver phoneReceiver;
+    /**
+     * 解注册电话监听
+     */
+    private void unRegisterPhoneReceiver() {
+
+        if (phoneReceiver != null) {
+            unregisterReceiver(phoneReceiver);
+        }
+
     }
     @Override
     public void initData() {
@@ -231,6 +269,7 @@ public class MainActivity extends BaseAllActivity implements HomeFragment.ScanLi
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unRegisterPhoneReceiver();
         if (mSubscription != null) {
             RxBus.getInstance().unSub(mSubscription);
         }

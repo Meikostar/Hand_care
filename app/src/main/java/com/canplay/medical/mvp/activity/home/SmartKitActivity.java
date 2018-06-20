@@ -71,7 +71,8 @@ public class SmartKitActivity extends BaseActivity implements BaseContract.View 
         ButterKnife.bind(this);
         DaggerBaseComponent.builder().appComponent(((BaseApplication)getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
-        presenter.myMedicineBox();
+        showProgress("加载中...");
+        presenter.getBoxInfo();
         navigationBar.setNavigationBarListener(this);
         adapter = new ItemAdapter(this);
         adapters = new SmartCycAdapter(this);
@@ -105,8 +106,10 @@ public class SmartKitActivity extends BaseActivity implements BaseContract.View 
             @Override
             public void getItem(Box box, int poistion) {
                 datas=box.medicines;
+
                 adapter.setData(box.medicines);
                 tvType.setText("药物种类（"+ box.medicines.size()+")");
+                tvTime.setText(TimeUtil.formatTims(box.dateTime));
                 tvCode.setText("0"+(poistion+1)+"药盒");
             }
         });
@@ -154,23 +157,29 @@ public class SmartKitActivity extends BaseActivity implements BaseContract.View 
     private List<Box> datas;
     @Override
     public <T> void toEntity(T entity, int type) {
+        dimessProgress();
         Box box= (Box) entity;
-        data=box.cups;
+        if(box!=null){
+            data=box.cups;
 //        tvTime.setText(TimeUtil.formatTims(box.planCreatedDateTime));
-        int poistion=0;
-        for(int i=0;i<data.size();i++){
-            if(data.get(i).status==1){
-                data.get(i).status=3;
-                poistion=i;
-                break;
+            int poistion=0;
+            for(int i=0;i<data.size();i++){
+                if(data.get(i).status==1){
+                    data.get(i).status=3;
+                    poistion=i;
+                    break;
+                }
             }
+            datas=data.get(poistion).medicines;
+            time=data.get(poistion).dateTime;
+            tvTime.setText(TimeUtil.formatTims(time));
+            tvType.setText("药物种类（"+ data.get(poistion).medicines.size()+")");
+            adapter.setData(data.get(poistion).medicines);
+            adapters.setData(data);
         }
-        datas=data.get(poistion).medicines;
-        tvType.setText("药物种类（"+ data.get(poistion).medicines.size()+")");
-        adapter.setData(data.get(poistion).medicines);
-        adapters.setData(data);
-    }
 
+    }
+    private long time;
     @Override
     public void toNextStep(int type) {
 
@@ -178,6 +187,7 @@ public class SmartKitActivity extends BaseActivity implements BaseContract.View 
 
     @Override
     public void showTomast(String msg) {
-
+        dimessProgress();
+        showToasts(msg);
     }
 }

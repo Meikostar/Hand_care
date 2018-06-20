@@ -426,6 +426,25 @@ public class BasesPresenter implements BaseContract.Presenter {
         });
 
     }
+    @Override
+    public void getBoxInfo() {
+        String id=SpUtil.getInstance().getUserId();
+        subscription = ApiManager.setSubscribe(contactApi.getBoxInfo(id), new MySubscriber<Box>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(Box entity){
+
+                mView.toEntity(entity,1);
+            }
+        });
+
+    }
 
     @Override
     public void addBloodPress(Press base) {

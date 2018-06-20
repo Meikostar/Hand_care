@@ -283,6 +283,7 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, H
             adapter.setData(list);
         } else if (type == 9) {
             box = (Boxs) entity;
+            BaseApplication.isOwn=box.owned;
             if (box.owned) {
                 ivBox.setImageResource(R.drawable.cw);
             } else {

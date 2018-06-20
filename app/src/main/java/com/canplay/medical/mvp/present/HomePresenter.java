@@ -601,6 +601,7 @@ public class HomePresenter implements HomeContract.Presenter {
     }
     @Override
     public void searchMedicine(String content) {
+
         subscription = ApiManager.setSubscribe(contactApi.searchMedicine(content), new MySubscriber<List<Medicines>>(){
             @Override
             public void onError(Throwable e){

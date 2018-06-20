@@ -97,6 +97,12 @@ public class SearchMedicalAdapter extends BaseAdapter {
                 notifyDataSetChanged();
             }
         });
+        if(list.get(position).isCheck){
+            holder.check.setChecked(true);
+        }else {
+            holder.check.setChecked(false);
+
+        }
         holder.ll_bg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
