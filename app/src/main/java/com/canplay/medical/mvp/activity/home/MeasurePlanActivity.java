@@ -211,7 +211,7 @@ public class MeasurePlanActivity extends BaseActivity implements OtherContract.V
                 if (hours < 0) {
                     hours = hours + 24;
                 }
-                tvTime.setText(time);
+                tvTime.setText(TimeUtil.formatToNew(TimeUtil.getStringToDate(medil.nextPlan.when)));
                 times = TimeUtil.getStringToDate(medil.nextPlan.when) - System.currentTimeMillis();
 
 

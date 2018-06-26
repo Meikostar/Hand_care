@@ -129,6 +129,7 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
         adapter.setListener(new RemindMeasureAdapter.selectItemListener() {
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
+                time=medicine.when;
                 if (type == 0) {
 //                    showProgress("删除中...");
                     showPopwindow(medicine.reminderTimeId);
@@ -249,9 +250,9 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                             // 关闭闹钟
                             MyUtil.cancelAlarmClock(getActivity(),
                                     alarmClock.getId());
-                            // 关闭小睡
-                            MyUtil.cancelAlarmClock(getActivity(),
-                                    -alarmClock.getId());
+//                            // 关闭小睡
+//                            MyUtil.cancelAlarmClock(getActivity(),
+//                                    -alarmClock.getId());
 
                             NotificationManager notificationManager = (NotificationManager) getActivity()
                                     .getSystemService(Activity.NOTIFICATION_SERVICE);

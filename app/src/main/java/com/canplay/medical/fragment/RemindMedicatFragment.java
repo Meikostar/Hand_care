@@ -21,6 +21,7 @@ import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.Medicine;
 import com.canplay.medical.mvp.activity.mine.RemindSettingActivity;
+import com.canplay.medical.mvp.activity.mine.SettingActivity;
 import com.canplay.medical.mvp.adapter.RemindMedicatAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
@@ -114,6 +115,7 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
         adapter.setListener(new RemindMedicatAdapter.selectItemListener() {
             @Override
             public void delete(Medicine medicine, int type, int poistion) {
+                time=medicine.when;
                 if (type == 1) {
                     Intent intent = new Intent(getActivity(), RemindSettingActivity.class);
                     intent.putExtra("data", medicine);
@@ -357,8 +359,8 @@ public class RemindMedicatFragment extends BaseFragment implements HomeContract.
                         MyUtil.cancelAlarmClock(getActivity(),
                                 alarmClock.getId());
                         // 关闭小睡
-                        MyUtil.cancelAlarmClock(getActivity(),
-                                -alarmClock.getId());
+//                        MyUtil.cancelAlarmClock(getActivity(),
+//                                -alarmClock.getId());
 
                         NotificationManager notificationManager = (NotificationManager) getActivity()
                                 .getSystemService(Activity.NOTIFICATION_SERVICE);

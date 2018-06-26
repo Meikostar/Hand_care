@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.support.v4.content.FileProvider;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -115,23 +116,54 @@ public class SettingActivity extends BaseActivity  {
         tvExit.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              List<AlarmClock> allAlarm = SpUtil.getInstance().getAllAlarm();
-              for(AlarmClock alarmClock:allAlarm){
-                  // 关闭闹钟
-                  MyUtil.cancelAlarmClock(SettingActivity.this,
-                          alarmClock.getId());
-              }
-              SpUtil.getInstance().clearData();
-
-
-              Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
-              startActivity(intent);
-              RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
-             finish();
+              showPopwindow();
           }
       });
     }
+    private View views=null;
+    private TextView sure = null;
+    private TextView cancel = null;
+    private TextView title = null;
+    private EditText reson = null;
+    public void showPopwindow() {
 
+        views = View.inflate(this, R.layout.add_euip, null);
+        sure = (TextView) views.findViewById(R.id.txt_sure);
+        cancel = (TextView) views.findViewById(R.id.txt_cancel);
+        title = (TextView) views.findViewById(R.id.tv_title);
+        reson = (EditText) views.findViewById(R.id.edit_reson);
+        title.setText("确定退出app?");
+        final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(this).setMessageView(views).create();
+        dialog.show();
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                List<AlarmClock> allAlarm = SpUtil.getInstance().getAllAlarm();
+                for (AlarmClock alarmClock : allAlarm) {
+                    // 关闭闹钟
+                    MyUtil.cancelAlarmClock(SettingActivity.this,
+                            alarmClock.getId());
+                }
+                SpUtil.getInstance().clearData();
+
+
+                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+                startActivity(intent);
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH, ""));
+                finish();
+
+                dialog.dismiss();
+            }
+        });
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

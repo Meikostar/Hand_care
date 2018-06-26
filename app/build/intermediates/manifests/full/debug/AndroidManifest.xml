@@ -33,8 +33,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <!-- 极光 -->
-    <!-- Required -->
+
     <permission
         android:name="com.canplay.medical.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
@@ -318,6 +317,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+        <receiver android:name="com.canplay.medical.receiver.PhoneReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
         <receiver
             android:name="com.canplay.medical.receiver.AlarmClockBroadcast"
             android:process=":daemon" >
@@ -374,8 +379,7 @@
         <service
             android:name="com.canplay.medical.receiver.DaemonService"
             android:exported="true"
-            android:process=":daemon" >
-        </service>
+            android:process=":daemon" />
 
         <!-- 百度releayKey -->
         <meta-data
@@ -399,8 +403,7 @@
         <activity
             android:name="cn.jpush.android.ui.PopWinActivity"
             android:exported="false"
-            android:theme="@style/MyDialogStyle" >
-        </activity>
+            android:theme="@style/MyDialogStyle" />
 
         <!-- Required SDK核心功能 -->
         <activity

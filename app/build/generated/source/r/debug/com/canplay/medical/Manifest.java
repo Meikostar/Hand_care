@@ -9,9 +9,6 @@ package com.canplay.medical;
 
 public final class Manifest {
     public static final class permission {
-        /**  极光 
- Required 
-         */
         public static final String JPUSH_MESSAGE="com.canplay.medical.permission.JPUSH_MESSAGE";
     }
 }

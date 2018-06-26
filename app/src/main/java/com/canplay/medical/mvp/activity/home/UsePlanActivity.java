@@ -291,6 +291,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
             iniGridView(medil.nextPlan.items);
             if (TextUtil.isNotEmpty(medil.nextPlan.when)) {
                 time = TimeUtil.formatHour(TimeUtil.getStringToDate(medil.nextPlan.when));
+
                 String date = TimeUtil.formatHour(System.currentTimeMillis());
                 String[] split = date.split(":");
                 final String[] splits = time.split(":");
@@ -305,7 +306,7 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
                 if (hours < 0) {
                     hours = hours + 24;
                 }
-                tvTime.setText(time);
+                tvTime.setText(TimeUtil.formatToNew(TimeUtil.getStringToDate(medil.nextPlan.when)));
                 times = TimeUtil.getStringToDate(medil.nextPlan.when) - System.currentTimeMillis();
                 llTimes.setVisibility(View.VISIBLE);
                 llRemind.setVisibility(View.GONE);

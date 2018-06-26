@@ -50,9 +50,9 @@ public class HomePresenter implements HomeContract.Presenter {
     public void getDetails(final int type) {
         String content;
         if(type==1){
-            content="Medicine";
+            content="medicine";
         }else {
-            content="Measurement";
+            content="measurement";
         }
         subscription = ApiManager.setSubscribe(contactApi.getDetails(content), new MySubscriber<Medil>(){
             @Override

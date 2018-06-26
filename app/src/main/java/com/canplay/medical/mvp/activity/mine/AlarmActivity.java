@@ -158,9 +158,10 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         // 启动的Activity个数加1
         WeacStatus.sActivityNumber++;
         if(BaseApplication.phoneState!=0){
-            finish();
+            finishActivity();
+            return;
         }
-        registerPhoneReceiver();
+//        registerPhoneReceiver();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
@@ -186,33 +187,37 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                 }
             }
 
+        if(BaseApplication.phoneState!=0){
+            finish();
+        }else {
+            if(mAlarmClock!=null){
+                String tag = mAlarmClock.getTag();
+                String[] splits = tag.split(":");
+                if(splits!=null&&splits.length!=1){
+                    if(Integer.valueOf(splits[0])==1){
+                        if(splits.length==3){
+                            if(splits[2].equals("血压")){
+                                img.setImageResource(R.drawable.cyc2);
+                                type=1;
+                            }  else {
+                                img.setImageResource(R.drawable.cyc3);
+                                type=2;
+                            }
+                            tvContent.setText("快去测量您的"+splits[2]);
+                        }
 
-        if(mAlarmClock!=null){
-            String tag = mAlarmClock.getTag();
-            String[] splits = tag.split(":");
-            if(splits!=null&&splits.length!=1){
-                if(Integer.valueOf(splits[0])==1){
-                    if(splits.length==3){
-                     if(splits[2].equals("血压")){
-                         img.setImageResource(R.drawable.cyc2);
-                         type=1;
-                     }  else {
-                         img.setImageResource(R.drawable.cyc3);
-                         type=2;
-                     }
-                        tvContent.setText("快去测量您的"+splits[2]);
+                    }else  {
+                        Intent intent = new Intent(this, RemindFirstDetailActivity.class);
+                        intent.putExtra("data",mAlarmClock);
+                        startActivity(intent);
+                        finish();
                     }
-
-                }else  {
-                    Intent intent = new Intent(this, RemindFirstDetailActivity.class);
-                    intent.putExtra("data",mAlarmClock);
-                    startActivity(intent);
-                    finish();
                 }
+
+
             }
-
-
         }
+
         if (mAlarmClock != null) {
             // 取得小睡间隔
             mNapInterval = mAlarmClock.getNapInterval();
@@ -420,10 +425,12 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         WeacStatus.sActivityNumber--;
 
 
+        if(mAudioManager!=null){
+            // 复原手机媒体音量
+            mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
+                    mCurrentVolume, AudioManager.ADJUST_SAME);
+        }
 
-        // 复原手机媒体音量
-        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
-                mCurrentVolume, AudioManager.ADJUST_SAME);
     }
 
     /**

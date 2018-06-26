@@ -80,6 +80,9 @@ public class RecordItemAdapter extends BaseAdapter {
         if(TextUtil.isNotEmpty(list.get(position).content)){
             holder.name.setText(list.get(position).content);
         }
+        if(TextUtil.isNotEmpty(list.get(position).dosage)){
+            holder.tvCount.setText(list.get(position).dosage);
+        }
         holder.llbg.setVisibility(View.VISIBLE);
         holder.tvTime.setText(TimeUtil.formatToMs(list.get(position).createdDateTime));
 

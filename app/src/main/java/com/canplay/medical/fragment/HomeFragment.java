@@ -400,7 +400,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             }.start();
 //            tvHour.setText(split[0]);
 //            tvMinter.setText(split[1]);
-            tvState.setText(entitys.status.equals("complete") ? "已完成" : "未完成");
+            tvState.setText(entitys.status.equals("completed") ? "已完成" : "未完成");
         } else if (type == 2) {
             Medil entitys = (Medil) entity;
             if (entitys == null || TextUtil.isEmpty(entitys.nextPlan.when)) {
@@ -495,7 +495,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             }.start();
             tvHour1.setText(split[0]);
             tvMinter1.setText(split[1]);
-            tvState1.setText(entitys.status.equals("complete") ? "已完成" : "未完成");
+            tvState1.setText(entitys.status.equals("completed") ? "已完成" : "未完成");
         } else if (type == 3) {
             BASE entitys = (BASE) entity;
             if (entitys.numberOfUnreadMessages == 0) {

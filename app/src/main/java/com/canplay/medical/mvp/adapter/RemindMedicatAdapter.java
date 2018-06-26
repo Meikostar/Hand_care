@@ -192,7 +192,7 @@ public class RemindMedicatAdapter extends BaseAdapter {
           });
          holder.rllist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
              @Override
-             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+             public boolean onItemLongClick(AdapterView<?> parent, View view, int positions, long id) {
                  listener.delete(list.get(position),4,position);
 
                  return true;

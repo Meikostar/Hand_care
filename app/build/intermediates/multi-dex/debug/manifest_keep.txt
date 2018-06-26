@@ -1,3 +1,3 @@
-# view AndroidManifest.xml #generated:88
+# view AndroidManifest.xml #generated:87
 -keep class com.canplay.medical.base.BaseApplication { <init>(...); }
 
