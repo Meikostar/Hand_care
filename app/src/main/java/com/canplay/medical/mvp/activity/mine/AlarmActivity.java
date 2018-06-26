@@ -157,10 +157,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         presenter.attachView(this);
         // 启动的Activity个数加1
         WeacStatus.sActivityNumber++;
-        if(BaseApplication.phoneState!=0){
-            finishActivity();
-            return;
-        }
+
 //        registerPhoneReceiver();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -408,7 +405,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         if(countDownTimer!=null){
             countDownTimer.cancel();
         }
-        unRegisterPhoneReceiver();
+//        unRegisterPhoneReceiver();
         // 当没有点击按钮，则当前响铃被新闹钟任务杀死，开启小睡
         if (!mIsOnclick) {
             // 小睡

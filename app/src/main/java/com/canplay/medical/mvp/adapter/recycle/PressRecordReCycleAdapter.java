@@ -43,16 +43,11 @@ public class PressRecordReCycleAdapter extends BaseRecycleViewAdapter {
         Record data= (Record) datas.get(position);
         if(type==0){
             if(TextUtil.isNotEmpty(data.high)){
-                holders.one.setText("收缩压："+data.high);
-            }  if(TextUtil.isNotEmpty(data.low)){
-                holders.two.setText("舒张压："+data.low);
-            }  if(TextUtil.isNotEmpty(data.pulse)){
-                holders.three.setText("心率："+data.pulse);
+                holders.one.setText("收缩压："+data.high+"mmHg"+"    舒张压："+data.low+"mmHg"+"   心率："+data.pulse+"次/分钟");
             }
         }else {
-            holders.one.setText("血糖:"+data.bgl);
-            holders.three.setVisibility(View.GONE);
-            holders.two.setVisibility(View.GONE);
+            holders.one.setText("血糖:"+data.bgl+"mmol/L");
+
         }
 
         if(position!=0){

@@ -261,6 +261,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         tvSure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showProgress("确认中...");
                 presenter.confirmEat(reminderTimeId);
           if(cout==1){
              cout=0;
@@ -282,7 +283,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
     private String reminderTimeId="";
     @Override
     public <T> void toEntity(T entity, int type) {
-
+        dimessProgress();
         data = (Detail) entity;
         if (data != null) {
             if (TextUtil.isNotEmpty(data.code)) {
@@ -317,6 +318,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
 
     @Override
     public void toNextStep(int type) {
+        dimessProgress();
         showTomast("用药已确认");
         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
@@ -327,7 +329,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
 
     @Override
     public void showTomast(String msg) {
-
+        dimessProgress();
     }
     /**
      * 播放铃声
