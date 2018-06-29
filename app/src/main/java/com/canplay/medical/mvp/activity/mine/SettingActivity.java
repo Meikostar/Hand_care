@@ -132,7 +132,7 @@ public class SettingActivity extends BaseActivity  {
         cancel = (TextView) views.findViewById(R.id.txt_cancel);
         title = (TextView) views.findViewById(R.id.tv_title);
         reson = (EditText) views.findViewById(R.id.edit_reson);
-        title.setText("确定退出app?");
+        title.setText("确认退出吗？");
         final MarkaBaseDialog dialog = BaseDailogManager.getInstance().getBuilder(this).setMessageView(views).create();
         dialog.show();
         cancel.setOnClickListener(new View.OnClickListener() {

@@ -197,7 +197,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="250mg"
+                        tools:text=""
                         android:textColor="@color/color9"
                         android:textSize="12sp"
                         />
@@ -208,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13sp"
-                    android:text="3颗"
+                    android:text=""
                     android:layout_marginRight="14dp"/>
             </LinearLayout>
 

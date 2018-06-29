@@ -79,7 +79,6 @@
               <TextView
                   android:id="@+id/tv_phone"
                   android:layout_marginTop="6dp"
-                  android:text="18155623647"
                   android:layout_marginRight="13dp"
                   android:textColor="@color/white"
                   android:textSize="14sp"
@@ -118,7 +117,6 @@
           <TextView
               android:layout_marginLeft="12dp"
               android:id="@+id/tv_birth"
-              android:text="1991.1.19"
               android:textColor="@color/white"
               android:textSize="15sp"
               android:layout_width="wrap_content"

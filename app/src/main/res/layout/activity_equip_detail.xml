@@ -36,7 +36,6 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="牵手关心智能药盒"
             android:textColor="@color/slow_black"
             android:textSize="15.5sp" />
 
@@ -46,7 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="22dp"
             android:layout_marginTop="11dp"
-            android:text="设备号：1234567"
             android:textColor="@color/color8"
             android:textSize="13sp" />
     </LinearLayout>
@@ -96,7 +94,6 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="11dp"
-            android:text="对方的身份的发生大幅度升高达高峰低谷的方法都放到沙发上的"
             android:textColor="@color/slow_black"
             android:textSize="15sp" />
     </LinearLayout>
