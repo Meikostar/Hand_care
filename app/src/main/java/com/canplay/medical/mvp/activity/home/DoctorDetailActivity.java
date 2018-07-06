@@ -17,6 +17,7 @@ import com.canplay.medical.bean.Friend;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.HomeContract;
 import com.canplay.medical.mvp.present.HomePresenter;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.view.CircleTransform;
 
@@ -68,6 +69,7 @@ public class DoctorDetailActivity extends BaseAllActivity implements HomeContrac
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         if(data==null){
+
             id=getIntent().getStringExtra("id");
             presenter.getDoctorInfo(id);
         }
