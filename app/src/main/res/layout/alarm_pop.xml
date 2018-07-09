@@ -83,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
-                    android:text="测量提醒"
+                    android:text="血糖测量"
                     android:textColor="@color/red_pop"
                     android:textSize="17sp" />
 

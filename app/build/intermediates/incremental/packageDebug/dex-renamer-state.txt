@@ -1,4 +1,4 @@
-#Fri Jun 29 18:29:07 CST 2018
+#Mon Jul 09 16:36:29 CST 2018
 base.0=F\:\\GitWorkSpace\\Hand_care\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.1=classes2.dex
 renamed.0=classes.dex

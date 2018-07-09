@@ -139,12 +139,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
 
 
     private byte[] bytes;
-    private String name;
-    private ViewGroup mWeatherInfoGroup;
-    private ProgressBar mWeatherPbar;
-    private TextView mWeatherTypeTv;
-    private TextView mUmbrellaTv;
-    private String mCurrentTimeDisplay = "";
+
 
     private int hour;
     private int minture;
@@ -253,42 +248,9 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     private CountDownTimer countDownTimer;
 
 
-    /**
-     * 注册电话监听
-     */
-    private void registerPhoneReceiver() {
-        if (phoneReceiver == null) {
-            IntentFilter intentFilter = new IntentFilter();
-            intentFilter.addAction("android.intent.action.PHONE_STATE");
-            intentFilter.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
-            phoneReceiver = new PhoneReceiver(new PhoneReceiver.OnPhoneListener() {
-                @Override
-                public void onPhoneResume() {
-                    //暂停音乐
-                    finish();
-                }
 
-                @Override
-                public void onPhoneIdle() {
-                    //开始播放音乐
 
-                }
-            });
-            registerReceiver(phoneReceiver, intentFilter);
-        }
-    }
 
-    private PhoneReceiver phoneReceiver;
-    /**
-     * 解注册电话监听
-     */
-    private void unRegisterPhoneReceiver() {
-
-        if (phoneReceiver != null) {
-            unregisterReceiver(phoneReceiver);
-        }
-
-    }
     @Override
     public <T> void toEntity(T entity, int type) {
         finishActivitys();

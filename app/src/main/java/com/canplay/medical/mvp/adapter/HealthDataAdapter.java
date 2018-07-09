@@ -81,7 +81,7 @@ public class HealthDataAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
      final    Health health = list.get(position);
-        if(TextUtil.isNotEmpty(health.high)){
+        if(TextUtil.isNotEmpty(health.high)&&position==0){
 
             holder.tvType.setText(" 血压测量记录");
             if (Double.valueOf(health.high) > 90 && Double.valueOf(health.high) < 139) {
@@ -112,7 +112,7 @@ public class HealthDataAdapter extends BaseAdapter {
             holder.tvContent.setText("心率");
             holder.llOne.setVisibility(View.VISIBLE);
             holder.llTwo.setVisibility(View.GONE);
-        }else if(health.bloodGlucoseLevels!=null){
+        }else if(health.bloodGlucoseLevels!=null&&position!=2){
             holder.tvType.setText(" 血糖测量记录");
             holder.llOne.setVisibility(View.VISIBLE);
 
