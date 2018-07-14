@@ -132,7 +132,12 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
                     }
 
                 } else if (type == 1) {
-                    startActivity(new Intent(getActivity(), SugarChartRecordActivity.class));
+                    if(menu.bloodGlucoseLevels!=null){
+                        startActivity(new Intent(getActivity(), SugarChartRecordActivity.class));
+                    }else {
+                        startActivity(new Intent(getActivity(), TakeMedicineActivity.class));
+                    }
+
                 } else if (type == 2) {
 
                     startActivity(new Intent(getActivity(), TakeMedicineActivity.class));

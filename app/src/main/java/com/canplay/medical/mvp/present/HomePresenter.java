@@ -254,7 +254,7 @@ public class HomePresenter implements HomeContract.Presenter {
             public void onError(Throwable e){
                 super.onError(e);
 
-                    mView.showTomast(e.getMessage());
+//                    mView.showTomast(e.getMessage());
 
 
             }

@@ -299,7 +299,7 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                         arm.setHour(Integer.valueOf(split[0]));
                         arm.setMinute(Integer.valueOf(split[1]));
 
-                        arm.setTag(1 + ":" + (medicine.reminderTimeId != null ? medicine.reminderTimeId : "###") + ":" + (medicine.items.get(0).name != null ? (medicine.items.get(0).name.equals("血压") ? "血压" : "血糖") : "血压"));
+                        arm.setTag(1 + ":" + "###"+ ":" + (medicine.items.get(0).name != null ? (medicine.items.get(0).name.equals("血压") ? "血压" : "血糖") : "血压"));
                         int id = arm.getId();
                         arm.setId(id + 1);
                         Gson gson = new Gson();
@@ -318,7 +318,7 @@ public class MeasureRemindFragment extends BaseFragment implements HomeContract.
                         if (alarmClock == null) {
                             String[] split = medicine.when.split(":");
                             arm = BaseApplication.getInstance().mAlarmClock;
-                            arm.setTag(1 + ":" + (medicine.reminderTimeId != null ? medicine.reminderTimeId : "###") + ":" + (medicine.items.get(0).name != null ? (medicine.items.get(0).name.equals("血压") ? "血压" : "血糖") : "血压"));
+                            arm.setTag(1 + ":" + "###" + ":" + (medicine.items.get(0).name != null ? (medicine.items.get(0).name.equals("血压") ? "血压" : "血糖") : "血压"));
                             arm.setHour(Integer.valueOf(split[0]));
                             arm.setMinute(Integer.valueOf(split[1]));
                             int id = arm.getId();

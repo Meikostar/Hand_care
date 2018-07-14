@@ -82,7 +82,6 @@
                android:hint="请输入登录密码"
                android:layout_marginRight="12dp"
                android:inputType="textPassword"
-               android:maxLength="11"
                android:textColor="@color/slow_black"
                android:textColorHint="#bdbdbd"/>
 

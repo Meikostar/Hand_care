@@ -448,7 +448,7 @@ public class MeasureActivity extends BaseActivity  implements
             mAlarmClock.setHour(Integer.valueOf(split[0]));
             // 初始化闹钟实例的分钟
             mAlarmClock.setMinute(Integer.valueOf(split[1]));
-            mAlarmClock.setTag("1");
+
             dat.add(mAlarmClock);
 //
 

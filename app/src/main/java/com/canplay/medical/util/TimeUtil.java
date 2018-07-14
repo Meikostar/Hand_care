@@ -88,6 +88,10 @@ public class TimeUtil {
         SimpleDateFormat format = new SimpleDateFormat("MM-dd");
         return format.format(new Date(time));
     }
+    public static String formatToMDs(long time){
+        SimpleDateFormat format = new SimpleDateFormat("MM.dd");
+        return format.format(new Date(time));
+    }
     public static String formatToNew(long time){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return format.format(new Date(time));

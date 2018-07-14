@@ -76,6 +76,9 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     TextView tvAdd;
     @BindView(R.id.tv_content)
     TextView tvContent;
+    @BindView(R.id.tv_reminds)
+    TextView tv_reminds;
+
     private int sex = 0;
     /**
      * Log tag ：AlarmClockOntimeFragment
@@ -196,6 +199,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                                 type=2;
                             }
                             tvContent.setText("快去测量您的"+splits[2]);
+                            tv_reminds.setText(splits[2]+"测量");
                         }
 
                     }else  {
@@ -260,6 +264,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AudioPlayer.getInstance(AlarmActivity.this).stop();
                 RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
                 RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
                 Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);
@@ -271,6 +276,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         tvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AudioPlayer.getInstance(AlarmActivity.this).stop();
                 RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
                 RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
                 Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);

@@ -29,6 +29,7 @@ public class AlarmActivity_ViewBinding implements Unbinder {
     target.tvName = Utils.findRequiredViewAsType(source, R.id.tv_name, "field 'tvName'", TextView.class);
     target.tvAdd = Utils.findRequiredViewAsType(source, R.id.tv_add, "field 'tvAdd'", TextView.class);
     target.tvContent = Utils.findRequiredViewAsType(source, R.id.tv_content, "field 'tvContent'", TextView.class);
+    target.tv_reminds = Utils.findRequiredViewAsType(source, R.id.tv_reminds, "field 'tv_reminds'", TextView.class);
   }
 
   @Override
@@ -43,5 +44,6 @@ public class AlarmActivity_ViewBinding implements Unbinder {
     target.tvName = null;
     target.tvAdd = null;
     target.tvContent = null;
+    target.tv_reminds = null;
   }
 }

@@ -118,6 +118,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         alarmClock=getIntent().getParcelableExtra("data");
         String[] split = alarmClock.getTag().split(":");
         reminderTimeId=split[1];
+        showProgress("加载中...");
         presenter.getDetail(reminderTimeId);
         adapter = new DetailAdapter(this);
         rlMenu.setAdapter(adapter);
@@ -262,6 +263,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
             @Override
             public void onClick(View v) {
                 showProgress("确认中...");
+
                 presenter.confirmEat(reminderTimeId);
           if(cout==1){
              cout=0;
@@ -323,7 +325,7 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
         RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
         startActivity(new Intent(this, LoginActivity.class));
-
+        AudioPlayer.getInstance(this).stop();
         finish();
     }
 

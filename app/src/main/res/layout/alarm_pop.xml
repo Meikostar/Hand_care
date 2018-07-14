@@ -80,10 +80,11 @@
 
 
                 <TextView
+                    android:id="@+id/tv_reminds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
-                    android:text="血糖测量"
+                    android:text="测量提醒"
                     android:textColor="@color/red_pop"
                     android:textSize="17sp" />
 
