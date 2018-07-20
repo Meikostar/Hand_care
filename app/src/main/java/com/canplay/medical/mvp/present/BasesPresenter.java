@@ -123,7 +123,7 @@ public class BasesPresenter implements BaseContract.Presenter {
             @Override
             public void onNext(Detail entity){
 
-                mView.toEntity(entity,1);
+                mView.toEntity(entity,11);
 
             }
         });

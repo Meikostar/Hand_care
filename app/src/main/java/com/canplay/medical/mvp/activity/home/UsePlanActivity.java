@@ -120,6 +120,9 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         tvTime.setFocusableInTouchMode(true);
         tvTime.requestFocus();
         scrollView.setFocusable(false);
+        if(BaseApplication.isOwn){
+            tvContent.setVisibility(View.GONE);
+        }
         mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
             @Override
             public void call(SubscriptionBean.RxBusSendBean bean) {
@@ -264,14 +267,19 @@ public class UsePlanActivity extends BaseActivity implements OtherContract.View 
         }
         if (medil.nextPlan != null) {
             if (medil.nextPlan.status.equals("incomplete")) {
-                tvContent.setVisibility(View.VISIBLE);
-                tvContent.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        showPopwindow(medil.nextPlan.reminderTimeId);
+                if(BaseApplication.isOwn){
+                    tvContent.setVisibility(View.GONE);
+                }else {
+                    tvContent.setVisibility(View.VISIBLE);
+                    tvContent.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            showPopwindow(medil.nextPlan.reminderTimeId);
 
-                    }
-                });
+                        }
+                    });
+                }
+
             } else {
                 tvContent.setVisibility(View.GONE);
             }

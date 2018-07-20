@@ -181,6 +181,28 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                     mAlarmClock=alarmClock;
                 }
             }
+            if(mAlarmClock==null){
+                for(int i=0;i<15;i++){
+                    if(minture>0){
+                        minture=minture-1;
+                    }else {
+                        minture=59;
+                        if(hour>1){
+                            hour=hour-1;
+                        }else {
+                            hour=23;
+                        }
+
+                    }
+
+                    for(AlarmClock alarmClock:alarmClocks){
+
+                        if(alarmClock.getHour()==hour&&minture==alarmClock.getMinute()){
+                            mAlarmClock=alarmClock;
+                        }
+                    }
+                }
+            }
 
         if(BaseApplication.phoneState!=0){
             finish();

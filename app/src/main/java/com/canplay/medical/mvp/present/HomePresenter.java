@@ -8,6 +8,7 @@ import com.canplay.medical.bean.Add;
 import com.canplay.medical.bean.BASE;
 import com.canplay.medical.bean.Bind;
 import com.canplay.medical.bean.Boxs;
+import com.canplay.medical.bean.Detail;
 import com.canplay.medical.bean.Euipt;
 import com.canplay.medical.bean.Friend;
 import com.canplay.medical.bean.Health;
@@ -215,6 +216,25 @@ public class HomePresenter implements HomeContract.Presenter {
                 }else {
                     mView.showTomast(entity.message);
                 }
+
+            }
+        });
+    }
+
+    @Override
+    public void getDetail(String id) {
+        subscription = ApiManager.setSubscribe(contactApi.getDetail(id), new MySubscriber<Detail>(){
+            @Override
+            public void onError(Throwable e){
+                super.onError(e);
+
+
+            }
+
+            @Override
+            public void onNext(Detail entity){
+
+                mView.toEntity(entity,11);
 
             }
         });

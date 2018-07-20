@@ -1,5 +1,6 @@
 package com.canplay.medical.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /***
@@ -8,7 +9,7 @@ import java.util.List;
  * 时间:2016/12/26
  * 版本:
  ***/
-public class Detail {
+public class Detail implements Serializable{
 //    {
 //        "reminderTimeId": "e0770e6d-2ef3-4a8b-9ce3-f1387331b827",
 //            "type": "02",

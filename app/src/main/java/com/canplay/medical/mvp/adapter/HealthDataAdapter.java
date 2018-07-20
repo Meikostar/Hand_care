@@ -82,7 +82,7 @@ public class HealthDataAdapter extends BaseAdapter {
         }
      final    Health health = list.get(position);
         if(TextUtil.isNotEmpty(health.high)&&position==0){
-
+            holder.card.setVisibility(View.VISIBLE);
             holder.tvType.setText(" 血压测量记录");
             if (Double.valueOf(health.high) > 90 && Double.valueOf(health.high) < 139) {
                 holder.tvOne.setTextColor(mContext.getResources().getColor(R.color.slow_black));
@@ -113,6 +113,7 @@ public class HealthDataAdapter extends BaseAdapter {
             holder.llOne.setVisibility(View.VISIBLE);
             holder.llTwo.setVisibility(View.GONE);
         }else if(health.bloodGlucoseLevels!=null&&position!=2){
+            holder.card.setVisibility(View.VISIBLE);
             holder.tvType.setText(" 血糖测量记录");
             holder.llOne.setVisibility(View.VISIBLE);
 
@@ -131,6 +132,7 @@ public class HealthDataAdapter extends BaseAdapter {
 
                 }
             }else   if(health.bloodGlucoseLevels.size()==2){
+                holder.card.setVisibility(View.VISIBLE);
                 holder.llTwo.setVisibility(View.GONE);
                 holder.tvOne.setVisibility(View.VISIBLE);
                 holder.tvOnes.setVisibility(View.VISIBLE);
@@ -152,6 +154,7 @@ public class HealthDataAdapter extends BaseAdapter {
 
                 }
             }else {
+                holder.card.setVisibility(View.VISIBLE);
                 holder.llTwo.setVisibility(View.GONE);
                 holder.tvOne.setVisibility(View.VISIBLE);
                 holder.tvOnes.setVisibility(View.VISIBLE);
@@ -182,18 +185,24 @@ public class HealthDataAdapter extends BaseAdapter {
             }
 
 
-        }else if(TextUtil.isNotEmpty(health.medicineName)){
-            holder.tvType.setText(" 服药记录");
-            holder.llOne.setVisibility(View.GONE);
-            holder.llTwo.setVisibility(View.VISIBLE);
+        }else if(TextUtil.isNotEmpty(health.medicineName)||position==2){
             if(TextUtil.isNotEmpty(health.medicineName)){
-                holder.tvName.setText(health.medicineName);
-            }  if(TextUtil.isNotEmpty(health.spec)){
-                holder.tvNumber.setText(health.spec);
-            }  if(TextUtil.isNotEmpty(health.dosage)){
-                holder.tvCout.setText(health.dosage);
+                holder.card.setVisibility(View.VISIBLE);
+                holder.tvType.setText(" 服药记录");
+                holder.llOne.setVisibility(View.GONE);
+                holder.llTwo.setVisibility(View.VISIBLE);
+                if(TextUtil.isNotEmpty(health.medicineName)){
+                    holder.tvName.setText(health.medicineName);
+                }  if(TextUtil.isNotEmpty(health.spec)){
+                    holder.tvNumber.setText(health.spec);
+                }  if(TextUtil.isNotEmpty(health.dosage)){
+                    holder.tvCout.setText(health.dosage);
+                }
+                Glide.with(mContext).load(health.image).asBitmap().placeholder(R.drawable.moren).into(holder.ivImg);
+            }else {
+                holder.card.setVisibility(View.GONE);
             }
-            Glide.with(mContext).load(health.image).asBitmap().placeholder(R.drawable.moren).into(holder.ivImg);
+
 
         }
         holder.llbg.setOnClickListener(new View.OnClickListener() {

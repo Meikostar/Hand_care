@@ -51,10 +51,12 @@ import com.canplay.medical.receiver.PhoneReceiver;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.AudioPlayer;
 import com.canplay.medical.util.Parcelables;
+import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.NavigationBar;
 import com.canplay.medical.view.RegularListView;
+import com.google.gson.Gson;
 import com.google.zxing.client.android.utils.LogUtil;
 
 import java.text.SimpleDateFormat;
@@ -118,10 +120,23 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         alarmClock=getIntent().getParcelableExtra("data");
         String[] split = alarmClock.getTag().split(":");
         reminderTimeId=split[1];
-        showProgress("加载中...");
-        presenter.getDetail(reminderTimeId);
+
+        String jsonStr = SpUtil.getInstance().getString(reminderTimeId+"medcial");
+        Gson gson = new Gson();
+        Detail detail = gson.fromJson(jsonStr, Detail.class); //将json字符串转换成 AlarmClock对象
+
+      if(BaseApplication.isOwn){
+          tvSure.setText("关闭闹铃");
+      }
         adapter = new DetailAdapter(this);
         rlMenu.setAdapter(adapter);
+        if(detail!=null){
+            data=detail;
+            setData();
+        }else {
+            showProgress("加载中...");
+            presenter.getDetail(reminderTimeId);
+        }
         animationhide = AnimationUtils.loadAnimation(this, R.anim.list_hide);
         animationshow = AnimationUtils.loadAnimation(this, R.anim.list_show);
         WeacStatus.sActivityNumber++;
@@ -262,13 +277,20 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
         tvSure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showProgress("确认中...");
+                if(BaseApplication.isOwn){
+                    startActivity(new Intent(RemindFirstDetailActivity.this, LoginActivity.class));
+                    AudioPlayer.getInstance(RemindFirstDetailActivity.this).stop();
+                    finish();
+                }else {
+                    showProgress("确认中...");
 
-                presenter.confirmEat(reminderTimeId);
-          if(cout==1){
-             cout=0;
-          }
-           ++cout;
+                    presenter.confirmEat(reminderTimeId);
+                    if(cout==1){
+                        cout=0;
+                    }
+                    ++cout;
+                }
+
             }
         });
 
@@ -287,37 +309,39 @@ public class RemindFirstDetailActivity extends BaseActivity implements BaseContr
     public <T> void toEntity(T entity, int type) {
         dimessProgress();
         data = (Detail) entity;
-        if (data != null) {
-            if (TextUtil.isNotEmpty(data.code)) {
 
-
-            }
-            if (TextUtil.isNotEmpty(data.time)) {
-                tvTimes.setText(data.time);
-            }
-            if(TextUtil.isNotEmpty(data.type)){
-                if(Integer.valueOf(data.type)==2){
-                    ivImg.setImageResource(R.drawable.yaohe);
-                    tvState.setText("请服用智能药杯");
-                }else {
-                    if (data.code.equals("早")) {
-                        ivImg.setImageResource(R.drawable.zs);
-                    } else if (data.code.equals("中")) {
-                        ivImg.setImageResource(R.drawable.qianshou);
-                    } else if (data.code.equals("晚")) {
-                        ivImg.setImageResource(R.drawable.wt);
-                    }
-                    tvState.setText("请服用"+data.code+"药盒");
-                }
-            }
-            datas = data.items;
-            tvType.setText("药物种类（" + data.items.size() + ")");
-            adapter.setData(datas);
-        }
-
+        setData();
 
     }
+   public void setData(){
+       if (data != null) {
+           if (TextUtil.isNotEmpty(data.code)) {
 
+
+           }
+           if (TextUtil.isNotEmpty(data.time)) {
+               tvTimes.setText(data.time);
+           }
+           if(TextUtil.isNotEmpty(data.type)){
+               if(Integer.valueOf(data.type)==2){
+                   ivImg.setImageResource(R.drawable.yaohe);
+                   tvState.setText("请服用智能药杯");
+               }else {
+                   if (data.code.equals("早")) {
+                       ivImg.setImageResource(R.drawable.zs);
+                   } else if (data.code.equals("中")) {
+                       ivImg.setImageResource(R.drawable.qianshou);
+                   } else if (data.code.equals("晚")) {
+                       ivImg.setImageResource(R.drawable.wt);
+                   }
+                   tvState.setText("请服用"+data.code+"药盒");
+               }
+           }
+           datas = data.items;
+           tvType.setText("药物种类（" + data.items.size() + ")");
+           adapter.setData(datas);
+       }
+   }
     @Override
     public void toNextStep(int type) {
         dimessProgress();
