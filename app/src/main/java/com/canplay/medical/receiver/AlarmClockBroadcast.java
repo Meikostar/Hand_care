@@ -106,8 +106,8 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
             it.putExtra(WeacConstants.NAP_RAN_TIMES, napTimesRan);
         }
         byte[] bytess = Parcelables.toByteArray(alarmClock);
-        intent.putExtra(WeacConstants.ALARM_CLOCK, bytess);
-        intent.putExtra(WeacConstants.ALARM_ID, stringExtra);
+//        intent.putExtra(WeacConstants.ALARM_CLOCK, bytess);
+        intent.putExtra(WeacConstants.ALARM_ID, "meiko");
         // 清除栈顶的Activity
         it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);

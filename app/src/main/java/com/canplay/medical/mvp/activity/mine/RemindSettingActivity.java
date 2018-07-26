@@ -213,13 +213,18 @@ public class RemindSettingActivity extends BaseActivity implements
         adapter.setClickListener(new MedicaldTurnapter.ClickListener() {
             @Override
             public void clickListener(Medicines medicines, int poition) {
-                datass.remove(poition);
-                 map.remove(medicines.name);
-                 adapter.setData(datass,0);
+                if(poition==-1){
+                    Intent intent = new Intent(RemindSettingActivity.this, MedicalDetailActivity.class);
+                    intent.putExtra("name",medicines.name);
+                    startActivity(intent);
+                }else {
+                    datass.remove(poition);
+                    map.remove(medicines.name);
+                    adapter.setData(datass,0);
+                }
 
-//                Intent intent = new Intent(RemindSettingActivity.this, MedicalDetailActivity.class);
-//                intent.putExtra("name",medicines.name);
-//                startActivity(intent);
+
+
             }
         });
 

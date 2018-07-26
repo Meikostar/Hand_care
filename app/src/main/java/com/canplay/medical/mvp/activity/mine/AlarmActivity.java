@@ -47,6 +47,7 @@ import com.canplay.medical.receiver.PhoneReceiver;
 import com.canplay.medical.util.AudioPlayer;
 import com.canplay.medical.util.Parcelables;
 import com.canplay.medical.util.SpUtil;
+import com.canplay.medical.util.TextUtil;
 import com.canplay.medical.util.TimeUtil;
 import com.google.zxing.client.android.utils.LogUtil;
 
@@ -168,14 +169,25 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                         | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         bytes = getIntent()
-                .getByteArrayExtra(WeacConstants.ALARM_CLOCK);
+                .getByteArrayExtra("alarm_clock");
 
+        String time = getIntent().getStringExtra("alarm_ids");
+        String times = getIntent().getStringExtra("msg");
+        List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
+        String s = TimeUtil.formatHour(System.currentTimeMillis());
 
-            List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
-            String s = TimeUtil.formatHour(System.currentTimeMillis());
+        if(TextUtil.isEmpty(time)){
             String[] split = s.split(":");
             hour=Integer.valueOf(split[0]);
             minture=Integer.valueOf(split[1]);
+        }else {
+            String[] split = time.split(":");
+            hour=Integer.valueOf(split[0]);
+            minture=Integer.valueOf(split[1]);
+        }
+
+
+
             for(AlarmClock alarmClock:alarmClocks){
                 if(alarmClock.getHour()==hour&&minture==alarmClock.getMinute()){
                     mAlarmClock=alarmClock;

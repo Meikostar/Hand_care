@@ -120,7 +120,7 @@ public class MedicaldTurnapter extends BaseAdapter {
                     holder.check.setChecked(true);
                     list.get(position).isCheck=true;
                 }
-//                listener.clickListener(list.get(position),position);
+                listener.clickListener(list.get(position),-1);
             }
         });
         if(TextUtil.isNotEmpty(list.get(position).name)){
