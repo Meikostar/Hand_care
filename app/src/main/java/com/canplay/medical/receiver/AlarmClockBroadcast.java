@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 
+import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.bean.AlarmClock;
 import com.canplay.medical.bean.WeacConstants;
 import com.canplay.medical.bean.WeacStatus;
@@ -28,6 +29,7 @@ import com.canplay.medical.mvp.activity.mine.AlarmActivity;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.MyUtil;
 import com.canplay.medical.util.Parcelables;
+import com.canplay.medical.util.TimeUtil;
 import com.google.zxing.client.android.utils.LogUtil;
 
 
@@ -52,6 +54,7 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
                 .getByteArrayExtra(WeacConstants.ALARM_CLOCK);
         String stringExtra = intent.getStringExtra(WeacConstants.ALARM_ID);
         AlarmClock alarmClock = Parcelables.toParcelable(bytes, AlarmClock.CREATOR);
+        BaseApplication.times=TimeUtil.formatHour(System.currentTimeMillis());
         if (alarmClock != null) {
             // 单次响铃
             if (alarmClock.getWeeks() == null) {
@@ -62,10 +65,10 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
                 context.sendBroadcast(i);
             } else {
                 // 重复周期闹钟
-                MyUtil.startAlarmClock(context, alarmClock);
+
             }
         }
-
+        MyUtil.startAlarmClock(context, alarmClock);
         // 小睡已执行次数
         int napTimesRan = intent.getIntExtra(WeacConstants.NAP_RAN_TIMES, 0);
         // 当前时间
@@ -106,8 +109,8 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
             it.putExtra(WeacConstants.NAP_RAN_TIMES, napTimesRan);
         }
         byte[] bytess = Parcelables.toByteArray(alarmClock);
-//        intent.putExtra(WeacConstants.ALARM_CLOCK, bytess);
-        intent.putExtra(WeacConstants.ALARM_ID, "meiko");
+        it.putExtra(WeacConstants.ALARM_CLOCK, bytess);
+
         // 清除栈顶的Activity
         it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);

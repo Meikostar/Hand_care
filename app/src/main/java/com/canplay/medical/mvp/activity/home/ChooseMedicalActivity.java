@@ -16,6 +16,7 @@ import com.canplay.medical.base.BaseApplication;
 import com.canplay.medical.base.RxBus;
 import com.canplay.medical.base.SubscriptionBean;
 import com.canplay.medical.bean.Medicines;
+import com.canplay.medical.mvp.activity.mine.RemindSettingActivity;
 import com.canplay.medical.mvp.adapter.SearchMedicalAdapter;
 import com.canplay.medical.mvp.component.DaggerBaseComponent;
 import com.canplay.medical.mvp.present.BaseContract;
@@ -84,6 +85,15 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
 
     @Override
     public void bindEvents() {
+
+        adapter.setClickListener(new SearchMedicalAdapter.ClickListener() {
+            @Override
+            public void clickListener(int type, String id) {
+                Intent intent = new Intent(ChooseMedicalActivity.this, MedicalDetailActivity.class);
+                intent.putExtra("name",id);
+                startActivity(intent);
+            }
+        });
         etSearch.setOnClearEditTextListener(new ClearEditText.ClearEditTextListener() {
             @Override
             public void afterTextChanged4ClearEdit(Editable s) {

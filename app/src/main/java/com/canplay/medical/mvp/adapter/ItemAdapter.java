@@ -81,12 +81,12 @@ public class ItemAdapter extends BaseAdapter {
         if(TextUtil.isNotEmpty(list.get(position).dose)){
             holder.tvCount.setText(list.get(position).dose);
         }
-//        holder.llbg.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                listener.getItem(list.get(position),position);
-//            }
-//        });
+        holder.llbg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.getItem(list.get(position),position);
+            }
+        });
         return view;
 
 

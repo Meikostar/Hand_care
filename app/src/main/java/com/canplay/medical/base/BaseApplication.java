@@ -58,6 +58,7 @@ public class BaseApplication extends DaemonApplication  {
     public static  boolean isOwn;
     public static  long phoneState=0;//1通话中，2 响铃 0，挂断和空闲
     public  AlarmClock mAlarmClock;
+    public static String times;
     public static Map<String,String> map=new HashMap<>();
     public static BaseApplication getInstance() {
         if (cplayApplication == null) {

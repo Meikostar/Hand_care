@@ -47,7 +47,7 @@ import com.google.gson.Gson;
 import com.google.zxing.client.android.decode.WeacConstants;
 import com.google.zxing.client.android.utils.AudioPlayer;
 import com.google.zxing.client.android.utils.MyUtil;
-
+import com.canplay.medical.mvp.activity.home.MedicalDetailActivity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;

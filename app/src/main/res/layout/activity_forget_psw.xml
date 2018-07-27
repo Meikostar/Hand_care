@@ -50,7 +50,6 @@
                 android:hint="请输入密码"
                 android:layout_marginRight="12dp"
                 android:inputType="textPassword"
-                android:maxLength="11"
                 android:textColor="@color/slow_black"
                 android:textColorHint="@color/bd"/>
 
@@ -90,7 +89,6 @@
                 android:hint="请再次输入新密码"
                 android:layout_marginRight="12dp"
                 android:inputType="textPassword"
-                android:maxLength="11"
                 android:textColor="@color/slow_black"
                 android:textColorHint="@color/bd"/>
 

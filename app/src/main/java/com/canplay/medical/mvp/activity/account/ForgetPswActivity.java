@@ -135,7 +135,7 @@ public class ForgetPswActivity extends BaseActivity implements LoginContract.Vie
             @Override
             public void onClick(View v) {
                 if(!PwdCheckUtil.isContainAll(etPws.getText().toString())||etPws.getText().toString().length()<6){
-                    showToasts("密码至少6位数且包含数字，大小写字母");
+                    showToasts("密码至少6位数且包含数字，小写字母");
                     return;
                 }
                 if(!etPws.getText().toString().equals(etNpws.getText().toString())){

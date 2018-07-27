@@ -55,6 +55,15 @@
                 />
 
         </LinearLayout>
+        <TextView
+            android:id="@+id/tv_detail"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+             android:textColor="@color/white"
+            android:text="查看详情"
+            android:background="@drawable/shape_bg_lin_cancel"
+            android:layout_width="80dp"
+            android:layout_height="30dp" />
         <ImageView
             android:visibility="gone"
             android:src="@drawable/delete"

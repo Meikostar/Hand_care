@@ -94,7 +94,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     /**
      * 闹钟实例
      */
-    private AlarmClock mAlarmClock=null;
+    private AlarmClock mAlarmClock = null;
 
     /**
      * 线程运行flag
@@ -148,6 +148,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
     private int hour;
     private int minture;
     private int type;
+
     @Override
     public void initViews() {
         setContentView(R.layout.alarm_pop);
@@ -167,78 +168,75 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                         | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
                         | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
                         | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        Intent intent1 = this.getIntent();
+        bytes = intent1.getByteArrayExtra("alarm_clock");
+        AlarmClock alarmClockss = Parcelables.toParcelable(bytes, AlarmClock.CREATOR);
 
-        bytes = getIntent()
-                .getByteArrayExtra("alarm_clock");
 
-        String time = getIntent().getStringExtra("alarm_ids");
-        String times = getIntent().getStringExtra("msg");
-        List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
-        String s = TimeUtil.formatHour(System.currentTimeMillis());
+        String s = "";
+        if (alarmClockss != null) {
+            mAlarmClock=alarmClockss;
+        } else {
+            List<AlarmClock> alarmClocks = SpUtil.getInstance().getAllAlarm();
+            s = TimeUtil.formatHour(System.currentTimeMillis());
+                String[] split = s.split(":");
+                hour = Integer.valueOf(split[0]);
+                minture = Integer.valueOf(split[1]);
 
-        if(TextUtil.isEmpty(time)){
-            String[] split = s.split(":");
-            hour=Integer.valueOf(split[0]);
-            minture=Integer.valueOf(split[1]);
-        }else {
-            String[] split = time.split(":");
-            hour=Integer.valueOf(split[0]);
-            minture=Integer.valueOf(split[1]);
+            for (AlarmClock alarmClock : alarmClocks) {
+                if (alarmClock.getHour() == hour && minture == alarmClock.getMinute()) {
+                    mAlarmClock = alarmClock;
+                }
+            }
+            if (mAlarmClock == null) {
+                for (int i = 0; i < 105; i++) {
+                    if (minture > 0) {
+                        minture = minture - 1;
+                    } else {
+                        minture = 59;
+                        if (hour > 1) {
+                            hour = hour - 1;
+                        } else {
+                            hour = 23;
+                        }
+
+                    }
+
+                    for (AlarmClock alarmClock : alarmClocks) {
+
+                        if (alarmClock.getHour() == hour && minture == alarmClock.getMinute()) {
+                            mAlarmClock = alarmClock;
+                        }
+                    }
+                }
+            }
+
         }
 
 
-
-            for(AlarmClock alarmClock:alarmClocks){
-                if(alarmClock.getHour()==hour&&minture==alarmClock.getMinute()){
-                    mAlarmClock=alarmClock;
-                }
-            }
-            if(mAlarmClock==null){
-                for(int i=0;i<15;i++){
-                    if(minture>0){
-                        minture=minture-1;
-                    }else {
-                        minture=59;
-                        if(hour>1){
-                            hour=hour-1;
-                        }else {
-                            hour=23;
-                        }
-
-                    }
-
-                    for(AlarmClock alarmClock:alarmClocks){
-
-                        if(alarmClock.getHour()==hour&&minture==alarmClock.getMinute()){
-                            mAlarmClock=alarmClock;
-                        }
-                    }
-                }
-            }
-
-        if(BaseApplication.phoneState!=0){
+        if (BaseApplication.phoneState != 0) {
             finish();
-        }else {
-            if(mAlarmClock!=null){
+        } else {
+            if (mAlarmClock != null) {
                 String tag = mAlarmClock.getTag();
                 String[] splits = tag.split(":");
-                if(splits!=null&&splits.length!=1){
-                    if(Integer.valueOf(splits[0])==1){
-                        if(splits.length==3){
-                            if(splits[2].equals("血压")){
+                if (splits != null && splits.length != 1) {
+                    if (Integer.valueOf(splits[0]) == 1) {
+                        if (splits.length == 3) {
+                            if (splits[2].equals("血压")) {
                                 img.setImageResource(R.drawable.cyc2);
-                                type=1;
-                            }  else {
+                                type = 1;
+                            } else {
                                 img.setImageResource(R.drawable.cyc3);
-                                type=2;
+                                type = 2;
                             }
-                            tvContent.setText("快去测量您的"+splits[2]);
-                            tv_reminds.setText(splits[2]+"测量");
+                            tvContent.setText("快去测量您的" + splits[2]);
+                            tv_reminds.setText(splits[2] + "测量");
                         }
 
-                    }else  {
+                    } else {
                         Intent intent = new Intent(this, RemindFirstDetailActivity.class);
-                        intent.putExtra("data",mAlarmClock);
+                        intent.putExtra("data", mAlarmClock);
                         startActivity(intent);
                         finish();
                     }
@@ -268,7 +266,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
             mNotificationManager.cancel(mAlarmClock.getId());
         }
 
-        countDownTimer = new CountDownTimer(1000*30, 30000) {
+        countDownTimer = new CountDownTimer(1000 * 30, 30000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
@@ -283,26 +281,25 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         }.start();
 
     }
+
     private CountDownTimer countDownTimer;
-
-
-
 
 
     @Override
     public <T> void toEntity(T entity, int type) {
         finishActivitys();
     }
+
     @Override
     public void bindEvents() {
         ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AudioPlayer.getInstance(AlarmActivity.this).stop();
-                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
-                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH, ""));
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
                 Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);
-                intent.putExtra("type",type);
+                intent.putExtra("type", type);
                 startActivity(intent);
                 finishAffinity();
             }
@@ -311,10 +308,10 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
             @Override
             public void onClick(View v) {
                 AudioPlayer.getInstance(AlarmActivity.this).stop();
-                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH,""));
-                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE,""));
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.FINISH, ""));
+                RxBus.getInstance().send(SubscriptionBean.createSendBean(SubscriptionBean.MESURE, ""));
                 Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);
-                intent.putExtra("type",type);
+                intent.putExtra("type", type);
                 startActivity(intent);
                 finishAffinity();
 
@@ -332,6 +329,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     /**
      * 执行结束当前Activity操作
      */
@@ -398,13 +396,14 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                     R.raw.ring_weac_alarm_clock_default, true, true);
         }
     }
+
     @Override
     public void onDestroy() {
 
         super.onDestroy();
         // 停止运行更新时间的线程
         mIsRun = false;
-        if(countDownTimer!=null){
+        if (countDownTimer != null) {
             countDownTimer.cancel();
         }
 //        unRegisterPhoneReceiver();
@@ -424,7 +423,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         WeacStatus.sActivityNumber--;
 
 
-        if(mAudioManager!=null){
+        if (mAudioManager != null) {
             // 复原手机媒体音量
             mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
                     mCurrentVolume, AudioManager.ADJUST_SAME);
@@ -513,7 +512,6 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         // 下拉列表显示小睡信息
         mNotificationManager.notify(mAlarmClock.getId(), notification);
     }
-
 
 
     @Override

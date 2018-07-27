@@ -350,7 +350,8 @@ public class MineInfoActivity extends BaseActivity implements View.OnClickListen
             mSelectBindDialog.setBindClickListener(new AddressSelectBindDialog.BindClickListener() {
                 @Override
                 public void site(String proName, String cityName) {
-                    tv_area.setText(proName.substring(0,(proName.length()-1))+","+cityName.substring(0,(cityName.length()-1)));
+
+                    tv_area.setText(proName.substring(0,(proName.length()))+","+cityName.substring(0,(cityName.length())));
 
                 }
             });

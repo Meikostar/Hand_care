@@ -80,6 +80,7 @@ public class SearchMedicalAdapter extends BaseAdapter {
             holder = new ViewHolder();
 
             holder.name = (TextView) view.findViewById(R.id.tv_name);
+            holder.tv_detail = (TextView) view.findViewById(R.id.tv_detail);
             holder.number = (TextView) view.findViewById(R.id.tv_number);
             holder.ll_bg = (LinearLayout) view.findViewById(R.id.ll_bg);
             holder.img = (ImageView) view.findViewById(R.id.iv_img);
@@ -115,6 +116,12 @@ public class SearchMedicalAdapter extends BaseAdapter {
                 }
             }
         });
+        holder.tv_detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.clickListener(position,list.get(position).name);
+            }
+        });
         if(TextUtil.isNotEmpty(list.get(position).name)){
             holder.name.setText(list.get(position).name);
         }
@@ -129,6 +136,7 @@ public class SearchMedicalAdapter extends BaseAdapter {
         TextView letter;
         TextView name;
         TextView number;
+        TextView tv_detail;
         ImageView img;
         ImageView ivClose;
         MCheckBox check;

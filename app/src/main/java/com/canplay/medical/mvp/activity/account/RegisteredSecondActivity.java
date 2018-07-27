@@ -108,7 +108,7 @@ public class RegisteredSecondActivity extends BaseActivity implements LoginContr
             @Override
             public void onClick(View v) {
                 if(!PwdCheckUtil.isContainAll(etPws.getText().toString())){
-                    showToasts("密码至少6位数且包含数字，大小写字母");
+                    showToasts("密码至少6位数且包含数字，小写字母");
                     return;
                 }
                 if(TextUtil.isEmpty(etFist.getText().toString())){

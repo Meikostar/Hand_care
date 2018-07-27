@@ -1703,7 +1703,7 @@
             },
             {
                 "provinceCode": 450000,
-                "provinceName": "广西",
+                "provinceName": "广西省",
                 "cityList": [
                     {
                         "cityCode": 450100,
@@ -6254,8 +6254,30 @@
                                 "areaName": "美兰区"
                             }
                         ]
+                    },        {
+                        "cityCode": 460100,
+                        "cityName": "三亚市",
+                        "areaList": [
+                            {
+                                "areaCode": 460105,
+                                "areaName": "秀英区"
+                            },
+                            {
+                                "areaCode": 460106,
+                                "areaName": "龙华区"
+                            },
+                            {
+                                "areaCode": 460107,
+                                "areaName": "琼山区"
+                            },
+                            {
+                                "areaCode": 460108,
+                                "areaName": "美兰区"
+                            }
+                        ]
                     }
                 ]
+
             },
             {
                 "provinceCode": 220000,

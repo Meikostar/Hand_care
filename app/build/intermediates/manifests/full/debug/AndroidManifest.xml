@@ -543,6 +543,7 @@
             android:name="JPUSH_APPKEY"
             android:value="f0fc99fc25b22fc38fe3a5d1" />
 
+        <activity android:name="com.canplay.medical.mvp.activity.mine.TuranActivity" />
         <activity android:name="io.valuesfeng.picker.ImageSelectActivity" />
         <activity
             android:name="com.antfortune.freeline.MiddlewareActivity"
