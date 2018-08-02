@@ -59,6 +59,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Subscription;
+import rx.functions.Action1;
 
 
 /**
@@ -172,7 +174,9 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         bytes = intent1.getByteArrayExtra("alarm_clock");
         AlarmClock alarmClockss = Parcelables.toParcelable(bytes, AlarmClock.CREATOR);
 
-
+        if (BaseApplication.phoneState != 0) {
+            finish();
+        }
         String s = "";
         if (alarmClockss != null) {
             mAlarmClock=alarmClockss;
@@ -214,9 +218,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
         }
 
 
-        if (BaseApplication.phoneState != 0) {
-            finish();
-        } else {
+
             if (mAlarmClock != null) {
                 String tag = mAlarmClock.getTag();
                 String[] splits = tag.split(":");
@@ -244,7 +246,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
 
 
             }
-        }
+
 
         if (mAlarmClock != null) {
             // 取得小睡间隔
@@ -301,7 +303,7 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                 Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);
                 intent.putExtra("type", type);
                 startActivity(intent);
-                finishAffinity();
+                finishActivitys();
             }
         });
         tvAdd.setOnClickListener(new View.OnClickListener() {
@@ -313,12 +315,29 @@ public class AlarmActivity extends BaseActivity implements BaseContract.View {
                 Intent intent = new Intent(AlarmActivity.this, LoginActivity.class);
                 intent.putExtra("type", type);
                 startActivity(intent);
-                finishAffinity();
+                finishActivitys();
 
             }
         });
-    }
+        mSubscription = RxBus.getInstance().toObserverable(SubscriptionBean.RxBusSendBean.class).subscribe(new Action1<SubscriptionBean.RxBusSendBean>() {
+            @Override
+            public void call(SubscriptionBean.RxBusSendBean bean) {
+                if (bean == null) return;
+                if(SubscriptionBean.PHONE_STATE==bean.type){
+                    finish();
+                }
 
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
+        RxBus.getInstance().addSubscription(mSubscription);
+    }
+     private Subscription mSubscription;
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 

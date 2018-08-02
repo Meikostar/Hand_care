@@ -70,7 +70,7 @@ public class ChooseMedicalActivity extends BaseActivity implements BaseContract.
     public void initViews() {
         setContentView(R.layout.activity_choose_medical);
         ButterKnife.bind(this);
-
+        etSearch.setdelteIconHilde();
         DaggerBaseComponent.builder().appComponent(((BaseApplication) getApplication()).getAppComponent()).build().inject(this);
         presenter.attachView(this);
         adapter = new SearchMedicalAdapter(this);

@@ -3,10 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Hand_care.iml" filepath="$PROJECT_DIR$/Hand_care.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LibMarsdaemon/Hand_care-LibMarsdaemon.iml" filepath="$PROJECT_DIR$/LibMarsdaemon/Hand_care-LibMarsdaemon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/Hand_care-app.iml" filepath="$PROJECT_DIR$/app/Hand_care-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gallery/Hand_care-gallery.iml" filepath="$PROJECT_DIR$/gallery/Hand_care-gallery.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zxingLibrary/Hand_care-zxingLibrary.iml" filepath="$PROJECT_DIR$/zxingLibrary/Hand_care-zxingLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/LibMarsdaemon/LibMarsdaemon.iml" filepath="$PROJECT_DIR$/LibMarsdaemon/LibMarsdaemon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/gallery/gallery.iml" filepath="$PROJECT_DIR$/gallery/gallery.iml" />

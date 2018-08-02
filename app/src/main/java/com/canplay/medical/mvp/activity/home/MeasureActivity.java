@@ -40,6 +40,7 @@ import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.util.AlarmClockOperate;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.HourSelector;
 import com.canplay.medical.view.ListPopupWindow;
 import com.canplay.medical.view.NavigationBar;
@@ -153,6 +154,14 @@ public class MeasureActivity extends BaseActivity  implements
                 mesure.userId=userId;
                 mesure.type="time";
                 mesure.remindingFor="Measurement";
+                String time = SpUtil.getInstance().getString("time");
+                if (TextUtil.isNotEmpty(time)) {
+                    String  times = selector.getSelector();
+                    if(time.contains(times+"ma")){
+                        showToasts("该时间点已设置提醒");
+                        return;
+                    }
+                }
                 presenter.addMesure(mesure);
                 showProgress("添加中...");
             }

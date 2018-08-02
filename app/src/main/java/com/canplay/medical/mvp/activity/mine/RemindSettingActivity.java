@@ -38,6 +38,7 @@ import com.canplay.medical.mvp.present.BaseContract;
 import com.canplay.medical.mvp.present.BasesPresenter;
 import com.canplay.medical.util.SpUtil;
 import com.canplay.medical.util.TextUtil;
+import com.canplay.medical.util.TimeUtil;
 import com.canplay.medical.view.HourSelector;
 import com.canplay.medical.view.ListPopupWindow;
 import com.canplay.medical.view.NavigationBar;
@@ -248,7 +249,16 @@ public class RemindSettingActivity extends BaseActivity implements
                     showToasts("请选择药物");
                     return;
                 }
-                showProgress("添加中...");
+
+
+                String time = SpUtil.getInstance().getString("time");
+                if (TextUtil.isNotEmpty(time)) {
+                String  times = selector.getSelector();
+                if(time.contains(times)){
+                    showToasts("该时间点已设置提醒");
+                    return;
+                }
+                }
                 datas.clear();
                 for(Medicines name:namess){
                     Decs dec=new Decs();
@@ -281,7 +291,7 @@ public class RemindSettingActivity extends BaseActivity implements
                 }
 
                 medical.medicines=datas;
-
+                showProgress("添加中...");
                 presenter.addMediacl(medical);
 
 

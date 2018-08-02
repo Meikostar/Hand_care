@@ -65,7 +65,7 @@
             </LinearLayout>
 
             <com.canplay.medical.view.MCheckBox
-
+                android:visibility="gone"
                 android:clickable="false"
                 app:canNoClick="true"
                 android:layout_gravity="center_vertical"
