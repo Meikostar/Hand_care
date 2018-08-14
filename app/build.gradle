@@ -2,20 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'com.antfortune.freeline'
 android {
-//    signingConfigs {
-//        debug {
-//            keyAlias 'yicss_app'
-//            keyPassword 'yicss123'
-//            storeFile file('./keystore/yicss_app.jks')
-//            storePassword 'yicss123'
-//        }
-//        release {
-//            keyAlias 'yicss_app'
-//            keyPassword 'yicss123'
-//            storeFile file('./keystore/yicss_app.jks')
-//            storePassword 'yicss123'
-//        }
-//    }
+    signingConfigs {
+
+        release {
+            keyAlias 'hand'
+            keyPassword 'qwedsa123'
+            storeFile file('./keystore/hand.jks')
+            storePassword 'qwedsa123'
+        }
+    }
     compileSdkVersion COMPILE_SDK_VERSION as int
     buildToolsVersion BUILD_TOOLS_VERSION
     dexOptions {
@@ -26,9 +21,10 @@ android {
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
         versionCode 1
-        versionName "1.0"
+        versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        flavors()
         buildTypes {
             release {
                 minifyEnabled false
@@ -103,3 +99,15 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:+'
 }
 
+def flavors() {
+    def path = './channels.txt' //channels.txt的路径
+    file(path).eachLine {
+        line ->
+            if (!line.startsWith("//")) {
+                //动态创建productFlavor
+                android.productFlavors.create(line, {
+                    manifestPlaceholders = [channel_param: name]
+                })
+            }
+    }
+}
