@@ -7,7 +7,7 @@
     android:background="#3c3b37"
     android:orientation="vertical">
 
-    <com.canplay.medical.view.NavigationBar
+    <io.cordova.qianshou.view.NavigationBar
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

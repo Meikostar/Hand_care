@@ -9,3 +9,5 @@ channel_xiaomi
 channel_huawei
 channel_renren
 channel_kaixin
+channel_oppo
+channel_vivo

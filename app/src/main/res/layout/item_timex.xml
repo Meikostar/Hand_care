@@ -12,7 +12,7 @@
         android:layout_marginRight="9dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
-        <com.canplay.medical.view.DashView
+        <io.cordova.qianshou.view.DashView
             android:id="@+id/line1"
             android:visibility="gone"
             android:layout_centerHorizontal="true"
@@ -25,7 +25,7 @@
             android:layout_height="28dp"
             />
 
-        <com.canplay.medical.view.DashView
+        <io.cordova.qianshou.view.DashView
             android:id="@+id/line2"
             android:layout_marginTop="28dp"
             android:layout_centerHorizontal="true"

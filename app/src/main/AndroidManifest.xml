@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.canplay.medical">
+    package="io.cordova.qianshou">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -29,7 +29,7 @@
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
     <permission
-        android:name="com.canplay.medical.permission.JPUSH_MESSAGE"
+        android:name="io.cordova.qianshou.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <!-- Required  一些系统要求的权限，如访问网络等 -->
@@ -100,7 +100,7 @@
         <!-- authorities中改为自己的包名+.fileProvider -->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.canplay.medical.fileProvider"
+            android:authorities="io.cordova.qianshou.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -335,7 +335,7 @@
             android:name=".receiver.AlarmClockProcessReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.canplay.medical.AlarmClockOff" />
+                <action android:name="io.cordova.qianshou.AlarmClockOff" />
             </intent-filter>
         </receiver>
 
@@ -428,7 +428,7 @@
 
         <provider
             android:name="cn.jpush.android.service.DataProvider"
-            android:authorities="com.canplay.medical.DataProvider"
+            android:authorities="io.cordova.qianshou.DataProvider"
             android:exported="false" />
 
         <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
@@ -446,12 +446,12 @@
         <!-- since 3.1.0 Required SDK 核心功能 -->
         <provider
             android:name="cn.jpush.android.service.DownloadProvider"
-            android:authorities="com.canplay.medical.DownloadProvider"
+            android:authorities="io.cordova.qianshou.DownloadProvider"
             android:exported="true" />
         <!-- since 3.1.0 Required SDK 核心功能 -->
         <provider
             android:name="cn.jpush.android.service.DownloadProvider"
-            android:authorities="com.canplay.medical.DownloadProvider"
+            android:authorities="io.cordova.qianshou.DownloadProvider"
             android:exported="true" />
 
         <activity

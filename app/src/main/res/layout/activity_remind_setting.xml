@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
-    <com.canplay.medical.view.NavigationBar
+    <io.cordova.qianshou.view.NavigationBar
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,13 +17,13 @@
         app:navigationRight_txt="保存"
 
         app:navigationTitle="设置提醒" />
-    <com.canplay.medical.view.HourSelector
+    <io.cordova.qianshou.view.HourSelector
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:id="@+id/selector"
         app:hour="8"
         app:minter="00"/>
-  <com.canplay.medical.view.scrollView.StickyScrollView
+  <io.cordova.qianshou.view.scrollView.StickyScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent">
       <LinearLayout
@@ -96,7 +96,7 @@
               android:layout_width="match_parent"
               android:layout_height="0.5dp"
               android:background="@color/linecolor"/>
-          <com.canplay.medical.view.RegularListView
+          <io.cordova.qianshou.view.RegularListView
               android:divider="#00000000"
               android:dividerHeight="0dip"
               android:listSelector="@android:color/transparent"
@@ -172,7 +172,7 @@
                   android:layout_marginRight="13dp"/>
           </LinearLayout>
       </LinearLayout>
-  </com.canplay.medical.view.scrollView.StickyScrollView>
+  </io.cordova.qianshou.view.scrollView.StickyScrollView>
 
 
 </LinearLayout>

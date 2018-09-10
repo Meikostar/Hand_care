@@ -17,11 +17,11 @@ android {
         javaMaxHeapSize "4g"
     }
     defaultConfig {
-        applicationId "com.canplay.medical"
+        applicationId "io.cordova.qianshou"
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
         versionCode 1
-        versionName "2.0"
+        versionName "2.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         flavors()

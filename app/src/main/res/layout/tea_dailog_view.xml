@@ -39,7 +39,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <com.canplay.medical.view.ClearEditText
+                <io.cordova.qianshou.view.ClearEditText
                     android:paddingLeft="11dp"
                     android:id="@+id/et_money"
                     android:layout_weight="1"

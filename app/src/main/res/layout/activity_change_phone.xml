@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
-    <com.canplay.medical.view.NavigationBar
+    <io.cordova.qianshou.view.NavigationBar
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
-            <com.canplay.medical.view.ClearEditText
+            <io.cordova.qianshou.view.ClearEditText
                 android:id="@+id/et_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
@@ -123,7 +123,7 @@
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
-            <com.canplay.medical.view.ClearEditText
+            <io.cordova.qianshou.view.ClearEditText
                 android:id="@+id/et_code"
                 android:layout_width="fill_parent"
                 android:layout_height="35dp"

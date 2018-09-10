@@ -5,7 +5,7 @@
     <version value="1"/>
 
     <list>
-        <mapping class="com.canplay.medical.bean.AlarmClock"/>
+        <mapping class="io.cordova.qianshou.bean.AlarmClock"/>
 
     </list>
 </litepal>  

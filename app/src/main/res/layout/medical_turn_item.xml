@@ -24,7 +24,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.canplay.medical.view.MCheckBox
+        <io.cordova.qianshou.view.MCheckBox
             android:id="@+id/iv_choose"
             android:layout_width="19dp"
             android:layout_height="19dp"
@@ -70,7 +70,7 @@
 
         </LinearLayout>
 
-        <com.canplay.medical.view.ClearEditText
+        <io.cordova.qianshou.view.ClearEditText
             android:id="@+id/tv_count"
             android:layout_width="wrap_content"
             android:layout_height="50dp"

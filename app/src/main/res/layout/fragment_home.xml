@@ -75,7 +75,7 @@
 
     </RelativeLayout>
 
-    <com.canplay.medical.view.scrollView.StickyScrollView
+    <io.cordova.qianshou.view.scrollView.StickyScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/content_bg">
@@ -86,7 +86,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.canplay.medical.view.banner.BannerView
+            <io.cordova.qianshou.view.banner.BannerView
                 android:id="@+id/bannerView"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
@@ -632,7 +632,7 @@
             </LinearLayout>
 
         </LinearLayout>
-    </com.canplay.medical.view.scrollView.StickyScrollView>
+    </io.cordova.qianshou.view.scrollView.StickyScrollView>
 
 
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="com.canplay.medical.mvp.activity.account.LoginActivity">
+    tools:context="io.cordova.qianshou.mvp.activity.account.LoginActivity">
     <ImageView
 
         android:id="@+id/tv_logo"
@@ -37,7 +37,7 @@
                android:layout_marginLeft="19dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content" />
-           <com.canplay.medical.view.ClearEditText
+           <io.cordova.qianshou.view.ClearEditText
                android:textSize="14sp"
                android:layout_marginLeft="12dp"
                android:layout_marginRight="12dp"
@@ -70,7 +70,7 @@
                android:layout_marginLeft="19dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content" />
-           <com.canplay.medical.view.ClearEditText
+           <io.cordova.qianshou.view.ClearEditText
                android:textSize="14sp"
                android:layout_marginLeft="12dp"
                android:id="@+id/et_pws"

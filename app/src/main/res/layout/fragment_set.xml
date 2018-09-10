@@ -80,7 +80,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true">
-                    <com.canplay.medical.view.CircleImageView
+                    <io.cordova.qianshou.view.CircleImageView
                         android:layout_marginTop="16dp"
                         android:id="@+id/iv_img"
                         android:layout_width="57dp"

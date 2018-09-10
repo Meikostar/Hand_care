@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
-    <com.canplay.medical.view.scrollView.StickyScrollView
+    <io.cordova.qianshou.view.scrollView.StickyScrollView
 
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -265,7 +265,7 @@
 
 
 
-    </com.canplay.medical.view.scrollView.StickyScrollView>
+    </io.cordova.qianshou.view.scrollView.StickyScrollView>
 
     <RelativeLayout
         android:layout_marginTop="22dp"

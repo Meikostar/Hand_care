@@ -22,7 +22,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="83dp">
-        <com.canplay.medical.view.MCheckBox
+        <io.cordova.qianshou.view.MCheckBox
             android:layout_marginLeft="15dp"
             android:clickable="false"
             app:canNoClick="true"

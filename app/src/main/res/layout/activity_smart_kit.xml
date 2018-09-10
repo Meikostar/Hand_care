@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
-    <com.canplay.medical.view.NavigationBar
+    <io.cordova.qianshou.view.NavigationBar
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:navigationLeft_img="@drawable/black_left"
 
         app:navigationTitle="智能药盒" />
-    <com.canplay.medical.view.scrollView.StickyScrollView
+    <io.cordova.qianshou.view.scrollView.StickyScrollView
         android:layout_below="@+id/navigationBar"
         android:layout_marginBottom="59dp"
         android:layout_width="match_parent"
@@ -86,7 +86,7 @@
                     android:textColor="@color/slow_black"
                     android:textSize="15sp" />
             </LinearLayout>
-                <com.canplay.medical.view.RegularListView
+                <io.cordova.qianshou.view.RegularListView
                     android:layout_marginTop="3dp"
                     android:divider="#00000000"
                     android:dividerHeight="0dip"
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 />
-                <com.canplay.medical.view.NoScrollGridView
+                <io.cordova.qianshou.view.NoScrollGridView
                     android:layout_marginTop="10dp"
                     android:id="@+id/grid_view"
                     android:layout_width="match_parent"
@@ -115,7 +115,7 @@
 
         </LinearLayout>
 
-    </com.canplay.medical.view.scrollView.StickyScrollView>
+    </io.cordova.qianshou.view.scrollView.StickyScrollView>
 
     <TextView
         android:background="@color/blue"

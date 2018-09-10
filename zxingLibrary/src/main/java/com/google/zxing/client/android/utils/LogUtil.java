@@ -73,7 +73,7 @@ public class LogUtil {
     }
     public static class BuildConfig {
         public static final boolean DEBUG = Boolean.parseBoolean("true");
-        public static final String APPLICATION_ID = "com.canplay.medical";
+        public static final String APPLICATION_ID = "io.cordova.qianshou";
         public static final String BUILD_TYPE = "debug";
         public static final String FLAVOR = "_360";
         public static final int VERSION_CODE = 7;

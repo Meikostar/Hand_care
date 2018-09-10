@@ -104,7 +104,7 @@
                     android:src="@mipmap/ic_search"
                     />
 
-                <com.canplay.medical.view.ClearEditText
+                <io.cordova.qianshou.view.ClearEditText
                     android:id="@+id/et_search"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -133,7 +133,7 @@
                 android:textColor="@color/blue"
                 android:textSize="15sp" />
         </LinearLayout>
-        <com.canplay.medical.view.loadingView.LoadingPager
+        <io.cordova.qianshou.view.loadingView.LoadingPager
             android:id="@+id/loadingView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -144,7 +144,7 @@
                 android:layout_height="match_parent"
                 style="@style/lv_content"
                 />
-        </com.canplay.medical.view.loadingView.LoadingPager>
+        </io.cordova.qianshou.view.loadingView.LoadingPager>
     </LinearLayout>
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.canplay.medical.view.scrollView.StickyScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+<io.cordova.qianshou.view.scrollView.StickyScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -319,7 +319,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <com.canplay.medical.view.NoScrollViewPager
+        <io.cordova.qianshou.view.NoScrollViewPager
             android:id="@+id/viewpager_main"
             android:layout_width="match_parent"
             android:layout_height="230dp"
@@ -330,4 +330,4 @@
 
 
     </LinearLayout>
-</com.canplay.medical.view.scrollView.StickyScrollView>
+</io.cordova.qianshou.view.scrollView.StickyScrollView>

@@ -38,7 +38,7 @@
                 android:layout_marginLeft="19dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <com.canplay.medical.view.ClearEditText
+            <io.cordova.qianshou.view.ClearEditText
                 android:textSize="16.5sp"
                 android:layout_marginLeft="22dp"
                 android:id="@+id/et_pws"
@@ -77,7 +77,7 @@
                 android:layout_marginLeft="19dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <com.canplay.medical.view.ClearEditText
+            <io.cordova.qianshou.view.ClearEditText
                 android:textSize="16.5sp"
                 android:layout_marginLeft="22dp"
                 android:id="@+id/et_npws"

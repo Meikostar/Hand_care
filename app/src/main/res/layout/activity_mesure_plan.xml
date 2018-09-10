@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
-    <com.canplay.medical.view.NavigationBar
+    <io.cordova.qianshou.view.NavigationBar
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
 
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.2dp"
         android:background="@color/linecolor"/>
-    <com.canplay.medical.view.scrollView.StickyScrollView
+    <io.cordova.qianshou.view.scrollView.StickyScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -210,7 +210,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-                <com.canplay.medical.view.RegularListView
+                <io.cordova.qianshou.view.RegularListView
                     android:layout_marginTop="3dp"
                     android:divider="#00000000"
                     android:dividerHeight="0dip"
@@ -253,6 +253,6 @@
 
 
         </LinearLayout>
-    </com.canplay.medical.view.scrollView.StickyScrollView>
+    </io.cordova.qianshou.view.scrollView.StickyScrollView>
 
 </LinearLayout>

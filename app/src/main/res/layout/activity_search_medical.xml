@@ -104,7 +104,7 @@
                   android:src="@mipmap/ic_search"
                   />
 
-              <com.canplay.medical.view.ClearEditText
+              <io.cordova.qianshou.view.ClearEditText
                   android:id="@+id/et_search"
                   android:layout_weight="1"
                   android:layout_width="0dp"

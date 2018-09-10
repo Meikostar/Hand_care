@@ -11,13 +11,13 @@
         android:orientation="horizontal"
         android:background="#ffffff">
 
-        <com.canplay.medical.view.CycleWheelView
+        <io.cordova.qianshou.view.CycleWheelView
             android:id="@+id/cwv_hour"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
 
-        <com.canplay.medical.view.CycleWheelView
+        <io.cordova.qianshou.view.CycleWheelView
             android:id="@+id/cwv_minute"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

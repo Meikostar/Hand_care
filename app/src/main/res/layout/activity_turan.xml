@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.canplay.medical.mvp.activity.mine.TuranActivity">
+    tools:context="io.cordova.qianshou.mvp.activity.mine.TuranActivity">
 
 </android.support.constraint.ConstraintLayout>

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
-    <com.canplay.medical.view.NavigationBar
+    <io.cordova.qianshou.view.NavigationBar
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,12 +18,12 @@
         app:navigationRight_img="@drawable/add"
         app:navigationTitle="血糖测量记录" />
 
- <com.canplay.medical.view.TwoNevgBar
+ <io.cordova.qianshou.view.TwoNevgBar
      android:background="@color/white"
      android:id="@+id/ne_bar"
      android:layout_width="match_parent"
      android:layout_height="49dp"/>
-    <com.canplay.medical.view.NoScrollViewPager
+    <io.cordova.qianshou.view.NoScrollViewPager
         android:layout_marginTop="10dp"
         android:id="@+id/viewpager_main"
         android:background="@color/white"

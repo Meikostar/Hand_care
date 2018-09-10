@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
         android:id="@+id/line"/>
-    <com.canplay.medical.view.NavigationBar
+    <io.cordova.qianshou.view.NavigationBar
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,11 +46,11 @@
            android:layout_marginRight="15dp"
            android:src="@drawable/arrow_left"/>
     </LinearLayout>
-    <com.canplay.medical.view.loadingView.LoadingPager
+    <io.cordova.qianshou.view.loadingView.LoadingPager
         android:id="@+id/loadingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.canplay.medical.view.RegularListView
+        <io.cordova.qianshou.view.RegularListView
             android:layout_marginTop="3dp"
             android:divider="#00000000"
             android:dividerHeight="0dip"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:visibility="visible"
             style="@style/lv_content"/>
-    </com.canplay.medical.view.loadingView.LoadingPager>
+    </io.cordova.qianshou.view.loadingView.LoadingPager>
 
 
 </LinearLayout>
